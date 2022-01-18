@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>演示</title>
+      <link href="/2022/01/18/%E6%BC%94%E7%A4%BA/%E6%BC%94%E7%A4%BA/"/>
+      <url>/2022/01/18/%E6%BC%94%E7%A4%BA/%E6%BC%94%E7%A4%BA/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hhhhhh&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>IC卡秘钥算法破解的一次尝试</title>
+      <link href="/2022/01/17/blog1/"/>
+      <url>/2022/01/17/blog1/</url>
+      
+        <content type="html"><![CDATA[<p>Hello大家好，这里是LanternMark，今天给大家分享一下我的一次水卡破解经历。</p><p>（本文只技术交流分享，滥用者自行承担责任，与本文作者无关）</p><h3 id="0x0-前言"><a href="#0x0-前言" class="headerlink" title="0x0.前言"></a>0x0.前言</h3><p>​    <strong>IC卡</strong>，即Integrated Circuit Card，集成电路卡,像我们平常看到的银行卡，地铁卡，还有校园里的饭卡，智能校徽等等，这些都属于IC卡。想必大家一定不陌生，但是大家有没有关注过IC卡的原理以及安全性。希望通过这篇文章，给大家一些启发。</p><h3 id="0x1-准备工作"><a href="#0x1-准备工作" class="headerlink" title="0x1.准备工作"></a>0x1.准备工作</h3><p>​    <strong>工欲善其事，必先利其器。</strong>在开始读卡之前，先准备好以下的东西:</p><ul><li> 一块读卡芯片（比如PN532）</li><li>一台有NFC功能的手机，和配套的软件（比如MCT）</li><li>一张水卡</li><li>一颗耐心(很重要)</li></ul><p>​    芯片这里我用的是PN532，一块很便宜的读卡芯片，某宝上30多就能买到了，都准备好之后，就可以开始破解了。</p><h3 id="0x2-开始破解"><a href="#0x2-开始破解" class="headerlink" title="0x2.开始破解"></a>0x2.开始破解</h3><p>​    首先，先打开手机的NFC功能，读取一下这张水卡，会得到以下的结果。</p><p><img src="https://raw.githubusercontent.com/ladeng07/pico/main/img/1.webp" alt="1"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2021/09/26/hello-world/"/>
+      <url>/2021/09/26/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
