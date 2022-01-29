@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>基于proteus的可视化设计(2)</title>
+      <link href="/2022/01/29/proteus/proteus2/"/>
+      <url>/2022/01/29/proteus/proteus2/</url>
+      
+        <content type="html"><![CDATA[<p>在上一篇文章中，介绍了proteus可视化设计的一些基本操作，今天我们来介绍第一种组件的使用——-LED控制。</p><h3 id="1-LED模块的选择"><a href="#1-LED模块的选择" class="headerlink" title="1.LED模块的选择"></a>1.LED模块的选择</h3><p>在Proteus中，一共有7种软件自身提供的模块，如下图：</p><p><img src="https://s2.loli.net/2022/01/30/XAkIU98Rcw2zuZQ.png"></p><p>这里可使用的LED模块有<strong>Breakout Perifherals</strong>里的和<strong>Grove</strong>里的，这两种LED灯都有红、黄、蓝、绿四种颜色，两种LED灯的区别在于接线方式不同</p><p><img src="https://s2.loli.net/2022/01/30/AeOXCZGl7oVKQab.png" alt="Breakout Perifherals模块里的LED"></p><p><img src="https://s2.loli.net/2022/01/30/1Is6pKj9vYWEVHF.png" alt="Grove模块里的LED"></p><p><img src="https://s2.loli.net/2022/01/30/RFOdxBc6SjmNkbn.png" alt="Breakout Perifherals模块里的LED原理图"></p><p><img src="https://s2.loli.net/2022/01/30/JkK9sgxz7NQd1Zb.png" alt="Grove模块里的LED原理图"></p><p>在原理图中双击Grove LED，可以看到connector ID，这里用的是D2到D8这6个数字端口，当你有多个Grove LED时，应该设置不同的端口，否则在编译过程中会报错；双击Arduino LED可以看到，Arduino LED可以使用IO0到IO19这20个输入输出端口，比Grove LED的可用端口要多，当你的程序所需的LED灯数量比较大时，Arduino LED是不错的选择。</p><p><img src="https://s2.loli.net/2022/01/30/ynhz2VmQl9siTUo.png" alt="Arduino LED的端口"><img src="https://s2.loli.net/2022/01/30/ldUFoYrzLs8MHD9.png" alt="Grove LED的端口"></p><p>这里补充一点，Grove LED的四个引脚都代表什么，如图，第一和第二引脚都是数字端口，第三个引脚是VCC，第四个引脚GND也就是接地。虽然Grove LED只使用一个引脚（即图中的D2，第二个引脚为proteus自动设置的），但是在编译过程中经常会出现一种情况：当你放置了多个Grove LED模块时，即使设置了不同的数字端口，编译时仍出现端口占用的情况。解决方法很简单，只需要给被占用的Grove LED模块设置一个新的端口，然后再设置成原来的端口，就可以解决问题了。<br><img src="https://s2.loli.net/2022/01/30/WIEKw52tipmgdky.png" alt="Grove LED的引脚图"></p><h3 id="2-LED模块的使用方法"><a href="#2-LED模块的使用方法" class="headerlink" title="2.LED模块的使用方法"></a>2.LED模块的使用方法</h3><p>前面介绍了两种LED模块，虽然这两种模块的来源不同，但是其方法时相同的。这里以Grove LED为例：</p><p><img src="https://s2.loli.net/2022/01/30/zK4muCOks79Wrqa.png" alt="LED模块的方法"></p><p><strong>on：端口输出高电平，LED发光</strong></p><p><strong>off：端口输出低电平，LED熄灭</strong></p><p><strong>set：设置LED发光/熄灭；TRUE=on</strong><br>                                           <strong>FLASE=off</strong></p><p><strong>dim：端口PWM输出,可以调光(0~255)</strong></p><p><strong>toggle：LED发光状态取反</strong></p><h4 id="（1）LED的闪烁"><a href="#（1）LED的闪烁" class="headerlink" title="（1）LED的闪烁"></a>（1）LED的闪烁</h4><p>只要将你所需的方法直接拖到流程图中就可以使用了，这里我们先做一个小实验，让LED灯闪烁，示例流程图如下：</p><p><img src="https://s2.loli.net/2022/01/30/iuonlGYtBJDjPUK.png"></p><p>编译运行一下：</p><p><img src="https://s2.loli.net/2022/01/30/QN94numX5UoHTIC.png"><img src="https://s2.loli.net/2022/01/30/cS4GhwI75RKO36o.png"></p><p>可以看到，LED灯就开始每秒闪烁一次了，是不是很简单？接下来我们来做一下键控LED灯，</p><h4 id="（2）键控LED"><a href="#（2）键控LED" class="headerlink" title="（2）键控LED"></a>（2）键控LED</h4><p>键控LED就是<strong>按键控制LED灯，按键按下时，对应LED发光，按键松开后LED灯熄灭。</strong>要用到的按钮模块选择Grove里的按钮模块，</p><p><img src="https://s2.loli.net/2022/01/30/zjHIZhb4o12Nuqf.png"></p><p>原理图：</p><p><img src="https://s2.loli.net/2022/01/30/1kjAqTJoDCYaWIg.png"></p><p>当按键按下时，端口D2输入高电平；当按键松开时，端口D2输入低电平。按键模块只有一个方法，即判断按键是否被按下，键控LED流程图如下：</p><p><img src="https://s2.loli.net/2022/01/30/ySDrvAH4sQ1lEVN.png"></p><p>当按键按下时，LED灯会一直亮着；当按键松开时，LED灯熄灭。从而实现键控LED效果</p><p><img src="https://s2.loli.net/2022/01/30/nsYmJzD4Q1lF7ea.png"></p><h4 id="（3）-流水灯控制"><a href="#（3）-流水灯控制" class="headerlink" title="（3） 流水灯控制"></a>（3） 流水灯控制</h4>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> proteus </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>基于proteus的可视化设计(1)</title>
+      <link href="/2022/01/29/proteus/proteus1/"/>
+      <url>/2022/01/29/proteus/proteus1/</url>
+      
+        <content type="html"><![CDATA[<p>Hello，大家好，这里是LMark，今天来给大家分享分享proteus软件的仿真设计的一些方法，如有错误，欢迎大家指正。我首先声明一下，本人为计算机专业大一学生，对单片机开发只是一个兴趣爱好，并不会在这里介绍太多原理性的内容（主要是我也不是很懂哈哈哈），主要介绍介绍proteus这个软件中，基于arduino uno板的可视化设计方法。OK，接下来进入正题。</p><p>​    关于Proteus的介绍，这里摘抄一段百度百科的介绍：</p><blockquote><p> Proteus软件是英国Lab Center Electronics公司出版的EDA工具软件。它不仅具有其它EDA工具软件的仿真功能，还能仿真单片机及外围器件。它是比较好的仿真单片机及外围器件的工具。虽然国内推广刚起步，但已受到单片机爱好者、从事单片机教学的教师、致力于单片机开发应用的科技工作者的青睐。</p></blockquote><p>就是这么一个功能强大的软件，成为了许多老师们上课喜欢用的软件。我们学校有老师开了一门单片机学习入门的课，就是用proteus来教学的。先来看看proteus长啥样：</p><p><img src="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" alt="image-20220129184045826"></p><p>现在proteus最新版本已经到了8.13，从8.6开始，proteus就已经支持可视化设计，那有人要问了：什么是可视化设计呀? </p><p><strong>可视化（Visual）程序设计其实是一种全新的程序设计方法。</strong></p><blockquote><p><strong>它主要是让程序设计人员利用软件本身所提供的各种控件，像搭积木一样来构造应用程序的各种界面。</strong> <strong>Proteus</strong>软件的可视化设计<strong>Visual Designer</strong>是一个独特的开发工具，同时使用流程图和<strong>Arduino</strong>开发板通过拖放的外围设备模块来设计基于<strong>Arduin</strong>嵌入式系统的程序设计。</p></blockquote><p>要想用proteus进行可视化设计，得要1.安装proteus8.6及以上的版本。2.软件需要破解。proteus破解版在网上搜可以搜索到很多，我这里给一个proteus8.11的破解版：<a href="https://pan.baidu.com/s/1QCxhFQWl4XzPcNVOcg_Czw">https://pan.baidu.com/s/1QCxhFQWl4XzPcNVOcg_Czw</a>   提取码：sc8a</p><h2 id="1-创建可视化设计工程"><a href="#1-创建可视化设计工程" class="headerlink" title="1.创建可视化设计工程"></a>1.创建可视化设计工程</h2><p>首先打开软件，可以看到这样的界面，点击“New Flowchart”（我的proteus是汉化过的，汉化的方法百度上有很多，以后会讲讲）</p><p><img src="https://s2.loli.net/2022/01/29/AbQeq74tcDo5xyF.png" alt="image-20220129190530172"></p><p>点击“下一步”</p><p><img src="https://s2.loli.net/2022/01/29/vh8HNQs1IXizbJa.png" alt="image-20220129190708897"></p><p>然后就按照默认配置即可，最后点击“完成”即可创建。</p><h2 id="2-界面介绍"><a href="#2-界面介绍" class="headerlink" title="2.界面介绍"></a>2.界面介绍</h2><p>原理图界面，在这里可以摆放部件的位置，对部件的属性进行修改</p><p><img src="https://s2.loli.net/2022/01/29/Dux2p38XEOCY65k.png" alt="image-20220129192304159"></p><p>流程图界面，在这里可以进行程序的设计</p><p><img src="https://s2.loli.net/2022/01/29/fvbYQgB6Fz8OUC7.png" alt="image-20220129192347730"></p><h6 id="基本操作方法介绍"><a href="#基本操作方法介绍" class="headerlink" title="基本操作方法介绍"></a>基本操作方法介绍</h6><p>1.添加硬件模块</p><p>2.SETUP流程图设计（SETUP流程只会执行一次，初始化程序）</p><p>3.LOOP流程图设计（LOOP程序无限循环执行）</p><h6 id="流程图介绍"><a href="#流程图介绍" class="headerlink" title="流程图介绍"></a>流程图介绍</h6><p>（巴拉巴拉很多）</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> proteus </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>IC卡秘钥算法破解的一次尝试</title>
       <link href="/2021/07/18/blog1/"/>
       <url>/2021/07/18/blog1/</url>
