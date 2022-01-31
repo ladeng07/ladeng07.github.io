@@ -1317,7 +1317,7 @@ canvas:not(#ribbon-canvas),
   --tab-button-active-bg: #fff;
   --card-bg: #fff;
   --sidebar-bg: #f6f8fa;
-  --btn-hover-color: #ab2b2b;
+  --btn-hover-color: #fe5b69;
   --btn-color: #fff;
   --btn-bg: #777bce;
   --text-bg-hover: rgba(119,123,206,0.7);
@@ -1427,7 +1427,7 @@ table td {
   vertical-align: middle;
 }
 *::selection {
-  background: #00c4b6;
+  background: #5e5dcf;
   color: #f7f7f7;
 }
 button {
@@ -2085,7 +2085,7 @@ blockquote footer cite:before {
   font-size: 1.72em;
 }
 .article-sort-title:hover:before {
-  border-color: #ab2b2b;
+  border-color: #fe5b69;
 }
 .article-sort-title:before {
   position: absolute;
@@ -2137,7 +2137,7 @@ blockquote footer cite:before {
   transition: all 0.2s ease-in-out;
 }
 .article-sort-item:hover:before {
-  border-color: #ab2b2b;
+  border-color: #fe5b69;
 }
 .article-sort-item:before {
   position: absolute;
@@ -2167,10 +2167,10 @@ blockquote footer cite:before {
   border-color: #777bce;
 }
 .article-sort-item.year:before {
-  border-color: #ab2b2b;
+  border-color: #fe5b69;
 }
 .article-sort-item-time {
-  color: #858585;
+  color: #507af6;
   font-size: 95%;
 }
 .article-sort-item-time time {
@@ -2251,7 +2251,7 @@ blockquote footer cite:before {
 }
 #page .category-lists .category-list .category-list-count {
   margin-left: 0.4rem;
-  color: #858585;
+  color: #507af6;
 }
 #page .category-lists .category-list .category-list-count:before {
   content: '(';
@@ -2291,7 +2291,7 @@ blockquote footer cite:before {
   content: '';
 }
 #page .category-lists ul li:hover:before {
-  border-color: #ab2b2b;
+  border-color: #fe5b69;
 }
 #body-wrap {
   display: -webkit-box;
@@ -2603,7 +2603,7 @@ blockquote footer cite:before {
   color: #777bce;
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap {
-  color: #858585;
+  color: #507af6;
   font-size: 90%;
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .post-meta-date {
@@ -2628,7 +2628,7 @@ blockquote footer cite:before {
   margin: 0 0.2rem;
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap a {
-  color: #858585;
+  color: #507af6;
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap a:hover {
   color: #777bce;
@@ -2902,7 +2902,7 @@ blockquote footer cite:before {
 #aside-content .aside-list > .aside-list-item .content > time,
 #aside-content .aside-list > .aside-list-item .content > .name {
   display: block;
-  color: #858585;
+  color: #507af6;
   font-size: 85%;
 }
 #aside-content .aside-list > .aside-list-item .content > .title,
@@ -3427,6 +3427,13 @@ blockquote footer cite:before {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
+}
+#footer:before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  content: '';
 }
 #footer-wrap {
   position: relative;
@@ -4318,7 +4325,7 @@ blockquote footer cite:before {
   cursor: pointer;
 }
 #pagination .page-number.current {
-  background: #00c4b6;
+  background: #7bf1f6;
   color: var(--white);
   cursor: default;
 }
@@ -4404,7 +4411,7 @@ blockquote footer cite:before {
   overflow-wrap: break-word;
 }
 #article-container a {
-  color: #9fa0d7;
+  color: #d663d1;
 }
 #article-container a:hover {
   text-decoration: underline;
@@ -4645,7 +4652,7 @@ blockquote footer cite:before {
   padding: 0.2em 0.2em 0.2em 1.4em;
 }
 #article-container.post-content ul > li:not(.tab):hover:before {
-  border-color: #ab2b2b;
+  border-color: #fe5b69;
 }
 #article-container.post-content ul > li:not(.tab):before {
   top: 0.78em;
@@ -5090,7 +5097,7 @@ blockquote footer cite:before {
 #waline-wrap {
   --waline-font-size: 1.1em;
   --waline-theme-color: #777bce;
-  --waline-active-color: #ab2b2b;
+  --waline-active-color: #fe5b69;
   --waline-avatar-size: 2.75rem;
 }
 #waline-wrap .vuser {
@@ -6484,7 +6491,7 @@ blockquote.pullquote.right {
   line-height: 1.7;
 }
 #local-search .search-dialog .local-search__hit-item:hover:before {
-  border-color: #ab2b2b;
+  border-color: #fe5b69;
 }
 #local-search .search-dialog .local-search__hit-item:before {
   position: absolute;
