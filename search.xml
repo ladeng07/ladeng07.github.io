@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>基于proteus的可视化设计（3）——显示屏控制</title>
+      <link href="/2022/02/01/proteus/proteus3/"/>
+      <url>/2022/02/01/proteus/proteus3/</url>
+      
+        <content type="html"><![CDATA[<p>上一篇文章介绍了LED模块的用法，这次来给大家介绍介绍一下显示屏的用法，列举一些常见的显示屏：</p><p><img src="https://s2.loli.net/2022/02/01/hOLUIEes4TAa6MS.png" alt="LED数码管显示器"><img src="https://s2.loli.net/2022/02/01/8XCiutYTAr6M1Uo.png" alt="LCD1602字符型液晶显示器"><img src="https://s2.loli.net/2022/02/01/G2gjx6dWCpM1vQN.png" alt="OLED 12864显示器"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> proteus </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于proteus的可视化设计(2)——LED模块</title>
       <link href="/2022/01/29/proteus/proteus2/"/>
       <url>/2022/01/29/proteus/proteus2/</url>
