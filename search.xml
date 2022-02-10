@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>用pyinstaller在64位电脑上打包32位exe</title>
+      <link href="/2022/02/10/py1/"/>
+      <url>/2022/02/10/py1/</url>
+      
+        <content type="html"><![CDATA[<p>hello大家好，这里是LMark。今天给别人写程序的时候，用pyinstaller打包成exe，但是对方是32位Win7，而我的是64位，所以用pyinstaller打包出来的exe文件运行不了，后来去网上找了些资料，解决了这个问题。</p><h4 id="1-安装32位的python"><a href="#1-安装32位的python" class="headerlink" title="1.安装32位的python"></a>1.安装32位的python</h4><p>下载python去官网，可以找到全版本。python的版本没有什么要求，只要是32位的。附官网传送门：<a href="https://www.python.org/downloads/windows/">Python Releases for Windows | Python.org</a>。这里我演示下的是3.4.4，因为3.4.4还支持XP。</p><p><img src="https://s2.loli.net/2022/02/10/aDRqVFzYm1K7AuN.png"></p><p>下载并安装，安装完之后记得将python添加到环境变量中（如果电脑上已经有了64位python，建议给32位python改个名字，防止冲突）</p><h4 id="2-安装pywin32"><a href="#2-安装pywin32" class="headerlink" title="2.安装pywin32"></a>2.安装pywin32</h4><p>打包成32位exe程序需要pywin32这个包，所以我们先安装一下，这里先去下载一下<a href="https://sourceforge.net/projects/pywin32/files/pywin32/">Pywin32</a></p><p><img src="https://s2.loli.net/2022/02/10/E7qX9ihPxUvdAfo.png"></p><p>找到适合的版本（这里以python3.4为例），貌似下载需要科学上网。</p><p><img src="https://s2.loli.net/2022/02/10/1ZzQB48rl3gc6Ud.png"></p><p>下载好后直接双击运行，按照默认值，一直下一步即可。</p><h4 id="3-更新pip、whell、setuptools和安装future、pefile"><a href="#3-更新pip、whell、setuptools和安装future、pefile" class="headerlink" title="3.更新pip、whell、setuptools和安装future、pefile"></a>3.更新pip、whell、setuptools和安装future、pefile</h4><p>在cmd命令行中依次输入：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pip install pip==<span class="number">19.1</span>.<span class="number">1</span></span><br><span class="line">pip install wheel==<span class="number">0.33</span>.<span class="number">6</span></span><br><span class="line">pip install setuptools==<span class="number">42.0</span>.<span class="number">2</span></span><br><span class="line">pip install future==<span class="number">0.18</span>.<span class="number">2</span></span><br><span class="line">pip install pefile==<span class="number">2017.8</span>.<span class="number">1</span></span><br></pre></td></tr></table></figure><h4 id="4-安装pyinstaller"><a href="#4-安装pyinstaller" class="headerlink" title="4.安装pyinstaller"></a>4.安装pyinstaller</h4><p>这里我安装的是3.4版本的pyinstaller(python3.4可以选择3.4或3.5版本的pyinstaller)</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyinstaller==<span class="number">3.4</span></span><br></pre></td></tr></table></figure><p>安装完成后，在命令行中输入以下命令，显示以下内容表示安装成功</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller <span class="literal">-v</span></span><br></pre></td></tr></table></figure><p><img src="https://s2.loli.net/2022/02/10/yIYAS92VR8JHGgF.png" alt="正常显示版本号"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于proteus的可视化设计(3)——显示屏控制</title>
       <link href="/2022/02/01/proteus/proteus3/"/>
       <url>/2022/02/01/proteus/proteus3/</url>
