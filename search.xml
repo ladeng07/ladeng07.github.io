@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>基于proteus的可视化设计(5)——传感器</title>
+      <link href="/2022/02/13/proteus/proteus5/"/>
+      <url>/2022/02/13/proteus/proteus5/</url>
+      
+        <content type="html"><![CDATA[<p>s上一篇文章介绍了电机的一些用法，这次来介绍——传感器。</p><p><img src="https://s2.loli.net/2022/02/13/tVdRNsYSIyZPBrq.png" alt="距离传感器"></p><p><img src="https://s2.loli.net/2022/02/13/D8oraYvJXlVQtbB.png" alt="声音传感器"></p><p><img src="https://s2.loli.net/2022/02/13/MkPCcfF9LOzopGU.png" alt="DHT22一体化温湿度传感器"></p><p><strong>传感器</strong>（sensor）</p><blockquote><p><strong>传感器是一种检测装置，能感受到被测量的信息，并能将感受到的信息，按一定规律变换成为电信号或其他所需形式的信息输出，以满足信息的传输、处理、存储、显示、记录和控制等要求。</strong></p><p>   <strong>传感器的特点包括:微型化、数字化、智能化、多功能化、系统化、网络化。它是实现自动检测和自动控制的首要环节。传感器的存在和发展，让物体有了触觉、味觉和嗅觉等感官，让物体慢慢变得活了起来。</strong></p><p>   <strong>通常根据其基本感知功能分为热敏元件、光敏元件、气敏元件、力敏元件、磁敏元件、湿敏元件、声敏元件、放射线敏感元件、色敏元件和味敏元件等十大类。</strong></p></blockquote><h4 id="1-距离传感器"><a href="#1-距离传感器" class="headerlink" title="(1).距离传感器"></a>(1).距离传感器</h4><p><img src="https://s2.loli.net/2022/02/13/iFnUAzLMD7rojQ4.png"></p><p>模块介绍：</p><p>１、本模块性能稳定，测度距离精确。模块高精度，盲区（2cm）。<br> 2 、主要技术参数：</p><ul><li>使用电压：DC5V        </li><li>静态电流：小于2mA</li><li>电平输出：高5V           </li><li>电平输出：低0V</li><li>感应角度：不大于15度       </li><li>探测距离：2cm-450cm      </li><li>高精度：可达0.3cm</li></ul><p> TRIP引脚是内部上拉10K的电阻，用单片机的IO口拉低TRIP引脚，然后给一个10us以上的脉冲信号。 </p><p>3、URF04模块工作原理：<br>    (1)采用IO触发测距，给至少10us的高电平信号;<br>    (2)模块自动发送8个40khz的方波，自动检测是否有信号返回；<br>    (3)有信号返回，通过IO输出一高电平，高电平持续的时间就是超声波从发射到返回的时间．<br>　             测试距离=(高电平时间*声速(340M/S))/2;<br>　<br>    本产品使用方法简单,一个控制口发一个10US以上的高电平,就可以在接收口等待高电平输出.一有输出就可以开定时器计时,当此口变为低电平时就可以读定时器的值,此时就为此次测距的时间,方可算出距离。 </p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> proteus </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于proteus的可视化设计(4)——电机控制</title>
       <link href="/2022/02/11/proteus/proteus4/"/>
       <url>/2022/02/11/proteus/proteus4/</url>
