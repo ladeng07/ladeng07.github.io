@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lmark.cc/archives/af59cd8a.html</loc>
-    <lastmod>2022-06-24</lastmod>
-  </url>
-  <url>
     <loc>https://lmark.cc/archives/c2bf18f6.html</loc>
     <lastmod>2022-06-24</lastmod>
   </url>
@@ -79,5 +75,9 @@
   <url>
     <loc>https://lmark.cc/archives/cec14bfd.html</loc>
     <lastmod>2022-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://lmark.cc/archives/af59cd8a.html</loc>
+    <lastmod>2022-03-24</lastmod>
   </url>
 </urlset> 
