@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>用ssh连接服务器和使用pycharm把代码同步上服务器的方法</title>
+      <link href="/2022/03/28/py2/"/>
+      <url>/2022/03/28/py2/</url>
+      
+        <content type="html"><![CDATA[<h4 id="1-SSH连接服务器"><a href="#1-SSH连接服务器" class="headerlink" title="1.SSH连接服务器"></a>1.SSH连接服务器</h4><p>首先需要安装一个远程连接客户端（我用的是Final shell，用别的也行）</p><p><img src="https://s2.loli.net/2022/03/07/DNEoTJ7X569cuAm.png" alt="image-20220307023514359"></p><p>然后在软件里新建一个连接</p><p><img src="https://s2.loli.net/2022/03/07/AVY7gGkNZ4jyixS.png" alt="image-20220307023631996"></p><p>这里，主机名是<strong>服务器的公网IP</strong>，端口默认<strong>22</strong>，底下，使用密码登录，</p><p>连接成功后就可以操作服务器了</p><h4 id="2-用pycharm把代码同步上服务器-需要pycharm专业版"><a href="#2-用pycharm把代码同步上服务器-需要pycharm专业版" class="headerlink" title="2.用pycharm把代码同步上服务器(需要pycharm专业版)"></a>2.用pycharm把代码同步上服务器(需要pycharm专业版)</h4><p>首先打开pycharm专业版（社区版没有这个功能好像），打开项目，左上角选择File–settings</p><p><img src="https://s2.loli.net/2022/03/07/vFUojrapRACKN7s.png" alt="image-20220307024224248"></p><p><img src="https://s2.loli.net/2022/03/07/knEfyd67xel8VYC.png" alt="image-20220307024333165"></p><p>新增一个SFTP连接，然后点右边的SSH configuration的三个点，新增SSH连接</p><p><img src="https://s2.loli.net/2022/03/07/FyE1Ltlp3ZYvuJH.png" alt="image-20220307024418946"></p><p>账号密码同之前SSH远程登录时的账号密码</p><p><img src="https://s2.loli.net/2022/03/28/nKcSr2xilLyjzgJ.png" alt="image-20220328202616312"></p><p>然后重点来了，<strong>接下来这几步不能错，不然可能会把文件覆盖掉</strong></p><p><img src="https://s2.loli.net/2022/03/07/153yWYZF2GHnhq8.png" alt="image-20220307024825692"></p><p>首先在Root path中，选择上图的路径<strong>（这个绝对不能错）</strong>，然后选择上方Mappings栏</p><p><img src="https://s2.loli.net/2022/03/07/GugR9rivUMS5PWA.png" alt="image-20220307024942956"></p><p>本地路径设置，这里就设置你<strong>本地的Django项目的路径（就是manage.py的路径）</strong></p><p><img src="https://s2.loli.net/2022/03/07/qXWIwHMOrQZ2keo.png" alt="image-20220307025057771"></p><p>配置完成后，点击OK，接下来就是从服务器下载和上传代码</p><p>在pycharm项目的首页，文件树那里，右键，往下滑选择Deployment，里面的下载和上载就是同步操作</p><p><img src="C:\Users\PBDELL\AppData\Roaming\Typora\typora-user-images\image-20220307025326524.png" alt="image-20220307025326524"></p><p>可以通过这个把代码同步上去。上传大概需要几分钟左右即可</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于uwsgi+nginx+centos的Django项目部署经历</title>
       <link href="/2022/03/27/django2/"/>
       <url>/2022/03/27/django2/</url>
