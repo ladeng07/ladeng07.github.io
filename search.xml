@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>我的一些常用的工具函数（持续更新）</title>
+      <link href="/archives/cfb06458.html"/>
+      <url>/archives/cfb06458.html</url>
+      
+        <content type="html"><![CDATA[<p>z之前写的一些有意思的函数，因为每次自己再敲一遍又很麻烦，故写好了可以直接复制就可以用了</p><h4 id="1-跑跑弱口令字典"><a href="#1-跑跑弱口令字典" class="headerlink" title="1.跑跑弱口令字典"></a>1.跑跑弱口令字典</h4><p>之前一个课上用的，字典是从github上找的：<a href="https://github.com/fuzz-security/SuperWordlist">https://github.com/fuzz-security/SuperWordlist</a></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">flag = <span class="literal">False</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;MidPwds.txt&quot;</span>, <span class="string">&quot;r&quot;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">        line = line.strip(<span class="string">&#x27;\n&#x27;</span>) </span><br><span class="line">        <span class="keyword">if</span> line == pwd:</span><br><span class="line">            flag = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></table></figure><h4 id="2-发邮件函数"><a href="#2-发邮件函数" class="headerlink" title="2.发邮件函数"></a>2.发邮件函数</h4><p>自己封装了个发邮件函数，写一些自动化任务可能会用到</p><p>需要的参数：</p><ul><li>邮箱</li><li>邮箱TOKEN</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># text 是你需要发送的内容，email 是邮箱，可以传入一个或者一堆</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">email</span>(<span class="params">text,email</span>):</span></span><br><span class="line">    my_sender = <span class="string">&#x27;你的邮箱&#x27;</span></span><br><span class="line">    my_pass = <span class="string">&quot;邮箱TOKEN&quot;</span></span><br><span class="line">    msg=MIMEText(text,<span class="string">&#x27;plain&#x27;</span>,<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    msg[<span class="string">&#x27;Subject&#x27;</span>]=<span class="string">&quot;这是一个主题&quot;</span></span><br><span class="line">    msg[<span class="string">&#x27;From&#x27;</span>]=formataddr([<span class="string">&quot;我是发件人&quot;</span>,my_sender])  <span class="comment"># 括号里的对应发件人邮箱昵称、发件人邮箱账号</span></span><br><span class="line">    msg[<span class="string">&#x27;To&#x27;</span>]=formataddr([<span class="string">&quot;我是收件人&quot;</span>,email])              <span class="comment"># 括号里的对应收件人邮箱昵称、收件人邮箱账号</span></span><br><span class="line">     </span><br><span class="line">    <span class="comment"># QQ邮箱的smtp服务器：smtp.qq.com   端口 465</span></span><br><span class="line">    <span class="comment"># 163邮箱smtp服务器 smtp.163.com 端口 25</span></span><br><span class="line">    server=smtplib.SMTP(<span class="string">&quot;smtp.163.com&quot;</span>, <span class="number">25</span>)  <span class="comment"># 发件人邮箱中的SMTP服务器，端口是25</span></span><br><span class="line">    server.login(my_sender, my_pass)  <span class="comment"># 括号中对应的是发件人邮箱账号、邮箱密码</span></span><br><span class="line">    server.sendmail(my_sender,email,msg.as_string())  <span class="comment"># 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件</span></span><br><span class="line">    server.quit()  <span class="comment"># 关闭连接</span></span><br></pre></td></tr></table></figure><h4 id="3-额"><a href="#3-额" class="headerlink" title="3.额"></a>3.额</h4>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Tool </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>一些常用的git命令</title>
+      <link href="/archives/b076b21a.html"/>
+      <url>/archives/b076b21a.html</url>
+      
+        <content type="html"><![CDATA[<p>记录一些git的用法，怕之后的我给忘了（虽然已经忘记几次了）</p><h3 id="1-克隆仓库"><a href="#1-克隆仓库" class="headerlink" title="1.克隆仓库"></a>1.克隆仓库</h3><p>克隆之前，先新建一个文件夹，进入后右键打开git bash，初始化git</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init  #初始化仓库</span><br></pre></td></tr></table></figure><p>然后就可以直接克隆仓库辣</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone URL    克隆仓库</span><br></pre></td></tr></table></figure><p>之后可以直接pull下来,获取最新版本</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull 本地与服务器端同步</span><br></pre></td></tr></table></figure><h3 id="2-上传"><a href="#2-上传" class="headerlink" title="2.上传"></a>2.上传</h3><p>在上传到服务器之前，需要先提交到本地仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -am &quot;init&quot; 提交并且加注释</span><br></pre></td></tr></table></figure><p>然后就可以推到远程服务器辣</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master 将文件给推到服务器上</span><br></pre></td></tr></table></figure><h3 id="3-其他"><a href="#3-其他" class="headerlink" title="3.其他"></a>3.其他</h3><p>其他一些可能会用到的命令</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status 查看当前状态</span><br><span class="line"></span><br><span class="line">git log 看你commit的日志</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>网络破防o实践先导实验二————ROP攻击</title>
       <link href="/archives/7b29b6a8.html"/>
       <url>/archives/7b29b6a8.html</url>
