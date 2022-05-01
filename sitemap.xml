@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ladeng07.github.io/archives/e868709.html</loc>
+    
+    <lastmod>2022-05-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ladeng07.github.io/archives/5e5bd1a8.html</loc>
     
     <lastmod>2022-04-25</lastmod>
@@ -175,7 +184,7 @@
 
   <url>
     <loc>https://ladeng07.github.io/</loc>
-    <lastmod>2022-04-25</lastmod>
+    <lastmod>2022-05-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -183,56 +192,63 @@
   
   <url>
     <loc>https://ladeng07.github.io/tags/RFID/</loc>
-    <lastmod>2022-04-25</lastmod>
+    <lastmod>2022-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ladeng07.github.io/tags/Git/</loc>
-    <lastmod>2022-04-25</lastmod>
+    <loc>https://ladeng07.github.io/tags/E-Prime/</loc>
+    <lastmod>2022-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ladeng07.github.io/tags/Django/</loc>
-    <lastmod>2022-04-25</lastmod>
+    <lastmod>2022-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ladeng07.github.io/tags/Git/</loc>
+    <lastmod>2022-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ladeng07.github.io/tags/%E7%BD%91%E7%BB%9C%E7%A0%B4%E9%98%B2%E5%AE%9E%E8%B7%B5%E5%85%88%E5%AF%BC/</loc>
-    <lastmod>2022-04-25</lastmod>
+    <lastmod>2022-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ladeng07.github.io/tags/Python/</loc>
-    <lastmod>2022-04-25</lastmod>
+    <lastmod>2022-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ladeng07.github.io/tags/QQ/</loc>
-    <lastmod>2022-04-25</lastmod>
+    <lastmod>2022-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ladeng07.github.io/tags/Tool/</loc>
-    <lastmod>2022-04-25</lastmod>
+    <lastmod>2022-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ladeng07.github.io/tags/Proteus/</loc>
-    <lastmod>2022-04-25</lastmod>
+    <lastmod>2022-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
