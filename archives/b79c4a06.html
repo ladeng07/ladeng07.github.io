@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IC卡秘钥算法破解的一次尝试 | Lantern Mark的博客</title><meta name="keywords" content="RFID"><meta name="author" content="Lantern Mark"><meta name="copyright" content="Lantern Mark"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Hello大家好，这里是LanternMark，今天给大家分享一下我的一次水卡破解经历。 （本文只技术交流分享，滥用者自行承担责任，与本文作者无关） 0x0.前言​    IC卡，即Integrated Circuit Card，集成电路卡,像我们平常看到的银行卡，地铁卡，还有校园里的饭卡，智能校徽等等，这些都属于IC卡。想必大家一定不陌生，但是大家有没有关注过IC卡的原理以及安全性。希望通过这篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IC卡秘钥算法破解的一次尝试">
-<meta property="og:url" content="https://ladeng07.github.io/archives/b79c4a06.html">
+<meta property="og:url" content="https://lmark.cc/archives/b79c4a06.html">
 <meta property="og:site_name" content="Lantern Mark的博客">
 <meta property="og:description" content="Hello大家好，这里是LanternMark，今天给大家分享一下我的一次水卡破解经历。 （本文只技术交流分享，滥用者自行承担责任，与本文作者无关） 0x0.前言​    IC卡，即Integrated Circuit Card，集成电路卡,像我们平常看到的银行卡，地铁卡，还有校园里的饭卡，智能校徽等等，这些都属于IC卡。想必大家一定不陌生，但是大家有没有关注过IC卡的原理以及安全性。希望通过这篇">
 <meta property="og:locale" content="zh_CN">
@@ -11,7 +11,7 @@
 <meta property="article:author" content="Lantern Mark">
 <meta property="article:tag" content="RFID">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2022/04/05/Hh3GSyIz42b1al7.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://ladeng07.github.io/archives/b79c4a06"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://s2.loli.net/2022/04/05/Hh3GSyIz42b1al7.jpg"><link rel="shortcut icon" href="http://cdn.lmark.cc/1633337981355.png"><link rel="canonical" href="https://lmark.cc/archives/b79c4a06"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},

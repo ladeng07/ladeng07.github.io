@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>基于uwsgi+nginx+centos的Django项目部署经历 | Lantern Mark的博客</title><meta name="keywords" content="Django"><meta name="author" content="Lantern Mark"><meta name="copyright" content="Lantern Mark"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1.起因寒假之前，我滴帅部长召哥给我们布置寒假作业：要求我们每个人把上个学期写的电商项目给部署到远程服务器上面。然后他也没告诉我们具体怎么去部署。我就自己在网上找教程，跌跌撞撞摸索出了部署的流程。 2.选择服务器要把Django部署上远程服务器，首先得有一台远程服务器。之前寄导课做实验，给了我们每个人华为云两百大洋的代金券，我才用了几块钱，本来想买华为云的，但是召哥推荐我们买良心云（腾讯云）和套路">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于uwsgi+nginx+centos的Django项目部署经历">
-<meta property="og:url" content="https://ladeng07.github.io/archives/cec14bfd.html">
+<meta property="og:url" content="https://lmark.cc/archives/cec14bfd.html">
 <meta property="og:site_name" content="Lantern Mark的博客">
 <meta property="og:description" content="1.起因寒假之前，我滴帅部长召哥给我们布置寒假作业：要求我们每个人把上个学期写的电商项目给部署到远程服务器上面。然后他也没告诉我们具体怎么去部署。我就自己在网上找教程，跌跌撞撞摸索出了部署的流程。 2.选择服务器要把Django部署上远程服务器，首先得有一台远程服务器。之前寄导课做实验，给了我们每个人华为云两百大洋的代金券，我才用了几块钱，本来想买华为云的，但是召哥推荐我们买良心云（腾讯云）和套路">
 <meta property="og:locale" content="zh_CN">
@@ -11,7 +11,7 @@
 <meta property="article:author" content="Lantern Mark">
 <meta property="article:tag" content="Django">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2022/04/05/8JTU56ek9YmLZF2.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://ladeng07.github.io/archives/cec14bfd"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://s2.loli.net/2022/04/05/8JTU56ek9YmLZF2.jpg"><link rel="shortcut icon" href="http://cdn.lmark.cc/1633337981355.png"><link rel="canonical" href="https://lmark.cc/archives/cec14bfd"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},

@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>网络破防实践先导实验一————数组越界检测心得 | Lantern Mark的博客</title><meta name="keywords" content="网络破防实践先导"><meta name="author" content="Lantern Mark"><meta name="copyright" content="Lantern Mark"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1.前言网络攻防实践先导，听着名字很高大上吧，正如它的名字那般，它的难度也是非常的大: (。作为一门今年新开的课，属于四门先导课程之一（剩下三门分别是软件工程先导、人工智能先导和忘了叫啥先导）。在上学期选课的时候，110人的课，选了139人，可见其火爆程度，也许是网络和攻防这两个要素吸引人，所以这门课的第一个实验——数组越界的检测，与上述两点看起来似乎没有丝毫关系，但是难度还极大，这就造成了，很多">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络破防实践先导实验一————数组越界检测心得">
-<meta property="og:url" content="https://ladeng07.github.io/archives/94f62543.html">
+<meta property="og:url" content="https://lmark.cc/archives/94f62543.html">
 <meta property="og:site_name" content="Lantern Mark的博客">
 <meta property="og:description" content="1.前言网络攻防实践先导，听着名字很高大上吧，正如它的名字那般，它的难度也是非常的大: (。作为一门今年新开的课，属于四门先导课程之一（剩下三门分别是软件工程先导、人工智能先导和忘了叫啥先导）。在上学期选课的时候，110人的课，选了139人，可见其火爆程度，也许是网络和攻防这两个要素吸引人，所以这门课的第一个实验——数组越界的检测，与上述两点看起来似乎没有丝毫关系，但是难度还极大，这就造成了，很多">
 <meta property="og:locale" content="zh_CN">
@@ -11,7 +11,7 @@
 <meta property="article:author" content="Lantern Mark">
 <meta property="article:tag" content="网络破防实践先导">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2022/04/05/kq4YLIQsoemf1g5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://ladeng07.github.io/archives/94f62543"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://s2.loli.net/2022/04/05/kq4YLIQsoemf1g5.jpg"><link rel="shortcut icon" href="http://cdn.lmark.cc/1633337981355.png"><link rel="canonical" href="https://lmark.cc/archives/94f62543"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},

@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>网络破防实践先导实验二————ROP攻击 | Lantern Mark的博客</title><meta name="keywords" content="网络破防实践先导"><meta name="author" content="Lantern Mark"><meta name="copyright" content="Lantern Mark"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1.前言终于在熬过了第一个实验之后，来到了老师所说的，比第一个简单一点的实验。然而，事实证明，老师在画大饼: (。第二次实验直接让我们利用二进制漏洞对程序进行攻击，拿到Flag。这有多难呢，这次上课在讲解实验的时候，就有好多人退课了，你没听错，上着上着课就退课了他们。不过抛开难度不谈，这次实验确实很有趣，不仅有种打游戏收集成就的感觉，还学到炒鸡多东西（没错，比上一个实验学到太多太多东西了），所以我">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络破防实践先导实验二————ROP攻击">
-<meta property="og:url" content="https://ladeng07.github.io/archives/7b29b6a8.html">
+<meta property="og:url" content="https://lmark.cc/archives/7b29b6a8.html">
 <meta property="og:site_name" content="Lantern Mark的博客">
 <meta property="og:description" content="1.前言终于在熬过了第一个实验之后，来到了老师所说的，比第一个简单一点的实验。然而，事实证明，老师在画大饼: (。第二次实验直接让我们利用二进制漏洞对程序进行攻击，拿到Flag。这有多难呢，这次上课在讲解实验的时候，就有好多人退课了，你没听错，上着上着课就退课了他们。不过抛开难度不谈，这次实验确实很有趣，不仅有种打游戏收集成就的感觉，还学到炒鸡多东西（没错，比上一个实验学到太多太多东西了），所以我">
 <meta property="og:locale" content="zh_CN">
@@ -11,7 +11,7 @@
 <meta property="article:author" content="Lantern Mark">
 <meta property="article:tag" content="网络破防实践先导">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2022/04/05/2JRfukwTYFL1o6V.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://ladeng07.github.io/archives/7b29b6a8"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://s2.loli.net/2022/04/05/2JRfukwTYFL1o6V.jpg"><link rel="shortcut icon" href="http://cdn.lmark.cc/1633337981355.png"><link rel="canonical" href="https://lmark.cc/archives/7b29b6a8"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
