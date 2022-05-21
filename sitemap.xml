@@ -207,14 +207,14 @@
   </url>
   
   <url>
-    <loc>https://lmark.cc/tags/E-Prime/</loc>
+    <loc>https://lmark.cc/tags/Django/</loc>
     <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://lmark.cc/tags/Django/</loc>
+    <loc>https://lmark.cc/tags/E-Prime/</loc>
     <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -228,13 +228,6 @@
   </url>
   
   <url>
-    <loc>https://lmark.cc/tags/Python/</loc>
-    <lastmod>2022-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://lmark.cc/tags/Git/</loc>
     <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -242,7 +235,7 @@
   </url>
   
   <url>
-    <loc>https://lmark.cc/tags/QQ/</loc>
+    <loc>https://lmark.cc/tags/Python/</loc>
     <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -250,6 +243,13 @@
   
   <url>
     <loc>https://lmark.cc/tags/Tool/</loc>
+    <lastmod>2022-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lmark.cc/tags/QQ/</loc>
     <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
