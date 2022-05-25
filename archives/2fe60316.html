@@ -177,7 +177,7 @@ window.addEventListener('load',preloader.endLoading())</script><div class="js-pj
     twikoo.init(Object.assign({
       el: '#twikoo-wrap',
       envId: 'twikoo-ladeng07',
-      region: 'ap-east-1',
+      region: '',
       onCommentLoaded: function () {
         btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
       }
@@ -189,7 +189,7 @@ window.addEventListener('load',preloader.endLoading())</script><div class="js-pj
     if(!countELement) return
     twikoo.getCommentsCount({
       envId: 'twikoo-ladeng07',
-      region: 'ap-east-1',
+      region: '',
       urls: [window.location.pathname],
       includeReply: false
     }).then(function (res) {
