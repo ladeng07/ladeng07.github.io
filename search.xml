@@ -14,9 +14,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> 校园网 </tag>
+            
+            <tag> Python </tag>
             
             <tag> 信息安全 </tag>
             
@@ -209,6 +209,29 @@
         <tags>
             
             <tag> 网络破防实践先导 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记录一些M1卡密钥计算方式和校验位计算方式</title>
+      <link href="/archives/abbb7553.html"/>
+      <url>/archives/abbb7553.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近这两年陆陆续续收到一些M1卡的数据，每次简单滴破解了一下之后感觉挺有意思的，但是害怕以后没过多久就忘记了，所以打算以我能看懂的形式浅浅的记录一下。</p><h3 id="密钥算法"><a href="#密钥算法" class="headerlink" title="密钥算法"></a>密钥算法</h3><h4 id="算法一"><a href="#算法一" class="headerlink" title="算法一"></a>算法一</h4><p>这是个非常非常非常简单的算法，只涉及到了异或</p><p>UID和Key的映射关系如下图：</p><p><img src="http://cdn.lmark.cc/img/image-20220330183307320.png" alt="image-20220330183307320"></p><p>具体算法：</p><blockquote><p>u2 XOR 12 = k1<br>u4 XOR A5 = k2<br>u3 XOR 34 = k3<br>u4 XOR AB = k4<br>u2 XOR 6A = k5<br>u1 XOR 36 = k6</p></blockquote><p>u1,u2,u3,u4分别对应UID的第一，第二，第三和第四位，k1-k6分别对应Key中的第一到第六位。</p><p>一些数据</p><p><img src="http://cdn.lmark.cc/img/image-20220630183923953.png"></p><h4 id="算法二"><a href="#算法二" class="headerlink" title="算法二"></a>算法二</h4><p>这个算法是某个学校的水卡的密钥算法，可以说算是非常地复杂了，当时花了一个星期才破解出来。这个对应关系有点复杂，每一位的第一个和第二个数字有其单独的对应。</p><p>UID和Key的映射关系：</p><p><img src="http://cdn.lmark.cc/img/QYRqbiGvDIgFAzZ.jpg"></p><p>每一位Key的算法都有点复杂，比如</p><h5 id="Key1"><a href="#Key1" class="headerlink" title="Key1"></a>Key1</h5><p>以这个为原像，建立k1的映射</p><p><img src="http://cdn.lmark.cc/img/image-20220630195159189.png" alt="image-20220630195159189"></p><p>映射之后如下：</p><p><img src="http://cdn.lmark.cc/img/image-20220630195258005.png" alt="image-20220630195258005"></p><p>这里我们设第一个数字为a，第二个数字为b，则k1的算法可表示为：</p><blockquote><p>a XOR 1 = 第一位数字</p><p>(30 - b)  % 16  = 第二位数字</p></blockquote><p>这算是6位key中最简单的一个了。</p><h5 id="Key2"><a href="#Key2" class="headerlink" title="Key2"></a>Key2</h5><p>由原像映射的像如下</p><p><img src="http://cdn.lmark.cc/img/image-20220630201140675.png" alt="image-20220630201140675"></p><p>算法：</p><blockquote><p>如果 0 &lt;= b &lt; 7:</p><p>则 (20 - a) % 16 = 第一位数字</p><p>如果 7 &lt; b &lt; 16</p><p>则 (19 - a) % 16 = 第一位数字</p><p>b XOR 1 = 第二位数字</p></blockquote><h5 id="Key3"><a href="#Key3" class="headerlink" title="Key3"></a>Key3</h5><p>映射关系</p><p><img src="http://cdn.lmark.cc/img/image-20220630201632020.png" alt="image-20220630201632020"></p><p>算法：</p><blockquote><p>如果 0 &lt;= b &lt; 7:</p><p>则 ((a + 1) % 16) XOR 5 = 第一位数字</p><p>如果 7 &lt; b &lt; 16</p><p>则 a XOR 5 = 第一位数字</p><p>(23 - b) % 16 = 第二位数字</p></blockquote><h5 id="Key4"><a href="#Key4" class="headerlink" title="Key4"></a>Key4</h5><p>映射关系</p><p><img src="http://cdn.lmark.cc/img/image-20220630205130845.png" alt="image-20220630205130845"></p><p>算法：</p><blockquote><p>当0 &lt;= a &lt; 14时</p><p>((a + 6) % 16) XOR 3 = 第一位数字</p><p>当13 &lt; a &lt; 16时</p><p>((a + 5) % 16) XOR 3 = 第一位数字</p><p>((b + 3) % 16) XOR A = 第二位数字</p></blockquote><h5 id="Key5"><a href="#Key5" class="headerlink" title="Key5"></a>Key5</h5><p>映射关系</p><p><img src="http://cdn.lmark.cc/img/image-20220630214805245.png" alt="image-20220630214805245"></p><p>算法</p><blockquote><p>当0 &lt;= b &lt; 12时</p><p>a XOR C = 第一位数字</p><p>当 11 &lt; b &lt; 16时</p><p>((a + 1) % 16) XOR C = 第一位数字</p><p>(20 - b) % 16 XOR 4 = 第二位数字</p></blockquote><h5 id="Key6"><a href="#Key6" class="headerlink" title="Key6"></a>Key6</h5><p>映射关系</p><p><img src="http://cdn.lmark.cc/img/image-20220701133436794.png" alt="image-20220701133436794"></p><p>算法：</p><blockquote><p>a XOR 1 = 第一位数字</p><p>（30 - b）% 16 = 第二位数字 </p></blockquote><h4 id="算法三"><a href="#算法三" class="headerlink" title="算法三"></a>算法三</h4><p>累了，有空再写</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> RFID </tag>
+            
+            <tag> M1卡 </tag>
+            
+            <tag> 校验位 </tag>
             
         </tags>
       
