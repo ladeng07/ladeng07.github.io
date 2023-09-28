@@ -1,0 +1,42 @@
+- class_name: 友情鏈接
+  class_desc: 那些人，那些事
+  link_list:
+    - name: bai佬的博客
+      link: https://www.imbai.cn/
+      avatar: http://q1.qlogo.cn/g?b=qq&nk=3401797899&s=640
+      descr: 是一个佬，部长的博客
+    - name: 小二上馄饨的博客
+      link: https://mo01iht.github.io/
+      avatar: https://i.postimg.cc/hj8v1Ktk/6e9bce8bbc5f3df73d3f75a8aefa535.jpg
+      descr: 乱把白云揉碎
+    - name: Swapfloor
+      link: https://swapfloor.github.io/
+      avatar: http://cdn.lmark.cc/img/v2-fab7b09137ed3d64caa750aa0dd70621_720w.png
+      descr: Swapfloor的博客哟
+    - name: Aoki-kelley の 小屋
+      link: https://hexo-blog-taupe.vercel.app/
+      avatar: https://s2.loli.net/2022/08/22/AHX4Cs5tvuEDJfr.jpg
+      descr: 因为兴趣
+    - name: yogurt_alpaca的博客
+      link: https://www.raining976.top/
+      avatar: https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F69ba936e-42db-4bc0-b713-3047c3a63646%2Favatar.png?table=collection&id=353b68bc-d0f4-40cf-8c64-8a6b0872f755&width=400
+      descr: 不是爱喝酸奶,也不喜欢羊驼
+    - name: 道宣的博客
+      link: http://daoxuan.cc/
+      avatar: http://daoxuan.cc/img/touxiang.jpg
+      descr: 是我们道宣的博客哟
+    - name: 火子哥的博客
+      link: https://fourfire.cc/
+      avatar: https://fourfire.cc/img/avatar.png
+      descr: 是我们火子哥的博客哟
+- class_name: 网站
+  class_desc: 一些奇奇怪怪的网站
+  link_list:
+    - name: Youtube
+      link: https://www.youtube.com/
+      avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
+      descr: 視頻網站
+    - name: Twitter
+      link: https://twitter.com/
+      avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
+      descr: 社交分享平臺
