@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.lmark.cc/img/300148_origin_20220531_195553.jpg">
 <meta property="article:published_time" content="2022-07-01T09:37:41.000Z">
-<meta property="article:modified_time" content="2022-07-01T09:08:10.000Z">
+<meta property="article:modified_time" content="2023-09-30T04:06:21.141Z">
 <meta property="article:author" content="LMark">
 <meta property="article:tag" content="RFID">
 <meta property="article:tag" content="M1卡">
@@ -59,7 +59,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2022-07-01 17:08:10'
+  postUpdate: '2023-09-30 12:06:21'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -157,10 +157,10 @@
       }
     }
     detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/xlenco/JS-X@main/pace.js/pace.css"/><script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.lmark.cc/img/300153_origin_20220531_195859.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="LMark的博客"><span class="site-name">LMark的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">记录一些M1卡密钥计算方式和校验位计算方式</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-01T09:37:41.000Z" title="发表于 2022-07-01 17:37:41">2022-07-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-01T09:08:10.000Z" title="更新于 2022-07-01 17:08:10">2022-07-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">574</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="记录一些M1卡密钥计算方式和校验位计算方式"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近这两年陆陆续续收到一些M1卡的数据，每次简单滴破解了一下之后感觉挺有意思的，但是害怕以后没过多久就忘记了，所以打算以我能看懂的形式浅浅的记录一下。</p>
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/xlenco/JS-X@main/pace.js/pace.css"/><script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.lmark.cc/img/300153_origin_20220531_195859.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="LMark的博客"><span class="site-name">LMark的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">记录一些M1卡密钥计算方式和校验位计算方式</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-01T09:37:41.000Z" title="发表于 2022-07-01 17:37:41">2022-07-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-30T04:06:21.141Z" title="更新于 2023-09-30 12:06:21">2023-09-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">574</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="记录一些M1卡密钥计算方式和校验位计算方式"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近这两年陆陆续续收到一些M1卡的数据，每次简单滴破解了一下之后感觉挺有意思的，但是害怕以后没过多久就忘记了，所以打算以我能看懂的形式浅浅的记录一下。</p>
 <h3 id="密钥算法"><a href="#密钥算法" class="headerlink" title="密钥算法"></a>密钥算法</h3><h4 id="算法一"><a href="#算法一" class="headerlink" title="算法一"></a>算法一</h4><p>这是个非常非常非常简单的算法，只涉及到了异或</p>
 <p>UID和Key的映射关系如下图：</p>
-<p><img src="http://cdn.lmark.cc/img/image-20220330183307320.png" alt="image-20220330183307320"></p>
+<p><img src="http://cdn.lmark.cc/img/image-20220330183307320.png"></p>
 <p>具体算法：</p>
 <blockquote>
 <p>u2 XOR 12 = k1<br>u4 XOR A5 = k2<br>u3 XOR 34 = k3<br>u4 XOR AB = k4<br>u2 XOR 6A = k5<br>u1 XOR 36 = k6</p>
@@ -173,9 +173,9 @@
 <p><img src="http://cdn.lmark.cc/img/QYRqbiGvDIgFAzZ.jpg"></p>
 <p>每一位Key的算法都有点复杂，比如</p>
 <h5 id="Key1"><a href="#Key1" class="headerlink" title="Key1"></a>Key1</h5><p>以这个为原像，建立k1的映射</p>
-<p><img src="http://cdn.lmark.cc/img/image-20220630195159189.png" alt="image-20220630195159189"></p>
+<p><img src="http://cdn.lmark.cc/img/image-20220630195159189.png"></p>
 <p>映射之后如下：</p>
-<p><img src="http://cdn.lmark.cc/img/image-20220630195258005.png" alt="image-20220630195258005"></p>
+<p><img src="http://cdn.lmark.cc/img/image-20220630195258005.png"></p>
 <p>这里我们设第一个数字为a，第二个数字为b，则k1的算法可表示为：</p>
 <blockquote>
 <p>a XOR 1 = 第一位数字</p>
@@ -183,7 +183,7 @@
 </blockquote>
 <p>这算是6位key中最简单的一个了。</p>
 <h5 id="Key2"><a href="#Key2" class="headerlink" title="Key2"></a>Key2</h5><p>由原像映射的像如下</p>
-<p><img src="http://cdn.lmark.cc/img/image-20220630201140675.png" alt="image-20220630201140675"></p>
+<p><img src="http://cdn.lmark.cc/img/image-20220630201140675.png"></p>
 <p>算法：</p>
 <blockquote>
 <p>如果 0 &lt;= b &lt; 7:</p>
@@ -193,7 +193,7 @@
 <p>b XOR 1 = 第二位数字</p>
 </blockquote>
 <h5 id="Key3"><a href="#Key3" class="headerlink" title="Key3"></a>Key3</h5><p>映射关系</p>
-<p><img src="http://cdn.lmark.cc/img/image-20220630201632020.png" alt="image-20220630201632020"></p>
+<p><img src="http://cdn.lmark.cc/img/image-20220630201632020.png"></p>
 <p>算法：</p>
 <blockquote>
 <p>如果 0 &lt;= b &lt; 7:</p>
@@ -203,7 +203,7 @@
 <p>(23 - b) % 16 = 第二位数字</p>
 </blockquote>
 <h5 id="Key4"><a href="#Key4" class="headerlink" title="Key4"></a>Key4</h5><p>映射关系</p>
-<p><img src="http://cdn.lmark.cc/img/image-20220630205130845.png" alt="image-20220630205130845"></p>
+<p><img src="http://cdn.lmark.cc/img/image-20220630205130845.png"></p>
 <p>算法：</p>
 <blockquote>
 <p>当0 &lt;= a &lt; 14时</p>
@@ -213,7 +213,7 @@
 <p>((b + 3) % 16) XOR A = 第二位数字</p>
 </blockquote>
 <h5 id="Key5"><a href="#Key5" class="headerlink" title="Key5"></a>Key5</h5><p>映射关系</p>
-<p><img src="http://cdn.lmark.cc/img/image-20220630214805245.png" alt="image-20220630214805245"></p>
+<p><img src="http://cdn.lmark.cc/img/image-20220630214805245.png"></p>
 <p>算法</p>
 <blockquote>
 <p>当0 &lt;= b &lt; 12时</p>
@@ -223,7 +223,7 @@
 <p>(20 - b) % 16 XOR 4 = 第二位数字</p>
 </blockquote>
 <h5 id="Key6"><a href="#Key6" class="headerlink" title="Key6"></a>Key6</h5><p>映射关系</p>
-<p><img src="http://cdn.lmark.cc/img/image-20220701133436794.png" alt="image-20220701133436794"></p>
+<p><img src="http://cdn.lmark.cc/img/image-20220701133436794.png"></p>
 <p>算法：</p>
 <blockquote>
 <p>a XOR 1 = 第一位数字</p>
