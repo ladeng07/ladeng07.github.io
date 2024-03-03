@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>一次给龙芯旧世界升级内核的失败经历</title>
+      <link href="/archives/febc3415.html"/>
+      <url>/archives/febc3415.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>最近在捣鼓旧世界的3A5000，编了个软件，编完之后有点空虚，在到处学习一些Linux知识。然后突然想到，早在Linux5xx版本，就宣布了对Loongarch的支持，那我岂不是可以自己编一个内核，然后给Loongnix升级，于是就有了这篇。</p><h2 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h2><p>源码：<a href="https://www.kernel.org/">The Linux Kernel Archives</a></p><p><img src="https://cdn.lmark.cc/img/image-20240227155337756.png"></p><p>选择6.7.6长期支持版，使用git拉取源码<a href="https://git.kernel.org/">Kernel.org git repositories</a></p><h2 id="编译："><a href="#编译：" class="headerlink" title="编译："></a>编译：</h2><h3 id="清理缓存"><a href="#清理缓存" class="headerlink" title="清理缓存"></a>清理缓存</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make clean</span><br></pre></td></tr></table></figure><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make loongson3_defconfig <span class="comment">#使用loongarch默认配置编译</span></span><br></pre></td></tr></table></figure><p>然后报错：</p><p><img src="https://cdn.lmark.cc/img/image-20240227162658409.png"></p><p>报错原因：没有安装flex</p><p>解决方法：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install flex</span><br><span class="line">sudo apt-get install bison</span><br></pre></td></tr></table></figure><p><img src="https://cdn.lmark.cc/img/image-20240227163510201.png"></p><h3 id="将配置文件移到顶层"><a href="#将配置文件移到顶层" class="headerlink" title="将配置文件移到顶层"></a>将配置文件移到顶层</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp arch/loongarch/configs/loongson3_defconfig .config</span><br></pre></td></tr></table></figure><h3 id="选择配置"><a href="#选择配置" class="headerlink" title="选择配置"></a>选择配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make menuconfig</span><br></pre></td></tr></table></figure><p><img src="https://cdn.lmark.cc/img/image-20240227164641246.png"></p><h3 id="开始编译"><a href="#开始编译" class="headerlink" title="开始编译"></a>开始编译</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j4<span class="comment">#3A5000是4核8线程的</span></span><br></pre></td></tr></table></figure><p>编译完成，大概花了四十分钟：</p><p><img src="https://cdn.lmark.cc/img/image-20240227235541676.png"></p><p><img src="https://cdn.lmark.cc/img/image-20240302224926807.png"></p><h3 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo make modules_install</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure><p><img src="https://cdn.lmark.cc/img/image-20240303004420741.png"></p><h2 id="启用内核作为引导"><a href="#启用内核作为引导" class="headerlink" title="启用内核作为引导"></a>启用内核作为引导</h2><p>输入下列命令将内核作为引导，将数字更改为你自己编译的版本号：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-initramfs -c -k 6.7.6</span><br></pre></td></tr></table></figure><p><img src="https://cdn.lmark.cc/img/image-20240303004926192.png"></p><p>下面更新一下grub：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure><p><img src="https://cdn.lmark.cc/img/image-20240303004950924.png"></p><p>之后重启即可在启动界面选择需要启动的内核。</p><h2 id="linux6-7-6——启动"><a href="#linux6-7-6——启动" class="headerlink" title="linux6.7.6——启动"></a>linux6.7.6——启动</h2><p>关机再开机之后，在Grub引导界面，选择”advanced”选项，选择刚刚安装的6.7.6内核。</p><p>激动的心，颤抖的手，按下了回车。The world！！！！</p><p><img src="https://cdn.lmark.cc/img/5f9067e0553e9c44731fa668fa1bc1f.jpg"></p><p>一秒钟过去了。。。</p><p>两秒钟过去了。。。</p><p>三秒钟过去了。。。</p><p>咦，</p><p>怎么还在Loading initial ramdisk</p><p>……</p><p>又过了五分钟，才发现进不去了，一直卡在这。内核升级宣告失败。</p><p>后面思考了一下，发现原因可能是，Linux对loongarch的支持是基于新世界的，而旧世界不配（</p><p>关于新旧世界，参考<a href="https://areweloongyet.com/docs/old-and-new-worlds">旧世界与新世界 | 咱龙了吗？ (areweloongyet.com)</a></p><p><img src="https://cdn.lmark.cc/img/image-20240303232816720.png"></p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.cnblogs.com/harrypotterjackson/p/11846222.html">如何编译安装Linux内核 - LightningStar - 博客园 (cnblogs.com)</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Loongarch </tag>
+            
+            <tag> 编译 </tag>
+            
+            <tag> Linux内核 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>在Loongarch下编译Remmina 1.4.5版本</title>
       <link href="/archives/bf37dab6.html"/>
       <url>/archives/bf37dab6.html</url>
@@ -325,9 +348,9 @@
             
             <tag> Python </tag>
             
-            <tag> CTF </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> CTF </tag>
             
             <tag> XSS </tag>
             
