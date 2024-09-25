@@ -24,7 +24,7 @@ date: 2022-07-01 17:37:41
 
 UID和Key的映射关系如下图：
 
-![image-20220330183307320](http://cdn.lmark.cc/img/image-20220330183307320.png)
+![](http://cdn.lmark.cc/img/image-20220330183307320.png)
 
 具体算法：
 
@@ -55,13 +55,13 @@ UID和Key的映射关系：
 
 以这个为原像，建立k1的映射
 
-![image-20220630195159189](http://cdn.lmark.cc/img/image-20220630195159189.png)
+![](http://cdn.lmark.cc/img/image-20220630195159189.png)
 
 
 
 映射之后如下：
 
-![image-20220630195258005](http://cdn.lmark.cc/img/image-20220630195258005.png)
+![](http://cdn.lmark.cc/img/image-20220630195258005.png)
 
 这里我们设第一个数字为a，第二个数字为b，则k1的算法可表示为：
 
@@ -77,7 +77,7 @@ UID和Key的映射关系：
 
 由原像映射的像如下
 
-![image-20220630201140675](http://cdn.lmark.cc/img/image-20220630201140675.png)
+![](http://cdn.lmark.cc/img/image-20220630201140675.png)
 
 算法：
 
@@ -97,7 +97,7 @@ UID和Key的映射关系：
 
 映射关系
 
-![image-20220630201632020](http://cdn.lmark.cc/img/image-20220630201632020.png)
+![](http://cdn.lmark.cc/img/image-20220630201632020.png)
 
 算法：
 
@@ -117,7 +117,7 @@ UID和Key的映射关系：
 
 映射关系
 
-![image-20220630205130845](http://cdn.lmark.cc/img/image-20220630205130845.png)
+![](http://cdn.lmark.cc/img/image-20220630205130845.png)
 
 算法：
 
@@ -137,7 +137,7 @@ UID和Key的映射关系：
 
 映射关系
 
-![image-20220630214805245](http://cdn.lmark.cc/img/image-20220630214805245.png)
+![](http://cdn.lmark.cc/img/image-20220630214805245.png)
 
 算法
 
@@ -157,7 +157,7 @@ UID和Key的映射关系：
 
 映射关系
 
-![image-20220701133436794](http://cdn.lmark.cc/img/image-20220701133436794.png)
+![](http://cdn.lmark.cc/img/image-20220701133436794.png)
 
 算法：
 

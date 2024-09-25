@@ -17,7 +17,7 @@ date: 2022-12-01 03:56:17
 
 具体表现在，执行了collectstatic命令后，提示copy成功
 
-![image-20221202190134796](http://cdn.lmark.cc/img/image-20221202190134796.png)
+![](http://cdn.lmark.cc/img/image-20221202190134796.png)
 
 但是实际上，项目目录下并没有收集到文件。
 
@@ -27,11 +27,11 @@ date: 2022-12-01 03:56:17
 
 反复收集了几次，还是不生效。都显示已经收集了，并没有修改。
 
-![image-20221202190509177](http://cdn.lmark.cc/img/image-20221202190509177.png)
+![](http://cdn.lmark.cc/img/image-20221202190509177.png)
 
 首先一开始我先按照网上的方法，排除了一些常规的原因，然后开始想想还能有什么离谱的bug，先看看配置文件。
 
-![image-20221202190909066](http://cdn.lmark.cc/img/image-20221202190909066.png)
+![](http://cdn.lmark.cc/img/image-20221202190909066.png)
 
 看似并没有什么问题，也确实没什么问题。但实际上这是个巨坑的地方
 
@@ -41,10 +41,10 @@ date: 2022-12-01 03:56:17
 
 非常坑爹的一个地方，先把`STATICFILES_DIRS`给注释掉，然后再把`STATIC_ROOT`里的`/static/`给改成`static`，如下图：
 
-![image-20221202191906353](http://cdn.lmark.cc/img/image-20221202191906353.png)
+![](http://cdn.lmark.cc/img/image-20221202191906353.png)
 
 这样一来就能正常收集了
 
-![image-20221202191757006](http://cdn.lmark.cc/img/image-20221202191757006.png)
+![](http://cdn.lmark.cc/img/image-20221202191757006.png)
 
 在收集完静态文件后记得把settings修改回来。

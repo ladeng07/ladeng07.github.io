@@ -162,7 +162,7 @@ proteus中提供了DHT22模块，
 
 仿真验证：
 
-![image-20220219214522500](https://s2.loli.net/2022/02/19/bsirlA6P2SxUvyn.png)
+![](https://s2.loli.net/2022/02/19/bsirlA6P2SxUvyn.png)
 
 ## 补充：热敏电阻测温
 

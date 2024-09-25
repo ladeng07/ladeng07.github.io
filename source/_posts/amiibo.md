@@ -25,11 +25,11 @@ date: 2023-04-27 02:59:59
 
 简单来说，Amiibo是任天堂官方出品的，具有NFC通信功能的塑胶人偶，国行版加个大概在99元，以正品手办来说，这个价格还可以接受。其质量来说也属于上乘了。
 
-![image-20230423111216383](https://cdn.lmark.cc/img/image-20230423111216383.png)
+![](https://cdn.lmark.cc/img/image-20230423111216383.png)
 
 但是Amiibo和普通手办最大的不同之处在于，其底座里有一块NFC芯片，可以与NS右侧手柄的摇杆进行交互，从而实现游戏与现实的互动。
 
-![image-20230423111510029](https://cdn.lmark.cc/img/image-20230423111510029.png)
+![](https://cdn.lmark.cc/img/image-20230423111510029.png)
 
 
 
@@ -37,7 +37,7 @@ date: 2023-04-27 02:59:59
 
 以《**薩爾達傳說 曠野之息**》为例，其在游戏中能够使用的的Amiibo有25个，而且随着数据更新，应该会不断增加，而且最近《**薩爾達傳說 王国之心**》也准备出了，之前旷野之息能使用的Amiibo在王国之心里应该也是能使用的。下图是旷野之息能使用的amiibo一览
 
-![image-20230423112444499](https://cdn.lmark.cc/img/image-20230423112444499.png)
+![](https://cdn.lmark.cc/img/image-20230423112444499.png)
 
 在旷野之息中，使用Amiibo可以获得一定的奖励，比如限定武器，装备，坐骑，宠物狼，材料等等。不同的奖励概率不一样，但是每个Amiibo每天只能用一次。由于Amiibo能刷限定装备，加之价格较贵，所以就有人动起了歪心思。因为普通的非CPU卡，大多具有可复制性，所以可以把amiibo玩偶的数据拷贝出来，然后复制到别的ic卡中去，这就是所谓的amiibo卡。
 
@@ -49,17 +49,17 @@ date: 2023-04-27 02:59:59
 
 具体Amiibo是用的NFC芯片属于哪个型号我因为没有测过所以不知道，但是可以用**NTag215**来写入复制的内容，至于NTag215，可以移步我之前写过的文章：[RFID第一期——各种IC卡和ID卡详解 | LMark的博客](https://lmark.cc/archives/f746fa7f.html#NTAG卡)淘宝上一张NTag215还是非常便宜的，一两块。有了卡之后，就需要可以写入的数据，这里推荐使用**TagMo**
 
-![image-20230423170006634](https://cdn.lmark.cc/img/image-20230423170006634.png)
+![](https://cdn.lmark.cc/img/image-20230423170006634.png)
 
 这是安卓上一个写amiibo数据的软件，这个软件使用之前需要导入**两个密钥文件**。
 
-![image-20230423171002400](https://cdn.lmark.cc/img/image-20230423171002400.png)
+![](https://cdn.lmark.cc/img/image-20230423171002400.png)
 
 然后就可以写入amiibo'数据了。
 
 在首页的`LOAD TAG`中选择存放amiibo数据（格式为.bin）的文件夹，然后选中需要的文件，回到主页，点击`WRITE TAG`即可写入数据
 
-![image-20230427013719311](https://cdn.lmark.cc/img/image-20230427013719311.png)
+![](https://cdn.lmark.cc/img/image-20230427013719311.png)
 
 
 
@@ -77,7 +77,7 @@ github上有个仓库也在不停更新着最新的amiibo数据：[GrewdonGaming
 
 这个TagMo软件原版作者已经停止维护了，现在有新开发者在维护，新版本的TagMo直接将密钥集成到了软件里，而且还可以直接在软件里搜索amiibo数据，非常方便。它的数据库同时也是实时更新的。
 
-![image-20230427014010500](https://cdn.lmark.cc/img/image-20230427014010500.png)
+![](https://cdn.lmark.cc/img/image-20230427014010500.png)
 
 项目官网：[TagMo: README](https://tagmo.gitlab.io/)
 
@@ -99,17 +99,17 @@ github上有个仓库也在不停更新着最新的amiibo数据：[GrewdonGaming
 
 我制作的方案是参考淘宝上有售卖的那种——亚克力壳+NTag215
 
-![image-20230427015056574](https://cdn.lmark.cc/img/image-20230427015056574.png)
+![](https://cdn.lmark.cc/img/image-20230427015056574.png)
 
 在淘宝找到一家卖卡和壳的，价格还很实惠六毛钱一个，我一口气买了20个
 
-![image-20230427015516774](https://cdn.lmark.cc/img/image-20230427015516774.png)
+![](https://cdn.lmark.cc/img/image-20230427015516774.png)
 
 然后就是图案，我是直接用铜版纸打印，两块钱。当然觉得麻烦可以在这里买，不过这里好像缺货了哈哈哈，打印的精度来说还是很不错的
 
 直接来看成品吧：
 
-![image-20230427015949386](https://cdn.lmark.cc/img/image-20230427015949386.png)
+![](https://cdn.lmark.cc/img/image-20230427015949386.png)
 
 
 
@@ -123,9 +123,9 @@ github上有个仓库也在不停更新着最新的amiibo数据：[GrewdonGaming
 
 这里拿塞尔达测试一下：
 
- ![image-20230427025625320](https://cdn.lmark.cc/img/image-20230427025625320.png)
+ ![](https://cdn.lmark.cc/img/image-20230427025625320.png)
 
-![image-20230427025738627](https://cdn.lmark.cc/img/image-20230427025738627.png)
+![](https://cdn.lmark.cc/img/image-20230427025738627.png)
 
 可以看到，是可以刷出来的，而且单机游戏刷东西也不用担心被ban啥的。
 

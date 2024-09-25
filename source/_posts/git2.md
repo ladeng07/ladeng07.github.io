@@ -15,7 +15,7 @@ date: 2022-11-29 09:07:30
 
 众所周知，由于某些不可抗力因素，github在的登录属于一个玄学的问题，偶尔运气好就能裸连，运气不好直接连push都push不上。
 
-![image-20221129092528293](http://cdn.lmark.cc/img/image-20221129092528293.png)
+![](http://cdn.lmark.cc/img/image-20221129092528293.png)
 
 ## 解决方法
 
@@ -25,7 +25,7 @@ date: 2022-11-29 09:07:30
 
 打开Clash，马上就可以看到它使用的代理端口，这里为`7890`
 
-![image-20221129093138144](http://cdn.lmark.cc/img/image-20221129093138144.png)
+![](http://cdn.lmark.cc/img/image-20221129093138144.png)
 
 接下来，给git设置代理，方法如下：
 
@@ -72,4 +72,4 @@ proxy = https://127.0.0.1:7890
 
 改了之后马上就会生效，无论是push还是clone都没有问题了。记得开代理就行。
 
-![image-20221129094611168](http://cdn.lmark.cc/img/image-20221129094611168.png)
+![](http://cdn.lmark.cc/img/image-20221129094611168.png)

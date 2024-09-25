@@ -103,7 +103,7 @@ def bilibili(UID):
 
 效果图：
 
-![image-20220412162324806](https://s2.loli.net/2022/04/12/E917W2tOC83XUqb.png)
+![](https://s2.loli.net/2022/04/12/E917W2tOC83XUqb.png)
 
 
 

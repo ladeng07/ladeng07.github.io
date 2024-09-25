@@ -37,15 +37,15 @@ date: 2022-09-02 00:28:15
 
 在Pycharm中用 `Ctrl + shift + N` 输入文件地址，找到这个文件`__init__.py`的77行对应的函数调用，
 
-![image-20220901020413298](http://cdn.lmark.cc/img/image-20220901020413298.png)
+![](http://cdn.lmark.cc/img/image-20220901020413298.png)
 
 再 `Ctrl + 鼠标左键` 点击查看 这个backend从哪里来的
 
-![image-20220901020500641](http://cdn.lmark.cc/img/image-20220901020500641.png)
+![](http://cdn.lmark.cc/img/image-20220901020500641.png)
 
 现在可以看到，这个`_get_backends`函数很可疑，我们再跳转看一下
 
-![image-20220901020549436](http://cdn.lmark.cc/img/image-20220901020549436.png)
+![](http://cdn.lmark.cc/img/image-20220901020549436.png)
 
 
 
@@ -61,7 +61,7 @@ date: 2022-09-02 00:28:15
 
 添加 `django.contrib.auth.backends.ModelBackend` 即可解决问题
 
-![image-20220901020810505](http://cdn.lmark.cc/img/image-20220901020810505.png)
+![](http://cdn.lmark.cc/img/image-20220901020810505.png)
 
 
 

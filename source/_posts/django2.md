@@ -17,7 +17,7 @@ date: 2022-03-27 23:35:37
 
 要把Django部署上远程服务器，首先得有一台远程服务器。之前寄导课做实验，给了我们每个人华为云两百大洋的代金券，我才用了几块钱，本来想买华为云的，但是召哥推荐我们买良心云（腾讯云）和套路云（阿里云），然后我就用学生优惠花40大洋买了一年的腾讯云2H2G+40G的轻量应用服务器，性能对我来说还是够用的。
 
-![image-20220327235146290](https://s2.loli.net/2022/03/27/dIckH4XfZ7LbzRF.png)
+![](https://s2.loli.net/2022/03/27/dIckH4XfZ7LbzRF.png)
 
 镜像我装了centos，至于为什么没用宝塔，主要使我想体验一下比较纯正的服务器体验。
 
@@ -129,7 +129,7 @@ pip freeze > requirements.txt
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt  #这里换了清华的源，加速安装
 ```
 
-![image-20220328003302389](https://s2.loli.net/2022/03/28/QKyh41Fc7zrGw6O.png)
+![](https://s2.loli.net/2022/03/28/QKyh41Fc7zrGw6O.png)
 
 
 
@@ -169,7 +169,7 @@ systemctl start  mysqld.service
 systemctl status mysqld.service
 ```
 
-![image-20220328004048494](https://s2.loli.net/2022/03/28/zugocTL7YyhAO6P.png)
+![](https://s2.loli.net/2022/03/28/zugocTL7YyhAO6P.png)
 
 此时MySQL已经开始正常运行，不过要想进入MySQL还得先找出此时root用户的密码，通过如下命令可以在日志文件中找出密码：
 
@@ -177,7 +177,7 @@ systemctl status mysqld.service
 grep "password" /var/log/mysqld.log
 ```
 
-![image-20220328004331994](https://s2.loli.net/2022/03/28/HTp9Jbv2t45oPws.png)
+![](https://s2.loli.net/2022/03/28/HTp9Jbv2t45oPws.png)
 
 图中圈出来的部分就是默认密码，用如下命令进入数据库：
 
@@ -224,11 +224,11 @@ UPDATE user SET Host='localhost' WHERE User='root' AND Host='127' LIMIT 1;
 
 先观察表里的root账户的主机是什么，然后再将其修改成%即可，这里是将127改成localhost
 
-![image-20220328010517649](https://s2.loli.net/2022/03/28/iRmCjkSf7QK56r1.png)
+![](https://s2.loli.net/2022/03/28/iRmCjkSf7QK56r1.png)
 
 更改后：
 
-![image-20220328010545418](https://s2.loli.net/2022/03/28/51avspWdV3zx7FH.png)
+![](https://s2.loli.net/2022/03/28/51avspWdV3zx7FH.png)
 
 最后在windows远程测试：
 
@@ -238,13 +238,13 @@ mysql -h 101.43.216.170 -P 3306 -uroot -p
 
 也可以用可视化的第三方工具（比如navicat）
 
-![image-20220328010723508](https://s2.loli.net/2022/03/28/MlwL6jTahZkf4gO.png)
+![](https://s2.loli.net/2022/03/28/MlwL6jTahZkf4gO.png)
 
-![image-20220328010902048](https://s2.loli.net/2022/03/28/RWKFpUZ1TSLA2yN.png)
+![](https://s2.loli.net/2022/03/28/RWKFpUZ1TSLA2yN.png)
 
 如果开放了远程权限，仍然连不上远程MySQL，有可能是服务器的防火墙，我用的腾讯云默认是不开放3306端口，所以得自己在防火墙开放3306端口后我才可以正常访问。
 
-![image-20220328011140911](https://s2.loli.net/2022/03/28/xIV4iwRrPkTEspt.png)
+![](https://s2.loli.net/2022/03/28/xIV4iwRrPkTEspt.png)
 
 
 
@@ -269,7 +269,7 @@ vim redis.conf
 
 打开redis.conf配置文件，修改daemonize，将no修改成yes
 
-![image-20220328012939640](https://s2.loli.net/2022/03/28/uQgn4r9tYKkChFx.png)
+![](https://s2.loli.net/2022/03/28/uQgn4r9tYKkChFx.png)
 
 然后保存退出就可以后台启动redis服务了(下面这条命令是在redis解压目录下执行)
 
@@ -283,7 +283,7 @@ vim redis.conf
 ss -tnl
 ```
 
-![image-20220328013236142](https://s2.loli.net/2022/03/28/1M6bGDPjyTCA8Ri.png)
+![](https://s2.loli.net/2022/03/28/1M6bGDPjyTCA8Ri.png)
 
 redis 的很多设置例如：设置密码，远程访问，持久化等，
 
@@ -399,7 +399,7 @@ tail -f uwsgi.log    #在manage.py目录下
 ss -tnl
 ```
 
-![image-20220328101534598](https://s2.loli.net/2022/03/28/47P6DaUvOkR9iNA.png)
+![](https://s2.loli.net/2022/03/28/47P6DaUvOkR9iNA.png)
 
 
 
@@ -459,7 +459,7 @@ python manage.py migrate                      #     数据库迁移
 python manage.py runserver 0.0.0.0:8000 
 ```
 
-![image-20220328192445383](https://s2.loli.net/2022/03/28/5mIrFDRAa7vyiTt.png)
+![](https://s2.loli.net/2022/03/28/5mIrFDRAa7vyiTt.png)
 
 #### 7）安装和配置nginx
 
@@ -565,10 +565,10 @@ nginx       　　　　　　　　　　　　　　　　　　　　　　�
 
 这时，通过查看端口开放情况，就可以知道nginx是否启动成功，
 
-![image-20220328195750720](https://s2.loli.net/2022/03/28/VwEp1PNGJuylxC9.png)
+![](https://s2.loli.net/2022/03/28/VwEp1PNGJuylxC9.png)
 
 然后再记得去服务器控制面板处开放想对应的端口访问权限，此时，去浏览器里，输入IP+端口即可访问网站：
 
-![image-20220328200213174](https://s2.loli.net/2022/03/28/atPXyW6EMrAhNko.png)
+![](https://s2.loli.net/2022/03/28/atPXyW6EMrAhNko.png)
 
 至此，服务器就可以算搭好了，其他的功能就需要各位自己去探索了。

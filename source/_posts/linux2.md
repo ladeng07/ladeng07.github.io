@@ -24,7 +24,7 @@ date: 2022-09-15 02:07:02
 
 一般我们的windows电脑上都会自带一个SSH客户端，就是这个openSSH，这是一个功能齐全的SSH客户端，在诸多平台上都有存在。
 
-![image-20220915022247046](http://cdn.lmark.cc/img/image-20220915022247046.png)
+![](http://cdn.lmark.cc/img/image-20220915022247046.png)
 
 一般的Linux发行版都安装有OpenSSH，但是在路由器上，由于空间不足，很多固件会选择使用DropbearSSH。
 
@@ -32,7 +32,7 @@ date: 2022-09-15 02:07:02
 
 > dropbear作为一款基于ssh协议的轻量级sshd服务器，相比OpenSSH，其更简洁，更小巧
 >
-> ![image-20220915023036908](http://cdn.lmark.cc/img/image-20220915023036908.png)
+> ![](http://cdn.lmark.cc/img/image-20220915023036908.png)
 
 所以这个ssh客户端的私钥验证和普通的ssh客户端有些不同，下面我会详细说说
 
@@ -52,15 +52,15 @@ C:\Users\PBDELL> ssh-keygen -t rsa -b 4096 -C "your_email@domain.com"
 
 创建的时候，它会提示你选择密钥对存放路径，直接按回车则存在默认的路径下
 
-![image-20220915023530830](http://cdn.lmark.cc/img/image-20220915023530830.png)
+![](http://cdn.lmark.cc/img/image-20220915023530830.png)
 
 接下来，如果你之前已经创建过密钥对了，最好不要覆盖，不然之前使用这个公钥的应用就会出问题，比如github
 
-![image-20220915023714884](http://cdn.lmark.cc/img/image-20220915023714884.png)
+![](http://cdn.lmark.cc/img/image-20220915023714884.png)
 
 此时，密钥对创建就完成了，可以在刚刚目录下看到刚刚创建的密钥对文件
 
-![image-20220915023845107](http://cdn.lmark.cc/img/image-20220915023845107.png)
+![](http://cdn.lmark.cc/img/image-20220915023845107.png)
 
 `id_rsa`是私钥，`id_rsa.pub`是密钥（等会上传上服务器的）
 
@@ -84,19 +84,19 @@ type C:\Users\PBDELL\.ssh\id_rsa.pub | ssh {IP-ADDRESS-OR-FQDN} "cat >> .ssh/aut
 type C:\Users\PBDELL\.ssh\id_rsa.pub | ssh {IP-ADDRESS-OR-FQDN} "cat >> /etc/dropbear/authorized_keys"
 ```
 
-![image-20220915025152141](http://cdn.lmark.cc/img/image-20220915025152141.png)
+![](http://cdn.lmark.cc/img/image-20220915025152141.png)
 
 运行完成后，可以看到远程服务器就生成了一个公钥文件
 
-![image-20220915025235806](http://cdn.lmark.cc/img/image-20220915025235806.png)
+![](http://cdn.lmark.cc/img/image-20220915025235806.png)
 
 这时我们就可以直接ssh连接到远程服务器而不需要使用密码了
 
-![image-20220915025332683](http://cdn.lmark.cc/img/image-20220915025332683.png)
+![](http://cdn.lmark.cc/img/image-20220915025332683.png)
 
 也可以直接在电脑上执行脚本，不用打开FinalShell来连接了
 
-![image-20220915025643733](http://cdn.lmark.cc/img/image-20220915025643733.png)
+![](http://cdn.lmark.cc/img/image-20220915025643733.png)
 
  
 
@@ -118,7 +118,7 @@ pause
 
 在结合上utools，可以实现秒开！
 
-![image-20220916235847122](http://cdn.lmark.cc/img/image-20220916235847122.png)
+![](http://cdn.lmark.cc/img/image-20220916235847122.png)
 
 ### 尾声
 

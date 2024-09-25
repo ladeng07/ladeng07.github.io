@@ -52,13 +52,13 @@ cd secfs
 
 出现以下提示即说明安装成功，之后只需要使用start.sh即可启动文件系统
 
-![image-20230414103810394](https://cdn.lmark.cc/img/image-20230414103810394.png)
+![](https://cdn.lmark.cc/img/image-20230414103810394.png)
 
 ### 文件目录
 
-![image-20230414111518317](https://cdn.lmark.cc/img/image-20230414111518317.png)
+![](https://cdn.lmark.cc/img/image-20230414111518317.png)
 
-![image-20230414111557373](https://cdn.lmark.cc/img/image-20230414111557373.png)
+![](https://cdn.lmark.cc/img/image-20230414111557373.png)
 
 ### 代码预览
 
@@ -911,7 +911,7 @@ SUNDR使用i-handle来查找某个用户的i-table，这和实验一关系不大
 
 先来看需要补充的函数上方的init函数
 
-![image-20230506104528577](https://cdn.lmark.cc/img/image-20230506104528577.png)
+![](https://cdn.lmark.cc/img/image-20230506104528577.png)
 
 可以看到，首先先给Inode结点分配了ihash，然后给这个ihash建立一个映射给root_i；这个实验主要操作的数据对象就是这个I类型，这个类型是由principal和i-number组成的。
 
@@ -925,7 +925,7 @@ SUNDR使用i-handle来查找某个用户的i-table，这和实验一关系不大
 
 然后就到`users`和`groups`文件的生成了，文件的生成和目录是差不多的，主要是少了一步add的步骤。还多了一步link，我们都知道，在Linux文件系统中，文件的只有在连接数为0的时候才会删除，也就是说，增加连接数才会让一个文件出现（？大概）
 
-![image-20230506112453558](https://cdn.lmark.cc/img/image-20230506112453558.png)
+![](https://cdn.lmark.cc/img/image-20230506112453558.png)
 
 
 
@@ -933,7 +933,7 @@ SUNDR使用i-handle来查找某个用户的i-table，这和实验一关系不大
 
 综上，实验一的参考代码如下：
 
-![image-20230506112516514](https://cdn.lmark.cc/img/image-20230506112516514.png)
+![](https://cdn.lmark.cc/img/image-20230506112516514.png)
 
 
 

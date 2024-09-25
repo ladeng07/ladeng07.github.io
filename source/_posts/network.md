@@ -29,9 +29,9 @@ date: 2022-04-01 02:45:36
 
 由于使用了自定义的easyc语法，所以逻辑上和我们平时的c语言有些许不同，但是还好，easyc简化很多东西，使其变得和Python语法那般简洁。在easyc中，程序执行被分为两部分：**变量赋值VarDef**（保存在VarDefList） 和 **数组引用ArrayUse**（保存在ArrayUseList），执行顺序上，先执行完所有变量赋值后，再进行数组引用。我们的任务就是，**遍历这两个部分，遍历其中的和数组越界有关的表达式，并判断其是否越界**。在存储结构中，变量的定义和数组的引用大量的用到了树结构，如下图：
 
-![image-20220401032431540](https://s2.loli.net/2022/04/01/rudhv5mA3Dit7f9.png)
+![](https://s2.loli.net/2022/04/01/rudhv5mA3Dit7f9.png)
 
-![image-20220401032527321](https://s2.loli.net/2022/04/01/njyuRsqIr98kltP.png)
+![](https://s2.loli.net/2022/04/01/njyuRsqIr98kltP.png)
 
 上图中`VarDefList`元素从0开始，长度为3，表示图中从左至右3个变量的定义语句，`ArrayUseList`元素从0开始，长度为4，表示图中从左至右4个表达式语句。
 

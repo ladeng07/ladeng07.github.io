@@ -41,11 +41,11 @@ supervisorctl stop all
 
 首先，直接重启的时候，会出现`unix:///var/run/supervisor/supervisor.sock no such file`报错
 
-![image-20230103063505361](http://cdn.lmark.cc/img/image-20230103063505361.png)
+![](http://cdn.lmark.cc/img/image-20230103063505361.png)
 
 如果此时按照网上的方法手动新建一个supervisor.sock，就会出现refused connection的错误，然后网上的教程就说是软连接问题，需要解除一下，但是一解除这个文件就会被删除。所以那个教程还挺自相矛盾。
 
-![image-20230103063825898](http://cdn.lmark.cc/img/image-20230103063825898.png)
+![](http://cdn.lmark.cc/img/image-20230103063825898.png)
 
 此时正确的做法是，应该重新指定配置文件，这样就能正确的生成一个sock文件
 
@@ -53,6 +53,6 @@ supervisorctl stop all
 supervisord -c /etc/supervisord.conf
 ```
 
-![image-20230103064102823](http://cdn.lmark.cc/img/image-20230103064102823.png)
+![](http://cdn.lmark.cc/img/image-20230103064102823.png)
 
 然后重启即可

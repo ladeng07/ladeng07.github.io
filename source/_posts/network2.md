@@ -278,13 +278,13 @@ pwndbg> telescope 0x401409
  07:0038│  0x401441 ◂— add    byte ptr [rax], al
 ```
 
-![image-20220405201914890](https://s2.loli.net/2022/04/05/COdgu3RscWBUHyo.png)
+![](https://s2.loli.net/2022/04/05/COdgu3RscWBUHyo.png)
 
 #### 使用IDA
 
 ##### 关于IDA
 
-![image-20220405201743314](https://s2.loli.net/2022/04/05/jOQfZXLyipHDFtN.png)
+![](https://s2.loli.net/2022/04/05/jOQfZXLyipHDFtN.png)
 
 > 交互式反汇编器专业版（Interactive Disassembler Professional），人们常称其为IDA Pro，或简称为IDA。是最棒的一个静态反编译软件，为众多[0day](https://baike.baidu.com/item/0day/4885829)世界的成员和[ShellCode](https://baike.baidu.com/item/ShellCode)安全分析人士不可缺少的利器！IDA Pro是一款交互式的，可编程的，可扩展的，多处理器的，交叉Windows或[Linux](https://baike.baidu.com/item/Linux) [WinCE](https://baike.baidu.com/item/WinCE) [MacOS](https://baike.baidu.com/item/MacOS)平台主机来分析程序， 被公认为最好的花钱可以买到的[逆向工程](https://baike.baidu.com/item/逆向工程/5097433)利器。IDA Pro已经成为事实上的分析敌意代码的标准并让其自身迅速成为攻击研究领域的重要工具。它支持数十种CPU指令集其中包括[Intel x86](https://baike.baidu.com/item/Intel x86)，[x64](https://baike.baidu.com/item/x64/8161446)，[MIPS](https://baike.baidu.com/item/MIPS/2173143)，[PowerPC](https://baike.baidu.com/item/PowerPC)，[ARM](https://baike.baidu.com/item/ARM/7518299)，[Z80](https://baike.baidu.com/item/Z80)，[68000](https://baike.baidu.com/item/68000/1255747)，c8051等等。
 
@@ -297,7 +297,7 @@ pwndbg> telescope 0x401409
 ![](https://s2.loli.net/2022/04/05/FYpcI51i6vWOLbX.png)
 在加载出汇编代码后，按下F5就可以看到又汇编代码生成的伪代码：
 
-![image-20220405202615021](https://s2.loli.net/2022/04/05/12nRigUsMPTZ4NY.png)
+![](https://s2.loli.net/2022/04/05/12nRigUsMPTZ4NY.png)
 
 通过IDA分析，可以很容易可以分析出各种函数的地址，还有内存中的一些地址，非常滴有用
 
@@ -313,11 +313,11 @@ pwndbg> telescope 0x401409
 
 首先，这个程序的功能就是发送给你一个4位数字，然后你需要将这个数字发送回去给程序，程序就会发送给你一个新的4位数字，然后就一直循环下去了......效果如下图所示：
 
-![image-20220405005410809](https://s2.loli.net/2022/04/05/AqnWdNpIsV3LmFM.png)
+![](https://s2.loli.net/2022/04/05/AqnWdNpIsV3LmFM.png)
 
 如果你不按要求来重复数字的话，嘿嘿，那你就 不是一个Repeater！！！
 
-![image-20220405005543600](https://s2.loli.net/2022/04/05/MFzkOmXrsqGLlph.png)
+![](https://s2.loli.net/2022/04/05/MFzkOmXrsqGLlph.png)
 
 就是这么一个功能简单的程序，里面放了五个Flag（Flag相当于游戏里面的成就，拿到就会得到相应的分数，还有大大滴成就感XD），下面列举这五个Flag的达成条件：
 
@@ -331,27 +331,27 @@ pwndbg> telescope 0x401409
 
 对于Flag1，重复一百次即可，当然，不可能手动了，用pwntools写个脚本来自动执行就好了，Flag1:
 
-![image-20220405211459914](https://s2.loli.net/2022/04/05/ChZeQ4O8oq5itwb.png)
+![](https://s2.loli.net/2022/04/05/ChZeQ4O8oq5itwb.png)
 
 接下来的**Flag2**就开始有难度了，要通过调用gift函数才可以拿到旗子。通过分析程序可以发现，在重复的时候输入10423可以进入里世界（一个彩蛋界面）
 
-![image-20220405212609948](https://s2.loli.net/2022/04/05/qsAlN2kCvxVctpD.png)
+![](https://s2.loli.net/2022/04/05/qsAlN2kCvxVctpD.png)
 
 在这个Input size里，可以使用了scanf函数，存在着栈溢出漏洞，通过利用漏洞可以覆盖返回地址进行ROP。
 
-![image-20220405215350432](https://s2.loli.net/2022/04/05/LhGjdSCrxKUIla8.png)
+![](https://s2.loli.net/2022/04/05/LhGjdSCrxKUIla8.png)
 
 通过分析scanf输入的变量可知，v3存在距离rbp（栈底）偏移8个字节的地方，也就是说只要把着8个字节覆盖掉，再覆盖掉一个old rbp（也是8个字节），就能覆盖返回地址了，这样一来就能劫持控制流了。然而理想很美好，现实很骨感，单单覆盖掉8+8个字节并不能成功，这和学长上课时候演示的不一样。因此只能通过GDB打断点调试，看看是那里出了问题，我选择在函数的ret之前打个断点看看栈的填充情况，一看，果然是没填充满栈帧，
 
-![image-20220405223335170](https://s2.loli.net/2022/04/05/TftjcHdZoxSMQYu.png)
+![](https://s2.loli.net/2022/04/05/TftjcHdZoxSMQYu.png)
 
 观察栈帧和寄存器的值，不停的增加填充量，最后终于填充成功了，变成了31+8（我也不知道为啥是31+8），最后成功覆盖了返回地址，使其跳转到了gift函数的地址
 
-![image-20220405223534611](https://s2.loli.net/2022/04/05/XPYHuZvtD9asMdz.png)
+![](https://s2.loli.net/2022/04/05/XPYHuZvtD9asMdz.png)
 
 最后成功的拿到Flag2了呢
 
-![image-20220405223722413](https://s2.loli.net/2022/04/05/3iZFLwCWRou2xzg.png)
+![](https://s2.loli.net/2022/04/05/3iZFLwCWRou2xzg.png)
 
 Flag2代码：
 
@@ -385,11 +385,11 @@ print(p.recvline())
 
 拿到Flag2之后，Flag3就很容易了，只要满足以下条件就能拿到了
 
-![image-20220405224104753](https://s2.loli.net/2022/04/05/XAGhVtk6CWQxiHn.png)
+![](https://s2.loli.net/2022/04/05/XAGhVtk6CWQxiHn.png)
 
 即找到一个数，是之不大于16，同时又大于0x10就可以了，因为第一个判断是把无符号整型转换为了普通整型，所以当你输入一个负数的时候，负数会小于第一个16，而第二个判断还是无符号整型，所以该整型会变成一个非常大的数。然后既可以拿到Flag3啦
 
-![image-20220405224440580](https://s2.loli.net/2022/04/05/9ifHF7leTxKC18A.png)
+![](https://s2.loli.net/2022/04/05/9ifHF7leTxKC18A.png)
 
 Flag4的话，又要用到一点新手段了，因为程序里没有直接的代码可以输出Flag4，所以需要我们自己构造ROP链来输出Flag4
 
@@ -401,7 +401,7 @@ Flag4的话，又要用到一点新手段了，因为程序里没有直接的代
 
 首先先找一下小片段代码的地址
 
-![image-20220405230956283](https://s2.loli.net/2022/04/05/bBrwV91pyLd6tFZ.png)
+![](https://s2.loli.net/2022/04/05/bBrwV91pyLd6tFZ.png)
 
 可以看到，程序中确实有这一段代码可以用，然后，按照函数调用的方式，构造ROP链
 
@@ -447,7 +447,7 @@ print(p.recvline())
 
 拿到Flag4力：
 
-![image-20220405232202371](https://s2.loli.net/2022/04/05/yFw3P6lS9jqCizh.png)
+![](https://s2.loli.net/2022/04/05/yFw3P6lS9jqCizh.png)
 
 最后一个Flag5，要用到ret2libc，非常的麻烦（当然是对我这种菜鸡来说: (。），简单说一下什么是ret2libc，原理：
 
@@ -523,7 +523,7 @@ p.interactive()
 
 通过这种比较厉害的手段，就可以拿到服务器的shell了，Flag全家福如下：
 
-![image-20220406000619440](https://s2.loli.net/2022/04/06/OBYjdFscGNmEzgK.png)
+![](https://s2.loli.net/2022/04/06/OBYjdFscGNmEzgK.png)
 
 终于Repeater全成就了，呜呜呜，好有成就感。
 

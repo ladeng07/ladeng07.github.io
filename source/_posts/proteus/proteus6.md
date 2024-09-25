@@ -252,7 +252,7 @@ date: 2022-02-20 20:23:32
 
 ![](https://s2.loli.net/2022/02/20/ipx86j5UHFD7vaM.png)
 
-![image-20220220215605039](https://s2.loli.net/2022/02/20/phUTsuxS8N1MyOV.png)
+![](https://s2.loli.net/2022/02/20/phUTsuxS8N1MyOV.png)
 
 ![](https://s2.loli.net/2022/02/20/2krWj4tZxloM7VU.png)
 

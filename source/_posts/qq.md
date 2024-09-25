@@ -25,7 +25,7 @@ date: 2022-04-08 00:46:01
 
 这个牛马的QQ，看了一下，只有一颗星（也就是一级）看起来是小号，不过也可能是隐藏了等级信息之类的，因为它设置了不可被搜索到，所以得用一个接口才能查询到它的资料：http://api.avak.cn/fqq/?qq=430892126
 
-![image-20220510010201527](https://s2.loli.net/2022/05/10/aKJY4DlS7skjRcg.png)
+![](https://s2.loli.net/2022/05/10/aKJY4DlS7skjRcg.png)
 
 想要从这个QQ号找到一些信息，先从社工库入手。
 
@@ -33,7 +33,7 @@ date: 2022-04-08 00:46:01
 
 
 
-![image-20220510010846059](https://s2.loli.net/2022/05/10/ZWqX1Dz3sVjg5nO.png)
+![](https://s2.loli.net/2022/05/10/ZWqX1Dz3sVjg5nO.png)
 
 #### 2.通过手机号查询相关信息
 
@@ -41,13 +41,13 @@ date: 2022-04-08 00:46:01
 
 查询一下这个手机号的一些关联信息
 
-![image-20220510012221560](https://s2.loli.net/2022/05/10/k5NK8Mbwt1SH6Z4.png)
+![](https://s2.loli.net/2022/05/10/k5NK8Mbwt1SH6Z4.png)
 
-![image-20220510012236898](https://s2.loli.net/2022/05/10/Yz3aq9vmjngxCR6.png)
+![](https://s2.loli.net/2022/05/10/Yz3aq9vmjngxCR6.png)
 
 可以看到，这个手机号应该也很久没有使用了，应该不是牛马现在正在使用的手机号，想要知道现绑，可以通过忘记密码来看看手机号某几位：
 
-![image-20220510012718638](https://s2.loli.net/2022/05/10/LfA5JCBTKV8h6yv.png)
+![](https://s2.loli.net/2022/05/10/LfA5JCBTKV8h6yv.png)
 
 看来，查出来的只是旧绑而已，现绑是很难查出来了。
 
@@ -55,7 +55,7 @@ date: 2022-04-08 00:46:01
 
 哎，不过这个可能性太低了，基本很难找出来。因为QQ的信息太少了。
 
-![image-20220510015646194](https://s2.loli.net/2022/05/10/1GgJIVrXjeNhqQo.png)
+![](https://s2.loli.net/2022/05/10/1GgJIVrXjeNhqQo.png)
 
 连红鼻子都说查不出什么东西，看来是真的查不了什么有用的信息了。
 

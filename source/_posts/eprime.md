@@ -25,11 +25,11 @@ z咱就是说，写个注意事项，方便调试程序，还能避免很多问�
 
 点一下Win图标或者Win键
 
-![image-20220502025959312](https://s2.loli.net/2022/05/02/KdX7CqkSHnVoWgi.png)
+![](https://s2.loli.net/2022/05/02/KdX7CqkSHnVoWgi.png)
 
 搜索 “ voice ” 
 
-![image-20220502030333267](https://s2.loli.net/2022/05/02/atfvRqMLo5uF76p.png)
+![](https://s2.loli.net/2022/05/02/atfvRqMLo5uF76p.png)
 
 打开即可（录音机打开又一点点慢，需要耐心）
 
@@ -43,7 +43,7 @@ Ctrl + Alt + Shift，这样子中断实验会导致数据记录不上
 
 如图，在程序文件夹下：
 
-![image-20220502030740586](https://s2.loli.net/2022/05/02/e5LM3yECDnRawUf.png)
+![](https://s2.loli.net/2022/05/02/e5LM3yECDnRawUf.png)
 
 每次做完一个人，最好就把这俩份东西拷贝出来，然后再删掉原来的这两个，再进行下一个实验，否则如果实验者输错序号会把数据覆盖掉的，，，
 
@@ -53,7 +53,7 @@ Ctrl + Alt + Shift，这样子中断实验会导致数据记录不上
 
 #### 7.运行EPrimer出现“Your system is in violation of the license agreement”错误
 
-![image-20220822022130889](http://cdn.lmark.cc/img/image-20220822022130889.png)
+![](http://cdn.lmark.cc/img/image-20220822022130889.png)
 
 原因：是破解版到期了，需要重新破解一下
 
@@ -63,6 +63,6 @@ e-prime2.0.reg
 
 然后会弹出一个弹窗，点击“是”即可
 
-![image-20220822022149024](http://cdn.lmark.cc/img/image-20220822022149024.png)
+![](http://cdn.lmark.cc/img/image-20220822022149024.png)
 
 然后再重新双击实验文件开始运行

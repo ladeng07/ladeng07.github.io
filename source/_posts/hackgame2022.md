@@ -15,7 +15,7 @@ date: 2022-10-29 22:35:15
 
 今年的比赛从2022 年 10 月 22 日 中午 12:00开始，到 10 月 29 日 中午 12:00（共七天）。在这7天里，我们可以不吃不喝来夺旗（bushi）。题目有难有易，而且对新手还挺友好，像我这样毛都没学过的都可以浅浅拿个1900。遂写篇博客浅浅记录一下这个比赛经历。
 
-![image-20221107105639243](http://cdn.lmark.cc/img/image-20221107105639243.png)
+![](http://cdn.lmark.cc/img/image-20221107105639243.png)
 
 先贴一下结果。我好菜呜呜，主要记录一下一些我觉得有意思的题目和解题方法。为了记录一下，我怕我以后都忘记我还会写这个。
 
@@ -27,7 +27,7 @@ date: 2022-10-29 22:35:15
 
 ### 题目
 
-![image-20221107110043374](http://cdn.lmark.cc/img/image-20221107110043374.png)
+![](http://cdn.lmark.cc/img/image-20221107110043374.png)
 
 在规定时间内写下2022来签到。
 
@@ -37,11 +37,11 @@ date: 2022-10-29 22:35:15
 
 其实只要手速超过光速，可以直接签下四个大字即可（bushi）。要是你没有这么快的手速，还是老老实实找一下方法把，可以看到，他是本地识别，然后再将识别结果用GET请求传给后端。
 
-![image-20221107110439346](http://cdn.lmark.cc/img/image-20221107110439346.png)
+![](http://cdn.lmark.cc/img/image-20221107110439346.png)
 
 所以只要直接修改GET请求，修改为2022即可。
 
-![image-20221107110514897](http://cdn.lmark.cc/img/image-20221107110514897.png)
+![](http://cdn.lmark.cc/img/image-20221107110514897.png)
 
 
 
@@ -49,9 +49,9 @@ date: 2022-10-29 22:35:15
 
 ### 题目
 
-![image-20221107110548870](http://cdn.lmark.cc/img/image-20221107110548870.png)
+![](http://cdn.lmark.cc/img/image-20221107110548870.png)
 
-![image-20221107110601603](http://cdn.lmark.cc/img/image-20221107110601603.png)
+![](http://cdn.lmark.cc/img/image-20221107110601603.png)
 
 
 
@@ -65,19 +65,19 @@ date: 2022-10-29 22:35:15
 
 直接在浏览器搜索**中国科学技术大学 NEBULA 战队**，第一篇里面就有。
 
-![image-20221107111040429](http://cdn.lmark.cc/img/image-20221107111040429.png)
+![](http://cdn.lmark.cc/img/image-20221107111040429.png)
 
 #### 第二题
 
 直接贴官方题解好了
 
-![image-20221107111434374](http://cdn.lmark.cc/img/image-20221107111434374.png)
+![](http://cdn.lmark.cc/img/image-20221107111434374.png)
 
 #### 第三题
 
 同
 
-![image-20221107111550358](http://cdn.lmark.cc/img/image-20221107111550358.png)
+![](http://cdn.lmark.cc/img/image-20221107111550358.png)
 
 #### 第四题
 
@@ -85,27 +85,27 @@ date: 2022-10-29 22:35:15
 
 直接在仓库力搜索这个错误代号
 
-![image-20221107111817644](http://cdn.lmark.cc/img/image-20221107111817644.png)
+![](http://cdn.lmark.cc/img/image-20221107111817644.png)
 
 这个commit记录就在这[exec: Force single empty string when argv is empty · torvalds/linux@dcd46d8 (github.com)](https://github.com/torvalds/linux/commit/dcd46d897adb70d63e025f175a00a89797d31a43)
 
-![image-20221107111856254](http://cdn.lmark.cc/img/image-20221107111856254.png)
+![](http://cdn.lmark.cc/img/image-20221107111856254.png)
 
 #### 第五题
 
 可以说是六道题中我写的最久的一道题，之前一直想着有没有什么工具可以直接公国ssh 公钥查找域名，结果找了很多，都没找到方法。然后直接把这一整个密钥信息拿去搜索也啥都搜不到
 
-![image-20221107112209932](http://cdn.lmark.cc/img/image-20221107112209932.png)
+![](http://cdn.lmark.cc/img/image-20221107112209932.png)
 
 之后又找了很多，关于这方面的东西，确定了，只有网站自己把公钥地址贴出来，我们才能搜到，而不是通过DNS来找，然后我直接把那串十六进制密钥粘贴去必应（谷歌也行）搜索了一下。
 
 然后就给我找到了
 
-![image-20221107112708534](http://cdn.lmark.cc/img/image-20221107112708534.png)
+![](http://cdn.lmark.cc/img/image-20221107112708534.png)
 
 看起来指向了一个神秘网址，刚好就是一个六个字母的域名[SDF Public Access UNIX System - Free Shell Account and Shell Access](http://sdf.org/)
 
-![image-20221107112810563](http://cdn.lmark.cc/img/image-20221107112810563.png)
+![](http://cdn.lmark.cc/img/image-20221107112810563.png)
 
 嗯，很复古的界面。这是一个免费的公共UNIX服务器。
 
@@ -115,13 +115,13 @@ date: 2022-10-29 22:35:15
 
 是我见识短浅了
 
-![image-20221107113922675](http://cdn.lmark.cc/img/image-20221107113922675.png)
+![](http://cdn.lmark.cc/img/image-20221107113922675.png)
 
 #### 第六题
 
 也是嗯搜就可以了，这里贴个官方题解
 
-![image-20221107114026862](http://cdn.lmark.cc/img/image-20221107114026862.png)
+![](http://cdn.lmark.cc/img/image-20221107114026862.png)
 
 
 
@@ -129,7 +129,7 @@ date: 2022-10-29 22:35:15
 
 ### 题目
 
-![image-20221107114232931](http://cdn.lmark.cc/img/image-20221107114232931.png)
+![](http://cdn.lmark.cc/img/image-20221107114232931.png)
 
 题目压缩包下载链接：[下载链接哟](https://cdn.lmark.cc/source/user_home.tar.gz)
 
@@ -139,13 +139,13 @@ date: 2022-10-29 22:35:15
 
 先把项目解压出来，然后拖入VSCode中，可以很清晰的看到整个文件夹结构，然后利用VSCode的搜索功能，直接搜索`flag`就可以找到第一个flag了。
 
-![image-20221107114948278](http://cdn.lmark.cc/img/image-20221107114948278.png)
+![](http://cdn.lmark.cc/img/image-20221107114948278.png)
 
 #### Rclone 里的 flag
 
 通过刚刚搜索flag可以发现，有一个Rclone的配置文件，上面写着大大的Flag2，看起来显然就是Flag2的关键道具
 
-![image-20221107115308531](http://cdn.lmark.cc/img/image-20221107115308531.png)
+![](http://cdn.lmark.cc/img/image-20221107115308531.png)
 
 其实这题当时没做出来哈哈哈哈，难绷
 
@@ -206,7 +206,7 @@ func main() {
 >
 > 1. 下载GO安装包，安装[Downloads - The Go Programming Language (google.cn)](https://golang.google.cn/dl/)
 >
-> ![image-20221107160901394](http://cdn.lmark.cc/img/image-20221107160901394.png)
+> ![](http://cdn.lmark.cc/img/image-20221107160901394.png)
 >
 > 2. 如果没添加环境变量，则可以直接进到GO安装目录下`C:\Program Files\Go\bin`
 >
@@ -218,7 +218,7 @@ func main() {
 
 跑出来代码后：
 
-![image-20221107161242547](http://cdn.lmark.cc/img/image-20221107161242547.png)
+![](http://cdn.lmark.cc/img/image-20221107161242547.png)
 
 ## HeiLang
 
@@ -226,7 +226,7 @@ func main() {
 
 ### 题目
 
-​	![image-20221107163611164](http://cdn.lmark.cc/img/image-20221107163611164.png)
+​	![](http://cdn.lmark.cc/img/image-20221107163611164.png)
 
 ### 题解
 
@@ -257,11 +257,11 @@ class L(list):
 
 然后，还是得稍微把每一个`|`给替换成`,`，这样传进去的参数就是一个不定长的元组，然后再分别赋值。
 
-![image-20221107164733923](http://cdn.lmark.cc/img/image-20221107164733923.png)
+![](http://cdn.lmark.cc/img/image-20221107164733923.png)
 
 最后直接跑一下，输出结果：
 
-![image-20221107165136981](http://cdn.lmark.cc/img/image-20221107165136981.png)
+![](http://cdn.lmark.cc/img/image-20221107165136981.png)
 
 > 偷偷插一句：Python自带的IDLE真好用！！！
 
@@ -271,13 +271,13 @@ class L(list):
 
 ### 题目
 
-![image-20221107165424721](http://cdn.lmark.cc/img/image-20221107165424721.png)
+![](http://cdn.lmark.cc/img/image-20221107165424721.png)
 
 ### 题解
 
 哈哈哈哈哈哈，题目超好笑的诶。咳咳，这道题是一个Web题，需要我们在3秒内计算三个大数相加。
 
-![image-20221107170911961](http://cdn.lmark.cc/img/image-20221107170911961.png)
+![](http://cdn.lmark.cc/img/image-20221107170911961.png)
 
 最简单的方法，找一个神童，让他光速算完并提交结果。
 
@@ -353,9 +353,9 @@ class L(list):
 
 ![img](http://cdn.lmark.cc/img/travel-photo-2.jpg)
 
-![image-20221107171823868](http://cdn.lmark.cc/img/image-20221107171823868.png)
+![](http://cdn.lmark.cc/img/image-20221107171823868.png)
 
-![image-20221107171843312](http://cdn.lmark.cc/img/image-20221107171843312.png)
+![](http://cdn.lmark.cc/img/image-20221107171843312.png)
 
 
 
@@ -365,7 +365,7 @@ class L(list):
 
 第一题，非常简单，直接右键照片->属性。可以看到这些所有的信息。
 
-![image-20221107172447738](http://cdn.lmark.cc/img/image-20221107172447738.png)
+![](http://cdn.lmark.cc/img/image-20221107172447738.png)
 
 第二题，可以说稍微有点难度了。
 
@@ -373,31 +373,31 @@ class L(list):
 
 上谷歌地图找找
 
-![image-20230103162524984](http://cdn.lmark.cc/img/image-20230103162524984.png)
+![](http://cdn.lmark.cc/img/image-20230103162524984.png)
 
 然后看看周边的酒店宾馆啥的，很容易找到一家APA，一家很大的连锁酒店，我同学去霓虹玩的时候还住过，浅浅看一下邮编
 
-![image-20230103162750564](http://cdn.lmark.cc/img/image-20230103162750564.png)
+![](http://cdn.lmark.cc/img/image-20230103162750564.png)
 
 然后接下来就是手机，从之前的EXIF信息可以看出，这款手机的型号是`sm6115(juice)`，看起来这是个很抽象的代号，放进google检索一下，第一个结果就是，红米9T？？？什么勾吧，没听说过，查了一下发现在国内这个叫红米NOTE 9，去官网或者淘宝查一下参数即可。分辨率是`2340x1080`
 
-![image-20230103163448917](http://cdn.lmark.cc/img/image-20230103163448917.png)
+![](http://cdn.lmark.cc/img/image-20230103163448917.png)
 
 最后到了最难的部分，就是查航班轨迹，以前听说过飞机的轨迹是能实时查看的，但是一直没试过，这次可以试试了。首先先找一个可以查看航班轨迹的网站，很多网站都需要会员才能看比较古早的历史数据。所以，[推荐这个](https://globe.adsbexchange.com/)一个免费但是可以看比较早的记录，最小时间粒度是10s。
 
-关于为什么这些网站能看到这么多飞机的航行记录，那是因为飞机在航行过程中会发射特定的无线电信号，里面包含着航班的信息，地面上的人只要接受信息，将其整理出来，就能的到实时的航班轨迹了，这种信号称作[ADS-B信号](https://zh.wikipedia.org/wiki/广播式自动相关监视)![image-20230103162125790](http://cdn.lmark.cc/img/image-20230103162125790.png)
+关于为什么这些网站能看到这么多飞机的航行记录，那是因为飞机在航行过程中会发射特定的无线电信号，里面包含着航班的信息，地面上的人只要接受信息，将其整理出来，就能的到实时的航班轨迹了，这种信号称作[ADS-B信号](https://zh.wikipedia.org/wiki/广播式自动相关监视)![](http://cdn.lmark.cc/img/image-20230103162125790.png)
 
 拍摄时的时间为霓虹时间，比我们北京时间快了一个小时，所以他们是东九区，转换一下，拍照片时的UTC时间就是 5 月 14 日 09:23:35 
 
 这个时候，恰好只有一架飞机从这里飞过，而且还是朝着北方飞，符合题意。这里看到航班号为ANA683，放进google里检索一下，因为一个航班号应该是固定的，所以半年前出发地和目的地应该是相同的，时间上来看应该也是差不多的，第一个结果就是
 
-![image-20230103165256195](http://cdn.lmark.cc/img/image-20230103165256195.png)
+![](http://cdn.lmark.cc/img/image-20230103165256195.png)
 
 出发地的HND是羽田机场，没错，就是羽田浩司的羽田（话说朗姆篇终于要完结了呜呜）。貌似每个机场都有自己的三个字母的机场代号。这么说，全世界只能用26 * 26 * 26 = 17656 个机场了咯。显然不太可能。扯远了。HIJ就是广岛机场，Hiroshima，这个词听着非常舒服，让人想到了广岛之恋。
 
 知道了所有信息后，答案就出来了
 
-![image-20230103165933448](http://cdn.lmark.cc/img/image-20230103165933448.png)
+![](http://cdn.lmark.cc/img/image-20230103165933448.png)
 
  ### 我的题解
 
@@ -411,7 +411,7 @@ class L(list):
 
 某大型餐饮连锁店的畅销菜品「嫩牛七方」（见下图）自正式线下售卖以来便好评如潮，但囿于产能限制，只有每周四才会对外售卖。你也是一名「嫩牛七方」的爱好者——每个星期四的晚上都能在某家连锁店里找到你的身影。
 
-![image-20230103171242749](http://cdn.lmark.cc/img/image-20230103171244507.png)
+![](http://cdn.lmark.cc/img/image-20230103171244507.png)
 
 「嫩牛七方」在绝大多数情况下都是七边形，但也会有粗心的店员在制作的时候不小心少折一道，从而将其变成六边形。不过，由于某大型餐饮连锁店对质量的严格把控，哪怕作为十多年以来的忠实粉丝，你也只吃到过两次六边形的「嫩牛七方」。当然，在极少数情况下也会有五边形的「嫩牛七方」——但恐怕仅有百万分之一的概率。上一个五边形的「嫩牛七方」在交易市场上已经卖出足足 50 元的天价了。
 
@@ -423,7 +423,7 @@ class L(list):
 
 这道题我当时没做出来，时候看乐一下感觉非常的有趣，这道题是要猜对一个数，正常方法显然概率太低。单次实验中几乎不发生。所以得想别的方法。先看源代码，找了一下，发现比较的地方
 
-![image-20230103173040454](http://cdn.lmark.cc/img/image-20230103173040454.png)
+![](http://cdn.lmark.cc/img/image-20230103173040454.png)
 
 根据出题人所说，这道题想考的是 IEEE 754 标准定义的浮点数并不满足数学上的全序关系.
 
@@ -488,11 +488,11 @@ Authorization: Bearer 1:MEQCIBxs4yBzfjnYS/o+Z3Bm3lJpIZVfvB1dsjSkzcgj8PakAiAtZcKG
 
 先看一下后台是如何生成PDF的。
 
-![image-20230103204836168](http://cdn.lmark.cc/img/image-20230103204836168.png)
+![](http://cdn.lmark.cc/img/image-20230103204836168.png)
 
 生成的时候，启用了一个`-no-shell-escape`选项，
 
-![image-20230103205421071](http://cdn.lmark.cc/img/image-20230103205421071.png)
+![](http://cdn.lmark.cc/img/image-20230103205421071.png)
 
 这个选项是关闭` \write18`这条指令，这是一条可以在LaTex里执行命令的用法。但是这里不能用，那就只能用别的了。
 
@@ -502,11 +502,11 @@ Authorization: Bearer 1:MEQCIBxs4yBzfjnYS/o+Z3Bm3lJpIZVfvB1dsjSkzcgj8PakAiAtZcKG
 \input{/flag1}
 ```
 
-![image-20230104001030354](http://cdn.lmark.cc/img/image-20230104001030354.png)
+![](http://cdn.lmark.cc/img/image-20230104001030354.png)
 
 第二问就有点难度了，因为其中混入了特殊字符下划线和井号，如果直接input的话会出LaTex的语法错误而导入失败。但是，功夫不负有心人，经过不懈的努力搜寻答案，终于在Google上找到了一个github仓库，里面详细的介绍LaTex注入的一些知识，感兴趣可以仔细看看。[PayloadsAllTheThings/LaTeX Injection at master · Mo01iHt/PayloadsAllTheThings (github.com)](https://github.com/Mo01iHt/PayloadsAllTheThings/tree/master/LaTeX Injection)
 
-![image-20230104000823965](http://cdn.lmark.cc/img/image-20230104000823965.png)
+![](http://cdn.lmark.cc/img/image-20230104000823965.png)
 
 意思是停用下划线和井号这两个控制字符，如下，和官方题解比起来十分的优雅
 
@@ -516,7 +516,7 @@ Authorization: Bearer 1:MEQCIBxs4yBzfjnYS/o+Z3Bm3lJpIZVfvB1dsjSkzcgj8PakAiAtZcKG
 
 
 
-![image-20230104000953022](http://cdn.lmark.cc/img/image-20230104000953022.png) 
+![](http://cdn.lmark.cc/img/image-20230104000953022.png) 
 
 
 
@@ -532,37 +532,37 @@ Authorization: Bearer 1:MEQCIBxs4yBzfjnYS/o+Z3Bm3lJpIZVfvB1dsjSkzcgj8PakAiAtZcKG
 
 > （题目 Dokuwiki 版本基于 2022-07-31a "Igor"）
 
-![image-20230104002021428](http://cdn.lmark.cc/img/image-20230104002021428.png)
+![](http://cdn.lmark.cc/img/image-20230104002021428.png)
 
 ### 题解
 
 官方题解鼓励我们自己动手，丰衣足食，自己本地跑一跑doukuwiki，但是，对于我这种菜鸡来说，理解成互联网漏洞冲浪收集题了。习惯性的先去Google了一下这个wiki，发现是一个蛮古老的wiki服务。直到现在也还在更新。仓库地址：[splitbrain/dokuwiki: The DokuWiki Open Source Wiki Engine (github.com)](https://github.com/splitbrain/dokuwiki)
 
-![image-20230104004418017](http://cdn.lmark.cc/img/image-20230104004418017.png)
+![](http://cdn.lmark.cc/img/image-20230104004418017.png)
 
 先使用之前学的，Google检索关键词大法
 
-![image-20230104004345929](http://cdn.lmark.cc/img/image-20230104004345929.png)
+![](http://cdn.lmark.cc/img/image-20230104004345929.png)
 
 看到几篇相关的问答贴，其中有一篇吸引了我的眼球：[Disabling restoring old revision - DokuWiki User Forum](https://forum.dokuwiki.org/d/18854-disabling-restoring-old-revision)
 
-![image-20230104004909215](http://cdn.lmark.cc/img/image-20230104004909215.png)
+![](http://cdn.lmark.cc/img/image-20230104004909215.png)
 
 这篇帖子里，楼主说有网络爬虫是不是恢复一些他已经删除掉的帖子，楼下纷纷表示遇到过这种情况。其中有一条回帖，精准命中
 
-![image-20230104013023110](http://cdn.lmark.cc/img/image-20230104013023110.png)
+![](http://cdn.lmark.cc/img/image-20230104013023110.png)
 
 他说这个回复功能bug，可以越过权限来恢复。然后在22年6月26日的一个更新中修复了这个bug，根据它提供的issue来看，似乎是一个可以利用的bug：[Although action "Old revisions" is deactivated, all old versions can be viewed. · Issue #3421 · splitbrain/dokuwiki (github.com)](https://github.com/splitbrain/dokuwiki/issues/3421)
 
-![image-20230104013428549](http://cdn.lmark.cc/img/image-20230104013428549.png)
+![](http://cdn.lmark.cc/img/image-20230104013428549.png)
 
 在这个issue的最后，有个人提出，虽然 `&do=revisions`的漏洞解决了，但是还存在的一个比较的漏洞，我尝试用了一下，然后就成功了。
 
-![image-20230104013659915](http://cdn.lmark.cc/img/image-20230104013659915.png)
+![](http://cdn.lmark.cc/img/image-20230104013659915.png)
 
 输入这个：[start [Flag Wiki\]](http://202.38.93.111:15004/doku.php?do=diff)，就可以进入到当前页面的比较历史版本的界面。拿到flag
 
-![image-20230104013922408](http://cdn.lmark.cc/img/image-20230104013922408.png)
+![](http://cdn.lmark.cc/img/image-20230104013922408.png)
 
 
 
@@ -599,7 +599,7 @@ Authorization: Bearer 1:MEQCIBxs4yBzfjnYS/o+Z3Bm3lJpIZVfvB1dsjSkzcgj8PakAiAtZcKG
 
 
 
-![image-20230104023012985](http://cdn.lmark.cc/img/image-20230104023012985.png)
+![](http://cdn.lmark.cc/img/image-20230104023012985.png)
 
 这样可以读出第一个数，由于第二个数是使用空格隔开，所以得让错误出现在第二个数，第一个数就得变得合法，这里参考官方题解是用一个变量来接收。
 
@@ -609,7 +609,7 @@ int a =
 #include "../data/static.out"
 ```
 
-![image-20230104023400875](http://cdn.lmark.cc/img/image-20230104023400875.png)
+![](http://cdn.lmark.cc/img/image-20230104023400875.png)
 
 又学到个小技巧！
 
@@ -630,7 +630,7 @@ int main() {
 
 拿到弗拉哥
 
-![image-20230104023602863](http://cdn.lmark.cc/img/image-20230104023602863.png)
+![](http://cdn.lmark.cc/img/image-20230104023602863.png)
 
 第二问是动态生成的数据，就不能直接用这种方法读取出来了。不会，先跳过
 
@@ -644,7 +644,7 @@ int main() {
 
 中午起床，看到室友的桌子上又多了一个正方形的盒子。快递标签上一如既往的写着：线路板。和往常一样，你“帮”室友拆开快递并抢先把板子把玩一番。可是突然，你注意到板子表面似乎写着些东西……看起来像是……flag？
 
-![image-20230106215906105](http://cdn.lmark.cc/img/image-20230106215906105.png)
+![](http://cdn.lmark.cc/img/image-20230106215906105.png)
 
 可是只有开头的几个字母可以看清楚。你一时间不知所措。
 
@@ -690,17 +690,17 @@ int main() {
 
 这道题非常的简单，同时很有意思，一开始写的时候可以说是状况百出，现在回过头来看却是极有意思。首先，这是一个作业提交的页面
 
-![image-20230106223300899](http://cdn.lmark.cc/img/image-20230106223300899.png)
+![](http://cdn.lmark.cc/img/image-20230106223300899.png)
 
-![image-20230106223433749](http://cdn.lmark.cc/img/image-20230106223433749.png)
+![](http://cdn.lmark.cc/img/image-20230106223433749.png)
 
 然后得到的链接，需要或者粘贴到另一个地方，来获取成绩
 
-![image-20230106223735544](http://cdn.lmark.cc/img/image-20230106223735544.png)
+![](http://cdn.lmark.cc/img/image-20230106223735544.png)
 
 逻辑上来看是挺简单的，接下来再看看源代码，可以看到flag放在了提交链接的cookie里面。
 
-![image-20230106225405316](http://cdn.lmark.cc/img/image-20230106225405316.png)
+![](http://cdn.lmark.cc/img/image-20230106225405316.png)
 
 通过查看后端代码可以发现，这个链接提交的页面，是使用了selenium来打开网页，渲染之后，在读取网页的内容。
 
@@ -714,7 +714,7 @@ int main() {
 
 一开始想，直接在姓名处把cookie输出，但是，在尝试直接插入script脚本后发现并不能执行。但是F12里看到的颜色正常的script标签。就算我手动把p标签封闭掉还是不能执行。
 
-![image-20230106233650996](http://cdn.lmark.cc/img/image-20230106233650996.png)
+![](http://cdn.lmark.cc/img/image-20230106233650996.png)
 
 这个地方一开始困扰了我很久，我焯，这怎么和我学过的不一样，为毛没有转义，也不能执行。后来百度了一下，才知道原来这是标签的innerhtml属性。原因就是直接通过innerHTML动态嵌入的script，浏览器会当做普通的文本，不会当作SCRIPT节点维护到DOM里面，所以调用的时候找不到。也就是说，只要不用script标签就可以，但是如何不适用script标签来执行js代码呢？这时候，就想到了另一个方法，img标签。原本img标签是显示图像用的，但是其有一个onerror字段，在图片报错时执行什么。所以我们此时可以这样：
 
@@ -724,7 +724,7 @@ int main() {
 
 把注入内容输入到姓名内，即可
 
-![image-20230107000123393](http://cdn.lmark.cc/img/image-20230107000123393.png)
+![](http://cdn.lmark.cc/img/image-20230107000123393.png)
 
 页面正常渲染，就会触发这个报错，然后js语句就被执行了，当然，如果你觉得显示一个破损图片太丑的话，可以隐藏一下。
 
@@ -732,7 +732,7 @@ int main() {
 <img src=x onerror="alert(document.cookie)" style=display:none;“>   
 ```
 
-![image-20230107000545283](http://cdn.lmark.cc/img/image-20230107000545283.png)
+![](http://cdn.lmark.cc/img/image-20230107000545283.png)
 
 但是，后端不能把弹窗内容显示给我们，所以这里选择将cookie赋值给某个变量，这里可以选择分数和greeting。
 
@@ -742,7 +742,7 @@ int main() {
 
 将链接复制到后端，可以得到flag
 
-![image-20230107000958675](http://cdn.lmark.cc/img/image-20230107000958675.png)
+![](http://cdn.lmark.cc/img/image-20230107000958675.png)
 
 
 
@@ -752,7 +752,7 @@ int main() {
 
 失败的伪造界面
 
-![image-20230107003358061](http://cdn.lmark.cc/img/image-20230107003358061.png)
+![](http://cdn.lmark.cc/img/image-20230107003358061.png)
 
 
 
@@ -766,7 +766,7 @@ int main() {
 
 第一次参加这种CTF，感觉其趣味性很足，整活也很多，很有趣。很多题目是非常的结合实际的。不过做了一圈下来，二进制一道没做，因为基本不会，所以我还是太菜了呜呜，这个题解写了快两个月了（其实一开始写了后面就没动过，后面重新写的时候发现，已经忘了当时怎么做的了呜呜。）。而且这也是我第一次写WriteUp，我喜欢写的时候唠唠嗑，什么奇怪的东西都写点，然后就八千多字了。。。。
 
-![image-20230107005029141](http://cdn.lmark.cc/img/image-20230107005029141.png)
+![](http://cdn.lmark.cc/img/image-20230107005029141.png)
 
 如果这篇题解有什么错误的地方，欢迎大佬们在评论区批评指正，本人不胜感激。不过我写给自己看的文章应该不会有别人看吧哈哈哈哈哈。
 

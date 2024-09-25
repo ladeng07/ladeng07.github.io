@@ -10,7 +10,7 @@ tags:
 
 放假闲来无事，在B站冲浪，看到有人在讨论IC卡，我在这方面刚好还是有这么一点了解，就拿MF1卡给别人举了个例子，然后MF1卡就被开除出IC卡籍了。
 
-![image-20230131031512672](http://cdn.lmark.cc/img/image-20230131031512672.png)
+![](http://cdn.lmark.cc/img/image-20230131031512672.png)
 
 有点气，但是仔细想想，网上关于这些卡的介绍知识太少了，有些人区分不了也很正常，于是我查阅大量资料，才有了这篇文章。
 
@@ -120,11 +120,11 @@ ID卡有很多种不用的芯片，由许多不同的公司生产的，常见的
 
 国内比较常见的是瑞士微电子公司的**EM4100**无线射频芯片的ID卡，所以一般的ID卡我将以这款芯片来介绍。首先上谷歌找一下EM4100的data sheet。
 
-![image-20230131154402445](http://cdn.lmark.cc/img/image-20230131154402445.png)
+![](http://cdn.lmark.cc/img/image-20230131154402445.png)
 
 从Feature可以看到，普通的ID卡只有64bit的存储空间，存个ID之后就没什么空间了，所以ID卡，应用场景十分的有限。再来看看存储结构：
 
-![image-20230131155700052](http://cdn.lmark.cc/img/image-20230131155700052.png)
+![](http://cdn.lmark.cc/img/image-20230131155700052.png)
 
 可以看到，真正存储数据的只有40bit，其中8bit是用户标识/版本号，剩下32bit是数据位/卡号。校验位Px和PCx，对应行或列有偶数个1(不包括校验位)，则校验位为0。奇数个1，则校验位为1。将数据进行编码之后，就变成了64bit的数据（9bit起始位 + 54bit数据/校验位 + 1bit停止位），在上电后就以“曼切斯特编码方式”循环地发送。
 
@@ -142,7 +142,7 @@ ID卡有很多种不用的芯片，由许多不同的公司生产的，常见的
 
 这里简单介绍一下存储结构，先贴一下data sheet：[Atmel T5557 Datasheet (orangetags.com)](https://orangetags.com/rfid-chip-datasheet/atmel-datasheet/t55/atmel-t5557-datasheet/)。感兴趣可以仔细研究研究。
 
-![image-20230131162607741](http://cdn.lmark.cc/img/image-20230131162607741.png)
+![](http://cdn.lmark.cc/img/image-20230131162607741.png)
 
 介绍摘抄自：[T5557卡片说明 - viperchaos - 博客园 (cnblogs.com)](https://www.cnblogs.com/viperchaos/archive/2011/09/07/2170067.html)
 
@@ -212,7 +212,7 @@ HID卡外观：
 
 这里的IC卡一般指高频卡（13.56MHz）放张图看下不同频段的一些特点
 
-![image-20230131181434483](http://cdn.lmark.cc/img/image-20230131181434483.png)
+![](http://cdn.lmark.cc/img/image-20230131181434483.png)
 
 至于为为什么是13.56MHz，我也没找到比较权威的说法，但是我们知道，频率越高，波长越小，所能携带的信息越多，这应该是一个折中的考虑，问题不大。在介绍IC卡种类之前，先来了解一下ISO14443标准：[ISO/IEC 14443 - 维基百科，自由的百科全书 (wikipedia.org)](https://zh.wikipedia.org/wiki/ISO/IEC_14443)
 
@@ -228,7 +228,7 @@ HID卡外观：
 
 这个可以说是目前最常见IC卡了，他还有许多名字，比如：Mifare Standard，Mifare S50，Mifare S70，MF1，M1等等。这个卡UID出厂固定，可以修改储存的数据。
 
-![image-20230131191318840](http://cdn.lmark.cc/img/image-20230131191318840.png)
+![](http://cdn.lmark.cc/img/image-20230131191318840.png)
 
 属于Mifare系列的，关于Mifare：[MIFARE - 维基百科，自由的百科全书 (wikipedia.org)](https://zh.wikipedia.org/wiki/MIFARE)
 
@@ -240,7 +240,7 @@ M1卡有16个扇区组成，每个扇区有4个数据快，每个数据块有16�
 
 其中0扇区的第0块存着卡片以及厂商的信息。
 
-![image-20230131192842658](http://cdn.lmark.cc/img/image-20230131192842658.png)
+![](http://cdn.lmark.cc/img/image-20230131192842658.png)
 
 每个扇区有两个密钥，keyA和keyB，3区块中间的四位是存储控制位，决定的这个扇区的权限。但是在2008年，M1就被爆出有漏洞，使得该种卡能够被直接破解，这类卡被称为所谓的**漏洞卡**，当然，过了这么久，漏洞会被修复的。目前**无漏洞卡**已经到了第三代，单靠pm3可能还破解不了，还需要变色龙来嗅探。
 
@@ -264,7 +264,7 @@ M1卡有16个扇区组成，每个扇区有4个数据快，每个数据块有16�
 
 其容量只有512bit，也就是64B。被划分为了16个page，每个page包含4个字节，如下图所示：
 
-![image-20230131195307035](http://cdn.lmark.cc/img/image-20230131195307035.png)
+![](http://cdn.lmark.cc/img/image-20230131195307035.png)
 
 可以看到，M0卡的UID有7个字节长，普通的M1卡只有四个。而且M0卡没有加密，所以M0卡只能用在一些身份识别的地方，比如地铁票，园区票之类。以下是M0卡的详细介绍：
 
@@ -276,7 +276,7 @@ M1卡有16个扇区组成，每个扇区有4个数据快，每个数据块有16�
 >
 > ​	Page2的第3和第4个字节用于将存储区锁定为只读。如下图所示，L4-L15的某一位设置为1，则对应序号的Page内容锁定为只读，每一个Page都可以单独设置。Lotp用于锁定Page3为只读。“螳螂捕蝉，黄雀在后”，Lotp-L15可以锁定别人，这些位本身又被三个BL位锁定，BL15-10用于锁定L15-L10，BL9-4用于锁定L9-L4，BLotp用于锁定Lotp。所有的这16个锁定位也具有OTP特性，通俗的讲就是这些“锁”没有“钥匙”，一旦锁死就再也改不回来了，所以锁定时一定要小心。
 >
-> ![image-20230131195928590](http://cdn.lmark.cc/img/image-20230131195928590.png)
+> ![](http://cdn.lmark.cc/img/image-20230131195928590.png)
 >
 > ​	Mifare UltraLight的读写操作和 Mifare S50是完全兼容的，这里的“兼容”是指二者可以使用同一个读卡器硬件，同一套软件。当然若软硬件完全相同就不是两种卡了，二者的区别主要体现在软件操作上，包括以下4个方面：
 >
@@ -293,7 +293,7 @@ M1卡有16个扇区组成，每个扇区有4个数据快，每个数据块有16�
 
 我曾今还是见过一次M0卡的，当时一个美国的网友找到我，给我看了张卡，当时我哪里懂这么多，只知道M1卡，就让他去读，结果读出来是M0卡，直接给我整懵了，后面上淘宝查了一下，没找到能复制M0卡的，不知道能不能用变色龙模拟出来。买个二手变色龙回来试试。
 
-![image-20230131202315380](http://cdn.lmark.cc/img/image-20230131202315380.png)
+![](http://cdn.lmark.cc/img/image-20230131202315380.png)
 
 想进一步了解M0卡的可以移步data sheet：[NXP Mifare Ultralight Datasheet (orangetags.com)](https://orangetags.com/rfid-chip-datasheet/nxp-rfid-chip-datasheet/mifare/nxp-mifare-ultralight-datasheet/)
 
@@ -301,7 +301,7 @@ M1卡有16个扇区组成，每个扇区有4个数据快，每个数据块有16�
 
 可以通过SAK值判断，以下是常见的SAK值：
 
-![image-20230201040441114](http://cdn.lmark.cc/img/image-20230201040441114.png)
+![](http://cdn.lmark.cc/img/image-20230201040441114.png)
 
 
 
@@ -323,7 +323,7 @@ MIFARE Plus卡有两种，分别是S和X。Plus是M1卡的升级，向下兼容M
 ■ 单次写操作次数：200000个周期（典型值）
 ■ 通用标准认证：EAL4+
 
-![image-20230201041803766](http://cdn.lmark.cc/img/image-20230201041803766.png)
+![](http://cdn.lmark.cc/img/image-20230201041803766.png)
 
 我手里的农行卡就是M2卡
 
@@ -349,13 +349,13 @@ NTAG是NXP公司的一种NFC卡，从名字就可以看出，这种卡是符合N
 
 NTAG卡用起来和MIFARE UltraLisght-C卡类似，UID都为7位，且非常薄，网上买的NTAG标签基本上都是非常薄同时还比较小的。NTAG215的卡片信息：
 
-![image-20230202003837091](http://cdn.lmark.cc/img/image-20230202003837091.png)
+![](http://cdn.lmark.cc/img/image-20230202003837091.png)
 
 
 
 NTAG213：
 
-![image-20230202003906841](http://cdn.lmark.cc/img/image-20230202003906841.png)
+![](http://cdn.lmark.cc/img/image-20230202003906841.png)
 
 市面上比较常见的产品可能是那个米家碰碰贴，不过太贵了，20块两个，不如去抢钱。这种卡贴可以拿来干很多有意思的事，比如碰一碰连WIFI和蓝牙，有时间写一下米家碰碰贴的用法。除了这个，switch的amiibo卡好像也是一种NTAG标签，网上有人拿NTAG215来复制的。
 
@@ -375,7 +375,7 @@ uid卡是国人发明的，全称Mifare UID Chinese magic card——中国魔术
 
 不响应后门指令(意味着不容易被反克隆系统发现)
 
-![image-20230131230703675](http://cdn.lmark.cc/img/image-20230131230703675.png)
+![](http://cdn.lmark.cc/img/image-20230131230703675.png)
 
 一张CUID卡展示，外观上看不出来和M1卡有什么区别。某宝上一张要好几块。
 
@@ -489,7 +489,7 @@ CPU卡和M1卡在外观和大小上，可以说毫无差异。所以怎么区分
 
 CPU卡的UID从ATS中获取，取ATS的后四位：
 
-![image-20230201031549695](http://cdn.lmark.cc/img/image-20230201031549695.png)
+![](http://cdn.lmark.cc/img/image-20230201031549695.png)
 
 然后可以把这个UID写进一个空白的dump文件里，也可以直接写入卡里，记得BCC校验，也就是第五位的值由UID的四位异或而来。亲测，我学校的校园卡，我把UID写进手环里，可以刷宿舍楼门禁、学校大门的闸机和图书馆炸鸡，但是图书馆签到刷不了。显然图书馆签到使用到了CPU卡的UID之外的部分。
 
@@ -523,7 +523,7 @@ TYPE:JCOP31 or JCOP41 v2.3.1
 
 毕竟ID卡的线圈这么小，可以塞进IC卡里也不奇怪。有下图那样式的：
 
-![image-20230201035031634](http://cdn.lmark.cc/img/image-20230201035031634.png)
+![](http://cdn.lmark.cc/img/image-20230201035031634.png)
 
 
 
@@ -560,11 +560,11 @@ TYPE B与TYPE A相比，具有**传输能量不中断、速率更高、抗干扰
 
 在写的过程中，我偶然间找到一篇12年前的帖子，在探讨破解M1卡的方法，里面有几层楼的贴很有意思：
 
-![image-20230202005757978](http://cdn.lmark.cc/img/image-20230202005757978.png)
+![](http://cdn.lmark.cc/img/image-20230202005757978.png)
 
 11年的时候M1卡就已经是很老的技术了，没想到到了23年，市面上还有这么多的M1卡。另一条：
 
-![image-20230202010104383](http://cdn.lmark.cc/img/image-20230202010104383.png)
+![](http://cdn.lmark.cc/img/image-20230202010104383.png)
 
 当时能够轻易修改UID的UID卡尚未出现，他们不会想到，12年后的现在，M1卡像一个筛子一样，能被随便复制。
 
@@ -576,7 +576,7 @@ TYPE B与TYPE A相比，具有**传输能量不中断、速率更高、抗干扰
 
 最后吐槽一下，再找资料的过程中，百度出的很多资料要么讲的太细，要么什么都没讲，结果最后发现，淘宝的商品详情页或成了找资料的好地方。
 
-![image-20230202012319261](http://cdn.lmark.cc/img/image-20230202012319261.png)
+![](http://cdn.lmark.cc/img/image-20230202012319261.png)
 
 这上面列举的卡比我在网上找的都详细，害。然后去谷歌上找了很多data sheet和官网的资料，还看了不少维基的内容，只能说，百度能找到的东西太少了，优质知识有时候付费也找不到。最后我放一下所有参考资料把，大家感兴趣可以去看看。我这里终究还是有很多没讲到。
 

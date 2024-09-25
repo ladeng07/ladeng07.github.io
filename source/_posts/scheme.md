@@ -25,13 +25,13 @@ Url Scheme对于移动设备用户来说是十分方便的，可以在手机上�
 
 这里用M1卡和NTAG21X都可以，能正常写入数据的就可以了，我推荐使用NTAG215轻薄款
 
-![image-20230723232048236](http://cdn.lmark.cc/img/image-20230723232048236.png)
+![](http://cdn.lmark.cc/img/image-20230723232048236.png)
 
 很薄，可以到贴到纸的后面或者其他什么地方都可以。
 
 其次，手机需要安装一个写入NFC数据的软件
 
-![image-20230723232309972](http://cdn.lmark.cc/img/image-20230723232309972.png)
+![](http://cdn.lmark.cc/img/image-20230723232309972.png)
 
 最后，也是最重要的一点，准备一台有NFC功能的手机。
 
@@ -47,11 +47,11 @@ Url Scheme对于移动设备用户来说是十分方便的，可以在手机上�
 
 这个功能是最常见的，严格意义上来说这不属于Url Scheme的内容，因为里面数据是这样式的
 
-![image-20230726102613708](http://cdn.lmark.cc/img/image-20230726102613708.png)
+![](http://cdn.lmark.cc/img/image-20230726102613708.png)
 
 这是用NFC Tools写入的数据，如果你是小米手机，使用米家app写入，就有些不一样
 
-![image-20230726102852681](http://cdn.lmark.cc/img/image-20230726102852681.png)
+![](http://cdn.lmark.cc/img/image-20230726102852681.png)
 
 当然这个也不是正宗的Url Scheme，是打开米家自己进行的操作而已。
 
@@ -670,7 +670,7 @@ alipays://platformapi/startapp?appId=77700109
 
 这个原理也是通过打开支付宝的健康卡来使用的，我为什么要单独拿出来说一下呢？是因为之前闹瘟疫的时候，淘宝上出现一种东西：一键打开健康码
 
-![image-20230726111807556](http://cdn.lmark.cc/img/image-20230726111807556.png)
+![](http://cdn.lmark.cc/img/image-20230726111807556.png)
 
 原理这么简单的一个操作，竟然能卖62块大洋，感觉老人的钱真好赚。岂可休，幸好现在瘟疫消失了，出门不用这些奇奇怪怪的码了。
 
@@ -690,7 +690,7 @@ mqq://card/show_pslcard?uin=2952569401
 
 具体使用效果可以参考我发在B站的视频：【碰一碰打开寄国-哔哩哔哩】 https://b23.tv/54TV5eY
 
-![image-20230726123828182](http://cdn.lmark.cc/img/image-20230726123828182.png)
+![](http://cdn.lmark.cc/img/image-20230726123828182.png)
 
 ### 碰一碰加入网易云一起听（仅供演示，无任何实际价值）
 
@@ -702,7 +702,7 @@ orpheus://nm/play/listenTogether?roomId=0d6e3c9c5a8231a8bd313d535cb1a229_1690362
 
 这个可以通过电脑浏览器调试找到
 
-![image-20230726172431290](http://cdn.lmark.cc/img/image-20230726172431290.png)
+![](http://cdn.lmark.cc/img/image-20230726172431290.png)
 
 效果是挺好的，但是有个致命问题，就是每次一起听的房间号是实时生成的，所以一个邀请链接只有30分钟的保质期，过了30分钟保质期就过期了，所以并不能做到远程两个人碰一碰就一起听的效果。
 
@@ -724,13 +724,13 @@ bilibili://video/385492200
 
 B站还有很多Scheme可以用，有需要可以自己找，简易教程如下：
 
-![image-20230726174410515](http://cdn.lmark.cc/img/image-20230726174410515.png)
+![](http://cdn.lmark.cc/img/image-20230726174410515.png)
 
 ### 碰一碰打开视频/音频（可以放相册里或者立体书）
 
 这个功能挺美好的，但是要求视频和音频储存的地址比较持久化，不然以后就打不开了，同时，这个功能需要手机安装NFC Tasks这个独立的应用，写入效果如下：
 
-![image-20230726182753984](http://cdn.lmark.cc/img/image-20230726182753984.png)
+![](http://cdn.lmark.cc/img/image-20230726182753984.png)
 
 
 

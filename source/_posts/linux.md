@@ -79,7 +79,7 @@ proot-distro list
 proot-distro install ubuntu
 ```
 
-![image-20220912162213928](http://cdn.lmark.cc/img/image-20220912162213928.png)
+![](http://cdn.lmark.cc/img/image-20220912162213928.png)
 
 安装完成后，可以使用如下命令进入系统
 
@@ -87,7 +87,7 @@ proot-distro install ubuntu
 proot-distro login ubuntu
 ```
 
-![image-20220912162311829](http://cdn.lmark.cc/img/image-20220912162311829.png)
+![](http://cdn.lmark.cc/img/image-20220912162311829.png)
 
 出现**root@localhost:~#** 代表已进入Ubuntu环境，**root@localhost:~#** 的含义如下：
 
@@ -112,9 +112,9 @@ curl -fsSL "https://alist.nn.ci/install.sh" | bash -s update /root
 curl -fsSL "https://alist.nn.ci/install.sh" | bash -s uninstall /root
 ```
 
-![image-20220912164317614](http://cdn.lmark.cc/img/image-20220912164317614.png)
+![](http://cdn.lmark.cc/img/image-20220912164317614.png)
 
-![image-20220912164337004](http://cdn.lmark.cc/img/image-20220912164337004.png)
+![](http://cdn.lmark.cc/img/image-20220912164337004.png)
 
 这时候如果直接使用systemctl命令是启动不了的，因为Termux的Ubuntu根本没有这条命令， 所以，我们需要去到alist的安装目录下`/opt/alist`手动启动一下。
 
@@ -126,11 +126,11 @@ curl -fsSL "https://alist.nn.ci/install.sh" | bash -s uninstall /root
 
 至此alist搭建就完成了，现在可以享受内网上传资源的高速体验了！！！
 
-![image-20220913234712124](http://cdn.lmark.cc/img/image-20220913234712124.png)
+![](http://cdn.lmark.cc/img/image-20220913234712124.png)
 
 浅浅测试一下，上传个视频上阿里云：
 
-![image-20220913235033880](http://cdn.lmark.cc/img/image-20220913235033880.png)
+![](http://cdn.lmark.cc/img/image-20220913235033880.png)
 
 上传速度还是非常快的！
 

@@ -17,7 +17,7 @@ Hello，大家好，这里是LMark，今天来给大家分享proteus软件的仿
 
 就是这么一个功能强大的软件，成为了许多老师们上课喜欢用的软件。我们学校有老师开了一门单片机学习入门的课，就是用proteus来教学的。先来看看proteus长啥样：
 
-![image-20220129184045826](https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png)
+![](https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png)
 
 现在proteus最新版本已经到了8.13，从8.6开始，proteus就已经支持可视化设计，那有人要问了：什么是可视化设计呀? 
 
@@ -35,11 +35,11 @@ Hello，大家好，这里是LMark，今天来给大家分享proteus软件的仿
 
 首先打开软件，可以看到这样的界面，点击“New Flowchart”（我的proteus是汉化过的，汉化的方法百度上有很多，以后会讲讲）
 
-![image-20220129190530172](https://s2.loli.net/2022/01/29/AbQeq74tcDo5xyF.png)
+![](https://s2.loli.net/2022/01/29/AbQeq74tcDo5xyF.png)
 
 点击“下一步”
 
-![image-20220129190708897](https://s2.loli.net/2022/01/29/vh8HNQs1IXizbJa.png)
+![](https://s2.loli.net/2022/01/29/vh8HNQs1IXizbJa.png)
 
 然后就按照默认配置即可，最后点击“完成”即可创建。
 
@@ -49,11 +49,11 @@ Hello，大家好，这里是LMark，今天来给大家分享proteus软件的仿
 
 原理图界面，在这里可以摆放部件的位置，对部件的属性进行修改
 
-![image-20220129192304159](https://s2.loli.net/2022/01/29/Dux2p38XEOCY65k.png)
+![](https://s2.loli.net/2022/01/29/Dux2p38XEOCY65k.png)
 
 流程图界面，在这里可以进行程序的设计
 
-![image-20220129192347730](https://s2.loli.net/2022/01/29/fvbYQgB6Fz8OUC7.png)
+![](https://s2.loli.net/2022/01/29/fvbYQgB6Fz8OUC7.png)
 
 ## 3.可视化设计基本方法介绍
 

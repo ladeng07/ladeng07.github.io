@@ -26,6 +26,6 @@ k2p有很多很好用的固件，像老毛子，潘朵拉，高恪，op等等。
 
 废话不多说，首先呢我们先要去网上找k2p的op固件，可以自己编译也可以用别人编译好的。找固件可以上[恩山无线论坛 (right.com.cn)](https://www.right.com.cn/FORUM/forum.php)的斐讯专区里的k2p专区，这里有很多，随便找一个。
 
-![image-20220923005442924](http://cdn.lmark.cc/img/image-20220923005442924.png)
+![](http://cdn.lmark.cc/img/image-20220923005442924.png)
 
 需要注意的是，你的k2p的芯片的型号是什么，这个可以在路由器底部的铭牌上找到

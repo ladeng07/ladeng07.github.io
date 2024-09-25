@@ -199,7 +199,7 @@ FizzBuzz问题是一种英国学校学生经常玩的游戏。举个“FizzBuzz 
 
 在proteus可视化设计中，提供了这个模块，并且方法很多
 
-![image-20220209024231174](https://s2.loli.net/2022/02/09/xhrAPKMbS3oZCdV.png)
+![](https://s2.loli.net/2022/02/09/xhrAPKMbS3oZCdV.png)
 
 先来看看模块的方法：
 
