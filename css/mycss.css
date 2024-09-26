@@ -142,3 +142,33 @@ body::-webkit-scrollbar {
     display: flex;
     flex-wrap:nowrap;
 }
+
+/* 页脚透明 */
+#footer {
+	/* 以下代表透明度为0.7 */
+	background: rgba(255,255,255, .0);
+}
+
+
+@font-face {
+    font-family: 'LXGWWenKaiMono';
+    src: url('/css/LXGWWenKaiMonoLite-Bold.ttf') format('truetype');
+  }
+  
+  /*应用在body体里，放在第一个，font-family会按顺序使用字体族。如果第一个没找到就会找第二个，以此类推。*/
+  body {
+  font-family: LXGWWenKaiMono ,-apple-system /*BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC", "STZhongsong", "Lantinghei SC", sans-serif */
+  }
+
+/*指针样式*/
+body {
+    cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/default.cur),
+        default;
+}
+/*链接小手样式*/
+a,
+img {
+    cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/pointer.cur),
+        default;
+}
+
