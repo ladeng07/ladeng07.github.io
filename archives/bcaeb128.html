@@ -1,0 +1,415 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>基于proteus的可视化设计(2)——LED模块 | LMark的博客</title><meta name="author" content="LMark"><meta name="copyright" content="LMark"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="在上一篇文章中，介绍了proteus可视化设计的一些基本操作，今天我们来介绍第一种组件的使用——-LED控制。 1.LED模块的选择在Proteus中，一共有7种软件自身提供的模块，如下图：  这里可使用的LED模块有Breakout Perifherals里的和Grove里的，这两种LED灯都有红、黄、蓝、绿四种颜色，两种LED灯的区别在于接线方式不同     在原理图中双击Grove LED，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于proteus的可视化设计(2)——LED模块">
+<meta property="og:url" content="https://lmark.cc/archives/bcaeb128.html">
+<meta property="og:site_name" content="LMark的博客">
+<meta property="og:description" content="在上一篇文章中，介绍了proteus可视化设计的一些基本操作，今天我们来介绍第一种组件的使用——-LED控制。 1.LED模块的选择在Proteus中，一共有7种软件自身提供的模块，如下图：  这里可使用的LED模块有Breakout Perifherals里的和Grove里的，这两种LED灯都有红、黄、蓝、绿四种颜色，两种LED灯的区别在于接线方式不同     在原理图中双击Grove LED，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png">
+<meta property="article:published_time" content="2022-01-29T15:52:45.000Z">
+<meta property="article:modified_time" content="2022-04-20T15:48:33.000Z">
+<meta property="article:author" content="LMark">
+<meta property="article:tag" content="Proteus">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png"><link rel="shortcut icon" href="https://cdn.lmark.cc/1633337981355.png"><link rel="canonical" href="https://lmark.cc/archives/bcaeb128.html"><link rel="preconnect" href="https://lib.baomitu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://lib.baomitu.com/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '基于proteus的可视化设计(2)——LED模块',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-04-20 23:48:33'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/xlenco/JS-X@main/pace.js/pace.css"/><script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">45</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/01/31/8pH9kra5PqMFUj6.png')"><nav id="nav"><span id="blog-info"><a href="/" title="LMark的博客"><span class="site-name">LMark的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">基于proteus的可视化设计(2)——LED模块</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-29T15:52:45.000Z" title="发表于 2022-01-29 23:52:45">2022-01-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-04-20T15:48:33.000Z" title="更新于 2022-04-20 23:48:33">2022-04-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">992</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="基于proteus的可视化设计(2)——LED模块"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>在上一篇文章中，介绍了proteus可视化设计的一些基本操作，今天我们来介绍第一种组件的使用——-LED控制。</p>
+<h3 id="1-LED模块的选择"><a href="#1-LED模块的选择" class="headerlink" title="1.LED模块的选择"></a>1.LED模块的选择</h3><p>在Proteus中，一共有7种软件自身提供的模块，如下图：</p>
+<p><img src="https://s2.loli.net/2022/01/30/XAkIU98Rcw2zuZQ.png"></p>
+<p>这里可使用的LED模块有<strong>Breakout Perifherals</strong>里的和<strong>Grove</strong>里的，这两种LED灯都有红、黄、蓝、绿四种颜色，两种LED灯的区别在于接线方式不同</p>
+<p><img src="https://s2.loli.net/2022/01/30/AeOXCZGl7oVKQab.png" alt="Breakout Perifherals模块里的LED"></p>
+<p><img src="https://s2.loli.net/2022/01/30/1Is6pKj9vYWEVHF.png" alt="Grove模块里的LED"></p>
+<p><img src="https://s2.loli.net/2022/01/30/RFOdxBc6SjmNkbn.png" alt="Breakout Perifherals模块里的LED原理图"></p>
+<p><img src="https://s2.loli.net/2022/01/30/JkK9sgxz7NQd1Zb.png" alt="Grove模块里的LED原理图"></p>
+<p>在原理图中双击Grove LED，可以看到connector ID，这里用的是D2到D8这6个数字端口，当你有多个Grove LED时，应该设置不同的端口，否则在编译过程中会报错；双击Arduino LED可以看到，Arduino LED可以使用IO0到IO19这20个输入输出端口，比Grove LED的可用端口要多，当你的程序所需的LED灯数量比较大时，Arduino LED是不错的选择。</p>
+<p><img src="https://s2.loli.net/2022/01/30/ynhz2VmQl9siTUo.png" alt="Arduino LED的端口"><img src="https://s2.loli.net/2022/01/30/ldUFoYrzLs8MHD9.png" alt="Grove LED的端口"></p>
+<p>这里补充一点，Grove LED的四个引脚都代表什么，如图，第一和第二引脚都是数字端口，第三个引脚是VCC，第四个引脚GND也就是接地。虽然Grove LED只使用一个引脚（即图中的D2，第二个引脚为proteus自动设置的），但是在编译过程中经常会出现一种情况：当你放置了多个Grove LED模块时，即使设置了不同的数字端口，编译时仍出现端口占用的情况。解决方法很简单，只需要给被占用的Grove LED模块设置一个新的端口，然后再设置成原来的端口，就可以解决问题了。<br><img src="https://s2.loli.net/2022/01/30/WIEKw52tipmgdky.png" alt="Grove LED的引脚图"></p>
+<h3 id="2-LED模块的使用方法"><a href="#2-LED模块的使用方法" class="headerlink" title="2.LED模块的使用方法"></a>2.LED模块的使用方法</h3><p>前面介绍了两种LED模块，虽然这两种模块的来源不同，但是其方法时相同的。这里以Grove LED为例：</p>
+<p><img src="https://s2.loli.net/2022/01/30/zK4muCOks79Wrqa.png" alt="LED模块的方法"></p>
+<p><strong>on：端口输出高电平，LED发光</strong></p>
+<p><strong>off：端口输出低电平，LED熄灭</strong></p>
+<p><strong>set：设置LED发光&#x2F;熄灭；TRUE&#x3D;on</strong><br>                                           <strong>FLASE&#x3D;off</strong></p>
+<p><strong>dim：端口PWM输出,可以调光(0~255)</strong></p>
+<p><strong>toggle：LED发光状态取反</strong></p>
+<h4 id="（1）LED的闪烁"><a href="#（1）LED的闪烁" class="headerlink" title="（1）LED的闪烁"></a>（1）LED的闪烁</h4><p>只要将你所需的方法直接拖到流程图中就可以使用了，这里我们先做一个小实验，让LED灯闪烁，示例流程图如下：</p>
+<p><img src="https://s2.loli.net/2022/01/30/iuonlGYtBJDjPUK.png"></p>
+<p>编译运行一下：</p>
+<p><img src="https://s2.loli.net/2022/01/30/QN94numX5UoHTIC.png"><img src="https://s2.loli.net/2022/01/30/cS4GhwI75RKO36o.png"></p>
+<p>可以看到，LED灯就开始每秒闪烁一次了，是不是很简单？接下来我们来做一下键控LED灯，</p>
+<h4 id="（2）键控LED"><a href="#（2）键控LED" class="headerlink" title="（2）键控LED"></a>（2）键控LED</h4><p>键控LED就是<strong>按键控制LED灯，按键按下时，对应LED发光，按键松开后LED灯熄灭。</strong>要用到的按钮模块选择Grove里的按钮模块，</p>
+<p><img src="https://s2.loli.net/2022/01/30/zjHIZhb4o12Nuqf.png"></p>
+<p>原理图：</p>
+<p><img src="https://s2.loli.net/2022/01/30/1kjAqTJoDCYaWIg.png"></p>
+<p>当按键按下时，端口D2输入高电平；当按键松开时，端口D2输入低电平。按键模块只有一个方法，即判断按键是否被按下，键控LED流程图如下：</p>
+<p><img src="https://s2.loli.net/2022/01/30/ySDrvAH4sQ1lEVN.png"></p>
+<p>当按键按下时，LED灯会一直亮着；当按键松开时，LED灯熄灭。从而实现键控LED效果</p>
+<p><img src="https://s2.loli.net/2022/01/30/nsYmJzD4Q1lF7ea.png"></p>
+<h4 id="（3）-流水灯控制"><a href="#（3）-流水灯控制" class="headerlink" title="（3） 流水灯控制"></a>（3） 流水灯控制</h4><p><strong>LED流水灯控制</strong>实际上就是多个LED发光二极管依次一个一个发光，每个发光管点亮约1秒。这种控制规律称为“流水灯”控制。这里以四个LED灯为例，给大家做一个流水灯的程序，效果图。</p>
+<p><img src="https://s2.loli.net/2022/02/01/y58cPRfqndoG6t1.png" alt="四个LED的流水灯控制"></p>
+<p>流程图<strong>SETUP部分：</strong></p>
+<p><img src="https://s2.loli.net/2022/02/01/n5rpzVo6Cimj9kB.png"></p>
+<p>流程图<strong>LOOP部分：</strong></p>
+<p><img src="https://s2.loli.net/2022/02/01/8jzBsh6Mn7oKqgZ.png" alt="主程序"></p>
+<p>子程序：</p>
+<p><img src="https://s2.loli.net/2022/02/01/wauy4P8qvRgYNMI.png" alt="子程序"></p>
+<p>这个流水灯的逻辑很简单，首先先是SETUP时初始化每个LED灯，即把状态设置成OFF，然后每个子程序负责点亮一个LED，熄灭剩下三个LED。这样子就实现了流水灯控制。</p>
+<h3 id="3-LED模块使用实战"><a href="#3-LED模块使用实战" class="headerlink" title="3.LED模块使用实战"></a>3.LED模块使用实战</h3><p>前面两部分已经详细的介绍了LED的一些用法，相信看到这里的各位已经对LED的使用完全掌握了，现在给大家布置一个小作业：<strong>实现简易红绿灯</strong>，具体要求如下：</p>
+<p><img src="https://s2.loli.net/2022/02/01/dkSJ5OG3m9qPg6t.png" alt="第一个作业要求"></p>
+<p>感兴趣可以做一下，底下我贴一下我的流程图：</p>
+<p><img src="https://s2.loli.net/2022/02/01/SrBLJEIxuedlQX3.png" alt="流程图"></p>
+<p>原理图：</p>
+<p><img src="https://s2.loli.net/2022/02/01/3I6ufamH7CglGbF.png" alt="原理图"></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Proteus/">Proteus</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://lib.baomitu.com/butterfly-extsrc/1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/butterfly-extsrc/1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/archives/cb089c0e.html" title="基于proteus的可视化设计(3)——显示屏控制"><img class="cover" src="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">基于proteus的可视化设计(3)——显示屏控制</div></div></a></div><div class="next-post pull-right"><a href="/archives/6a55821b.html" title="基于proteus的可视化设计(1)——基础介绍"><img class="cover" src="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">基于proteus的可视化设计(1)——基础介绍</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/archives/6a55821b.html" title="基于proteus的可视化设计(1)——基础介绍"><img class="cover" src="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-29</div><div class="title">基于proteus的可视化设计(1)——基础介绍</div></div></a></div><div><a href="/archives/f26766a0.html" title="基于proteus的可视化设计(4)——电机控制"><img class="cover" src="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-11</div><div class="title">基于proteus的可视化设计(4)——电机控制</div></div></a></div><div><a href="/archives/cb089c0e.html" title="基于proteus的可视化设计(3)——显示屏控制"><img class="cover" src="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-01</div><div class="title">基于proteus的可视化设计(3)——显示屏控制</div></div></a></div><div><a href="/archives/1244c55c.html" title="基于proteus的可视化设计(5)——传感器"><img class="cover" src="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-13</div><div class="title">基于proteus的可视化设计(5)——传感器</div></div></a></div><div><a href="/archives/8540ce62.html" title="基于proteus的可视化设计(6)——一些自己写的程序介绍"><img class="cover" src="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-20</div><div class="title">基于proteus的可视化设计(6)——一些自己写的程序介绍</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LMark</div><div class="author-info__description">一个喜欢折腾有意思的技术的人，但是记性不好，所以博客主要记录曾经掌握的知识，方便日后已经忘记的我回来复习。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">45</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/ladeng07"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ladeng07" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2312936963@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/34625132" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fas fa-tv"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-LED%E6%A8%A1%E5%9D%97%E7%9A%84%E9%80%89%E6%8B%A9"><span class="toc-number">1.</span> <span class="toc-text">1.LED模块的选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-LED%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">2.LED模块的使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%881%EF%BC%89LED%E7%9A%84%E9%97%AA%E7%83%81"><span class="toc-number">2.1.</span> <span class="toc-text">（1）LED的闪烁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E9%94%AE%E6%8E%A7LED"><span class="toc-number">2.2.</span> <span class="toc-text">（2）键控LED</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%883%EF%BC%89-%E6%B5%81%E6%B0%B4%E7%81%AF%E6%8E%A7%E5%88%B6"><span class="toc-number">2.3.</span> <span class="toc-text">（3） 流水灯控制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-LED%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8%E5%AE%9E%E6%88%98"><span class="toc-number">3.</span> <span class="toc-text">3.LED模块使用实战</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/archives/febc3415.html" title="一次给龙芯旧世界升级内核的失败经历"><img src="https://cdn.lmark.cc/img/300147_origin_20220531_195551.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一次给龙芯旧世界升级内核的失败经历"/></a><div class="content"><a class="title" href="/archives/febc3415.html" title="一次给龙芯旧世界升级内核的失败经历">一次给龙芯旧世界升级内核的失败经历</a><time datetime="2024-03-03T15:47:36.000Z" title="发表于 2024-03-03 23:47:36">2024-03-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/bf37dab6.html" title="在Loongarch下编译Remmina 1.4.5版本"><img src="https://cdn.lmark.cc/img/300172_origin_20220531_200244.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在Loongarch下编译Remmina 1.4.5版本"/></a><div class="content"><a class="title" href="/archives/bf37dab6.html" title="在Loongarch下编译Remmina 1.4.5版本">在Loongarch下编译Remmina 1.4.5版本</a><time datetime="2024-02-29T13:04:38.000Z" title="发表于 2024-02-29 21:04:38">2024-02-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/a0885322.html" title="关于Django以前忽略的一些东西"><img src="http://cdn.lmark.cc/img/8KTbdUZovNG1DgH.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于Django以前忽略的一些东西"/></a><div class="content"><a class="title" href="/archives/a0885322.html" title="关于Django以前忽略的一些东西">关于Django以前忽略的一些东西</a><time datetime="2024-02-27T03:49:26.000Z" title="发表于 2024-02-27 11:49:26">2024-02-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/b280ab86.html" title="记一次手相简单学习"><img src="https://cdn.lmark.cc/img/300227_origin_20220531_201506.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记一次手相简单学习"/></a><div class="content"><a class="title" href="/archives/b280ab86.html" title="记一次手相简单学习">记一次手相简单学习</a><time datetime="2023-11-11T08:57:54.000Z" title="发表于 2023-11-11 16:57:54">2023-11-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/ea66db6.html" title="为Loongarch移植thunderbird78版本"><img src="https://cdn.lmark.cc/img/300138_origin_20220531_195238.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="为Loongarch移植thunderbird78版本"/></a><div class="content"><a class="title" href="/archives/ea66db6.html" title="为Loongarch移植thunderbird78版本">为Loongarch移植thunderbird78版本</a><time datetime="2023-10-22T17:45:57.000Z" title="发表于 2023-10-23 01:45:57">2023-10-23</time></div></div></div></div></div></div></main><footer id="footer" style="background: #fccce6"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By LMark</div><div class="footer_custom_text"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://beian.miit.gov.cn/"><span>桂ICP备2022004639号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/utils.min.js"></script><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/main.min.js"></script><script src="https://lib.baomitu.com/medium-zoom/1.1.0/medium-zoom.min.js"></script><script src="https://lib.baomitu.com/instant.page/5.2.0/instantpage.min.js" type="module"></script><script src="https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.lmark.cc/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.lmark.cc/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://lib.baomitu.com/twikoo/1.6.31/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.lmark.cc/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://lib.baomitu.com/twikoo/1.6.31/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><div class="aplayer no-destroy" data-id="7509532357" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-order="random"> </div><link rel="stylesheet" href="https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://lib.baomitu.com/butterfly-extsrc/1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax src="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("https://gitcalendar.lmark.cc/api?ladeng07",['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c'],'ladeng07')
+    }
+  </script><!-- hexo injector body_end end --></body></html>

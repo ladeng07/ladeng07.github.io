@@ -1,0 +1,408 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>关于Django以前忽略的一些东西 | LMark的博客</title><meta name="author" content="LMark"><meta name="copyright" content="LMark"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Django直接使用sql查询官方文档：执行原生 SQL 查询 | Django 文档 | Django (djangoproject.com) 将查询字段映射为模型字段¶raw() 字段将查询语句中的字段映射至模型中的字段。 查询语句中的字段排序并不重要。换而言之，以下两种查询是一致的: 123&gt;&gt;&gt; Person.objects.raw(&#x27;SELECT id, fi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Django以前忽略的一些东西">
+<meta property="og:url" content="https://lmark.cc/archives/a0885322.html">
+<meta property="og:site_name" content="LMark的博客">
+<meta property="og:description" content="Django直接使用sql查询官方文档：执行原生 SQL 查询 | Django 文档 | Django (djangoproject.com) 将查询字段映射为模型字段¶raw() 字段将查询语句中的字段映射至模型中的字段。 查询语句中的字段排序并不重要。换而言之，以下两种查询是一致的: 123&gt;&gt;&gt; Person.objects.raw(&#x27;SELECT id, fi">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://cdn.lmark.cc/img/8KTbdUZovNG1DgH.jpg">
+<meta property="article:published_time" content="2024-02-27T03:49:26.000Z">
+<meta property="article:modified_time" content="2024-02-27T07:48:09.000Z">
+<meta property="article:author" content="LMark">
+<meta property="article:tag" content="Django">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cdn.lmark.cc/img/8KTbdUZovNG1DgH.jpg"><link rel="shortcut icon" href="https://cdn.lmark.cc/1633337981355.png"><link rel="canonical" href="https://lmark.cc/archives/a0885322.html"><link rel="preconnect" href="https://lib.baomitu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://lib.baomitu.com/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '关于Django以前忽略的一些东西',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-02-27 15:48:09'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/xlenco/JS-X@main/pace.js/pace.css"/><script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">45</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('http://cdn.lmark.cc/img/sFGpRjcrt2vNXoh.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="LMark的博客"><span class="site-name">LMark的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">关于Django以前忽略的一些东西</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-02-27T03:49:26.000Z" title="发表于 2024-02-27 11:49:26">2024-02-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-02-27T07:48:09.000Z" title="更新于 2024-02-27 15:48:09">2024-02-27</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">736</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="关于Django以前忽略的一些东西"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Django直接使用sql查询"><a href="#Django直接使用sql查询" class="headerlink" title="Django直接使用sql查询"></a>Django直接使用sql查询</h2><p>官方文档：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.djangoproject.com/zh-hans/4.1/topics/db/sql/">执行原生 SQL 查询 | Django 文档 | Django (djangoproject.com)</a></p>
+<h3 id="将查询字段映射为模型字段¶"><a href="#将查询字段映射为模型字段¶" class="headerlink" title="将查询字段映射为模型字段¶"></a>将查询字段映射为模型字段<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.djangoproject.com/zh-hans/4.1/topics/db/sql/#mapping-query-fields-to-model-fields">¶</a></h3><p><code>raw()</code> 字段将查询语句中的字段映射至模型中的字段。</p>
+<p>查询语句中的字段排序并不重要。换而言之，以下两种查询是一致的:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>Person.objects.raw(<span class="string">&#x27;SELECT id, first_name, last_name, birth_date FROM myapp_person&#x27;</span>)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Person.objects.raw(<span class="string">&#x27;SELECT last_name, birth_date, first_name, id FROM myapp_person&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="直接执行自定义-SQL¶"><a href="#直接执行自定义-SQL¶" class="headerlink" title="直接执行自定义 SQL¶"></a>直接执行自定义 SQL<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.djangoproject.com/zh-hans/4.1/topics/db/sql/#executing-custom-sql-directly">¶</a></h3><p>有时候，甚至 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.djangoproject.com/zh-hans/4.1/topics/db/sql/#django.db.models.Manager.raw"><code>Manager.raw()</code></a> 都无法满足需求：你可能要执行不明确映射至模型的查询语句，或者就是直接执行 <code>UPDATE</code>， <code>INSERT</code> 或 <code>DELETE</code> 语句。</p>
+<p>这些情况下，你总是能直接访问数据库，完全绕过模型层。</p>
+<p>对象 <code>django.db.connection</code> 代表默认数据库连接。要使用这个数据库连接，调用 <code>connection.cursor()</code> 来获取一个指针对象。然后，调用 <code>cursor.execute(sql, [params])</code> 来执行该 SQL 和 <code>cursor.fetchone()</code>，或 <code>cursor.fetchall()</code> 获取结果数据。</p>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from django.db import connection</span><br><span class="line"></span><br><span class="line">def my_custom_sql(self):</span><br><span class="line">    with connection.cursor() as cursor:</span><br><span class="line">        cursor.execute(&quot;UPDATE bar SET foo = 1 WHERE baz = %s&quot;, [self.baz])</span><br><span class="line">        cursor.execute(&quot;SELECT foo FROM bar WHERE baz = %s&quot;, [self.baz])</span><br><span class="line">        row = cursor.fetchone()</span><br><span class="line"></span><br><span class="line">    return row</span><br></pre></td></tr></table></figure>
+
+<p>要避免 SQL 注入，你绝对不能在 SQL 字符串中用引号包裹 <code>%s</code> 占位符。</p>
+<p>注意，若要在查询中包含文本的百分号，你需要在传入参数使用两个百分号:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cursor.execute(&quot;SELECT foo FROM bar WHERE baz = &#x27;30%&#x27;&quot;)</span><br><span class="line">cursor.execute(&quot;SELECT foo FROM bar WHERE baz = &#x27;30%%&#x27; AND id = %s&quot;, [self.id])</span><br></pre></td></tr></table></figure>
+
+<p>若你同时使用 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.djangoproject.com/zh-hans/4.1/topics/db/multi-db/">不止一个数据库</a>，你可以使用 <code>django.db.connections</code> 获取指定数据库的连接（和指针）。 <code>django.db.connections</code> 是一个类字典对象，它允许你通过连接别名获取指定连接:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from django.db import connections</span><br><span class="line">with connections[&#x27;my_db_alias&#x27;].cursor() as cursor:</span><br><span class="line">    # Your code here...</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Queryset的缓存行为"><a href="#Queryset的缓存行为" class="headerlink" title="Queryset的缓存行为"></a>Queryset的缓存行为</h2><p>Queryset是有缓存的，但也不是一直都缓存，得遍历过一遍之后才会有缓存。</p>
+<p>官方文档：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.djangoproject.com/zh-hans/4.1/topics/db/queries/#caching-and-querysets">执行查询 | Django 文档 | Django (djangoproject.com)</a></p>
+<h4 id="当-QuerySet-未被缓存时¶"><a href="#当-QuerySet-未被缓存时¶" class="headerlink" title="当 QuerySet 未被缓存时¶"></a>当 <code>QuerySet</code> 未被缓存时<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.djangoproject.com/zh-hans/4.1/topics/db/queries/#when-querysets-are-not-cached">¶</a></h4><p>查询结果集并不总是缓存结果。当仅计算查询结果集的 <em>部分</em> 时，会校验缓存，若没有填充缓存，则后续查询返回的项目不会被缓存。特别地说，这意味着使用数组切片或索引的 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.djangoproject.com/zh-hans/4.1/topics/db/queries/#limiting-querysets">限制查询结果集</a> 不会填充缓存。</p>
+<p>例如，重复的从某个查询结果集对象中取指定索引的对象会每次都查询数据库:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>queryset = Entry.objects.<span class="built_in">all</span>()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(queryset[<span class="number">5</span>]) <span class="comment"># Queries the database</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(queryset[<span class="number">5</span>]) <span class="comment"># Queries the database again</span></span><br></pre></td></tr></table></figure>
+
+<p>不过，若全部查询结果集已被检出，就会去检查缓存:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>queryset = Entry.objects.<span class="built_in">all</span>()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[entry <span class="keyword">for</span> entry <span class="keyword">in</span> queryset] <span class="comment"># Queries the database</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(queryset[<span class="number">5</span>]) <span class="comment"># Uses cache</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(queryset[<span class="number">5</span>]) <span class="comment"># Uses cache</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Django使用test"><a href="#Django使用test" class="headerlink" title="Django使用test"></a>Django使用test</h2><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.djangoproject.com/zh-hans/4.1/topics/testing/overview/">编写并运行测试 | Django 文档 | Django (djangoproject.com)</a></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Django/">Django</a><a class="post-meta__tags" href="/tags/Python/">Python</a></div><div class="post_share"><div class="social-share" data-image="http://cdn.lmark.cc/img/8KTbdUZovNG1DgH.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://lib.baomitu.com/butterfly-extsrc/1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/butterfly-extsrc/1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/archives/bf37dab6.html" title="在Loongarch下编译Remmina 1.4.5版本"><img class="cover" src="https://cdn.lmark.cc/img/300172_origin_20220531_200244.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">在Loongarch下编译Remmina 1.4.5版本</div></div></a></div><div class="next-post pull-right"><a href="/archives/b280ab86.html" title="记一次手相简单学习"><img class="cover" src="https://cdn.lmark.cc/img/300227_origin_20220531_201506.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">记一次手相简单学习</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/archives/1b50bad4.html" title="Django 报错 &#39;WSGIRequest&#39; object has no attribute &#39;data&#39; 的一个解决方法"><img class="cover" src="https://cdn.lmark.cc/img/300208_origin_20220531_200914.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-02</div><div class="title">Django 报错 &#39;WSGIRequest&#39; object has no attribute &#39;data&#39; 的一个解决方法</div></div></a></div><div><a href="/archives/2514f762.html" title="DjangoAdmin后台collectstatic不生效问题"><img class="cover" src="https://cdn.lmark.cc/img/300216_origin_20220531_201214.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-01</div><div class="title">DjangoAdmin后台collectstatic不生效问题</div></div></a></div><div><a href="/archives/cec14bfd.html" title="基于uwsgi+nginx+centos的Django项目部署经历"><img class="cover" src="https://s2.loli.net/2022/04/05/8JTU56ek9YmLZF2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-27</div><div class="title">基于uwsgi+nginx+centos的Django项目部署经历</div></div></a></div><div><a href="/archives/dc57b028.html" title="HackGame2022部分题解（签到——微积分小练习）"><img class="cover" src="https://cdn.lmark.cc/img/300234_origin_20220531_201611.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-29</div><div class="title">HackGame2022部分题解（签到——微积分小练习）</div></div></a></div><div><a href="/archives/875c09b2.html" title="校园网安全问题"><img class="cover" src="https://cdn.lmark.cc/img/300141_origin_20220531_195311.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-25</div><div class="title">校园网安全问题</div></div></a></div><div><a href="/archives/2fe60316.html" title="用pyinstaller在64位电脑上打包32位exe"><img class="cover" src="https://s2.loli.net/2022/04/05/CzxFZsMLiYdVH4l.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-10</div><div class="title">用pyinstaller在64位电脑上打包32位exe</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LMark</div><div class="author-info__description">一个喜欢折腾有意思的技术的人，但是记性不好，所以博客主要记录曾经掌握的知识，方便日后已经忘记的我回来复习。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">45</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/ladeng07"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ladeng07" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2312936963@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/34625132" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fas fa-tv"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Django%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8sql%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.</span> <span class="toc-text">Django直接使用sql查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%86%E6%9F%A5%E8%AF%A2%E5%AD%97%E6%AE%B5%E6%98%A0%E5%B0%84%E4%B8%BA%E6%A8%A1%E5%9E%8B%E5%AD%97%E6%AE%B5%C2%B6"><span class="toc-number">1.1.</span> <span class="toc-text">将查询字段映射为模型字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E6%89%A7%E8%A1%8C%E8%87%AA%E5%AE%9A%E4%B9%89-SQL%C2%B6"><span class="toc-number">1.2.</span> <span class="toc-text">直接执行自定义 SQL</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Queryset%E7%9A%84%E7%BC%93%E5%AD%98%E8%A1%8C%E4%B8%BA"><span class="toc-number">2.</span> <span class="toc-text">Queryset的缓存行为</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%93-QuerySet-%E6%9C%AA%E8%A2%AB%E7%BC%93%E5%AD%98%E6%97%B6%C2%B6"><span class="toc-number">2.0.1.</span> <span class="toc-text">当 QuerySet 未被缓存时</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Django%E4%BD%BF%E7%94%A8test"><span class="toc-number">3.</span> <span class="toc-text">Django使用test</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/archives/febc3415.html" title="一次给龙芯旧世界升级内核的失败经历"><img src="https://cdn.lmark.cc/img/300147_origin_20220531_195551.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一次给龙芯旧世界升级内核的失败经历"/></a><div class="content"><a class="title" href="/archives/febc3415.html" title="一次给龙芯旧世界升级内核的失败经历">一次给龙芯旧世界升级内核的失败经历</a><time datetime="2024-03-03T15:47:36.000Z" title="发表于 2024-03-03 23:47:36">2024-03-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/bf37dab6.html" title="在Loongarch下编译Remmina 1.4.5版本"><img src="https://cdn.lmark.cc/img/300172_origin_20220531_200244.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在Loongarch下编译Remmina 1.4.5版本"/></a><div class="content"><a class="title" href="/archives/bf37dab6.html" title="在Loongarch下编译Remmina 1.4.5版本">在Loongarch下编译Remmina 1.4.5版本</a><time datetime="2024-02-29T13:04:38.000Z" title="发表于 2024-02-29 21:04:38">2024-02-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/a0885322.html" title="关于Django以前忽略的一些东西"><img src="http://cdn.lmark.cc/img/8KTbdUZovNG1DgH.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于Django以前忽略的一些东西"/></a><div class="content"><a class="title" href="/archives/a0885322.html" title="关于Django以前忽略的一些东西">关于Django以前忽略的一些东西</a><time datetime="2024-02-27T03:49:26.000Z" title="发表于 2024-02-27 11:49:26">2024-02-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/b280ab86.html" title="记一次手相简单学习"><img src="https://cdn.lmark.cc/img/300227_origin_20220531_201506.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记一次手相简单学习"/></a><div class="content"><a class="title" href="/archives/b280ab86.html" title="记一次手相简单学习">记一次手相简单学习</a><time datetime="2023-11-11T08:57:54.000Z" title="发表于 2023-11-11 16:57:54">2023-11-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/ea66db6.html" title="为Loongarch移植thunderbird78版本"><img src="https://cdn.lmark.cc/img/300138_origin_20220531_195238.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="为Loongarch移植thunderbird78版本"/></a><div class="content"><a class="title" href="/archives/ea66db6.html" title="为Loongarch移植thunderbird78版本">为Loongarch移植thunderbird78版本</a><time datetime="2023-10-22T17:45:57.000Z" title="发表于 2023-10-23 01:45:57">2023-10-23</time></div></div></div></div></div></div></main><footer id="footer" style="background: #fccce6"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By LMark</div><div class="footer_custom_text"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://beian.miit.gov.cn/"><span>桂ICP备2022004639号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/utils.min.js"></script><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/main.min.js"></script><script src="https://lib.baomitu.com/medium-zoom/1.1.0/medium-zoom.min.js"></script><script src="https://lib.baomitu.com/instant.page/5.2.0/instantpage.min.js" type="module"></script><script src="https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.lmark.cc/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.lmark.cc/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://lib.baomitu.com/twikoo/1.6.31/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.lmark.cc/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://lib.baomitu.com/twikoo/1.6.31/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><div class="aplayer no-destroy" data-id="7509532357" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-order="random"> </div><link rel="stylesheet" href="https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://lib.baomitu.com/butterfly-extsrc/1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax src="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("https://gitcalendar.lmark.cc/api?ladeng07",['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c'],'ladeng07')
+    }
+  </script><!-- hexo injector body_end end --></body></html>
