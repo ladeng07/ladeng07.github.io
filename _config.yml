@@ -114,8 +114,8 @@ deploy:
 search:
   path: search.xml
   field: post
-  format: html
-  limit: 10000
+  content: true
+  template: ./source/css/search.xml
 
 
 sitemap:
