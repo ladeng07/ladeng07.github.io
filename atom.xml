@@ -83,9 +83,9 @@
     
     <category term="Loongarch" scheme="https://lmark.cc/tags/Loongarch/"/>
     
-    <category term="编译" scheme="https://lmark.cc/tags/%E7%BC%96%E8%AF%91/"/>
-    
     <category term="Linux内核" scheme="https://lmark.cc/tags/Linux%E5%86%85%E6%A0%B8/"/>
+    
+    <category term="编译" scheme="https://lmark.cc/tags/%E7%BC%96%E8%AF%91/"/>
     
   </entry>
   
