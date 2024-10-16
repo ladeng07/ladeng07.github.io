@@ -6,7 +6,7 @@
   <link href="https://lmark.cc/atom.xml" rel="self"/>
   
   <link href="https://lmark.cc/"/>
-  <updated>2024-09-27T07:15:35.241Z</updated>
+  <updated>2024-10-16T07:47:38.714Z</updated>
   <id>https://lmark.cc/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用脚本自动更新实验室电脑IP到cloudflare域名</title>
+    <link href="https://lmark.cc/archives/efb03d74.html"/>
+    <id>https://lmark.cc/archives/efb03d74.html</id>
+    <published>2024-10-09T08:14:27.000Z</published>
+    <updated>2024-10-16T07:47:38.714Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Cloudflare" scheme="https://lmark.cc/tags/Cloudflare/"/>
+    
+  </entry>
   
   <entry>
     <title>一次给龙芯旧世界升级内核的失败经历</title>
@@ -500,35 +523,6 @@
     <category term="Linux" scheme="https://lmark.cc/tags/Linux/"/>
     
     <category term="openwrt" scheme="https://lmark.cc/tags/openwrt/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安卓Termux安装ubuntu+alist实现文件中继服务</title>
-    <link href="https://lmark.cc/archives/b2e71f46.html"/>
-    <id>https://lmark.cc/archives/b2e71f46.html</id>
-    <published>2022-09-11T17:54:40.000Z</published>
-    <updated>2024-09-27T07:15:35.239Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Linux" scheme="https://lmark.cc/tags/Linux/"/>
-    
-    <category term="alist" scheme="https://lmark.cc/tags/alist/"/>
-    
-    <category term="Termux" scheme="https://lmark.cc/tags/Termux/"/>
-    
-    <category term="Ubuntu" scheme="https://lmark.cc/tags/Ubuntu/"/>
     
   </entry>
   
