@@ -5,6 +5,27 @@
     
     <entry>
       
+        <title>Windows11挂载群晖webdav到本地</title>
+      
+      <link href="/archives/ea042a0d.html"/>
+      <url>/archives/ea042a0d.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在群晖里启动了webdav server之后，windows11上添加会出现<code>0x80070043 找不到网络名</code></p><p><img src="https://cdn.lmark.cc/img/image-20241016160808887.png" alt="image-20241016160808887"></p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ul><li>确认webdav服务正确打开，端口无冲突。</li><li>windows11注册表的<code>BasicAuthLevel</code>设置为2</li></ul><p>具体操作</p><ol><li>使用<code>win+R</code>，输入<code>regedit</code>打开注册表</li><li>找到<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters</code>键</li><li>找到<code>BasicAuthLevel</code>的项</li><li>修改其值为2</li></ol><p><img src="https://cdn.lmark.cc/img/image-20241016161746210.png" alt="image-20241016161746210"></p><ol start="5"><li>如果不存在这个键，新建一个名为<code>BasicAuthLevel</code>，类型为<code>DWORD</code>的值，设置为2</li><li>重启</li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      
         <title>使用脚本自动更新实验室电脑IP到cloudflare域名</title>
       
       <link href="/archives/efb03d74.html"/>

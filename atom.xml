@@ -6,7 +6,7 @@
   <link href="https://lmark.cc/atom.xml" rel="self"/>
   
   <link href="https://lmark.cc/"/>
-  <updated>2024-10-16T07:47:38.714Z</updated>
+  <updated>2024-10-16T08:23:43.588Z</updated>
   <id>https://lmark.cc/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Windows11挂载群晖webdav到本地</title>
+    <link href="https://lmark.cc/archives/ea042a0d.html"/>
+    <id>https://lmark.cc/archives/ea042a0d.html</id>
+    <published>2024-10-16T07:50:57.000Z</published>
+    <updated>2024-10-16T08:23:43.588Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;在群晖里启动了webdav server之后，windows11上添加会出现&lt;code&gt;0x80070043</summary>
+        
+      
+    
+    
+    
+    
+    <category term="windows" scheme="https://lmark.cc/tags/windows/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用脚本自动更新实验室电脑IP到cloudflare域名</title>
     <link href="https://lmark.cc/archives/efb03d74.html"/>
     <id>https://lmark.cc/archives/efb03d74.html</id>
     <published>2024-10-09T08:14:27.000Z</published>
-    <updated>2024-10-16T07:47:38.714Z</updated>
+    <updated>2024-10-16T07:47:53.963Z</updated>
     
     
       
@@ -498,31 +521,6 @@
     <category term="Openwrt" scheme="https://lmark.cc/tags/Openwrt/"/>
     
     <category term="路由器" scheme="https://lmark.cc/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Windows(OpenSSH)实现私钥免密码连接Linux(DropbearSSH)服务器</title>
-    <link href="https://lmark.cc/archives/e74a4c2c.html"/>
-    <id>https://lmark.cc/archives/e74a4c2c.html</id>
-    <published>2022-09-14T18:07:02.000Z</published>
-    <updated>2024-09-27T07:15:35.239Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Linux" scheme="https://lmark.cc/tags/Linux/"/>
-    
-    <category term="openwrt" scheme="https://lmark.cc/tags/openwrt/"/>
     
   </entry>
   
