@@ -6,7 +6,7 @@
   <link href="https://lmark.cc/atom.xml" rel="self"/>
   
   <link href="https://lmark.cc/"/>
-  <updated>2024-10-16T17:51:25.660Z</updated>
+  <updated>2024-10-16T19:45:55.033Z</updated>
   <id>https://lmark.cc/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lmark.cc/archives/ea042a0d.html"/>
     <id>https://lmark.cc/archives/ea042a0d.html</id>
     <published>2024-10-16T07:50:57.000Z</published>
-    <updated>2024-10-16T17:51:25.660Z</updated>
+    <updated>2024-10-16T19:45:55.033Z</updated>
     
     
       
@@ -44,7 +44,7 @@
     <link href="https://lmark.cc/archives/efb03d74.html"/>
     <id>https://lmark.cc/archives/efb03d74.html</id>
     <published>2024-10-09T08:14:27.000Z</published>
-    <updated>2024-10-16T07:47:53.963Z</updated>
+    <updated>2024-10-16T19:46:13.085Z</updated>
     
     
       
@@ -83,9 +83,9 @@
     
     <category term="Loongarch" scheme="https://lmark.cc/tags/Loongarch/"/>
     
-    <category term="Linux内核" scheme="https://lmark.cc/tags/Linux%E5%86%85%E6%A0%B8/"/>
-    
     <category term="编译" scheme="https://lmark.cc/tags/%E7%BC%96%E8%AF%91/"/>
+    
+    <category term="Linux内核" scheme="https://lmark.cc/tags/Linux%E5%86%85%E6%A0%B8/"/>
     
   </entry>
   
