@@ -42,6 +42,6 @@ function removeBlur(){
     bk.style.filter = 'blur(0)'
     isScrolling = false
 }
-
+    
 document.addEventListener('scroll', debounce(removeBlur, 500))
 document.addEventListener('scroll', throttle(handlerScroll, 400))
