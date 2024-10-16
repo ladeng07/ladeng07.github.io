@@ -2,6 +2,7 @@
 title: Windows11挂载群晖webdav到本地
 cover: 'https://cdn.lmark.cc/img/319678_origin_20220628_092530.jpg'
 top_img: 'https://cdn.lmark.cc/img/319678_origin_20220628_092530.jpg'
+backgroud: "https://cdn.lmark.cc/img/319678_origin_20220628_092530.jpg"
 tags: windows
 abbrlink: ea042a0d
 date: 2024-10-16 15:50:57

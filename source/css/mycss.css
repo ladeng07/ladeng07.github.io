@@ -199,3 +199,17 @@ img {
     top: -3px;  /* 向上移动10像素 */
     left: -10px; /* 向左移动10像素 */
   }
+
+#page-header {
+/* background-attachment: fixed; */
+background-color: transparent !important;
+background-image: unset !important
+}
+
+#page-header:not(.not-top-img):before{
+    background: none !important;
+}
+#web_bg{
+    transition: filter 0.3s;
+}
+
