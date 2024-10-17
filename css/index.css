@@ -1610,6 +1610,12 @@ img:not([src]) {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
 }
+img[data-lazy-src]:not(.loaded) {
+  filter: blur(8px) brightness(1);
+}
+img[data-lazy-src].error {
+  filter: none;
+}
 .img-alt {
   margin: -10px 0 10px;
   color: #858585;
@@ -2191,7 +2197,7 @@ figure.highlight pre .javascript .function {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
-  font-size: 0.6rem;
+  font-size: 0.9rem;
   line-height: 1;
   margin-bottom: 12px;
   display: -webkit-box;
@@ -2316,7 +2322,6 @@ figure.highlight pre .javascript .function {
   justify-content: space-between;
 }
 #icat-about-page .Personal-Introduction .PI-box-left {
-  margin-top: 4.25rem;
   color: var(--icat-fontcolor);
   font-weight: 400;
   width: 60%;
@@ -3515,7 +3520,7 @@ figure.highlight pre .javascript .function {
   }
 }
 .layout.hide-aside {
-  max-width: 1000px;
+  max-width: 1300px;
 }
 @media screen and (min-width: 2000px) {
   .layout.hide-aside {
