@@ -2162,10 +2162,10 @@ figure.highlight pre .javascript .function {
 }
 #icat-about-page .about-layout {
   border-radius: 12px;
-  background: var(--icat-card-bg);
+  background: #fff;
   border: 1px solid #e3e8f7;
-  -webkit-box-shadow: var(--icat-shadow-border);
-  box-shadow: var(--icat-shadow-border);
+  -webkit-box-shadow: 0 8px 16px -4px rgba(44,45,48,0.047);
+  box-shadow: 0 8px 16px -4px rgba(44,45,48,0.047);
   position: relative;
   padding: 1rem 2rem;
   overflow: hidden;
@@ -2176,12 +2176,12 @@ figure.highlight pre .javascript .function {
   transition: 0.6s;
 }
 #icat-about-page .about-layout:hover {
-  -webkit-box-shadow: var(--icat-shadow-blue);
-  box-shadow: var(--icat-shadow-blue);
-  border-color: var(--icat-blue);
+  -webkit-box-shadow: 0 8px 12px -3px rgba(40,109,234,0.2);
+  box-shadow: 0 8px 12px -3px rgba(40,109,234,0.2);
+  border-color: #425aef;
 }
 #icat-about-page .about-layout:hover .title {
-  color: var(--icat-fontcolor);
+  color: #363636;
 }
 #icat-about-page .title {
   font-size: 36px;
@@ -2208,14 +2208,14 @@ figure.highlight pre .javascript .function {
   display: flex;
 }
 #icat-about-page .tips-bottom {
-  color: var(--icat-gray);
+  color: #999;
   font-size: 14px;
   position: absolute;
   bottom: 1rem;
   left: 2rem;
 }
 #icat-about-page .tips-bottom a {
-  color: var(--icat-gray);
+  color: #999;
   font-weight: 600;
 }
 #icat-about-page .h1-box {
@@ -2271,7 +2271,7 @@ figure.highlight pre .javascript .function {
   line-height: 1.1;
   margin: 0.5rem 0;
   letter-spacing: 0.2rem;
-  color: var(--icat-fontcolor);
+  color: #363636;
 }
 #icat-about-page .h1-box .box-bottom {
   padding: 1.25rem 2rem;
@@ -2293,19 +2293,19 @@ figure.highlight pre .javascript .function {
 }
 #icat-about-page .btn-layout {
   padding: 6px 18px;
-  background: var(--icat-background);
+  background: #f7f9fe;
   margin: 0 18px 18px 0;
   border: 1px solid #e3e8f7;
   border-radius: 8px;
-  -webkit-box-shadow: var(--icat-shadow-border);
-  box-shadow: var(--icat-shadow-border);
+  -webkit-box-shadow: 0 8px 16px -4px rgba(44,45,48,0.047);
+  box-shadow: 0 8px 16px -4px rgba(44,45,48,0.047);
 }
 #icat-about-page .btn-layout:hover {
-  -webkit-box-shadow: var(--icat-shadow-blue);
-  box-shadow: var(--icat-shadow-blue);
-  border-color: var(--icat-blue);
-  background: var(--icat-blue);
-  color: var(--icat-white);
+  -webkit-box-shadow: 0 8px 12px -3px rgba(40,109,234,0.2);
+  box-shadow: 0 8px 12px -3px rgba(40,109,234,0.2);
+  border-color: #425aef;
+  background: #425aef;
+  color: #fff;
 }
 #icat-about-page .Personal-Introduction {
   display: -webkit-box;
@@ -2322,7 +2322,7 @@ figure.highlight pre .javascript .function {
   justify-content: space-between;
 }
 #icat-about-page .Personal-Introduction .PI-box-left {
-  color: var(--icat-fontcolor);
+  color: #363636;
   font-weight: 400;
   width: 60%;
   position: relative;
@@ -2381,10 +2381,10 @@ figure.highlight pre .javascript .function {
 }
 #icat-about-page .Personal-Introduction .PI-box-left .PI-button a {
   border-radius: 8px;
-  background: var(--icat-card-bg);
+  background: #fff;
   border: 1px solid #e3e8f7;
-  -webkit-box-shadow: var(--icat-shadow-border);
-  box-shadow: var(--icat-shadow-border);
+  -webkit-box-shadow: 0 8px 16px -4px rgba(44,45,48,0.047);
+  box-shadow: 0 8px 16px -4px rgba(44,45,48,0.047);
   padding: 6px 18px;
   -webkit-transition: 0.6s;
   -moz-transition: 0.6s;
@@ -2394,10 +2394,10 @@ figure.highlight pre .javascript .function {
   margin-right: 16px;
 }
 #icat-about-page .Personal-Introduction .PI-box-left .PI-button a:hover {
-  background: var(--icat-blue);
-  color: var(--icat-white);
-  -webkit-box-shadow: var(--icat-shadow-blue);
-  box-shadow: var(--icat-shadow-blue);
+  background: #425aef;
+  color: #fff;
+  -webkit-box-shadow: 0 8px 12px -3px rgba(40,109,234,0.2);
+  box-shadow: 0 8px 12px -3px rgba(40,109,234,0.2);
 }
 #icat-about-page .Personal-Introduction .PI-box-right {
   height: 420px;
@@ -2548,8 +2548,8 @@ figure.highlight pre .javascript .function {
 }
 #icat-about-page #one .map:hover {
   background-size: 150%;
-  background-position-x: 5%;
-  background-position-y: 5%;
+  background-position-x: 20%;
+  background-position-y: 50%;
 }
 #icat-about-page #one .map:hover span {
   bottom: -100%;
@@ -2559,7 +2559,7 @@ figure.highlight pre .javascript .function {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: var(--icat-maskbg);
+  background: rgba(255,255,255,0.6);
   padding: 1.25rem 2rem;
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
@@ -2895,7 +2895,7 @@ figure.highlight pre .javascript .function {
   height: 100%;
 }
 #icat-about-page #two .information .Version .V-box .title {
-  color: var(--icat-fontcolor);
+  color: #363636;
   z-index: 1;
 }
 #icat-about-page #two .information .Statistics {
@@ -2976,7 +2976,7 @@ figure.highlight pre .javascript .function {
   flex-direction: column;
   background: url("https://img.meuicat.com/blog/25.webp") no-repeat center;
   background-size: 100%;
-  color: var(--icat-white);
+  color: #fff;
 }
 @media screen and (max-width: 768px) {
   #icat-about-page .data .statistic {
@@ -2985,7 +2985,7 @@ figure.highlight pre .javascript .function {
   }
 }
 #icat-about-page .data .statistic:hover .title {
-  color: var(--icat-white);
+  color: #fff;
 }
 #icat-about-page .data .statistic:before {
   -webkit-box-shadow: 0 -159px 173px 71px #0c1c2c inset;
@@ -3039,7 +3039,7 @@ figure.highlight pre .javascript .function {
   font-size: 36px;
   font-weight: 700;
   line-height: 1.1;
-  color: var(--icat-white);
+  color: #fff;
 }
 #icat-about-page .data .statistic .tips-bottom {
   display: -webkit-box;
@@ -3072,8 +3072,8 @@ figure.highlight pre .javascript .function {
   display: -ms-flexbox;
   display: box;
   display: flex;
-  -webkit-box-shadow: var(--icat-shadow-border);
-  box-shadow: var(--icat-shadow-border);
+  -webkit-box-shadow: 0 8px 16px -4px rgba(44,45,48,0.047);
+  box-shadow: 0 8px 16px -4px rgba(44,45,48,0.047);
   -webkit-box-align: center;
   -moz-box-align: center;
   -o-box-align: center;
@@ -3087,7 +3087,7 @@ figure.highlight pre .javascript .function {
   -webkit-justify-content: center;
   justify-content: center;
   border: 1px solid #e3e8f7;
-  background: var(--icat-background);
+  background: #f7f9fe;
   margin-right: 4rem;
 }
 @media screen and (max-width: 768px) {
@@ -3096,11 +3096,11 @@ figure.highlight pre .javascript .function {
   }
 }
 #icat-about-page .data .statistic .tips-bottom .T-btn:hover {
-  -webkit-box-shadow: var(--icat-shadow-blue);
-  box-shadow: var(--icat-shadow-blue);
-  border-color: var(--icat-blue);
-  background: var(--icat-blue);
-  color: var(--icat-white);
+  -webkit-box-shadow: 0 8px 12px -3px rgba(40,109,234,0.2);
+  box-shadow: 0 8px 12px -3px rgba(40,109,234,0.2);
+  border-color: #425aef;
+  background: #425aef;
+  color: #fff;
 }
 #icat-about-page .data .union {
   width: calc(35% - 8px);
@@ -3164,8 +3164,8 @@ figure.highlight pre .javascript .function {
   border: 1px solid #e3e8f7;
   width: calc((100% / 4) - 0.5rem);
   margin: 0 0.25rem 0.5rem 0.25rem;
-  -webkit-box-shadow: var(--icat-shadow-border);
-  box-shadow: var(--icat-shadow-border);
+  -webkit-box-shadow: 0 8px 16px -4px rgba(44,45,48,0.047);
+  box-shadow: 0 8px 16px -4px rgba(44,45,48,0.047);
   -webkit-transition: 0.6s;
   -moz-transition: 0.6s;
   -o-transition: 0.6s;
@@ -3178,20 +3178,20 @@ figure.highlight pre .javascript .function {
   }
 }
 #icat-about-page #name-list .reward-list-all .reward-list-item:hover {
-  background: var(--icat-blue);
-  color: var(--icat-white);
-  -webkit-box-shadow: var(--icat-shadow-blue);
-  box-shadow: var(--icat-shadow-blue);
+  background: #425aef;
+  color: #fff;
+  -webkit-box-shadow: 0 8px 12px -3px rgba(40,109,234,0.2);
+  box-shadow: 0 8px 12px -3px rgba(40,109,234,0.2);
 }
 #icat-about-page #name-list .reward-list-all .reward-list-item:hover .reward-list-item-money {
-  background: var(--icat-white);
+  background: #fff;
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
-  color: var(--icat-black);
+  color: #000;
 }
 #icat-about-page #name-list .reward-list-all .reward-list-item:hover .reward-list-item-time {
-  color: var(--icat-white);
+  color: #fff;
   opacity: 0.6;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
   filter: alpha(opacity=60);
@@ -3234,7 +3234,7 @@ figure.highlight pre .javascript .function {
 }
 #icat-about-page #name-list .reward-list-all .reward-list-item .reward-list-item-time {
   font-size: 12px;
-  color: var(--icat-secondtext);
+  color: rgba(60,60,67,0.8);
   white-space: nowrap;
 }
 #icat-about-page #name-list .post-reward {

@@ -160,9 +160,9 @@
     
     
     
-    <category term="手相" scheme="https://lmark.cc/tags/%E6%89%8B%E7%9B%B8/"/>
-    
     <category term="生活" scheme="https://lmark.cc/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="手相" scheme="https://lmark.cc/tags/%E6%89%8B%E7%9B%B8/"/>
     
   </entry>
   
@@ -288,11 +288,11 @@
     
     
     
-    <category term="生活" scheme="https://lmark.cc/tags/%E7%94%9F%E6%B4%BB/"/>
-    
     <category term="旅行" scheme="https://lmark.cc/tags/%E6%97%85%E8%A1%8C/"/>
     
     <category term="武汉" scheme="https://lmark.cc/tags/%E6%AD%A6%E6%B1%89/"/>
+    
+    <category term="生活" scheme="https://lmark.cc/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
