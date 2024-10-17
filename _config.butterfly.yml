@@ -8,9 +8,9 @@ menu:
   归档: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   # 分类: /categories/ || fas fa-folder-open
-  链接||fas fa-list:
-    友情链接: /link/ || fas fa-link
-    关于: /about/ || fas fa-heart
+  # 链接||fas fa-list:
+  友链: /link/ || fas fa-link
+  关于: /about/ || fas fa-heart
 
 nav:
   logo: https://cdn.lmark.cc/1633337981355.png 
@@ -82,7 +82,7 @@ katex:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: https://cdn.lmark.cc/1633337981355.png
+favicon:  
 
 # Avatar (頭像)
 avatar:
@@ -704,8 +704,8 @@ aside:
 # busuanzi count for PV / UV in site
 # 訪問人數
 busuanzi:
-  site_uv: false
-  site_pv: false
+  site_uv: true
+  site_pv: true
   page_pv: false
 
 # Time difference between publish date and now (網頁運行時間)
@@ -727,7 +727,7 @@ newest_comments:
 
 # Conversion between Traditional and Simplified Chinese (簡繁轉換)
 translate:
-  enable: false
+  enable: true
   # The text of a button
   default: 繁
   # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
@@ -744,7 +744,7 @@ readmode: true
 
 # dark mode
 darkmode:
-  enable: true
+  enable: false
   # Toggle Button to switch dark/light mode
   button: true
   # Switch dark/light mode automatically (自動切換 dark mode和 light mode)
@@ -770,11 +770,11 @@ rightside_item_order:
 
 # medium-zoom
 # https://github.com/francoischalifour/medium-zoom
-medium_zoom: true
+medium_zoom: false
 
 # fancybox
 # http://fancyapps.com/fancybox/3/
-fancybox: false
+fancybox: true
 
 # Tag Plugins settings (標籤外掛)
 # --------------------------------------
@@ -842,10 +842,10 @@ pangu:
 # Lazyload (圖片懶加載)
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: false
+  enable: true
   field: site # site/post
   placeholder:
-  blur: false
+  blur: true
 
 # PWA
 # See https://github.com/JLHwung/hexo-offline
@@ -880,10 +880,14 @@ css_prefix: true
 inject:
   head:
      - <link rel="stylesheet" href="/css/mycss.css">
+     - <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+     - <script>LA.init({id:"3K1gEbd0agcY8IUo",ck:"3K1gEbd0agcY8IUo"})</script>
   bottom:
-      - <div class="aplayer no-destroy" data-id="7509532357" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-order="random"> </div>
+      - <div class="aplayer no-destroy" data-id="7509532357" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-order="random"> </div>
       - <script>(function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime()/100000000).toString(),10)));window.SeniverseWeatherWidget('show',{flavor:"slim",location:"WWMKWU0KKVZP",geolocation:true,language:"zh-Hans",unit:"c",theme:"auto",token:"be6ff036-8674-43e7-8f27-8716c37b157b",hover:"disabled",container:"tp-weather-widget"});</script>
-      - <script src='/js/blurBk.js' defer ></script>
+      - <script src='/js/blurBk.js' defer ></script>\
+      - <script type="text/javascript" src="/js/about.js"></script> # about关于页 - 处理函数
+
 
 
 # CDN
@@ -957,4 +961,59 @@ CDN:
     # prismjs_autoloader:
     # artalk_js:
     # artalk_css:
-    busuanzi: https://raw.githubusercontent.com/JoeyBling/busuanzi.pure.js/refs/heads/master/busuanzi.pure.js
+    # busuanzi: https://raw.githubusercontent.com/JoeyBling/busuanzi.pure.js/refs/heads/master/busuanzi.pure.js
+
+# about
+# MeuiCat设计
+# https://meuicat.com/blog/78/
+# --------------------------------------
+
+about: 
+  Personal_Introduction:
+  # 个人简介
+    image: https://cdn.lmark.cc/avatar.webp
+    describe: 一个喜欢折腾有意思的技术的人，但是记性不好，所以博客主要记录曾经掌握的知识，方便日后已经忘记的我回来复习。
+    tips: Only once life of course to live more than anyone else
+
+    bar:
+      year: 壬午年
+      constellation: 房日兔
+      hobby: 玩游戏
+      career: 观察者
+
+  map: 青岛 西海岸
+  # 现居地
+
+  Philosophical: 
+  # 博主信息介绍
+    title: 竞选家
+    referred_to_as: ENFP-A
+    image: https://www.16personalities.com/static/images/personality-types/avatars/email/large/ENFP_female.png?v=1
+    link: https://www.16personalities.com/ch/enfp-%E4%BA%BA%E6%A0%BC?utm_source=results-assertive-campaigner&utm_medium=email&utm_campaign=ch&utm_content=type-personality-0
+
+    motto_one: 活在當下 即是全部
+    motto_two: 熱烈且自由
+    motto_tips: Now is everything, warm and free
+
+  Account_number:
+  # 社交平台（可多项配置，无数量限制）
+    QQ: http://wpa.qq.com/msgrd?v=3&uin=2312936963
+    哔哩哔哩: https://space.bilibili.com/34625132?spm_id_from=333.1007.0.0
+    Telegram: https://t.me/yife68
+    Twitter: https://twitter.com/yife68
+    GitHub: https://github.com/ladeng07
+    # xx: xxxx
+
+  Union: 
+  # 博客联盟（可多项配置，无数量限制）
+    十年之约: https://www.foreverblog.cn/blog/4006.html
+    开往: https://travellings.cn/
+    BlogFinder: https://bf.zzxworld.com/s/876
+    个性商店: https://storeweb.cn/site/o/1674
+    博客录: https://boke.lu/icat-author/18
+    站点聚合平台: https://sites.link/site-info?siteType=life&siteId=64775163ea53c100a9b742ba
+    博友圈: https://www.boyouquan.com/blogs/meuicat.com
+    # xx: xxxx
+
+  aifadian: https://afdian.net/a/yife68
+  # 爱发电主页

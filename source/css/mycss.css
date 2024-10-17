@@ -215,7 +215,11 @@ background-image: unset !important
 }
 
 #post {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.85);
+}
+
+#gitcalendarBar.recent-post-item {
+    background-color: rgba(227, 224, 224, 0.9);
 }
 
 

@@ -23,15 +23,15 @@ date: 2024-10-09 16:14:27
 
 在开始之前，我们需要先去CF申请一个API的令牌：[User API Tokens | Cloudflare](https://dash.cloudflare.com/profile/api-tokens)
 
-![img](https://cdn.lmark.cc/img/image-20240312211343051.png)
+![](https://cdn.lmark.cc/img/image-20240312211343051.png)
 
 选择你的域名，然后点击进入，滑倒下面，找到`Get your API token`，进去后点击右上角的create，选择下图的`Edit zone DNS`
 
-![img](https://cdn.lmark.cc/img/image-20240312211626694.png)
+![](https://cdn.lmark.cc/img/image-20240312211626694.png)
 
 然后配置大概如下，然后再continue就可以了，最后保存好你的密钥。
 
-![img](https://cdn.lmark.cc/img/image-20240312211706353.png)
+![](https://cdn.lmark.cc/img/image-20240312211706353.png)
 
 ### 获取zone的id
 
@@ -65,7 +65,7 @@ curl -X GET "https://api.cloudflare.com/client/v4/zones" -H "Authorization: Bear
 
 这是我参考的教程给的方法，然而我在写这篇文章的时候，才发现，原来域名的主页里有区域id
 
-![img](https://cdn.lmark.cc/img/image-20240312211921352.png)
+![](https://cdn.lmark.cc/img/image-20240312211921352.png)
 
 ### 获取对应子域名的id
 

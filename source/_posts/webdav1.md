@@ -11,7 +11,7 @@ date: 2024-10-16 15:50:57
 
 在群晖里启动了webdav server之后，windows11上添加会出现`0x80070043 找不到网络名`
 
-![image-20241016160808887](https://cdn.lmark.cc/img/image-20241016160808887.png)
+![](https://cdn.lmark.cc/img/image-20241016160808887.png)
 
 
 
@@ -27,7 +27,7 @@ date: 2024-10-16 15:50:57
 3. 找到`BasicAuthLevel`的项
 4. 修改其值为2
 
-![image-20241016161746210](https://cdn.lmark.cc/img/image-20241016161746210.png)
+![](https://cdn.lmark.cc/img/image-20241016161746210.png)
 
 5. 如果不存在这个键，新建一个名为`BasicAuthLevel`，类型为`DWORD`的值，设置为2
 6. 重启
