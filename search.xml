@@ -131,9 +131,9 @@
       
         <tags>
             
-            <tag> 生活 </tag>
-            
             <tag> 手相 </tag>
+            
+            <tag> 生活 </tag>
             
         </tags>
       
@@ -244,11 +244,11 @@
       
         <tags>
             
+            <tag> 生活 </tag>
+            
             <tag> 旅行 </tag>
             
             <tag> 武汉 </tag>
-            
-            <tag> 生活 </tag>
             
         </tags>
       
@@ -424,9 +424,9 @@
             
             <tag> Python </tag>
             
-            <tag> CTF </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> CTF </tag>
             
             <tag> XSS </tag>
             
