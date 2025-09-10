@@ -1,0 +1,606 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>LMark的博客 - 记录一些小技巧|经验|知识 </title><meta name="author" content="LMark"><meta name="copyright" content="LMark"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一个喜欢折腾有意思的技术的人，但是记性不好，所以博客主要记录曾经掌握的知识，方便日后已经忘记的我回来复习。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LMark的博客">
+<meta property="og:url" content="https://lmark.cc/page/3/index.html">
+<meta property="og:site_name" content="LMark的博客">
+<meta property="og:description" content="一个喜欢折腾有意思的技术的人，但是记性不好，所以博客主要记录曾经掌握的知识，方便日后已经忘记的我回来复习。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lmark.cc/img/avatar.jpg">
+<meta property="article:author" content="LMark">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lmark.cc/img/avatar.jpg"><link rel="shortcut icon" href="/"><link rel="canonical" href="https://lmark.cc/page/3/index.html"><link rel="preconnect" href="https://lib.baomitu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://lib.baomitu.com/fancyapps-ui/5.0.33/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://lib.baomitu.com/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'LMark的博客',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-09-11 01:37:50'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"3K1gEbd0agcY8IUo",ck:"3K1gEbd0agcY8IUo"})</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="LMark的博客" type="application/atom+xml">
+</head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/xlenco/JS-X@main/pace.js/pace.css"/><script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">49</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://cdn.lmark.cc/blog/IMG_0152.JPG')"><nav id="nav"><span id="blog-info"><a href="/" title="LMark的博客"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/1633337981355.png"/><span class="site-name">LMark的博客</span></a></span><div id="tp-weather-widget"></div><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">LMark的博客</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/ladeng07" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2312936963@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/34625132" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fas fa-tv"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/archives/ba5d5beb.html" title="第一次组装自己的电脑的经历"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300228_origin_20220531_201525.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第一次组装自己的电脑的经历"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/ba5d5beb.html" title="第一次组装自己的电脑的经历">第一次组装自己的电脑的经历</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-29T14:35:59.000Z" title="发表于 2022-10-29 22:35:59">2022-10-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/ba5d5beb.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">开头搬到新校区，宿舍终于不断电了，考虑了很久的台式机计划终于可以搞了，加上第三个项目预支了4000的项目款，终于可以组一台自己的电脑了
+配置声明：我没有仔细挑过。而且这方面可以说是一窍不通，看了一周视频速成了一下。
+
+主板： 华硕 TUF B550M-PLUS WIFI Ⅱ
+显卡：5700G的核显
+CPU：锐龙7 5700G 盒装（带风扇）
+内存：科赋雷霆马甲条3600MHz 16G ×2
+电源：艾湃电竞金牌全模组650W
+硬盘：三星980 1TB版
+机箱：长城 阿基米德9PRO
+散热：原装
+
+因为买的时候打算当传家宝来用了，所以有些配置是冗余的，价格偏贵。至于总共价格，留到后面再说。
+组装组装电脑的过程还是挺有趣的，虽然遇到了不少问题。机箱是最先到的，结果拿到手后才发现机箱有点大过头了，毕竟可以兼容E-ATX主板。
+首先先是主板，装主板可以说是最复杂的了。不仅有许多排线，还有很多螺丝需要拧。
+
+第一步，先装CPU，拆开CPU的时候，没想到CPU竟然这么重，沉甸甸的，感觉发热会不小。
+
+
+小心翼翼地打开主板的卡扣，然后小心翼翼地取出CPU，看着密密麻麻的针脚，真想给他全部薅弯。装的时候，我和舍友研究了好一会CPU的方向，后面发现原来有防呆口。
+
+接下来就是装散热了，本来买了个双塔散热，但是发现好像太大了，对我的性能来说过于冗余，就退货了，选择原装的散热。下图是工具人舍友在装风扇
+
+接下来就是装内存条了，这个没什么难度，只要不傻， 不大力出奇迹，就好。
+
+然后就是固态，这个也没什么难度，把螺丝拧下来，插上去，拧回去就装好了，我没装散热条啥的
+
+主板方面已经完工了，接下来是装电源，电源也有防呆口，所以很好装。因为我们宿舍限电200W，所以舍友很担心我开机时候会不会跳闸。
+
+装好电源后，再把主板装进机箱里，这时候就是最难的一步了。接线，不仅是电源线，还有机箱线，无线网卡的线。我和 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/archives/dc57b028.html" title="HackGame2022部分题解（签到——微积分小练习）"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300234_origin_20220531_201611.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HackGame2022部分题解（签到——微积分小练习）"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/dc57b028.html" title="HackGame2022部分题解（签到——微积分小练习）">HackGame2022部分题解（签到——微积分小练习）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-29T14:35:15.000Z" title="发表于 2022-10-29 22:35:15">2022-10-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/dc57b028.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">总所周知，中科大每年都会举办一个HackGame，今年也不例外。
+今年的比赛从2022 年 10 月 22 日 中午 12:00开始，到 10 月 29 日 中午 12:00（共七天）。在这7天里，我们可以不吃不喝来夺旗（bushi）。题目有难有易，而且对新手还挺友好，像我这样毛都没学过的都可以浅浅拿个1900。遂写篇博客浅浅记录一下这个比赛经历。
+
+先贴一下结果。我好菜呜呜，主要记录一下一些我觉得有意思的题目和解题方法。为了记录一下，我怕我以后都忘记我还会写这个。
+签到题目
+在规定时间内写下2022来签到。
+题解其实只要手速超过光速，可以直接签下四个大字即可（bushi）。要是你没有这么快的手速，还是老老实实找一下方法把，可以看到，他是本地识别，然后再将识别结果用GET请求传给后端。
+
+所以只要直接修改GET请求，修改为2022即可。
+
+猫咪问答喵题目
+
+题解猫咪问答可以说是Hackgame的经典题目了，是一道有关中科大的信息收集题。如果你有中科大同学你可以直接去问问他们（bushi）
+先讲一下前三题，
+第一题直接在浏览器搜索中国科学技术大学 NEBULA 战队，第一篇里面就有。
+
+第二题直接贴官方题解好了
+
+第三题同
+
+第四题先去Github上找到Linux的仓库torvalds&#x2F;linux: Linux kernel source tree (github.com)
+直接在仓库力搜索这个错误代号
+
+这个commit记录就在这exec: Force single empty string when argv is empty · torvalds&#x2F;linux@dcd46d8 (github.com)
+
+第五题可以说是六道题中我写的最久的一道题，之前一直想着有没有什么工具可以直接公国ssh 公钥查找域名，结果找了很多，都没找到方法。然后直接把这一整个密 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/archives/ff16b028.html" title="斐讯K2P路由器+Openwrt固件实现校园网多播"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/blog/IMG_0181.PNG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="斐讯K2P路由器+Openwrt固件实现校园网多播"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/ff16b028.html" title="斐讯K2P路由器+Openwrt固件实现校园网多播">斐讯K2P路由器+Openwrt固件实现校园网多播</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-22T16:39:16.000Z" title="发表于 2022-09-23 00:39:16">2022-09-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/ff16b028.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">前言书接上回。自从买了路由器之后，一周都在不停的刷固件来玩，至今也刷了十几个了。其实当初买k2p的主要目的还是想多拨。因为我们学校校园网一台设备只有40Mbps的上下行带宽。在2022年，家里WiFi都已经是几百兆的时代，40兆的校园网真的太拉了。而且一个账号只能连三台设备，我一个人都有6台需要联网的设备（3台手机+1台ipad+1台电脑+1个小爱同学）。所以整了个二手k2p。但是感觉翻车了，现在只能凑合用了。
+刷入Openwrt固件k2p有很多很好用的固件，像老毛子，潘朵拉，高恪，op等等。这里我选op。是因为op支持我校园网的多拨。虽然高恪也支持多拨，但是只支持传统的PPOE拨号，不支持DHCP认证。
+
+要是已经刷入op系统可以跳过哦
+
+废话不多说，首先呢我们先要去网上找k2p的op固件，可以自己编译也可以用别人编译好的。找固件可以上恩山无线论坛 (right.com.cn)的斐讯专区里的k2p专区，这里有很多，随便找一个。
+
+需要注意的是，你的k2p的芯片的型号是什么，这个可以在路由器底部的铭牌上找到
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/archives/e74a4c2c.html" title="使用Windows(OpenSSH)实现私钥免密码连接Linux(DropbearSSH)服务器"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300192_origin_20220531_200511.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用Windows(OpenSSH)实现私钥免密码连接Linux(DropbearSSH)服务器"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/e74a4c2c.html" title="使用Windows(OpenSSH)实现私钥免密码连接Linux(DropbearSSH)服务器">使用Windows(OpenSSH)实现私钥免密码连接Linux(DropbearSSH)服务器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-14T18:07:02.000Z" title="发表于 2022-09-15 02:07:02">2022-09-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/e74a4c2c.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">前言今天晚上又折腾了一个晚上的路由器，终于搞定了局域网的端口转发到校园网。以后可以在学校的任何一个角落都连接到我的电脑了，乐。详细的操作之后有时间再记录吧，今天先来写一个简单的经验分享。因为路由器需要多拨，我自己设置的自动拨号频率是十分钟一次，但是有时候很容易掉一两个号，这时候就需要我手动拨号乐。以前每次拨号都需要远程连接一下路由器命令行来执行脚本，实在是太麻烦了。所以我就想，能不能直接在电脑上发送一条指令让路由器自动拨号，然后我就找到了ssh客户端的私钥验证方法，但是路由器装的是DropbearSSH，所以和网上的大多数教程不太一样，遂自己参考大神的方法自己写了一个
+
+关于DropbearSSH和openSSH一般我们的windows电脑上都会自带一个SSH客户端，就是这个openSSH，这是一个功能齐全的SSH客户端，在诸多平台上都有存在。
+
+一般的Linux发行版都安装有OpenSSH，但是在路由器上，由于空间不足，很多固件会选择使用DropbearSSH。
+关于DropbearSSH:
+
+dropbear作为一款基于ssh协议的轻量级sshd服务器，相比OpenSSH，其更简洁，更小巧
+
+
+所以这个ssh客户端的私钥验证和普通的ssh客户端有些不同，下面我会详细说说
+
+在Windows上创建密钥对首先我们需要创建一对公钥和私钥，公钥放在远程Linux服务器上，私钥则放在本地的电脑上。
+创建一个4096位的密钥对，并以你的邮箱为注释
+1C:\Users\PBDELL&gt; ssh-keygen -t rsa -b 4096 -C &quot;your_email@domain.com&quot;
+
+创建的时候，它会提示你选择密钥对存放路径，直接按回车则存在默认的路径下
+
+接下来，如果你之前已经创建过密钥对了，最好不要覆盖，不然之前使用这个公钥的应用就会出问题，比如g ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/archives/b2e71f46.html" title="安卓Termux安装ubuntu+alist实现文件中继服务"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/IMG_0346.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="安卓Termux安装ubuntu+alist实现文件中继服务"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/b2e71f46.html" title="安卓Termux安装ubuntu+alist实现文件中继服务">安卓Termux安装ubuntu+alist实现文件中继服务</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-11T17:54:40.000Z" title="发表于 2022-09-12 01:54:40">2022-09-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/b2e71f46.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">1.前言上几周刚搬校区，来到了一个鸟不生蛋的好地方，三面都是荒地，一面是大海，海的对面是南朝鲜。除了宿舍稍微好点，其他地方都输麻乐。不过，新宿舍有了明显的网线口，这就能让我完成上个学期一直没完成的计划乐——拿我的二手小米5搭个alist服务，这样我就可以，同时管理多个网盘乐。
+之前因为校园网账号不够，所以这台小米5就没有拿来用，装了k2p路由器后，再也不缺网乐，所以便有了今天的计划。
+
+2.安装TermuxTermux到处都能找得到，葫芦侠，酷安等等。当然也可以看看官网：Termux | The main termux site and help pages.然后打开首页
+
+有了linux系统，咱一般做的第一步就是——换源。不然默认源的下载速度太慢了，Termux换源方法网上很多，这里推荐一个简单的：
+1sed -i &#x27;s@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main@&#x27; $PREFIX/etc/apt/sources.list
+
+
+
+然后我们还需要使用sudo来执行命令，所以使用pkg安装一个：pkg install tsu
+
+准备工作完成，接下来就可以开始安装Ubuntu系统了
+
+3.安装Ubuntu在没有root的情况下Termux是不能直接装ubuntu的，这里需要用到一个工具Proot，来安装‘阉割版’的Ubuntu。
+关于proot
+
+首先先安装proot
+1pkg install proot-distro 
+
+安装完成后，可以使用
+1proot-distro list
+
+查看可以安装的Linux发行版
+
+接下来就可以选择你想安装的Linux发行版本了，这里我选择Ubuntu
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/archives/1b50bad4.html" title="Django 报错 'WSGIRequest' object has no attribute 'data' 的一个解决方法"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300208_origin_20220531_200914.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Django 报错 'WSGIRequest' object has no attribute 'data' 的一个解决方法"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/1b50bad4.html" title="Django 报错 'WSGIRequest' object has no attribute 'data' 的一个解决方法">Django 报错 'WSGIRequest' object has no attribute 'data' 的一个解决方法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-01T16:28:15.000Z" title="发表于 2022-09-02 00:28:15">2022-09-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/1b50bad4.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">报错截图
+
+报错描述
+之前写Django后台的时候没遇到过这个bug，是今天写项目才遇到的bug
+报错分析
+看报错，是出在一个自定义的权限认证函数中，在仔细看看报错，发现是后台登录使用了自定义的权限认证类
+
+在Pycharm中用 Ctrl + shift + N 输入文件地址，找到这个文件__init__.py的77行对应的函数调用，
+
+再 Ctrl + 鼠标左键 点击查看 这个backend从哪里来的
+
+现在可以看到，这个_get_backends函数很可疑，我们再跳转看一下
+
+到这里真相水落石出了，
+get_backends函数从settings的AUTHENTICATION_BACKENDS里面寻找权限认证类，然而我忘了添加自带的权限认证类，只有我自定义的权限认证类，所以这个函数就使用了自定义的权限认证类。
+解决方案
+添加 django.contrib.auth.backends.ModelBackend 即可解决问题
+
+一丢丢心得
+暑假写的项目，可以说通过这个项目，对Django有了更深入的了解，也学会了往底层找问题，重写某些类的方法，之后浅浅分享一下Pycharm写Django的心得吧。
+最后想说，写这个项目好难，又好累，还是好好学习吧。
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/archives/31f4e153.html" title="算法笔记①——快速排序and归并排序and二分查找"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300171_origin_20220531_200046.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法笔记①——快速排序and归并排序and二分查找"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/31f4e153.html" title="算法笔记①——快速排序and归并排序and二分查找">算法笔记①——快速排序and归并排序and二分查找</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-04T10:13:18.000Z" title="发表于 2022-07-04 18:13:18">2022-07-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/31f4e153.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">浅浅记录一下，学的快排与归并与二分。视频地址：第一章 基础算法（一） - AcWing
+快速排序听名字就知道是很快的算法，听了y总深入浅出的解释，我对于快速排序的理解进一步加深了。在大一上的计导课里，有一个实验就是让我们用人体计算机的方式实现快排。当时，不记得是王老师还是助教说只能使用单指针的快排，然后我琢磨乐好久也没搞明白该怎么排，后面半推半就做完了那个实验。之后，快排就忘得一干二净了哈哈哈哈。现在听了y总的课，我总结出了以下几个要点，记住这几个要点，可以更容易背住模板。
+
+
+当递归到最底层，只有一个元素的时候，是不用排序的，所以此时直接return即可，这也是递归的出口，判断条件就是左边界是否大于右边界。
+选取一个分界的数，可以选数组里任何一个数，第一，最后，中间都可以，看情况
+选取左右指针时，要选在两个指针的外边；左指针就在左边界减一处；右指针在有边界加一处。
+对于一次快排，原理就是使所有比 X（选定的数）小的数在X左边；所有比X大的数在X的右边，所以套一层while循环，判断条件是两指针是否相遇。
+然后两个指针开始移动，左指针往右移动，遇到第一个比X大的数停下；右指针同理。
+两个指针停下后，如果没相遇，就交换两个数。
+然后分成两个区间，再递归使用快排。
+
+
+快排模板
+123456789101112131415161718192021222324252627282930313233343536#include &lt;iostream&gt;using namespace std;const int N = 1e6+10;int q[N];int n; void quick_sort(int q[],int l,int r)&#123;	if (l &gt;= r) return ;	//递归出口    	int i = l - 1;		//左右指针	int j =  ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/archives/abbb7553.html" title="记录一些M1卡密钥计算方式和校验位计算方式"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300148_origin_20220531_195553.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记录一些M1卡密钥计算方式和校验位计算方式"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/abbb7553.html" title="记录一些M1卡密钥计算方式和校验位计算方式">记录一些M1卡密钥计算方式和校验位计算方式</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-01T09:37:41.000Z" title="发表于 2022-07-01 17:37:41">2022-07-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/abbb7553.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">前言最近这两年陆陆续续收到一些M1卡的数据，每次简单滴破解了一下之后感觉挺有意思的，但是害怕以后没过多久就忘记了，所以打算以我能看懂的形式浅浅的记录一下。
+密钥算法算法一这是个非常非常非常简单的算法，只涉及到了异或
+UID和Key的映射关系如下图：
+
+具体算法：
+
+u2 XOR 12 &#x3D; k1u4 XOR A5 &#x3D; k2u3 XOR 34 &#x3D; k3u4 XOR AB &#x3D; k4u2 XOR 6A &#x3D; k5u1 XOR 36 &#x3D; k6
+
+u1,u2,u3,u4分别对应UID的第一，第二，第三和第四位，k1-k6分别对应Key中的第一到第六位。
+一些数据
+
+算法二这个算法是某个学校的水卡的密钥算法，可以说算是非常地复杂了，当时花了一个星期才破解出来。这个对应关系有点复杂，每一位的第一个和第二个数字有其单独的对应。
+UID和Key的映射关系：
+
+每一位Key的算法都有点复杂，比如
+Key1以这个为原像，建立k1的映射
+
+映射之后如下：
+
+这里我们设第一个数字为a，第二个数字为b，则k1的算法可表示为：
+
+a XOR 1 &#x3D; 第一位数字
+(30 - b)  % 16  &#x3D; 第二位数字
+
+这算是6位key中最简单的一个了。
+Key2由原像映射的像如下
+
+算法：
+
+如果 0 &lt;&#x3D; b &lt; 7:
+则 (20 - a) % 16 &#x3D; 第一位数字
+如果 7 &lt; b &lt; 16
+则 (19 - a) % 16 &#x3D; 第一位数字
+b XOR 1 &#x3D; 第二位数字
+
+Key3映射关系
+
+算法：
+
+如果 0 &lt;&#x3D; b &lt; 7:
+则 ((a + 1) % 16) XOR 5 &#x3D; 第一位数字
+如果 7 &lt; b &lt; 16
+则 a ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/archives/875c09b2.html" title="校园网安全问题"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300141_origin_20220531_195311.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="校园网安全问题"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/875c09b2.html" title="校园网安全问题">校园网安全问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-25T02:35:12.000Z" title="发表于 2022-06-25 10:35:12">2022-06-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/875c09b2.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">起因信息安全实在是太重要太重要。不过，在疫情时代下，公民个人隐私信息泄露已经是家常便饭了，今天，来给大家看看，通过合法手段（指在通知群里面拿到的数据），获取到的个人隐私数据，能反映出什么问题。
+关于校园网校园网大伙都不陌生，有些是学校自己搭的，有些是外包给运营商来做的。今天我们故事的主人公——某某大学，有自己的校园网，但是这个校园网，有一个问题。就是校园网的默认账号是学生的学号，密码则是学生本人的身份证号后六位。乍一看，这也没什么，起码默认密码不是123456。但就是这样的设计，造成一个问题。学生会认为：别人又不知道我的身份证，所以我直接用身份证后六位这个默认密码，很安全呀！然而，正式这种想法，让许多人的校园网账号在裸奔。
+关于信息泄露进入疫情时代以来，人们开始大规模的使用许多的线上在线文档，办公协作，还有视频会议软件。这些软件在大大方便我们生产工作的同时，也为我们埋下不小的信息安全隐患。举个最常见的例子，很多在线填写信息的excel表格，往往是多人在同一个界面填写信息，这其中有些是敏感信息，比如学号，身份证号，手机号等。如果有人别有用心，这些信息就会被他们收集起来，拿去做一些坏事。这就是说者无心，听者有心。但大多数情况下，许多的信息泄露都是发送文件的人，为了图省事，就直接把整个包含所有人的信息的excel表格直接发出去了，这也是今天这个故事的起因——用各种通知群里面发出来的文件，获取到身份证号，学号等个人信息，然后使用Python的小爬虫进行模拟登录，找出某某学院的21级新生中有多少人校园网还在用默认密码（身份证后六位）。
+测试回放首先呢，在年级的大群里，俺们辅导员曾由于失误，一不小心把整个学院（四个年级+所有研究生）本科生和研究生的个人信息（包括学号，手机号班别年级等）都给发出来了。很快地，辅导员就撤回了。但是呢，我的QQ是装有QX模块的，里面有个防撤回功能，然后我当时 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/archives/af59cd8a.html" title="网络破防实践先导实验四————XSS攻击"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://cdn.lmark.cc/img/300137_origin_20220531_195151.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="网络破防实践先导实验四————XSS攻击"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/af59cd8a.html" title="网络破防实践先导实验四————XSS攻击">网络破防实践先导实验四————XSS攻击</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-24T09:54:37.000Z" title="发表于 2022-06-24 17:54:37">2022-06-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/af59cd8a.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">前情回顾终于一路跌跌撞撞，终于来到了网络破防这门课最后一个实验，这次这个实验的可以说四个实验之中最简单的，我只花了不到一个小时就搞定了。
+XSS介绍首先，什么是XSS攻击呢？
+
+XSS攻击通常指的是通过利用网页开发时留下的漏洞，通过巧妙的方法注入恶意指令代码到网页，使用户加载并执行攻击者恶意制造的网页程序。这些恶意网页程序通常是JavaScript，但实际上也可以包括Java、 VBScript、ActiveX、 Flash 或者甚至是普通的HTML。攻击成功后，攻击者可能得到包括但不限于更高的权限（如执行一些操作）、私密网页内容、会话和cookie等各种内容。                                       ——摘自百度百科
+
+我的理解就是，利用一些输入框，然后输入一些能产生特效果的语句，让网页执行你需要的代码，以达到攻击的目的。
+网页一般用的html，如果输入的内容没有进行转义，在输出的时候有可能会变成网页html的一部分，像这种
+反射型XSS
+
+
+
+
+除此之外，还有DOM Based XSS
+DOM Based XSS
+XSS的过滤和绕过XSS攻击是一种很常见的攻击方式，所以很早就有了各种各样的防护方式。但是道高一尺，魔高一丈，XSS攻击也有许多绕过方式，如下：
+
+闭合引号、标签
+关键字过滤
+编码绕过
+宽字节绕过
+其他技巧绕过
+
+关于每种技巧：
+闭合引号、标签
+关键字过滤
+编码绕过
+
+
+宽字节绕过
+
+其他绕过
+
+实验过程Target 1Target1比较容易，直接输出即可，
+1&lt;script&gt;alert(document.cookie);&lt;/script&gt;
+
+Target 2Target2需要先把第一个a标签给结束了，才可以写自己代码，先随便输点东西看看输出的格式，
+
+可以看到，输出的内容是在一个a标签的herf属性 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="page-number" href="/page/5/#content-inner">5</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LMark</div><div class="author-info__description">一个喜欢折腾有意思的技术的人，但是记性不好，所以博客主要记录曾经掌握的知识，方便日后已经忘记的我回来复习。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">49</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/ladeng07"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ladeng07" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2312936963@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/34625132" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fas fa-tv"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/archives/13f312f.html" title="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300155_origin_20220531_195944.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;"/></a><div class="content"><a class="title" href="/archives/13f312f.html" title="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;">解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;</a><time datetime="2025-07-13T10:30:44.000Z" title="发表于 2025-07-13 18:30:44">2025-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/8f8ea55e.html" title="七牛云批量下载图床图片"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300144_origin_20220531_195534.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="七牛云批量下载图床图片"/></a><div class="content"><a class="title" href="/archives/8f8ea55e.html" title="七牛云批量下载图床图片">七牛云批量下载图床图片</a><time datetime="2024-11-17T07:34:44.000Z" title="发表于 2024-11-17 15:34:44">2024-11-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/ea042a0d.html" title="Windows11挂载群晖webdav到本地"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/319678_origin_20220628_092530.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Windows11挂载群晖webdav到本地"/></a><div class="content"><a class="title" href="/archives/ea042a0d.html" title="Windows11挂载群晖webdav到本地">Windows11挂载群晖webdav到本地</a><time datetime="2024-10-16T07:50:57.000Z" title="发表于 2024-10-16 15:50:57">2024-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/efb03d74.html" title="使用脚本自动更新实验室电脑IP到cloudflare域名"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300186_origin_20220531_200449.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用脚本自动更新实验室电脑IP到cloudflare域名"/></a><div class="content"><a class="title" href="/archives/efb03d74.html" title="使用脚本自动更新实验室电脑IP到cloudflare域名">使用脚本自动更新实验室电脑IP到cloudflare域名</a><time datetime="2024-10-09T08:14:27.000Z" title="发表于 2024-10-09 16:14:27">2024-10-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/febc3415.html" title="一次给龙芯旧世界升级内核的失败经历"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300147_origin_20220531_195551.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一次给龙芯旧世界升级内核的失败经历"/></a><div class="content"><a class="title" href="/archives/febc3415.html" title="一次给龙芯旧世界升级内核的失败经历">一次给龙芯旧世界升级内核的失败经历</a><time datetime="2024-03-03T15:47:36.000Z" title="发表于 2024-03-03 23:47:36">2024-03-03</time></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/RFID/" style="font-size: 1.25em; color: rgb(194, 14, 39)">RFID</a><a href="/tags/%E6%B5%A6%E4%B8%AD/" style="font-size: 1.2em; color: rgb(148, 121, 148)">浦中</a><a href="/tags/M1%E5%8D%A1/" style="font-size: 1.15em; color: rgb(159, 157, 86)">M1卡</a><a href="/tags/%E6%A0%A1%E9%AA%8C%E4%BD%8D/" style="font-size: 1.15em; color: rgb(145, 163, 114)">校验位</a><a href="/tags/Amiibo/" style="font-size: 1.15em; color: rgb(11, 10, 45)">Amiibo</a><a href="/tags/NFC/" style="font-size: 1.2em; color: rgb(158, 25, 200)">NFC</a><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.15em; color: rgb(157, 123, 87)">算法</a><a href="/tags/C/" style="font-size: 1.15em; color: rgb(88, 144, 45)">C++</a><a href="/tags/Cloudflare/" style="font-size: 1.15em; color: rgb(129, 86, 157)">Cloudflare</a><a href="/tags/Django/" style="font-size: 1.35em; color: rgb(20, 16, 178)">Django</a><a href="/tags/Python/" style="font-size: 1.45em; color: rgb(60, 126, 122)">Python</a><a href="/tags/Git/" style="font-size: 1.2em; color: rgb(90, 134, 27)">Git</a><a href="/tags/E-Prime/" style="font-size: 1.15em; color: rgb(119, 184, 122)">E-Prime</a><a href="/tags/%E4%BB%A3%E7%90%86/" style="font-size: 1.15em; color: rgb(20, 76, 20)">代理</a><a href="/tags/CTF/" style="font-size: 1.15em; color: rgb(139, 69, 42)">CTF</a><a href="/tags/Linux/" style="font-size: 1.4em; color: rgb(30, 195, 36)">Linux</a><a href="/tags/XSS/" style="font-size: 1.15em; color: rgb(121, 197, 115)">XSS</a><a href="/tags/alist/" style="font-size: 1.15em; color: rgb(163, 172, 166)">alist</a><a href="/tags/Termux/" style="font-size: 1.15em; color: rgb(23, 51, 43)">Termux</a><a href="/tags/Ubuntu/" style="font-size: 1.15em; color: rgb(132, 83, 125)">Ubuntu</a><a href="/tags/Openwrt/" style="font-size: 1.15em; color: rgb(127, 67, 92)">Openwrt</a><a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" style="font-size: 1.15em; color: rgb(29, 179, 64)">路由器</a><a href="/tags/openwrt/" style="font-size: 1.15em; color: rgb(103, 198, 58)">openwrt</a><a href="/tags/Supervisord/" style="font-size: 1.15em; color: rgb(129, 131, 51)">Supervisord</a><a href="/tags/Loongarch/" style="font-size: 1.3em; color: rgb(74, 100, 57)">Loongarch</a><a href="/tags/%E7%BC%96%E8%AF%91/" style="font-size: 1.25em; color: rgb(188, 86, 188)">编译</a><a href="/tags/thunderbird/" style="font-size: 1.15em; color: rgb(52, 157, 138)">thunderbird</a><a href="/tags/Remmina/" style="font-size: 1.15em; color: rgb(48, 2, 40)">Remmina</a><a href="/tags/Linux%E5%86%85%E6%A0%B8/" style="font-size: 1.15em; color: rgb(20, 158, 177)">Linux内核</a><a href="/tags/%E7%BD%91%E7%BB%9C%E7%A0%B4%E9%98%B2%E5%AE%9E%E8%B7%B5%E5%85%88%E5%AF%BC/" style="font-size: 1.3em; color: rgb(10, 47, 30)">网络破防实践先导</a><a href="/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/" style="font-size: 1.15em; color: rgb(66, 114, 156)">校园网</a><a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="font-size: 1.15em; color: rgb(123, 176, 125)">信息安全</a><a href="/tags/%E7%94%B5%E8%84%91/" style="font-size: 1.15em; color: rgb(81, 191, 24)">电脑</a><a href="/tags/%E8%A3%85%E6%9C%BA/" style="font-size: 1.15em; color: rgb(76, 57, 131)">装机</a><a href="/tags/%E4%B8%83%E7%89%9B%E4%BA%91/" style="font-size: 1.15em; color: rgb(190, 122, 193)">七牛云</a><a href="/tags/%E5%A4%87%E4%BB%BD/" style="font-size: 1.15em; color: rgb(39, 98, 47)">备份</a><a href="/tags/qemu/" style="font-size: 1.15em; color: rgb(175, 121, 74)">qemu</a><a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 1.15em; color: rgb(7, 46, 37)">虚拟机</a><a href="/tags/QQ/" style="font-size: 1.15em; color: rgb(135, 57, 132)">QQ</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%B7%A5%E7%A8%8B/" style="font-size: 1.15em; color: rgb(8, 38, 158)">计算机系统工程</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">48</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2022-01-16T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">118.9k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-09-10T17:37:50.006Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By LMark</div><div class="footer_custom_text"><p><a style="margin-inline:5px" target="_blank" href="https://hexo.io/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a><a style="margin-inline:5px" target="_blank" href="https://butterfly.js.org/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a><a style="margin-inline:5px" target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/%E6%A1%82ICP%E5%A4%87-2022004639%E5%8F%B7--1-blue" alt="桂ICP备2022004639号-1" title="本站已在桂进行备案"></a><a style="margin-inline:5px" target="_blank" href="https://github.com/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a><a style="margin-inline:5px" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a><a style="margin-inline:5px" target="_blank" href="https://www.itstudio.club/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/itstudio-shields.svg" title="爱特工作室"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div style="background-color:rgba(0,0,0,0.3)"><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/utils.min.js"></script><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/main.min.js"></script><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/tw_cn.min.js"></script><script src="https://lib.baomitu.com/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script><script src="https://lib.baomitu.com/instant.page/5.2.0/instantpage.min.js" type="module"></script><script src="https://lib.baomitu.com/vanilla-lazyload/17.8.8/lazyload.iife.min.js"></script><script src="https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.js"></script><div class="js-pjax"><script>(() => { 
+  const getCommentUrl = () => {
+    const eleGroup = document.querySelectorAll('#recent-posts .article-title')
+    let urlArray = []
+    eleGroup.forEach(i=>{
+      urlArray.push(i.getAttribute('href'))
+    })
+    return urlArray
+  }
+
+  const getCount = () => {
+    const runTwikoo = () => {
+      twikoo.getCommentsCount({
+        envId: 'https://twikoo.lmark.cc/',
+        region: '',
+        urls: getCommentUrl(),
+        includeReply: false
+      }).then(function (res) {
+        document.querySelectorAll('#recent-posts .twikoo-count').forEach((item,index) => {
+          item.textContent = res[index].count
+        })
+      }).catch(function (err) {
+        console.log(err)
+      })
+    }
+
+      if (typeof twikoo === 'object') {
+        runTwikoo()
+      } else {
+        getScript('https://lib.baomitu.com/twikoo/1.6.39/twikoo.all.min.js').then(runTwikoo)
+      }
+  }
+
+  window.pjax ? getCount() : window.addEventListener('load', getCount)
+
+})()</script><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://lib.baomitu.com/typed.js/2.1.0/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  getScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js').then(() => {
+    jinrishici.load(result =>{
+      if (true) {
+        const sub = ["欢迎来到LMark的博客！！！","今天月色真美","我直接LYG牛逼","我想回小江呜呜呜，想和大伙玩","前有文章，请小心前行"]
+        const content = result.data.content
+        sub.unshift(content)
+        typedJSFn.init(sub)
+      } else {
+        document.getElementById('subtitle').textContent = result.data.content
+      }
+    })
+  })
+}
+typedJSFn.run(subtitleType)
+</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.lmark.cc/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://lib.baomitu.com/twikoo/1.6.39/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><div class="aplayer no-destroy" data-id="7509532357" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-order="random"> </div><script>(function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime()/100000000).toString(),10)));window.SeniverseWeatherWidget('show',{flavor:"slim",location:"WWMKWU0KKVZP",geolocation:true,language:"zh-Hans",unit:"c",theme:"auto",token:"be6ff036-8674-43e7-8f27-8716c37b157b",hover:"disabled",container:"tp-weather-widget"});</script><script src='/js/blurBk.js' defer ></script>\<script type="text/javascript" src="/js/about.js"></script><link rel="stylesheet" href="https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://lib.baomitu.com/butterfly-extsrc/1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/search/local-search.min.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax src="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("https://gitcalendar.lmark.cc/api?ladeng07",['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c'],'ladeng07')
+    }
+  </script><!-- hexo injector body_end end --></body></html>

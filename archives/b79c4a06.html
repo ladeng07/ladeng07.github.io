@@ -1,0 +1,408 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>IC卡秘钥算法破解的一次尝试 | LMark的博客</title><meta name="author" content="LMark"><meta name="copyright" content="LMark"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Hello大家好，这里是LanternMark，今天给大家分享一下我的一次水卡破解经历。 （本文只技术交流分享，滥用者自行承担责任，与本文作者无关） 0x0.前言​	IC卡，即Integrated Circuit Card，集成电路卡,像我们平常看到的银行卡，地铁卡，还有校园里的饭卡，智能校徽等等，这些都属于IC卡。想必大家一定不陌生，但是大家有没有关注过IC卡的原理以及安全性。希望通过这篇文章，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IC卡秘钥算法破解的一次尝试">
+<meta property="og:url" content="https://lmark.cc/archives/b79c4a06.html">
+<meta property="og:site_name" content="LMark的博客">
+<meta property="og:description" content="Hello大家好，这里是LanternMark，今天给大家分享一下我的一次水卡破解经历。 （本文只技术交流分享，滥用者自行承担责任，与本文作者无关） 0x0.前言​	IC卡，即Integrated Circuit Card，集成电路卡,像我们平常看到的银行卡，地铁卡，还有校园里的饭卡，智能校徽等等，这些都属于IC卡。想必大家一定不陌生，但是大家有没有关注过IC卡的原理以及安全性。希望通过这篇文章，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/04/05/Hh3GSyIz42b1al7.jpg">
+<meta property="article:published_time" content="2021-07-18T00:41:24.000Z">
+<meta property="article:modified_time" content="2025-01-20T12:53:31.656Z">
+<meta property="article:author" content="LMark">
+<meta property="article:tag" content="RFID">
+<meta property="article:tag" content="浦中">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/04/05/Hh3GSyIz42b1al7.jpg"><link rel="shortcut icon" href="/"><link rel="canonical" href="https://lmark.cc/archives/b79c4a06.html"><link rel="preconnect" href="https://lib.baomitu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://lib.baomitu.com/fancyapps-ui/5.0.33/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://lib.baomitu.com/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'IC卡秘钥算法破解的一次尝试',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-01-20 20:53:31'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"3K1gEbd0agcY8IUo",ck:"3K1gEbd0agcY8IUo"})</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="LMark的博客" type="application/atom+xml">
+</head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/xlenco/JS-X@main/pace.js/pace.css"/><script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">49</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/04/05/c4ZkjCsxFm5Rf3w.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="LMark的博客"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/1633337981355.png"/><span class="site-name">LMark的博客</span></a></span><div id="tp-weather-widget"></div><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">IC卡秘钥算法破解的一次尝试</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-07-18T00:41:24.000Z" title="发表于 2021-07-18 08:41:24">2021-07-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-20T12:53:31.656Z" title="更新于 2025-01-20 20:53:31">2025-01-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="IC卡秘钥算法破解的一次尝试"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><script>document.getElementById('web_bg').style.backgroundImage = `url('https://s2.loli.net/2022/04/05/c4ZkjCsxFm5Rf3w.jpg')`; // 将Pug变量传递并设置背景图
+</script><article class="post-content" id="article-container"><p>Hello大家好，这里是LanternMark，今天给大家分享一下我的一次水卡破解经历。</p>
+<p>（本文只技术交流分享，滥用者自行承担责任，与本文作者无关）</p>
+<h3 id="0x0-前言"><a href="#0x0-前言" class="headerlink" title="0x0.前言"></a>0x0.前言</h3><p>​	<strong>IC卡</strong>，即Integrated Circuit Card，集成电路卡,像我们平常看到的银行卡，地铁卡，还有校园里的饭卡，智能校徽等等，这些都属于IC卡。想必大家一定不陌生，但是大家有没有关注过IC卡的原理以及安全性。希望通过这篇文章，给大家一些启发。</p>
+<h3 id="0x1-准备工作"><a href="#0x1-准备工作" class="headerlink" title="0x1.准备工作"></a>0x1.准备工作</h3><p>​	<strong>工欲善其事，必先利其器。</strong>在开始读卡之前，先准备好以下的东西:</p>
+<ul>
+<li>一块读卡芯片（比如PN532）</li>
+<li>一台有NFC功能的手机，和配套的软件（比如MCT）</li>
+<li>一张水卡</li>
+<li>一颗耐心(很重要)</li>
+</ul>
+<p>​    芯片这里我用的是PN532，一块很便宜的读卡芯片，某宝上30多就能买到了，都准备好之后，就可以开始破解了。</p>
+<h3 id="0x2-开始破解"><a href="#0x2-开始破解" class="headerlink" title="0x2.开始破解"></a>0x2.开始破解</h3><p>​	首先，先打开手机的NFC功能，读取一下这张水卡，会得到以下的结果。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/19/n2aFzDm46Icd7A1.jpg"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/19/khfsmgKjar8ivtO.jpg"></p>
+<p>​	可以看到，除了13扇区之外，其他扇区都是用的默认密钥，这就给这张卡片带来了很大的安全风险，因为像这种没有全部加密（半加密）的卡片，是可以利用IC卡漏洞轻松破解的，这里我们来用PN532配套的上位机尝试破解一下。</p>
+<p>结果如下图：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/19/TvoRFf3WdtHALGi.jpg" alt="很轻松就能获取13扇区的密钥"></p>
+<p>用了三分钟，秘钥就很轻松的被破解出来了，可见这种IC卡的安全性真的不高。不过用漏洞破解不是本文的重点，本文主要分享一个业余的人破解秘钥的过程。</p>
+<h3 id="0x3-数据分析"><a href="#0x3-数据分析" class="headerlink" title="0x3.数据分析"></a>0x3.数据分析</h3><p>​	通过上面一张卡的数据，我还是看不出来有什么联系，所以我又找了另外一些卡来破解寻找UID和密钥的关系。在扫了10+张卡片后，我可以初步知道UID和密钥的映射关系。</p>
+<p>​				                     <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/19/GBC5kYt2LOnSDfy.jpg" alt="第一行是UID，第二行是Key">	</p>
+<p>​	由于这种卡的KeyB都是相同的，只有KeyA不一样，所以UID决定的是KeyA，而且KeyA有六位，而UID只有四位，通过上图，我们可以清晰地看到UID地每一位都决定着Key的一位。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/19/QYRqbiGvDIgFAzZ.jpg" alt="映射关系"></p>
+<p>​	知道了这个以后，事情就变得简单了起来（也许吧），只要找出每一位Key的映射关系，就能破解出密钥的计算公式。接下来就来讲讲我破解密码的过程，在IC卡中，运算关系无非是加减乘除，异或和取反等等，只要有足够的数据，连蒙带猜，应该能推算出来，就拿第一位来说，通过UID和对应的Key位进行运算，可以很容易看出是有规律的。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/19/KXEyUcPTxn8sbfa.jpg" alt="异或结果都是1E"></p>
+<p>​	异或结果都相同，也就是说，由UID XOR 1E &#x3D;&#x3D; 对应的Key，这样第一个映射关系就找出来了。第一位key的对应关系被这么容易找出来了，使我备受鼓舞，可开始找第二位Key的对应关系的时候，就遇到了困难。</p>
+<p>作为一名高三学生，对于这方面并没有太多的专业知识，就连异或也是只了解一丢丢。对于密钥破解，只能是不停的猜测，比如破解第二位Key。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/19/Ak9jmKyC73R264N.jpg" alt="第二位Key"></p>
+<p>可以看到，第二个数字是通过 异或 1得到的结果，而第一位，就显得没有规律了，比如图中的</p>
+<p>​								<strong>6</strong>0  —&gt;  <strong>8</strong>1    </p>
+<p>​								<strong>6</strong>B  —&gt;  <strong>B</strong>1 </p>
+<p>​    				</p>
+<p>​	出现了两个自变量对一个因变量的情况，这就很麻烦了，无法直接地观察。于是乎，我就把这些数据对应关系列出来，得到了以下的对应表 :</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/19/6Alh7bOcfsjWQ92.jpg" alt="看起来毫无规律的表"></p>
+<p>   这使得我当时破解工作陷入了低迷，，，但是，我没有放弃，我想:我看不懂的东西，应该是我不会的东西，那就只有异或是我没掌握的了。为此，我开始去钻研异或，还特意画了一张异或关系表</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/19/ts36yeqkB8mpd25.jpg" alt="我知道我的字不好看"></p>
+<p>正是这张表，为后来的破解工作提供了很大的帮助，通过这张表，我了解到了异或的一些规律，比如相邻的两个数字对应的异或值也是相邻的。有了这张表，在结合上面的对应关系，我隐隐约约感觉到Key的计算是和异或有些关系，于是我开始了头脑风暴。我试了很多种模型，没有成功，但每次失败，都让我感受到离成功更近一步，终于，在一个炎热的午后（没错，南方的十二月还是很热的），一次英语听力即将开始的时候，我终于看出来了。</p>
+<p>​	首先，我发现虽然这些数没有直接的异或关系，但是不同异或结果之间的绝对距离是不变的，也就是说，只要我根据结果的数据之间相隔多少距离，可以反推出对应的异或的数字，比如说2往上数刚好隔了五个单位到8，又隔了三个单位到12(C),又隔了一个单位到14(E),这样的关系，让我联想到了凯撒密码</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/19/GNdn9rjCvTIgxRW.jpg" alt="交错对应"></p>
+<p> 这样的结果，都可以由UID 异或 0 得到结果，再类比凯撒密码，我得到了以下的对应关系</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/19/DE8BtK7YLrS5ATm.jpg" alt="黑色是确定的数据，红色的是猜测的数据"></p>
+<p>   可以看到，大部分数据还是符合关系的，只有一小部分不符合关系，而这不符合关系的一小部分数字，都是对应着下一位的数字，也就是说，由于某种原因，导致了数字进了一位，接下来，只要找出为什么进位就可以了，这是又要进行大数据分析了，列表 </p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/19/Li6ElRksVvf2Ku3.jpg" alt="清晰明了"></p>
+<p>​	通过对比，不难发现，要进位的UID第二位数都大于8，而不用进位的数字第二位数都小于9，至此，这位Key的映射关系已经出来了，接下来要做的，就是用数据验证猜想，为此，我又去找了10+张卡来验证，发现都符合我的结论，可以说，在一定范围内，我的猜想是成立的。Key的第二位破解工作圆满完成！</p>
+<p>​	剩下的4位Key也可以了这样类似的方法破解出来的，这里我就不一一赘述了。</p>
+<h3 id="0x4-结果验证"><a href="#0x4-结果验证" class="headerlink" title="0x4.结果验证"></a>0x4.结果验证</h3><p>在破解出了Key的算法后，我用Python写了一个计算程序</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/19/HSOaPB3QgME98Rk.jpg" alt="一个很水的算法"></p>
+<p>​	经过我已有的数据验证，这个计算方法都是成立的，</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/19/IOJvc9HzT1UglEx.jpg" alt="成立了"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/19/6oJqKDEGntBVRTO.jpg" alt="又成立了呢"></p>
+<h3 id="0x5-后记"><a href="#0x5-后记" class="headerlink" title="0x5.后记"></a>0x5.后记</h3><p>​	像这种M1卡，也是十几年前的发明了。时代日新月异，被破解也是无法避免的事情。只是现在在很多地方，比如校园，都还在大范围使用这种卡，而且溯源性不强。希望能尽快升级成CPU卡，这样安全性就高很多了。</p>
+<p>​	破解是一个很有趣的过程，锻炼了我的思维能力，也加深了我对IC卡的了解，还让我懂得了数学的重要性。尽管过程很有趣，得到结果也很能让人获得成就感，但破解过程还是充满着艰辛。光推算秘钥的过程都写满了四张纸。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/19/7EFxRbnTjsSzY8g.jpg" alt="草 稿 纸"></p>
+<p>​	最后，当你登上山顶后，收获的风景远比你付出的艰辛多得多。</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/RFID/">RFID</a><a class="post-meta__tags" href="/tags/%E6%B5%A6%E4%B8%AD/">浦中</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/04/05/Hh3GSyIz42b1al7.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://lib.baomitu.com/butterfly-extsrc/1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/butterfly-extsrc/1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/archives/6a55821b.html" title="基于proteus的可视化设计(1)——基础介绍"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">基于proteus的可视化设计(1)——基础介绍</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/archives/5e5bd1a8.html" title="IC卡金额算法破解的一次尝试"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/04/20/O6bwe5Jmi38VKYn.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-16</div><div class="title">IC卡金额算法破解的一次尝试</div></div></a></div><div><a href="/archives/abbb7553.html" title="记录一些M1卡密钥计算方式和校验位计算方式"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300148_origin_20220531_195553.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-01</div><div class="title">记录一些M1卡密钥计算方式和校验位计算方式</div></div></a></div><div><a href="/archives/3abaf1c6.html" title="东滨路249号的回忆"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/05/21/Gd8soD4KXErcPuZ.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-21</div><div class="title">东滨路249号的回忆</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LMark</div><div class="author-info__description">一个喜欢折腾有意思的技术的人，但是记性不好，所以博客主要记录曾经掌握的知识，方便日后已经忘记的我回来复习。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">49</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/ladeng07"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ladeng07" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2312936963@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/34625132" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fas fa-tv"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0x0-%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">0x0.前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0x1-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">0x1.准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0x2-%E5%BC%80%E5%A7%8B%E7%A0%B4%E8%A7%A3"><span class="toc-number">3.</span> <span class="toc-text">0x2.开始破解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0x3-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-number">4.</span> <span class="toc-text">0x3.数据分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0x4-%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81"><span class="toc-number">5.</span> <span class="toc-text">0x4.结果验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0x5-%E5%90%8E%E8%AE%B0"><span class="toc-number">6.</span> <span class="toc-text">0x5.后记</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/archives/13f312f.html" title="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300155_origin_20220531_195944.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;"/></a><div class="content"><a class="title" href="/archives/13f312f.html" title="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;">解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;</a><time datetime="2025-07-13T10:30:44.000Z" title="发表于 2025-07-13 18:30:44">2025-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/8f8ea55e.html" title="七牛云批量下载图床图片"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300144_origin_20220531_195534.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="七牛云批量下载图床图片"/></a><div class="content"><a class="title" href="/archives/8f8ea55e.html" title="七牛云批量下载图床图片">七牛云批量下载图床图片</a><time datetime="2024-11-17T07:34:44.000Z" title="发表于 2024-11-17 15:34:44">2024-11-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/ea042a0d.html" title="Windows11挂载群晖webdav到本地"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/319678_origin_20220628_092530.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Windows11挂载群晖webdav到本地"/></a><div class="content"><a class="title" href="/archives/ea042a0d.html" title="Windows11挂载群晖webdav到本地">Windows11挂载群晖webdav到本地</a><time datetime="2024-10-16T07:50:57.000Z" title="发表于 2024-10-16 15:50:57">2024-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/efb03d74.html" title="使用脚本自动更新实验室电脑IP到cloudflare域名"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300186_origin_20220531_200449.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用脚本自动更新实验室电脑IP到cloudflare域名"/></a><div class="content"><a class="title" href="/archives/efb03d74.html" title="使用脚本自动更新实验室电脑IP到cloudflare域名">使用脚本自动更新实验室电脑IP到cloudflare域名</a><time datetime="2024-10-09T08:14:27.000Z" title="发表于 2024-10-09 16:14:27">2024-10-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/febc3415.html" title="一次给龙芯旧世界升级内核的失败经历"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300147_origin_20220531_195551.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一次给龙芯旧世界升级内核的失败经历"/></a><div class="content"><a class="title" href="/archives/febc3415.html" title="一次给龙芯旧世界升级内核的失败经历">一次给龙芯旧世界升级内核的失败经历</a><time datetime="2024-03-03T15:47:36.000Z" title="发表于 2024-03-03 23:47:36">2024-03-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By LMark</div><div class="footer_custom_text"><p><a style="margin-inline:5px" target="_blank" href="https://hexo.io/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a><a style="margin-inline:5px" target="_blank" href="https://butterfly.js.org/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a><a style="margin-inline:5px" target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/%E6%A1%82ICP%E5%A4%87-2022004639%E5%8F%B7--1-blue" alt="桂ICP备2022004639号-1" title="本站已在桂进行备案"></a><a style="margin-inline:5px" target="_blank" href="https://github.com/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a><a style="margin-inline:5px" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a><a style="margin-inline:5px" target="_blank" href="https://www.itstudio.club/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/itstudio-shields.svg" title="爱特工作室"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div style="background-color:rgba(0,0,0,0.3)"><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/utils.min.js"></script><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/main.min.js"></script><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/tw_cn.min.js"></script><script src="https://lib.baomitu.com/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script><script src="https://lib.baomitu.com/instant.page/5.2.0/instantpage.min.js" type="module"></script><script src="https://lib.baomitu.com/vanilla-lazyload/17.8.8/lazyload.iife.min.js"></script><script src="https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.lmark.cc/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.lmark.cc/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://lib.baomitu.com/twikoo/1.6.39/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.lmark.cc/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://lib.baomitu.com/twikoo/1.6.39/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><div class="aplayer no-destroy" data-id="7509532357" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-order="random"> </div><script>(function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime()/100000000).toString(),10)));window.SeniverseWeatherWidget('show',{flavor:"slim",location:"WWMKWU0KKVZP",geolocation:true,language:"zh-Hans",unit:"c",theme:"auto",token:"be6ff036-8674-43e7-8f27-8716c37b157b",hover:"disabled",container:"tp-weather-widget"});</script><script src='/js/blurBk.js' defer ></script>\<script type="text/javascript" src="/js/about.js"></script><link rel="stylesheet" href="https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://lib.baomitu.com/butterfly-extsrc/1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/search/local-search.min.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax src="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("https://gitcalendar.lmark.cc/api?ladeng07",['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c'],'ladeng07')
+    }
+  </script><!-- hexo injector body_end end --></body></html>

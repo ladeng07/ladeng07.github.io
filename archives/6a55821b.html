@@ -1,0 +1,439 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>基于proteus的可视化设计(1)——基础介绍 | LMark的博客</title><meta name="author" content="LMark"><meta name="copyright" content="LMark"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Hello，大家好，这里是LMark，今天来给大家分享proteus软件的仿真设计的一些方法，如有错误，欢迎大家指正。我首先声明一下，本人为计算机专业大一学生，对单片机开发只是一个兴趣爱好，并不会在这里介绍太多原理性的内容（主要是我也不是很懂哈哈哈），主要介绍介绍proteus这个软件中，基于arduino uno板的可视化设计(visual Designer)方法。OK，接下来让我们进入正题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于proteus的可视化设计(1)——基础介绍">
+<meta property="og:url" content="https://lmark.cc/archives/6a55821b.html">
+<meta property="og:site_name" content="LMark的博客">
+<meta property="og:description" content="Hello，大家好，这里是LMark，今天来给大家分享proteus软件的仿真设计的一些方法，如有错误，欢迎大家指正。我首先声明一下，本人为计算机专业大一学生，对单片机开发只是一个兴趣爱好，并不会在这里介绍太多原理性的内容（主要是我也不是很懂哈哈哈），主要介绍介绍proteus这个软件中，基于arduino uno板的可视化设计(visual Designer)方法。OK，接下来让我们进入正题。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png">
+<meta property="article:published_time" content="2022-01-29T14:46:01.000Z">
+<meta property="article:modified_time" content="2025-01-20T12:53:31.671Z">
+<meta property="article:author" content="LMark">
+<meta property="article:tag" content="Proteus">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png"><link rel="shortcut icon" href="/"><link rel="canonical" href="https://lmark.cc/archives/6a55821b.html"><link rel="preconnect" href="https://lib.baomitu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://lib.baomitu.com/fancyapps-ui/5.0.33/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://lib.baomitu.com/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '基于proteus的可视化设计(1)——基础介绍',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-01-20 20:53:31'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"3K1gEbd0agcY8IUo",ck:"3K1gEbd0agcY8IUo"})</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="LMark的博客" type="application/atom+xml">
+</head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/xlenco/JS-X@main/pace.js/pace.css"/><script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">49</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/01/31/8pH9kra5PqMFUj6.png')"><nav id="nav"><span id="blog-info"><a href="/" title="LMark的博客"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/1633337981355.png"/><span class="site-name">LMark的博客</span></a></span><div id="tp-weather-widget"></div><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">基于proteus的可视化设计(1)——基础介绍</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-29T14:46:01.000Z" title="发表于 2022-01-29 22:46:01">2022-01-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-20T12:53:31.671Z" title="更新于 2025-01-20 20:53:31">2025-01-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="基于proteus的可视化设计(1)——基础介绍"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><script>document.getElementById('web_bg').style.backgroundImage = `url('https://s2.loli.net/2022/01/31/8pH9kra5PqMFUj6.png')`; // 将Pug变量传递并设置背景图
+</script><article class="post-content" id="article-container"><p>Hello，大家好，这里是LMark，今天来给大家分享proteus软件的仿真设计的一些方法，如有错误，欢迎大家指正。我首先声明一下，本人为计算机专业大一学生，对单片机开发只是一个兴趣爱好，并不会在这里介绍太多原理性的内容（主要是我也不是很懂哈哈哈），主要介绍介绍proteus这个软件中，基于arduino uno板的可视化设计(visual Designer)方法。OK，接下来让我们进入正题。</p>
+<p>​	关于Proteus的介绍，这里摘抄一段百度百科的介绍：</p>
+<blockquote>
+<p> Proteus软件是英国Lab Center Electronics公司出版的EDA工具软件。它不仅具有其它EDA工具软件的仿真功能，还能仿真单片机及外围器件。它是比较好的仿真单片机及外围器件的工具。虽然国内推广刚起步，但已受到单片机爱好者、从事单片机教学的教师、致力于单片机开发应用的科技工作者的青睐。</p>
+</blockquote>
+<p>就是这么一个功能强大的软件，成为了许多老师们上课喜欢用的软件。我们学校有老师开了一门单片机学习入门的课，就是用proteus来教学的。先来看看proteus长啥样：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png"></p>
+<p>现在proteus最新版本已经到了8.13，从8.6开始，proteus就已经支持可视化设计，那有人要问了：什么是可视化设计呀? </p>
+<p><strong>可视化（Visual）程序设计其实是一种全新的程序设计方法。</strong></p>
+<blockquote>
+<p><strong>它主要是让程序设计人员利用软件本身所提供的各种控件，像搭积木一样来构造应用程序的各种界面。</strong> <strong>Proteus</strong>软件的可视化设计<strong>Visual Designer</strong>是一个独特的开发工具，同时使用流程图和<strong>Arduino</strong>开发板通过拖放的外围设备模块来设计基于<strong>Arduin</strong>嵌入式系统的程序设计。并且设计好的程序可以直接烧录到对应的板子上。</p>
+</blockquote>
+<p>要想用proteus进行可视化设计，得要1.安装proteus8.6及以上的版本。2.软件需要破解。proteus破解版在网上搜可以搜索到很多，我这里给一个proteus8.11的破解版：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://pan.baidu.com/s/1QCxhFQWl4XzPcNVOcg_Czw">https://pan.baidu.com/s/1QCxhFQWl4XzPcNVOcg_Czw</a>   提取码：sc8a</p>
+<h2 id="1-创建可视化设计工程"><a href="#1-创建可视化设计工程" class="headerlink" title="1.创建可视化设计工程"></a>1.创建可视化设计工程</h2><p>首先打开软件，可以看到这样的界面，点击“New Flowchart”（我的proteus是汉化过的，汉化的方法百度上有很多，以后会讲讲）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/29/AbQeq74tcDo5xyF.png"></p>
+<p>点击“下一步”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/29/vh8HNQs1IXizbJa.png"></p>
+<p>然后就按照默认配置即可，最后点击“完成”即可创建。</p>
+<h2 id="2-界面介绍"><a href="#2-界面介绍" class="headerlink" title="2.界面介绍"></a>2.界面介绍</h2><p>原理图界面，在这里可以摆放部件的位置，对部件的属性进行修改</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/29/Dux2p38XEOCY65k.png"></p>
+<p>流程图界面，在这里可以进行程序的设计</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/29/fvbYQgB6Fz8OUC7.png"></p>
+<h2 id="3-可视化设计基本方法介绍"><a href="#3-可视化设计基本方法介绍" class="headerlink" title="3.可视化设计基本方法介绍"></a>3.可视化设计基本方法介绍</h2><p>以刚刚的工程为例，可视化原理图搭建完成后，将界面切换至可视化界面，从左边工程树中的Peripherals选项中，我们可以看到cpu和timer1两个关于Arduino开发平台的方法库：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/30/S8HFInczCLbNOhs.png"></p>
+<h4 id="cpu模块的方法"><a href="#cpu模块的方法" class="headerlink" title="cpu模块的方法"></a>cpu模块的方法</h4><p>单击cpu左边的三角，弹出cpu相关的方法：</p>
+<p>pinMode（配置引脚模块，指定引脚和方向）</p>
+<p>analogReference（配置模拟引脚参考电压模块）</p>
+<p>analogWrite（写入模拟量模块）</p>
+<p>analogRead（读取模拟量模块）</p>
+<p>digitalWrite（写入数字量模块，指定输出引脚和高低电平）</p>
+<p>digitalRead（读取数字量模块）</p>
+<p>pulseIn（读取脉冲时间模块）</p>
+<p>millis（延时模块）</p>
+<p>enableInterrupt（启用中断模块）</p>
+<p>disableInterrupt（禁用终端模块）</p>
+<p>debug(调试模块)等等</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/30/Z82nzGi4UXoysc3.png"></p>
+<h4 id="timer1模块的方法"><a href="#timer1模块的方法" class="headerlink" title="timer1模块的方法"></a>timer1模块的方法</h4><p>单击timer1左边的三角，弹出timer1相关的方法：</p>
+<p>initialize（初始化模块）</p>
+<p>setPeriod（设置频率模块）</p>
+<p>start（启动模块）</p>
+<p>stop（停止模块）</p>
+<p>restart（重启模块）</p>
+<p>resume（继续模块）</p>
+<p>read（读取模块）</p>
+<p>pwm（启用PWM模块）</p>
+<p>disablepwm（禁用PWM模块）</p>
+<p>setPwmDuty（设置PWM占空比模块）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/30/Y5ys48PL2QpAatU.png"></p>
+<h4 id="基本逻辑框图"><a href="#基本逻辑框图" class="headerlink" title="基本逻辑框图"></a>基本逻辑框图</h4><p>从工程树的右边可以看到基本逻辑框图，如下图所示：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/30/zWuhaMGO1ErptAq.png" alt="流程图中的基本逻辑框图"></p>
+<p>需要使用的时候只需要将对应的框拖动到流程图中即可,在这里简单介绍几个逻辑框图的用法。首先，是赋值&#x2F;分配模块，该模块是变量赋值的工具，可以在赋值&#x2F;分配模块中完成创建新变量、编辑变量和删除变量等操作，可用的变量类型如下：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/30/aEYybHV4cNxvR6g.png" alt="可视化设计中的变量的类型"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/02/11/2P1DtsyaXRCgwbH.png"></p>
+<p>和C语言差不多，有布尔类型，整型，浮点型，字符串型等等，后面的TIME是时间类型（之后的文章会介绍），还有一个HANDLE（句柄）我也没用过。其次，介绍一下决策&#x2F;判断模块，双击该模块，在Condition中填入判断的条件；右键点击该模块，选择“Swap Yes&#x2F;No”，可以交换流程图中的Yes和No的分支。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/30/8gnBGM3FosKCam2.png" alt="判断模块"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/30/eIMNr85RTaBclVZ.png" alt="交换Yes和No"></p>
+<p>然后介绍一下循环模块，这个循环模块里包含了三种循环，分别是计数循环（Count Loop）、For-Next循环（For-Next Loop）、While-Wend循环（While-Wend Loop）和Repeat-Until循环（Repeat-Until Loop）。后面三种循环分别对应着C语言中的FOR循环、While循环和While-Until循环。</p>
+<p>最后告诉大家一个小技巧，当你的流程图过长时，你可以把流程图分开成两个，操作方法是右键单击要分离的地方并Split（分离）向导线即可，如图所示：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/30/mKWHu3kt25eUQcf.png"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/30/mps9S8WZdKLDvjt.png"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/30/AGZzHFmqoyWxJMb.png"></p>
+<h4 id="系统仿真"><a href="#系统仿真" class="headerlink" title="系统仿真"></a>系统仿真</h4><p><strong>开始仿真：</strong>若要开始仿真，可以单击动画控制面板上的“播放”按钮。程序将进行编译并且仿真进度将在状态栏上显示：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/30/7VxU5rYJ9O8lt2E.png" alt="第一个"></p>
+<p><strong>停止仿真：</strong>若要停止仿真，可以单击动画控制面板上的“停止”按钮，整个工程将停止仿真。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/30/kxhK1N95mj6teF3.png" alt="第四个"></p>
+<p><strong>暂停仿真：</strong>暂停Proteus仿真是一个重要的概念。当仿真暂停时，程序和元器件处于当前静止状态，例如，电容器不会放电，电机将保持其角位置和动量，这样便可以是用户检查程序和虚拟硬件。若要暂停仿真，可以单击动画控制面板上的“暂停”按钮。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/30/oIdv7l8anJQOYV4.png" alt="第三个"></p>
+<h4 id="串行口通信模块"><a href="#串行口通信模块" class="headerlink" title="串行口通信模块"></a>串行口通信模块</h4><p>在可视化设计中，有时候需要实时查看一些变量的值来检查程序是否正常运行，当你的程序中没有显示屏的时候，串口通信模块就能发挥大用处，软件里提供了这个模块</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/02/11/pMASxXbFc7E64lP.png"></p>
+<p>如图，在Grove中的UART。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/02/11/m3oeF4EkxatJKIu.png"></p>
+<p>方法：</p>
+<ul>
+<li>1.print:屏幕打印字符</li>
+<li>2.println:屏幕打印字符，并换行回车</li>
+<li>3.setBase:设置数据打印进制数</li>
+<li>4.setPlaces:设置数据打印保留几位小数点</li>
+</ul>
+<p>方法很简单，就是print嘛，举个例子，输出一个字符串：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/02/11/tsiWvHFObe2uyg9.png"></p>
+<p>效果：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/02/11/2SZd3ApnVXrPCLz.png"></p>
+<p>这样就在屏幕上打开了！如果你一不小心点了右上角的X关掉了，下次模拟仿真的时候是不会出现的，需要手动打开，打开方法：</p>
+<p>点击调试</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/02/11/9GVg4W3A2EyaBDF.png"></p>
+<p>然后勾选这个VT的选项即可</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/02/11/YAT8nP3cHGF2LWl.png"></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Proteus/">Proteus</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://lib.baomitu.com/butterfly-extsrc/1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/butterfly-extsrc/1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/archives/bcaeb128.html" title="基于proteus的可视化设计(2)——LED模块"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">基于proteus的可视化设计(2)——LED模块</div></div></a></div><div class="next-post pull-right"><a href="/archives/b79c4a06.html" title="IC卡秘钥算法破解的一次尝试"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/04/05/Hh3GSyIz42b1al7.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">IC卡秘钥算法破解的一次尝试</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/archives/bcaeb128.html" title="基于proteus的可视化设计(2)——LED模块"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-29</div><div class="title">基于proteus的可视化设计(2)——LED模块</div></div></a></div><div><a href="/archives/cb089c0e.html" title="基于proteus的可视化设计(3)——显示屏控制"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-01</div><div class="title">基于proteus的可视化设计(3)——显示屏控制</div></div></a></div><div><a href="/archives/f26766a0.html" title="基于proteus的可视化设计(4)——电机控制"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-11</div><div class="title">基于proteus的可视化设计(4)——电机控制</div></div></a></div><div><a href="/archives/1244c55c.html" title="基于proteus的可视化设计(5)——传感器"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-13</div><div class="title">基于proteus的可视化设计(5)——传感器</div></div></a></div><div><a href="/archives/8540ce62.html" title="基于proteus的可视化设计(6)——一些自己写的程序介绍"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/01/29/1WsFjBXNIlyAvYc.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-20</div><div class="title">基于proteus的可视化设计(6)——一些自己写的程序介绍</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LMark</div><div class="author-info__description">一个喜欢折腾有意思的技术的人，但是记性不好，所以博客主要记录曾经掌握的知识，方便日后已经忘记的我回来复习。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">49</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/ladeng07"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ladeng07" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2312936963@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/34625132" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fas fa-tv"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E5%8F%AF%E8%A7%86%E5%8C%96%E8%AE%BE%E8%AE%A1%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">1.创建可视化设计工程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%95%8C%E9%9D%A2%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text">2.界面介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%8F%AF%E8%A7%86%E5%8C%96%E8%AE%BE%E8%AE%A1%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.</span> <span class="toc-text">3.可视化设计基本方法介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#cpu%E6%A8%A1%E5%9D%97%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">3.0.1.</span> <span class="toc-text">cpu模块的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#timer1%E6%A8%A1%E5%9D%97%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">3.0.2.</span> <span class="toc-text">timer1模块的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91%E6%A1%86%E5%9B%BE"><span class="toc-number">3.0.3.</span> <span class="toc-text">基本逻辑框图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E4%BB%BF%E7%9C%9F"><span class="toc-number">3.0.4.</span> <span class="toc-text">系统仿真</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%B2%E8%A1%8C%E5%8F%A3%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%9D%97"><span class="toc-number">3.0.5.</span> <span class="toc-text">串行口通信模块</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/archives/13f312f.html" title="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300155_origin_20220531_195944.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;"/></a><div class="content"><a class="title" href="/archives/13f312f.html" title="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;">解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;</a><time datetime="2025-07-13T10:30:44.000Z" title="发表于 2025-07-13 18:30:44">2025-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/8f8ea55e.html" title="七牛云批量下载图床图片"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300144_origin_20220531_195534.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="七牛云批量下载图床图片"/></a><div class="content"><a class="title" href="/archives/8f8ea55e.html" title="七牛云批量下载图床图片">七牛云批量下载图床图片</a><time datetime="2024-11-17T07:34:44.000Z" title="发表于 2024-11-17 15:34:44">2024-11-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/ea042a0d.html" title="Windows11挂载群晖webdav到本地"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/319678_origin_20220628_092530.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Windows11挂载群晖webdav到本地"/></a><div class="content"><a class="title" href="/archives/ea042a0d.html" title="Windows11挂载群晖webdav到本地">Windows11挂载群晖webdav到本地</a><time datetime="2024-10-16T07:50:57.000Z" title="发表于 2024-10-16 15:50:57">2024-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/efb03d74.html" title="使用脚本自动更新实验室电脑IP到cloudflare域名"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300186_origin_20220531_200449.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用脚本自动更新实验室电脑IP到cloudflare域名"/></a><div class="content"><a class="title" href="/archives/efb03d74.html" title="使用脚本自动更新实验室电脑IP到cloudflare域名">使用脚本自动更新实验室电脑IP到cloudflare域名</a><time datetime="2024-10-09T08:14:27.000Z" title="发表于 2024-10-09 16:14:27">2024-10-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/febc3415.html" title="一次给龙芯旧世界升级内核的失败经历"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300147_origin_20220531_195551.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一次给龙芯旧世界升级内核的失败经历"/></a><div class="content"><a class="title" href="/archives/febc3415.html" title="一次给龙芯旧世界升级内核的失败经历">一次给龙芯旧世界升级内核的失败经历</a><time datetime="2024-03-03T15:47:36.000Z" title="发表于 2024-03-03 23:47:36">2024-03-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By LMark</div><div class="footer_custom_text"><p><a style="margin-inline:5px" target="_blank" href="https://hexo.io/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a><a style="margin-inline:5px" target="_blank" href="https://butterfly.js.org/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a><a style="margin-inline:5px" target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/%E6%A1%82ICP%E5%A4%87-2022004639%E5%8F%B7--1-blue" alt="桂ICP备2022004639号-1" title="本站已在桂进行备案"></a><a style="margin-inline:5px" target="_blank" href="https://github.com/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a><a style="margin-inline:5px" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a><a style="margin-inline:5px" target="_blank" href="https://www.itstudio.club/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/itstudio-shields.svg" title="爱特工作室"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div style="background-color:rgba(0,0,0,0.3)"><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/utils.min.js"></script><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/main.min.js"></script><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/tw_cn.min.js"></script><script src="https://lib.baomitu.com/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script><script src="https://lib.baomitu.com/instant.page/5.2.0/instantpage.min.js" type="module"></script><script src="https://lib.baomitu.com/vanilla-lazyload/17.8.8/lazyload.iife.min.js"></script><script src="https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.lmark.cc/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.lmark.cc/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://lib.baomitu.com/twikoo/1.6.39/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.lmark.cc/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://lib.baomitu.com/twikoo/1.6.39/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><div class="aplayer no-destroy" data-id="7509532357" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-order="random"> </div><script>(function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime()/100000000).toString(),10)));window.SeniverseWeatherWidget('show',{flavor:"slim",location:"WWMKWU0KKVZP",geolocation:true,language:"zh-Hans",unit:"c",theme:"auto",token:"be6ff036-8674-43e7-8f27-8716c37b157b",hover:"disabled",container:"tp-weather-widget"});</script><script src='/js/blurBk.js' defer ></script>\<script type="text/javascript" src="/js/about.js"></script><link rel="stylesheet" href="https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://lib.baomitu.com/butterfly-extsrc/1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/search/local-search.min.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax src="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("https://gitcalendar.lmark.cc/api?ladeng07",['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c'],'ladeng07')
+    }
+  </script><!-- hexo injector body_end end --></body></html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>LMark的博客 - 记录一些小技巧|经验|知识 </title><meta name="author" content="LMark"><meta name="copyright" content="LMark"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一个喜欢折腾有意思的技术的人，但是记性不好，所以博客主要记录曾经掌握的知识，方便日后已经忘记的我回来复习。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LMark的博客">
+<meta property="og:url" content="https://lmark.cc/index.html">
+<meta property="og:site_name" content="LMark的博客">
+<meta property="og:description" content="一个喜欢折腾有意思的技术的人，但是记性不好，所以博客主要记录曾经掌握的知识，方便日后已经忘记的我回来复习。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lmark.cc/img/avatar.jpg">
+<meta property="article:author" content="LMark">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lmark.cc/img/avatar.jpg"><link rel="shortcut icon" href="/"><link rel="canonical" href="https://lmark.cc/index.html"><link rel="preconnect" href="https://lib.baomitu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://lib.baomitu.com/fancyapps-ui/5.0.33/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://lib.baomitu.com/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'LMark的博客',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-09-11 01:37:50'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"3K1gEbd0agcY8IUo",ck:"3K1gEbd0agcY8IUo"})</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="LMark的博客" type="application/atom+xml">
+</head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/xlenco/JS-X@main/pace.js/pace.css"/><script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">49</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://cdn.lmark.cc/blog/IMG_0152.JPG')"><nav id="nav"><span id="blog-info"><a href="/" title="LMark的博客"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/1633337981355.png"/><span class="site-name">LMark的博客</span></a></span><div id="tp-weather-widget"></div><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">LMark的博客</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/ladeng07" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2312936963@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/34625132" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fas fa-tv"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/archives/b79c4a06.html" title="IC卡秘钥算法破解的一次尝试"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/04/05/Hh3GSyIz42b1al7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IC卡秘钥算法破解的一次尝试"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/b79c4a06.html" title="IC卡秘钥算法破解的一次尝试"><i class="fas fa-thumbtack sticky"></i>IC卡秘钥算法破解的一次尝试</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-07-18T00:41:24.000Z" title="发表于 2021-07-18 08:41:24">2021-07-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/b79c4a06.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">Hello大家好，这里是LanternMark，今天给大家分享一下我的一次水卡破解经历。
+（本文只技术交流分享，滥用者自行承担责任，与本文作者无关）
+0x0.前言​	IC卡，即Integrated Circuit Card，集成电路卡,像我们平常看到的银行卡，地铁卡，还有校园里的饭卡，智能校徽等等，这些都属于IC卡。想必大家一定不陌生，但是大家有没有关注过IC卡的原理以及安全性。希望通过这篇文章，给大家一些启发。
+0x1.准备工作​	工欲善其事，必先利其器。在开始读卡之前，先准备好以下的东西:
+
+一块读卡芯片（比如PN532）
+一台有NFC功能的手机，和配套的软件（比如MCT）
+一张水卡
+一颗耐心(很重要)
+
+​    芯片这里我用的是PN532，一块很便宜的读卡芯片，某宝上30多就能买到了，都准备好之后，就可以开始破解了。
+0x2.开始破解​	首先，先打开手机的NFC功能，读取一下这张水卡，会得到以下的结果。
+
+
+​	可以看到，除了13扇区之外，其他扇区都是用的默认密钥，这就给这张卡片带来了很大的安全风险，因为像这种没有全部加密（半加密）的卡片，是可以利用IC卡漏洞轻松破解的，这里我们来用PN532配套的上位机尝试破解一下。
+结果如下图：
+
+用了三分钟，秘钥就很轻松的被破解出来了，可见这种IC卡的安全性真的不高。不过用漏洞破解不是本文的重点，本文主要分享一个业余的人破解秘钥的过程。
+0x3.数据分析​	通过上面一张卡的数据，我还是看不出来有什么联系，所以我又找了另外一些卡来破解寻找UID和密钥的关系。在扫了10+张卡片后，我可以初步知道UID和密钥的映射关系。
+​				                     	
+​	由于这种卡的KeyB都是相同的，只有KeyA不一样，所以UID决定的是KeyA，而且KeyA有六位，而UID只有四位，通过上图，我们可以清晰地看到UID地 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/archives/13f312f.html" title="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300155_origin_20220531_195944.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/13f312f.html" title="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;">解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-07-13T10:30:44.000Z" title="发表于 2025-07-13 18:30:44">2025-07-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/13f312f.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">问题今天写Django项目，创建订单时遇到个bug MySQL backend does notsupport timezone-aware datetimes when USE TZ is False
+我把Django的USE_TZ关掉时，他说我mysql不支持，我去打开之后，能创建订单了，但是admin里商品显示有问题了，报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;然后网上查教程让我把这个选项USE_TZ时区支持打开(Django5.0默认打开)。一根筋变成两头堵了。
+解决研究了好久，比如给我mysql加上 SET time_zone = &#39;+08:00&#39;再重启，没用。还是一样报错。后面查了好久才发现，原来是我的mysql数据库里没时区信息，虽然不知道为什么都2025年了，默认不自带时区信息。
+Linux下使用命令：
+1mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql
+
+即可写入时区信息，Windows比较麻烦，得去官网下一个时区的sql文件MySQL :: Time zone description tables，
+
+选timezone_2025b_posix_sql.zip下载，然后解压出sql文件在数据库里执行一下就行了，大概看了一下，里面都是些时区名字和时间偏移的对应关系。如下图所示：
+
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/archives/8f8ea55e.html" title="七牛云批量下载图床图片"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300144_origin_20220531_195534.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="七牛云批量下载图床图片"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/8f8ea55e.html" title="七牛云批量下载图床图片">七牛云批量下载图床图片</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-11-17T07:34:44.000Z" title="发表于 2024-11-17 15:34:44">2024-11-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/8f8ea55e.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">起因大一搭博客的时候，需要用到图床，当时用了免费的SM.MS速度差点意思，正好看到七牛云有免费的10G空间，用来搭图床足够了。正好typora也支持接入七牛云，就这样写了几年博客，上传了两千多张照片，一直用的好好的。
+直到去年，腾讯云的免费https证书从时间从1年变成了三个月，博客的图床经常因为没更新证书直接挂掉。此时开始萌生想把七牛云上的图片迁移走的想法。然后找了一圈发现，七牛云网站本身不支持批量下载，但是官方提供了一个命令行工具可以批量下载：qiniu&#x2F;qshell: Shell Tools for Qiniu Cloud
+使用参考官方教程批量下载 - 七牛开发者中心
+下载了qshell.exe（以windows为例）之后，使用如下两个命令可以进行下载：
+12qshell account 您的ak 您的sk 空间名称qshell qdownload2 --dest-dir=本地文件夹相对路径或者绝对路径 --bucket=空间名称
+
+这里的ak和sk都是密钥，之前使用七牛云作图床时，已经保存过一份，空间名称就是空间管理中的名字，如下：
+
+然后就能下载了，在这里我推荐另外一个方法，把以上信息写入conf文件里，之后可以直接调用，格式如下：
+1234567&#123;      &quot;accessKey&quot;: 您的ak,      &quot;secretKey&quot;: 您的sk,      &quot;bucket&quot;: 空间名称,      &quot;cdn_domain、&quot;: cdn使用的域名,      &quot;dest_dir&quot;: 保存路径&#125;
+
+批量下载是支持增量下载的，也就说之后可以写定时任务，自动备份图床图片。
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/archives/ea042a0d.html" title="Windows11挂载群晖webdav到本地"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/319678_origin_20220628_092530.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Windows11挂载群晖webdav到本地"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/ea042a0d.html" title="Windows11挂载群晖webdav到本地">Windows11挂载群晖webdav到本地</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-16T07:50:57.000Z" title="发表于 2024-10-16 15:50:57">2024-10-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/ea042a0d.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">问题描述在群晖里启动了webdav server之后，windows11上添加会出现0x80070043 找不到网络名
+
+解决方案
+确认webdav服务正确打开，端口无冲突。
+windows11注册表的BasicAuthLevel设置为2
+
+具体操作
+
+使用win+R，输入regedit打开注册表
+找到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters键
+找到BasicAuthLevel的项
+修改其值为2
+
+
+
+如果不存在这个键，新建一个名为BasicAuthLevel，类型为DWORD的值，设置为2
+重启
+
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/archives/efb03d74.html" title="使用脚本自动更新实验室电脑IP到cloudflare域名"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300186_origin_20220531_200449.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用脚本自动更新实验室电脑IP到cloudflare域名"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/efb03d74.html" title="使用脚本自动更新实验室电脑IP到cloudflare域名">使用脚本自动更新实验室电脑IP到cloudflare域名</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-09T08:14:27.000Z" title="发表于 2024-10-09 16:14:27">2024-10-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/efb03d74.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">起因之前实验室路由器用的老师的账号，有段时间网络不好，校园网老掉，师兄他们得经常重新登录，每次重新登陆容易造成实验室路由器IP改变，因为我的loongson电脑放在实验室，打洞在校园网。每次换IP我还得跑到实验室去重新看，累死我。然后想到可以像DDNS一样，请求一下API来定时更新IP。因为我的域名是停靠在CF的，所以得用CF的API。
+步骤理论上只要一条请求就可以更新了，但是在这之前，得先获取别的信息，所以整个过程要分三步。
+
+先获取zone的id
+在获取对应子域名的id
+最后组装成更新请求
+
+在开始之前，我们需要先去CF申请一个API的令牌：User API Tokens | Cloudflare
+
+选择你的域名，然后点击进入，滑倒下面，找到Get your API token，进去后点击右上角的create，选择下图的Edit zone DNS
+
+然后配置大概如下，然后再continue就可以了，最后保存好你的密钥。
+
+获取zone的id命令如下，
+1curl -X GET &quot;https://api.cloudflare.com/client/v4/zones&quot; -H &quot;Authorization: Bearer TOKEN&quot; -H &quot;Content-Type: application/json&quot;
+
+返回格式
+123456789101112131415&#123;    &quot;result&quot;: [        &#123;            &quot;id&quot;: &quot;这是你获取的id&quot;,            &quot;name&quot;: &quot;lmark.cc&quot;,            &quot;status&quot;: &quot ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/archives/febc3415.html" title="一次给龙芯旧世界升级内核的失败经历"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300147_origin_20220531_195551.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一次给龙芯旧世界升级内核的失败经历"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/febc3415.html" title="一次给龙芯旧世界升级内核的失败经历">一次给龙芯旧世界升级内核的失败经历</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-03T15:47:36.000Z" title="发表于 2024-03-03 23:47:36">2024-03-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/febc3415.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">起因最近在捣鼓旧世界的3A5000，编了个软件，编完之后有点空虚，在到处学习一些Linux知识。然后突然想到，早在Linux5xx版本，就宣布了对Loongarch的支持，那我岂不是可以自己编一个内核，然后给Loongnix升级，于是就有了这篇。
+下载源码源码：The Linux Kernel Archives
+
+选择6.7.6长期支持版，使用git拉取源码Kernel.org git repositories
+编译：清理缓存1make clean
+
+
+
+配置文件1make loongson3_defconfig #使用loongarch默认配置编译
+
+然后报错：
+
+报错原因：没有安装flex
+解决方法：
+12sudo apt-get install flexsudo apt-get install bison
+
+
+
+
+将配置文件移到顶层1cp arch/loongarch/configs/loongson3_defconfig .config
+
+
+
+选择配置1make menuconfig
+
+
+开始编译1make -j4	#3A5000是4核8线程的
+
+编译完成，大概花了四十分钟：
+
+
+安装模块12sudo make modules_installsudo make install
+
+
+
+
+启用内核作为引导输入下列命令将内核作为引导，将数字更改为你自己编译的版本号：
+1sudo update-initramfs -c -k 6.7.6
+
+
+下面更新一下grub：
+1sudo update-grub
+
+
+
+
+之后重启即可在启动界面选择需要启动的内核。
+linux6.7.6——启动关机再开机之后，在Grub引导界面，选择”advanced”选项，选择刚刚安装的6.7.6内核。
+激动的心，颤抖的手，按下了回车。The world！！！！
+
+一秒钟过去了。。。
+两秒钟过去了。。。 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/archives/bf37dab6.html" title="在Loongarch下编译Remmina 1.4.5版本"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300172_origin_20220531_200244.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在Loongarch下编译Remmina 1.4.5版本"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/bf37dab6.html" title="在Loongarch下编译Remmina 1.4.5版本">在Loongarch下编译Remmina 1.4.5版本</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-02-29T13:04:38.000Z" title="发表于 2024-02-29 21:04:38">2024-02-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/bf37dab6.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">起因之前一直使用loongnix作为跳板机，连接宿舍电脑，然后一直使用Remmina连接，后面看了下Remmina的版本，是1.3.3。
+
+最新版都已经到了1.4.5了已经，我还在用这么老的版本，太不舒服了（遂编一个试试。全程按照官方文档走，没有什么难点，浅浅记录一下。
+安装依赖12345678910sudo apt install build-essential git-core libssh-dev cmake libx11-dev libxext-dev libxinerama-dev \  libxcursor-dev libxdamage-dev libxv-dev libxkbfile-dev libasound2-dev libcups2-dev libxml2 libxml2-dev \  libxrandr-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \  libxi-dev libavutil-dev libjson-glib-dev\  libavcodec-dev libxtst-dev libgtk-3-dev libgcrypt20-dev  libpulse-dev \  libvte-2.91-dev libxkbfile-dev libtelepathy-glib-dev libjpeg-dev \  libgnutls28-dev libsecret-1-dev libavahi-ui-gtk3-dev libvncserver-dev \  libappindicator3-dev intltool libsecret-1-dev libwebkit2gtk-4.0-dev libsystemd-dev \  libsodium-dev libkf5wallet-de ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/archives/a0885322.html" title="关于Django以前忽略的一些东西"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://cdn.lmark.cc/img/8KTbdUZovNG1DgH.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于Django以前忽略的一些东西"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/a0885322.html" title="关于Django以前忽略的一些东西">关于Django以前忽略的一些东西</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-02-27T03:49:26.000Z" title="发表于 2024-02-27 11:49:26">2024-02-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/a0885322.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">Django直接使用sql查询官方文档：执行原生 SQL 查询 | Django 文档 | Django (djangoproject.com)
+将查询字段映射为模型字段¶raw() 字段将查询语句中的字段映射至模型中的字段。
+查询语句中的字段排序并不重要。换而言之，以下两种查询是一致的:
+123&gt;&gt;&gt; Person.objects.raw(&#x27;SELECT id, first_name, last_name, birth_date FROM myapp_person&#x27;)...&gt;&gt;&gt; Person.objects.raw(&#x27;SELECT last_name, birth_date, first_name, id FROM myapp_person&#x27;)
+
+
+
+直接执行自定义 SQL¶有时候，甚至 Manager.raw() 都无法满足需求：你可能要执行不明确映射至模型的查询语句，或者就是直接执行 UPDATE， INSERT 或 DELETE 语句。
+这些情况下，你总是能直接访问数据库，完全绕过模型层。
+对象 django.db.connection 代表默认数据库连接。要使用这个数据库连接，调用 connection.cursor() 来获取一个指针对象。然后，调用 cursor.execute(sql, [params]) 来执行该 SQL 和 cursor.fetchone()，或 cursor.fetchall() 获取结果数据。
+例如：
+123456789from django.db import connectiondef my_custom_sql(self):    with connection.cursor() as cursor:        cursor.execute(&qu ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/archives/b280ab86.html" title="记一次手相简单学习"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300227_origin_20220531_201506.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记一次手相简单学习"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/b280ab86.html" title="记一次手相简单学习">记一次手相简单学习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-11T08:57:54.000Z" title="发表于 2023-11-11 16:57:54">2023-11-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/b280ab86.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">之前上网冲浪，在油管上看到老高的新视频：最強手相，你的雙手決定你的人生 | 老高與小茉 Mr &amp; Mrs Gao - YouTube 看了下自己的手相，感觉还是不错的，故在此记录一下，以后也能回来看一下。
+摘要精彩之處
+💡 手相能揭示人生命運的秘密
+
+高亮
+🌟 人的雙手能反映出個人性格和潛力
+
+內容
+🔮 手掌的線條和紋路能預測一個人的命運和未來
+🌟 手相學是一門古老的術科，被視為一種神秘的藝術
+🌟 人的手形和手指的長度能反映出個人的性格特徵
+💼 某些手相特徵與事業和財富有關
+🌟 通過觀察手相，我們可以了解一個人的健康狀況和壽命
+🌟 手相學的研究能幫助人們更好地了解自己的潛力和命運
+
+本人手
+如何看手相看哪一只手才是对的？惯用手的另一只手（我的就是左手）。左手反映的是天命，也就是不需要努力就能得到的；右手是需要努力才能得到的。
+最重要的三根线
+对应到我的就是：
+
+先来看第一条——生命线。
+生命线生命线长短和寿命的长短没有直接的关系，它反映的是生命力的强弱。主要看生命线下降的弧度，如果下降太快，说明生命力消耗过快。下降快是如下图所示，没有过食指和中指之间的线。
+
+我过了嘿嘿。
+如果没过也不要灰心，看看右手，如果右手好说明通过后天努力是能让生命力获得补充。
+此外，还有内生命线，可能有一条，两条，甚至四条。
+
+此外，生命线末端有分叉的的是——旅行线
+
+旅行线我虽然左手没有，但是我右手有嘿嘿，所以只要我努努力，就可以去很远的地方，努努力运气就会好！
+智慧线智慧线的长度并不代表智商高低，而是一个人的思考方式和脑回路。
+长短也就代表思考问题的长短，智慧线越短越倾向直觉；长代表深思熟虑，但容易过度思考
+这根线的长短可以用来作为判断一个人的依据，别人长的话就慢慢来讲；如果短的话就快速说结论，快速解决。
+还有就是这条线的形状也很重要，如果比较直，偏向理性思维，如果比较弯 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/archives/ea66db6.html" title="为Loongarch移植thunderbird78版本"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300138_origin_20220531_195238.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="为Loongarch移植thunderbird78版本"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/ea66db6.html" title="为Loongarch移植thunderbird78版本">为Loongarch移植thunderbird78版本</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-10-22T17:45:57.000Z" title="发表于 2023-10-23 01:45:57">2023-10-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/ea66db6.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">引言：Mozilla Thunderbird，非正式中文名称为雷鸟，是由Mozilla基金会研发的一款自由及开放源码的跨平台电邮客户端、新闻阅读器、聚合器以及即时通讯软件。此软件预设安装于Ubuntu之上。Thunderbird可用作电邮、新闻组、聚合器或聊天（XMPP、IRC或Twitter）客户端。其预设安装的Lightning扩展则入了个人资讯管理功能。用户若有需要亦可自行安装其他附加元件。
+移植环境软件环境：
+
+操作系统：loongnix-19.0
+
+硬件环境：
+
+CPU：3C5000 CPU
+
+核数：四核
+
+内存：8GB以上
+
+硬盘：256GB以上
+
+
+移植准备本节操作需要以下依赖:
+1.rust-1.65.0-loongarch6412345678# 下载rustup以及rust相关二进制包export RUSTUP_DIST_SERVER=https://rust-lang.loongnix.cnexport RUSTUP_UPDATE_ROOT=https://rust-lang.loongnix.cn/rustupcurl --proto &#x27;=https&#x27; --tlsv1.2 -sSf https://rust-lang.loongnix.cn/rustup-init.sh | sh# 使用rustup安装1.65.0版本rustrustup toolchain install 1.65.0rustup default 1.65.0-loongarch64-unknown-linux-gnu
+
+
+
+
+
+2.cbindgen-0.14.312345# 卸载旧版本cbindgensudo apt remove --purge cbindgen#安装0.14.3版本cbindgencargo install --version 0.14.3  ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#content-inner">5</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LMark</div><div class="author-info__description">一个喜欢折腾有意思的技术的人，但是记性不好，所以博客主要记录曾经掌握的知识，方便日后已经忘记的我回来复习。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">49</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/ladeng07"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ladeng07" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2312936963@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/34625132" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fas fa-tv"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/archives/13f312f.html" title="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300155_origin_20220531_195944.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;"/></a><div class="content"><a class="title" href="/archives/13f312f.html" title="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;">解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;</a><time datetime="2025-07-13T10:30:44.000Z" title="发表于 2025-07-13 18:30:44">2025-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/8f8ea55e.html" title="七牛云批量下载图床图片"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300144_origin_20220531_195534.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="七牛云批量下载图床图片"/></a><div class="content"><a class="title" href="/archives/8f8ea55e.html" title="七牛云批量下载图床图片">七牛云批量下载图床图片</a><time datetime="2024-11-17T07:34:44.000Z" title="发表于 2024-11-17 15:34:44">2024-11-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/ea042a0d.html" title="Windows11挂载群晖webdav到本地"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/319678_origin_20220628_092530.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Windows11挂载群晖webdav到本地"/></a><div class="content"><a class="title" href="/archives/ea042a0d.html" title="Windows11挂载群晖webdav到本地">Windows11挂载群晖webdav到本地</a><time datetime="2024-10-16T07:50:57.000Z" title="发表于 2024-10-16 15:50:57">2024-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/efb03d74.html" title="使用脚本自动更新实验室电脑IP到cloudflare域名"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300186_origin_20220531_200449.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用脚本自动更新实验室电脑IP到cloudflare域名"/></a><div class="content"><a class="title" href="/archives/efb03d74.html" title="使用脚本自动更新实验室电脑IP到cloudflare域名">使用脚本自动更新实验室电脑IP到cloudflare域名</a><time datetime="2024-10-09T08:14:27.000Z" title="发表于 2024-10-09 16:14:27">2024-10-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/febc3415.html" title="一次给龙芯旧世界升级内核的失败经历"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300147_origin_20220531_195551.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一次给龙芯旧世界升级内核的失败经历"/></a><div class="content"><a class="title" href="/archives/febc3415.html" title="一次给龙芯旧世界升级内核的失败经历">一次给龙芯旧世界升级内核的失败经历</a><time datetime="2024-03-03T15:47:36.000Z" title="发表于 2024-03-03 23:47:36">2024-03-03</time></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/RFID/" style="font-size: 1.25em; color: rgb(194, 14, 39)">RFID</a><a href="/tags/%E6%B5%A6%E4%B8%AD/" style="font-size: 1.2em; color: rgb(148, 121, 148)">浦中</a><a href="/tags/M1%E5%8D%A1/" style="font-size: 1.15em; color: rgb(159, 157, 86)">M1卡</a><a href="/tags/%E6%A0%A1%E9%AA%8C%E4%BD%8D/" style="font-size: 1.15em; color: rgb(145, 163, 114)">校验位</a><a href="/tags/Amiibo/" style="font-size: 1.15em; color: rgb(11, 10, 45)">Amiibo</a><a href="/tags/NFC/" style="font-size: 1.2em; color: rgb(158, 25, 200)">NFC</a><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.15em; color: rgb(157, 123, 87)">算法</a><a href="/tags/C/" style="font-size: 1.15em; color: rgb(88, 144, 45)">C++</a><a href="/tags/Cloudflare/" style="font-size: 1.15em; color: rgb(129, 86, 157)">Cloudflare</a><a href="/tags/Django/" style="font-size: 1.35em; color: rgb(20, 16, 178)">Django</a><a href="/tags/Python/" style="font-size: 1.45em; color: rgb(60, 126, 122)">Python</a><a href="/tags/Git/" style="font-size: 1.2em; color: rgb(90, 134, 27)">Git</a><a href="/tags/E-Prime/" style="font-size: 1.15em; color: rgb(119, 184, 122)">E-Prime</a><a href="/tags/%E4%BB%A3%E7%90%86/" style="font-size: 1.15em; color: rgb(20, 76, 20)">代理</a><a href="/tags/CTF/" style="font-size: 1.15em; color: rgb(139, 69, 42)">CTF</a><a href="/tags/Linux/" style="font-size: 1.4em; color: rgb(30, 195, 36)">Linux</a><a href="/tags/XSS/" style="font-size: 1.15em; color: rgb(121, 197, 115)">XSS</a><a href="/tags/alist/" style="font-size: 1.15em; color: rgb(163, 172, 166)">alist</a><a href="/tags/Termux/" style="font-size: 1.15em; color: rgb(23, 51, 43)">Termux</a><a href="/tags/Ubuntu/" style="font-size: 1.15em; color: rgb(132, 83, 125)">Ubuntu</a><a href="/tags/Openwrt/" style="font-size: 1.15em; color: rgb(127, 67, 92)">Openwrt</a><a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" style="font-size: 1.15em; color: rgb(29, 179, 64)">路由器</a><a href="/tags/openwrt/" style="font-size: 1.15em; color: rgb(103, 198, 58)">openwrt</a><a href="/tags/Supervisord/" style="font-size: 1.15em; color: rgb(129, 131, 51)">Supervisord</a><a href="/tags/Loongarch/" style="font-size: 1.3em; color: rgb(74, 100, 57)">Loongarch</a><a href="/tags/%E7%BC%96%E8%AF%91/" style="font-size: 1.25em; color: rgb(188, 86, 188)">编译</a><a href="/tags/thunderbird/" style="font-size: 1.15em; color: rgb(52, 157, 138)">thunderbird</a><a href="/tags/Remmina/" style="font-size: 1.15em; color: rgb(48, 2, 40)">Remmina</a><a href="/tags/Linux%E5%86%85%E6%A0%B8/" style="font-size: 1.15em; color: rgb(20, 158, 177)">Linux内核</a><a href="/tags/%E7%BD%91%E7%BB%9C%E7%A0%B4%E9%98%B2%E5%AE%9E%E8%B7%B5%E5%85%88%E5%AF%BC/" style="font-size: 1.3em; color: rgb(10, 47, 30)">网络破防实践先导</a><a href="/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/" style="font-size: 1.15em; color: rgb(66, 114, 156)">校园网</a><a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="font-size: 1.15em; color: rgb(123, 176, 125)">信息安全</a><a href="/tags/%E7%94%B5%E8%84%91/" style="font-size: 1.15em; color: rgb(81, 191, 24)">电脑</a><a href="/tags/%E8%A3%85%E6%9C%BA/" style="font-size: 1.15em; color: rgb(76, 57, 131)">装机</a><a href="/tags/%E4%B8%83%E7%89%9B%E4%BA%91/" style="font-size: 1.15em; color: rgb(190, 122, 193)">七牛云</a><a href="/tags/%E5%A4%87%E4%BB%BD/" style="font-size: 1.15em; color: rgb(39, 98, 47)">备份</a><a href="/tags/qemu/" style="font-size: 1.15em; color: rgb(175, 121, 74)">qemu</a><a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 1.15em; color: rgb(7, 46, 37)">虚拟机</a><a href="/tags/QQ/" style="font-size: 1.15em; color: rgb(135, 57, 132)">QQ</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%B7%A5%E7%A8%8B/" style="font-size: 1.15em; color: rgb(8, 38, 158)">计算机系统工程</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">48</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2022-01-16T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">118.9k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-09-10T17:37:50.006Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By LMark</div><div class="footer_custom_text"><p><a style="margin-inline:5px" target="_blank" href="https://hexo.io/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a><a style="margin-inline:5px" target="_blank" href="https://butterfly.js.org/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a><a style="margin-inline:5px" target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/%E6%A1%82ICP%E5%A4%87-2022004639%E5%8F%B7--1-blue" alt="桂ICP备2022004639号-1" title="本站已在桂进行备案"></a><a style="margin-inline:5px" target="_blank" href="https://github.com/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a><a style="margin-inline:5px" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a><a style="margin-inline:5px" target="_blank" href="https://www.itstudio.club/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/itstudio-shields.svg" title="爱特工作室"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div style="background-color:rgba(0,0,0,0.3)"><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/utils.min.js"></script><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/main.min.js"></script><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/tw_cn.min.js"></script><script src="https://lib.baomitu.com/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script><script src="https://lib.baomitu.com/instant.page/5.2.0/instantpage.min.js" type="module"></script><script src="https://lib.baomitu.com/vanilla-lazyload/17.8.8/lazyload.iife.min.js"></script><script src="https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.js"></script><div class="js-pjax"><script>(() => { 
+  const getCommentUrl = () => {
+    const eleGroup = document.querySelectorAll('#recent-posts .article-title')
+    let urlArray = []
+    eleGroup.forEach(i=>{
+      urlArray.push(i.getAttribute('href'))
+    })
+    return urlArray
+  }
+
+  const getCount = () => {
+    const runTwikoo = () => {
+      twikoo.getCommentsCount({
+        envId: 'https://twikoo.lmark.cc/',
+        region: '',
+        urls: getCommentUrl(),
+        includeReply: false
+      }).then(function (res) {
+        document.querySelectorAll('#recent-posts .twikoo-count').forEach((item,index) => {
+          item.textContent = res[index].count
+        })
+      }).catch(function (err) {
+        console.log(err)
+      })
+    }
+
+      if (typeof twikoo === 'object') {
+        runTwikoo()
+      } else {
+        getScript('https://lib.baomitu.com/twikoo/1.6.39/twikoo.all.min.js').then(runTwikoo)
+      }
+  }
+
+  window.pjax ? getCount() : window.addEventListener('load', getCount)
+
+})()</script><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://lib.baomitu.com/typed.js/2.1.0/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  getScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js').then(() => {
+    jinrishici.load(result =>{
+      if (true) {
+        const sub = ["欢迎来到LMark的博客！！！","今天月色真美","我直接LYG牛逼","我想回小江呜呜呜，想和大伙玩","前有文章，请小心前行"]
+        const content = result.data.content
+        sub.unshift(content)
+        typedJSFn.init(sub)
+      } else {
+        document.getElementById('subtitle').textContent = result.data.content
+      }
+    })
+  })
+}
+typedJSFn.run(subtitleType)
+</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.lmark.cc/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://lib.baomitu.com/twikoo/1.6.39/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><div class="aplayer no-destroy" data-id="7509532357" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-order="random"> </div><script>(function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime()/100000000).toString(),10)));window.SeniverseWeatherWidget('show',{flavor:"slim",location:"WWMKWU0KKVZP",geolocation:true,language:"zh-Hans",unit:"c",theme:"auto",token:"be6ff036-8674-43e7-8f27-8716c37b157b",hover:"disabled",container:"tp-weather-widget"});</script><script src='/js/blurBk.js' defer ></script>\<script type="text/javascript" src="/js/about.js"></script><link rel="stylesheet" href="https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://lib.baomitu.com/butterfly-extsrc/1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/search/local-search.min.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax src="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("https://gitcalendar.lmark.cc/api?ladeng07",['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c'],'ladeng07')
+    }
+  </script><!-- hexo injector body_end end --></body></html>

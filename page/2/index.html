@@ -1,0 +1,531 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>LMark的博客 - 记录一些小技巧|经验|知识 </title><meta name="author" content="LMark"><meta name="copyright" content="LMark"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一个喜欢折腾有意思的技术的人，但是记性不好，所以博客主要记录曾经掌握的知识，方便日后已经忘记的我回来复习。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LMark的博客">
+<meta property="og:url" content="https://lmark.cc/page/2/index.html">
+<meta property="og:site_name" content="LMark的博客">
+<meta property="og:description" content="一个喜欢折腾有意思的技术的人，但是记性不好，所以博客主要记录曾经掌握的知识，方便日后已经忘记的我回来复习。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lmark.cc/img/avatar.jpg">
+<meta property="article:author" content="LMark">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lmark.cc/img/avatar.jpg"><link rel="shortcut icon" href="/"><link rel="canonical" href="https://lmark.cc/page/2/index.html"><link rel="preconnect" href="https://lib.baomitu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://lib.baomitu.com/fancyapps-ui/5.0.33/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://lib.baomitu.com/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'LMark的博客',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-09-11 01:37:50'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"3K1gEbd0agcY8IUo",ck:"3K1gEbd0agcY8IUo"})</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="LMark的博客" type="application/atom+xml">
+</head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/xlenco/JS-X@main/pace.js/pace.css"/><script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">49</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://cdn.lmark.cc/blog/IMG_0152.JPG')"><nav id="nav"><span id="blog-info"><a href="/" title="LMark的博客"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/1633337981355.png"/><span class="site-name">LMark的博客</span></a></span><div id="tp-weather-widget"></div><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">LMark的博客</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/ladeng07" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2312936963@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/34625132" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fas fa-tv"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/archives/df0f0134.html" title="宿舍网络拓扑介绍（附部分教程）"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300264_origin_20220531_202747.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="宿舍网络拓扑介绍（附部分教程）"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/df0f0134.html" title="宿舍网络拓扑介绍（附部分教程）">宿舍网络拓扑介绍（附部分教程）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-28T09:29:56.000Z" title="发表于 2023-09-28 17:29:56">2023-09-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/df0f0134.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">前言曾经折腾了个K2P的路由器，感觉性能还是差点意思，于是暑假就入手了台J4125小主机，准备好好折腾一下宿舍网络，装一些实用的功能来方便我学习生活。
+现在差不多折腾好了，遂写一篇文章记录一下，我的近乎完美的宿舍网络设计。
+设计理念
+性价比+实用+好玩
+
+三个点没有绝对的优先级，主打一个主观好玩且买得起
+但是现实是实用的东西比较多
+网络结构总结起来是“1+1+1”结构，即一个硬路由+群晖+小爱
+拓扑图如下：
+
+本文主要围绕这张图展开介绍
+实现功能这里我先简单介绍几个最实用的功能和实现的基本部件思路：
+
+校园内网远程桌面（硬路由端口转发）
+校园网多拨（OP的多拨功能）
+多设备存储&#x2F;备份（NAS+微力存储自动同步）
+自建DNS+去广告（Docker+adguardHome）
+全局爬墙（PassWall 2+旁路由）
+公网访问内网网盘&#x2F;图床&#x2F;RSS阅读器 （CF打洞）
+远程or语音操控开关空调&#x2F;台灯&#x2F;电脑（小爱音箱+终端设备）
+墨水屏实时监控宿舍电量（驱动板自动连接WIFI爬取数据）
+安全的内网穿透访问（zerotier+自建Moon）
+……
+
+还有很多就不一一列举了，接下来就详细介绍一下各个功能的一些细节，以及使用心得。
+校园网内网远程桌面这是我最常使用的功能，实现起来也非常简单。需要升级到企业版Windows，并且开放相应的端口到校园网上就行。
+
+但是这样有几个小问题，首先就是校园网IP可能会经常变化，其次校园网账号只有三个设备，很容易被挤掉。
+所以这时候可以在宿舍装一个路由器，这样可以稍微固定校园网IP，同时，使用端口转发可以方便的通过路由器IP访问远程桌面。另外使用openwrt固件的DDNS功能还可以动态绑定域名和IP，这样就不用记路由器IP了
+
+校园网多拨校园网多拨是个好东西，因为🐏带校园网IPV4下行只有40M带宽 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/archives/3f81eb3.html" title="win11下使用qemu运行Loongarch虚拟机"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300239_origin_20220531_201743.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="win11下使用qemu运行Loongarch虚拟机"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/3f81eb3.html" title="win11下使用qemu运行Loongarch虚拟机">win11下使用qemu运行Loongarch虚拟机</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-23T07:03:23.000Z" title="发表于 2023-09-23 15:03:23">2023-09-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/3f81eb3.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">前言之前打软件杯龙芯赛道，师姐让我们自己用qemu装loongnix体验一下比赛环境，但是当时一直忙就没装。现在又要编译一下loongarch的包了，交叉编译链搭起来好麻烦，遂想到了用qemu装loongarch虚拟机来玩玩。而且在8月份更新的8.1版本中对LA（代指loongarch，下同）更好了，更有理由装一个玩玩了。
+安装qemu现在在windows下安装qemu已经很方便了，只需要在官网下载安装包：qemu-w64-setup-20230822.exe
+
+按照需要安装即可。
+下载loongnix镜像这里我安装的是loongnix系统，当然LA也支持其他系统（如arch，debian12等）。根据需求安装。
+镜像去官网下载：Nginx Directory (loongnix.cn)
+我下的是cartoon版的，带gui。并且是直接使用官方提供的qcow2虚拟盘格式，这样做的好处就是集成在一起，不用自己划盘，缺点就是比普通镜像稍微大点。当然这里使用普通iso镜像安装也是可以的。
+
+下载UEFI镜像启动需要引导程序，可以使用arch的引导程序Index of &#x2F;loongarch&#x2F;archlinux&#x2F;images&#x2F; (wsyu.edu.cn)
+
+这里下载8.0的引导程序QEMU_EFI_8.0.fd
+安装虚拟网卡使用tap-windows创建一张虚拟网卡，官网：Index of &#x2F;downloads&#x2F;releases&#x2F; (openvpn.net)
+win11使用最新版本比较稳定，这个tap-windows-9.24.7-I601-Win10版本，之前使用9.23.1就会出现桥接之后虚拟机连不上网的情况，使用9.24.7完美解决。
+下载地址:https://build.openvpn.net/downlo ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/archives/decf5cc8.html" title="基于NFC的Url Scheme奇妙用法"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300203_origin_20220531_200850.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于NFC的Url Scheme奇妙用法"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/decf5cc8.html" title="基于NFC的Url Scheme奇妙用法">基于NFC的Url Scheme奇妙用法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-26T10:30:44.000Z" title="发表于 2023-07-26 18:30:44">2023-07-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/decf5cc8.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">前言Url Scheme对于移动设备用户来说是十分方便的，可以在手机上快速打开应用，也可以实现应用间的互相调用；对于苹果用户，得益于快捷指令的强大，许多软件都支持各种各样的捷径来快速打开；而反观安卓这边，由于没有一个统一的要求，捷径这种东西在安卓上并不常见。一般都是软件内部自己在使用。但是安卓上的Url Scheme有许多有意思的东西，连苹果都做不到的一些功能，在这里记录一下。
+准备工作安卓没有类似苹果的捷径这样纯软件打开Url Scheme（貌似有，不过要root），所以需要一些NFC芯片来作为Trigger
+这里用M1卡和NTAG21X都可以，能正常写入数据的就可以了，我推荐使用NTAG215轻薄款
+
+很薄，可以到贴到纸的后面或者其他什么地方都可以。
+其次，手机需要安装一个写入NFC数据的软件
+
+最后，也是最重要的一点，准备一台有NFC功能的手机。
+实际应用以下是个人觉得比较有用的一些Url Scheme应用，欢迎大佬在评论区补充些
+碰一碰连WIFI这个功能是最常见的，严格意义上来说这不属于Url Scheme的内容，因为里面数据是这样式的
+
+这是用NFC Tools写入的数据，如果你是小米手机，使用米家app写入，就有些不一样
+
+当然这个也不是正宗的Url Scheme，是打开米家自己进行的操作而已。
+碰一碰听歌（NFC音乐墙）这个在各大视频平台有很高的播放量，而且同一个Url Scheme安卓和苹果都能使用，网上比较多的教程是用网易云音乐的，当然其他音乐软件也行，我这里演示一下网易云的
+往卡里写入如下代码：
+1orpheus://song/1365626644/?autoplay=1 
+
+其中orpheus是网易云音乐的包名，冒号后面的就是Url Scheme的路径了，中间的数字是想听的歌的id，后面的autoplay&#x3D;1是打开后自动播放的参数，可加可不加 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/archives/83346b50.html" title="武汉游"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/image-20230509231341633.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="武汉游"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/83346b50.html" title="武汉游">武汉游</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-08T01:45:48.000Z" title="发表于 2023-05-08 09:45:48">2023-05-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/83346b50.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">本来想着，在天河机场等飞机的时候就开始写的，结果躺椅子上直接睡着了，就忘了这事。回青岛之后忙着写作业，一直没机会写。现在终于忙完了，终于可以开始写了。
+写在前面这是一篇游记，主要记录了五一假期去武汉七天的经历，没有文笔可言，主要是流水账和一些自己人的烂梗吧，不认识我的人估计看起来很费劲，不过我也会尽量写的通俗易懂的。写这篇游记的主要目的就是为了记录这7天在武汉发生的各种各样的魔幻的事情和经历。
+主要出场人物介绍
+我：笔者，亦是故事主人公，是一个心超大的人（或许），而且很笨（某个人说的）
+同学Z：武带同学，人高还帅，就是不怎么出来玩。
+同学L：民带同学，一个靓女，就是不怎么出来玩。
+同学X：武理工的，一个好人，就是不怎么出来玩。
+
+第一部分
+如果再给你一次机会，你还会来武汉吗？
+同学Z如是道
+
+这是同学Z当时某一天问我的一个问题，现在想想真是讽刺。谁能想到，一次正常的旅游，出了这么多鸟事。
+本人是一名在琴岛念书的苦逼带学牲，这个学期解封之后，差不多把市区逛了个底朝天，然后在一次和同学L的闲聊之中，我开玩笑的说了一句，有时间可以去武汉玩（笑），
+
+然后，突然发现五一放五天假，这么一想，好像确实可以去。于是去武汉旅游这件事就给我留下了心里阴影在我心里扎了根。
+3月和4月过去了，我的泰山之旅一直没去成，身边的同学也没人邀请我五一去玩（其实是有的，只不过不是很感兴趣，绝不是因为我没朋友） 。有个同学五一打算去淄博吃烧烤，但是我感觉淄博会很多人，遂没去（事实证明是正确的选择）。后面到了四月中旬，就正式决定了要去武汉了。
+然后就是做攻略，买车票，订酒店。我这个人比较喜欢随性旅游，攻略就是在小红薯上看了两眼，就觉得稳了。事实证明，什么都看小红薯只会害了你！！！，然后有俩需要预约的地方（省博和美术馆）由于太佛系，结果忘了预约，然后就差点去不了了，不过这也是后话了。
+攻略做好后（可能），接下来 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/archives/cc742ad6.html" title="计算机系统工程SecFs实验一"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300249_origin_20220531_202313.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机系统工程SecFs实验一"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/cc742ad6.html" title="计算机系统工程SecFs实验一">计算机系统工程SecFs实验一</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-07T08:10:59.000Z" title="发表于 2023-05-07 16:10:59">2023-05-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/cc742ad6.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">前言这个学期（大二下）我在郝xd的撺掇下，选了曲老师的《计算机系统工程》这门课。对标的是MIT的6.033课程，参考内容目录MIT6.033 Computer System Design | 计算机系统设计 | Miigon’s blog这门课在国内各大高校同类型的课基本找不到(可能不叫这个名字吧)，就连这本课本的中译版正版都很难找到(我只买到了盗版)。就是这么一门神秘的课程，却讲了许多计算机系统设计的基本原则，可谓是干货满满。用曲老师的话来说:这门课可能是大学四年中，计算机专业最实用的课。在上了半个学期后，我是深深体会到了。故想写一篇博客记录一下这节课的实验课，以及自己的一些想法。
+实验背景世界正在慢慢变得更加紧密，并且越来越需要让你的所有数据都具有可用性、可共享性、安全性和可 复制性，由于这些需求，Dropbox 和 Google Drive 等云服务应运而生，并取得了巨大成功。他们获取你的 文件并将它们透明地托管在“云”中。但是，用户在此过程中失去了对数据的一些控制。你必须信任公司 能够保证数据安全；你必须相信他们不会查看你的数据，不会共享它，也不会丢失它。在本实验中，要求 开发一个文件系统，这个系统允许用户将数据存储在远程文件服务器上，但是用户无需信任该服务器。
+实验介绍本实验的目的是让你了解如何构建安全、相对复杂且有用的软件。你将构建一个远程文件系统 SecFS， 它在面对完全不受信任的服务器时能提供机密性和完整性。 我们为你提供了一个具有很少功能和更少安全保证的框架为基础进行本实验。你需要扩展这些功能来 实现线面的实验目标。我们提供的代码是 SUNDR 序列化版本的一部分。你应该阅读论文 SUNDR ，因为本 实验中的许多概念和原理与之相似。为了完成本实验，你需要实现其余部分以支持整个序列化 SUNDR，并 添加机密性保证（文件的读取保护）。
+实验官网：6.85 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/archives/646e4863.html" title="自制Amiibo全记录"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300257_origin_20220531_202454.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自制Amiibo全记录"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/646e4863.html" title="自制Amiibo全记录">自制Amiibo全记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-26T18:59:59.000Z" title="发表于 2023-04-27 02:59:59">2023-04-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/646e4863.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">Amiibo卡写入何为Amiibo
+Amiibo（官方正名：amiibo，日文：アミーボ，中文：阿咪包或阿咪寶），是由日本遊戲廠商任天堂自家所發行的近場通訊產品，與之前其他遊戲廠商所發行的《寶貝龍冒險》系列、《迪士尼 無限》系列以及《Telepods》等系列擁有近場通訊功能的玩偶有所差異[1][2]，主要用在Wii U平板控制器、新任天堂3DS[3]、新任天堂2DS XL&#x2F;LL、任天堂3DS（需要額外Amiibo接收平台提供支援）和任天堂Switch上，這些Amiibo可以在一些特定的遊戲上傳送或接收所儲存的遊戲數據。
+Amiibo首次在2014年E3展上對外發表，並公佈第一波Amiibo，早期發售的Amiibo大多數為《任天堂明星大亂鬥3DS&#x2F;Wii U》登場的角色，後續也陸續發行了《超級瑪利歐系列》等的Amiibo。[4]
+——Amiibo - 維基百科，自由的百科全書 (wikipedia.org)
+
+简单来说，Amiibo是任天堂官方出品的，具有NFC通信功能的塑胶人偶，国行版加个大概在99元，以正品手办来说，这个价格还可以接受。其质量来说也属于上乘了。
+
+但是Amiibo和普通手办最大的不同之处在于，其底座里有一块NFC芯片，可以与NS右侧手柄的摇杆进行交互，从而实现游戏与现实的互动。
+
+Amiibo有什么用以《薩爾達傳說 曠野之息》为例，其在游戏中能够使用的的Amiibo有25个，而且随着数据更新，应该会不断增加，而且最近《薩爾達傳說 王国之心》也准备出了，之前旷野之息能使用的Amiibo在王国之心里应该也是能使用的。下图是旷野之息能使用的amiibo一览
+
+在旷野之息中，使用Amiibo可以获得一定的奖励，比如限定武器，装备，坐骑，宠物狼，材料等等。不同的奖励概率不一样，但是每个Amiibo每天只能用一次。由于Amiibo能刷限定装备，加之 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/archives/f746fa7f.html" title="RFID第一期——各种IC卡和ID卡详解"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300261_origin_20220531_202723.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RFID第一期——各种IC卡和ID卡详解"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/f746fa7f.html" title="RFID第一期——各种IC卡和ID卡详解">RFID第一期——各种IC卡和ID卡详解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-31T20:33:48.000Z" title="发表于 2023-02-01 04:33:48">2023-02-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/f746fa7f.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">起因放假闲来无事，在B站冲浪，看到有人在讨论IC卡，我在这方面刚好还是有这么一点了解，就拿MF1卡给别人举了个例子，然后MF1卡就被开除出IC卡籍了。
+
+有点气，但是仔细想想，网上关于这些卡的介绍知识太少了，有些人区分不了也很正常，于是我查阅大量资料，才有了这篇文章。
+
+前置知识先给大家捋清楚几个不同的名词：ID卡，IC卡，RFID卡，CPU卡，m1卡，MF1卡，UID卡,CUID卡。。。
+看到这对名词想必大家头都大了，但是，今天我就带大家搞清楚这每一个名词的意思，以及目前市面上比较常见的卡的类型的介绍。
+RFID卡和IC卡首先，大家需要知道的一个名词是：RFID
+这是什么意思？我摘抄了Wiki上的介绍，帮助大家理解：射频识别 - 维基百科，自由的百科全书 (wikipedia.org)
+
+射频识别（英语：Radio Frequency IDentification，缩写：RFID）是一种无线通信技术，可以通过无线电信号识别特定目标并读写相关数据，而无需识别系统与特定目标之间建立机械或者光学接触。
+
+可以看到，RFID不是一种卡的代号，而是一种技术，一种非常常见的技术，使用了这个技术的“卡”都能称为RFID卡，这是一个大类，基本涵盖今天说的所有卡，除了接下来要说的IC卡的一部分:
+IC卡定义，摘自百度百科：IC卡_百度百科 (baidu.com)
+
+IC卡 (Integrated Circuit Card，集成电路卡)，也称智能卡(Smart card)、智慧卡(Intelligent card)、微电路卡(Microcircuit card)或微芯片卡等。它是将一个微电子芯片嵌入符合ISO 7816标准的卡基中，做成卡片形式。IC卡与读写器之间的通讯方式可以是接触式也可以是非接触式。
+
+从两者定义可以看出，RFID卡和IC卡并不是简单的包含与被包含的关系，因为一个是从技术 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/archives/6bff89fa.html" title="Supervisord进程管理工具的重启问题 supervisor.sock no such file"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300211_origin_20220531_201145.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Supervisord进程管理工具的重启问题 supervisor.sock no such file"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/6bff89fa.html" title="Supervisord进程管理工具的重启问题 supervisor.sock no such file">Supervisord进程管理工具的重启问题 supervisor.sock no such file</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-02T21:45:45.000Z" title="发表于 2023-01-03 05:45:45">2023-01-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/6bff89fa.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">起因前两天，黄哥找到我说，有个网站挂了，需要我去恢复一下，然后给了我账号密码，然后我就去看了一下，然后发现网站使用的是flask搭的，但是，我不太了解，完全不知道是用什么来启动的。甚至nginx都没配软连接，后面拿到了帮助文档才知道，原来使用Supervisord来启动和守护进程。因为之前阿里云服务器空调故障，导致服务器宕机。这个Supervisord直接异常退出了，按照网上的方法，并没有用，然后就去研究了一下。
+关于SupervisordSupervisor 是一个用 Python 写的进程管理工具，可以很方便的用来在 UNIX-like 系统（不支持 Windows）下启动、重启（自动重启程序）、关闭进程（不仅仅是 Python 进程）Supervisor 是一个 C&#x2F;S 模型的程序，supervisord 是 server 端，supervisorctl 是 client 端
+supervisord的出现，可以用来管理后台运行的程序。通过supervisorctl客户端来控制supervisord守护进程服务，真正进行进程监听的是supervisorctl客户端，而运行supervisor服务时是需要制定相应的supervisor配置文件的。Supervisord工具的整个使用流程：1、首先通过echo_supervisord_conf 生成配置文件模板2、然后你根据自己的需求进行修改，接着就使用相应的命令来使用supervisorctl客户端3、而supervisorctl客户端会将对应的信息传递给supervisord守护进程服务，让supervisord守护进程服务进行进程守护。
+问题复现及解决supervisorctl的几条指令
+1234supervisorctl restart all  supervisorctl statussupervisor ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/archives/2514f762.html" title="DjangoAdmin后台collectstatic不生效问题"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300216_origin_20220531_201214.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DjangoAdmin后台collectstatic不生效问题"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/2514f762.html" title="DjangoAdmin后台collectstatic不生效问题">DjangoAdmin后台collectstatic不生效问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-30T19:56:17.000Z" title="发表于 2022-12-01 03:56:17">2022-12-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/2514f762.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">问题起因最近把一个Django项目部署上服务器的时候，发现了一个问题。在收集静态资源的时候，发现后台Admin的样式资源不生效，
+具体表现在，执行了collectstatic命令后，提示copy成功
+
+但是实际上，项目目录下并没有收集到文件。
+问题分析反复收集了几次，还是不生效。都显示已经收集了，并没有修改。
+
+首先一开始我先按照网上的方法，排除了一些常规的原因，然后开始想想还能有什么离谱的bug，先看看配置文件。
+
+看似并没有什么问题，也确实没什么问题。但实际上这是个巨坑的地方
+解决方法非常坑爹的一个地方，先把STATICFILES_DIRS给注释掉，然后再把STATIC_ROOT里的/static/给改成static，如下图：
+
+这样一来就能正常收集了
+
+在收集完静态文件后记得把settings修改回来。
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/archives/5f2a3725.html" title="Git配置全局代理解决10054问题"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/blog/603078.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git配置全局代理解决10054问题"></a></div><div class="recent-post-info"><a class="article-title" href="/archives/5f2a3725.html" title="Git配置全局代理解决10054问题">Git配置全局代理解决10054问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-29T01:07:30.000Z" title="发表于 2022-11-29 09:07:30">2022-11-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/archives/5f2a3725.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">问题复现最近装了新电脑，很多东西都没配置，都是很久以前在笔记本上配置的。结果现在台式上有一堆环境问题，就比如今天这个Git推送的问题就是一个。
+众所周知，由于某些不可抗力因素，github在的登录属于一个玄学的问题，偶尔运气好就能裸连，运气不好直接连push都push不上。
+
+解决方法为了解决这个问题，我们一般想到的方法就是走一下代理，但是Clash开启之后，我们可以在网页端正常访问github，但是push还是不行。问题的根源是：普通的代理模式，流量都是走一个特定的端口，与服务器通信，但是git的流量不会走。所以我们需要手动绑定一下代理。
+方法非常简单，这里以Clash为例，其他软件的配置也大差不差。
+打开Clash，马上就可以看到它使用的代理端口，这里为7890
+
+接下来，给git设置代理，方法如下：
+方法一 直接使用命令直接在Bash里输入命令设置全局http&#x2F;https代理
+123git config --global http.proxy http://127.0.0.1:7890 git config --global https.proxy https://127.0.0.1:7890
+
+这样以后使用Clash时，git也能走代理了
+方法二 修改配置文件打开配置文件
+1vi ~/.gitconfig
+
+在文件末尾添加配置
+12345678[http] proxy = http://127.0.0.1:7890 [https] proxy = https://127.0.0.1:7890
+
+保存退出，重启一下git，结果也是立竿见影。
+结果改了之后马上就会生效，无论是push还是clone都没有问题了。记得开代理就行。
+
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#content-inner">5</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LMark</div><div class="author-info__description">一个喜欢折腾有意思的技术的人，但是记性不好，所以博客主要记录曾经掌握的知识，方便日后已经忘记的我回来复习。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">49</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/ladeng07"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ladeng07" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2312936963@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/34625132" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fas fa-tv"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/archives/13f312f.html" title="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300155_origin_20220531_195944.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;"/></a><div class="content"><a class="title" href="/archives/13f312f.html" title="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;">解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;</a><time datetime="2025-07-13T10:30:44.000Z" title="发表于 2025-07-13 18:30:44">2025-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/8f8ea55e.html" title="七牛云批量下载图床图片"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300144_origin_20220531_195534.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="七牛云批量下载图床图片"/></a><div class="content"><a class="title" href="/archives/8f8ea55e.html" title="七牛云批量下载图床图片">七牛云批量下载图床图片</a><time datetime="2024-11-17T07:34:44.000Z" title="发表于 2024-11-17 15:34:44">2024-11-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/ea042a0d.html" title="Windows11挂载群晖webdav到本地"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/319678_origin_20220628_092530.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Windows11挂载群晖webdav到本地"/></a><div class="content"><a class="title" href="/archives/ea042a0d.html" title="Windows11挂载群晖webdav到本地">Windows11挂载群晖webdav到本地</a><time datetime="2024-10-16T07:50:57.000Z" title="发表于 2024-10-16 15:50:57">2024-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/efb03d74.html" title="使用脚本自动更新实验室电脑IP到cloudflare域名"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300186_origin_20220531_200449.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用脚本自动更新实验室电脑IP到cloudflare域名"/></a><div class="content"><a class="title" href="/archives/efb03d74.html" title="使用脚本自动更新实验室电脑IP到cloudflare域名">使用脚本自动更新实验室电脑IP到cloudflare域名</a><time datetime="2024-10-09T08:14:27.000Z" title="发表于 2024-10-09 16:14:27">2024-10-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/febc3415.html" title="一次给龙芯旧世界升级内核的失败经历"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300147_origin_20220531_195551.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一次给龙芯旧世界升级内核的失败经历"/></a><div class="content"><a class="title" href="/archives/febc3415.html" title="一次给龙芯旧世界升级内核的失败经历">一次给龙芯旧世界升级内核的失败经历</a><time datetime="2024-03-03T15:47:36.000Z" title="发表于 2024-03-03 23:47:36">2024-03-03</time></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/RFID/" style="font-size: 1.25em; color: rgb(194, 14, 39)">RFID</a><a href="/tags/%E6%B5%A6%E4%B8%AD/" style="font-size: 1.2em; color: rgb(148, 121, 148)">浦中</a><a href="/tags/M1%E5%8D%A1/" style="font-size: 1.15em; color: rgb(159, 157, 86)">M1卡</a><a href="/tags/%E6%A0%A1%E9%AA%8C%E4%BD%8D/" style="font-size: 1.15em; color: rgb(145, 163, 114)">校验位</a><a href="/tags/Amiibo/" style="font-size: 1.15em; color: rgb(11, 10, 45)">Amiibo</a><a href="/tags/NFC/" style="font-size: 1.2em; color: rgb(158, 25, 200)">NFC</a><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.15em; color: rgb(157, 123, 87)">算法</a><a href="/tags/C/" style="font-size: 1.15em; color: rgb(88, 144, 45)">C++</a><a href="/tags/Cloudflare/" style="font-size: 1.15em; color: rgb(129, 86, 157)">Cloudflare</a><a href="/tags/Django/" style="font-size: 1.35em; color: rgb(20, 16, 178)">Django</a><a href="/tags/Python/" style="font-size: 1.45em; color: rgb(60, 126, 122)">Python</a><a href="/tags/Git/" style="font-size: 1.2em; color: rgb(90, 134, 27)">Git</a><a href="/tags/E-Prime/" style="font-size: 1.15em; color: rgb(119, 184, 122)">E-Prime</a><a href="/tags/%E4%BB%A3%E7%90%86/" style="font-size: 1.15em; color: rgb(20, 76, 20)">代理</a><a href="/tags/CTF/" style="font-size: 1.15em; color: rgb(139, 69, 42)">CTF</a><a href="/tags/Linux/" style="font-size: 1.4em; color: rgb(30, 195, 36)">Linux</a><a href="/tags/XSS/" style="font-size: 1.15em; color: rgb(121, 197, 115)">XSS</a><a href="/tags/alist/" style="font-size: 1.15em; color: rgb(163, 172, 166)">alist</a><a href="/tags/Termux/" style="font-size: 1.15em; color: rgb(23, 51, 43)">Termux</a><a href="/tags/Ubuntu/" style="font-size: 1.15em; color: rgb(132, 83, 125)">Ubuntu</a><a href="/tags/Openwrt/" style="font-size: 1.15em; color: rgb(127, 67, 92)">Openwrt</a><a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" style="font-size: 1.15em; color: rgb(29, 179, 64)">路由器</a><a href="/tags/openwrt/" style="font-size: 1.15em; color: rgb(103, 198, 58)">openwrt</a><a href="/tags/Supervisord/" style="font-size: 1.15em; color: rgb(129, 131, 51)">Supervisord</a><a href="/tags/Loongarch/" style="font-size: 1.3em; color: rgb(74, 100, 57)">Loongarch</a><a href="/tags/%E7%BC%96%E8%AF%91/" style="font-size: 1.25em; color: rgb(188, 86, 188)">编译</a><a href="/tags/thunderbird/" style="font-size: 1.15em; color: rgb(52, 157, 138)">thunderbird</a><a href="/tags/Remmina/" style="font-size: 1.15em; color: rgb(48, 2, 40)">Remmina</a><a href="/tags/Linux%E5%86%85%E6%A0%B8/" style="font-size: 1.15em; color: rgb(20, 158, 177)">Linux内核</a><a href="/tags/%E7%BD%91%E7%BB%9C%E7%A0%B4%E9%98%B2%E5%AE%9E%E8%B7%B5%E5%85%88%E5%AF%BC/" style="font-size: 1.3em; color: rgb(10, 47, 30)">网络破防实践先导</a><a href="/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/" style="font-size: 1.15em; color: rgb(66, 114, 156)">校园网</a><a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="font-size: 1.15em; color: rgb(123, 176, 125)">信息安全</a><a href="/tags/%E7%94%B5%E8%84%91/" style="font-size: 1.15em; color: rgb(81, 191, 24)">电脑</a><a href="/tags/%E8%A3%85%E6%9C%BA/" style="font-size: 1.15em; color: rgb(76, 57, 131)">装机</a><a href="/tags/%E4%B8%83%E7%89%9B%E4%BA%91/" style="font-size: 1.15em; color: rgb(190, 122, 193)">七牛云</a><a href="/tags/%E5%A4%87%E4%BB%BD/" style="font-size: 1.15em; color: rgb(39, 98, 47)">备份</a><a href="/tags/qemu/" style="font-size: 1.15em; color: rgb(175, 121, 74)">qemu</a><a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 1.15em; color: rgb(7, 46, 37)">虚拟机</a><a href="/tags/QQ/" style="font-size: 1.15em; color: rgb(135, 57, 132)">QQ</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%B7%A5%E7%A8%8B/" style="font-size: 1.15em; color: rgb(8, 38, 158)">计算机系统工程</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">48</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2022-01-16T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">118.9k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-09-10T17:37:50.006Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By LMark</div><div class="footer_custom_text"><p><a style="margin-inline:5px" target="_blank" href="https://hexo.io/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a><a style="margin-inline:5px" target="_blank" href="https://butterfly.js.org/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a><a style="margin-inline:5px" target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/%E6%A1%82ICP%E5%A4%87-2022004639%E5%8F%B7--1-blue" alt="桂ICP备2022004639号-1" title="本站已在桂进行备案"></a><a style="margin-inline:5px" target="_blank" href="https://github.com/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a><a style="margin-inline:5px" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a><a style="margin-inline:5px" target="_blank" href="https://www.itstudio.club/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/itstudio-shields.svg" title="爱特工作室"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div style="background-color:rgba(0,0,0,0.3)"><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/utils.min.js"></script><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/main.min.js"></script><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/tw_cn.min.js"></script><script src="https://lib.baomitu.com/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script><script src="https://lib.baomitu.com/instant.page/5.2.0/instantpage.min.js" type="module"></script><script src="https://lib.baomitu.com/vanilla-lazyload/17.8.8/lazyload.iife.min.js"></script><script src="https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.js"></script><div class="js-pjax"><script>(() => { 
+  const getCommentUrl = () => {
+    const eleGroup = document.querySelectorAll('#recent-posts .article-title')
+    let urlArray = []
+    eleGroup.forEach(i=>{
+      urlArray.push(i.getAttribute('href'))
+    })
+    return urlArray
+  }
+
+  const getCount = () => {
+    const runTwikoo = () => {
+      twikoo.getCommentsCount({
+        envId: 'https://twikoo.lmark.cc/',
+        region: '',
+        urls: getCommentUrl(),
+        includeReply: false
+      }).then(function (res) {
+        document.querySelectorAll('#recent-posts .twikoo-count').forEach((item,index) => {
+          item.textContent = res[index].count
+        })
+      }).catch(function (err) {
+        console.log(err)
+      })
+    }
+
+      if (typeof twikoo === 'object') {
+        runTwikoo()
+      } else {
+        getScript('https://lib.baomitu.com/twikoo/1.6.39/twikoo.all.min.js').then(runTwikoo)
+      }
+  }
+
+  window.pjax ? getCount() : window.addEventListener('load', getCount)
+
+})()</script><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://lib.baomitu.com/typed.js/2.1.0/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  getScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js').then(() => {
+    jinrishici.load(result =>{
+      if (true) {
+        const sub = ["欢迎来到LMark的博客！！！","今天月色真美","我直接LYG牛逼","我想回小江呜呜呜，想和大伙玩","前有文章，请小心前行"]
+        const content = result.data.content
+        sub.unshift(content)
+        typedJSFn.init(sub)
+      } else {
+        document.getElementById('subtitle').textContent = result.data.content
+      }
+    })
+  })
+}
+typedJSFn.run(subtitleType)
+</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.lmark.cc/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://lib.baomitu.com/twikoo/1.6.39/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><div class="aplayer no-destroy" data-id="7509532357" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-order="random"> </div><script>(function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime()/100000000).toString(),10)));window.SeniverseWeatherWidget('show',{flavor:"slim",location:"WWMKWU0KKVZP",geolocation:true,language:"zh-Hans",unit:"c",theme:"auto",token:"be6ff036-8674-43e7-8f27-8716c37b157b",hover:"disabled",container:"tp-weather-widget"});</script><script src='/js/blurBk.js' defer ></script>\<script type="text/javascript" src="/js/about.js"></script><link rel="stylesheet" href="https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://lib.baomitu.com/butterfly-extsrc/1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/search/local-search.min.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax src="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("https://gitcalendar.lmark.cc/api?ladeng07",['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c'],'ladeng07')
+    }
+  </script><!-- hexo injector body_end end --></body></html>

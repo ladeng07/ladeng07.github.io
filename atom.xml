@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>LMark的博客</title>
+  <icon>https://lmark.cc/icon.png</icon>
+  <subtitle>记录一些小技巧|经验|知识 </subtitle>
+  <link href="https://lmark.cc/atom.xml" rel="self"/>
+  
+  <link href="https://lmark.cc/"/>
+  <updated>2025-09-10T16:21:09.405Z</updated>
+  <id>https://lmark.cc/</id>
+  
+  <author>
+    <name>LMark</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;</title>
+    <link href="https://lmark.cc/archives/13f312f.html"/>
+    <id>https://lmark.cc/archives/13f312f.html</id>
+    <published>2025-07-13T10:30:44.000Z</published>
+    <updated>2025-09-10T16:21:09.405Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;今天写Django项目，创建订单时遇到个bug &lt;code&gt;MySQL backend does notsupport</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Django" scheme="https://lmark.cc/tags/Django/"/>
+    
+    <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>七牛云批量下载图床图片</title>
+    <link href="https://lmark.cc/archives/8f8ea55e.html"/>
+    <id>https://lmark.cc/archives/8f8ea55e.html</id>
+    <published>2024-11-17T07:34:44.000Z</published>
+    <updated>2025-09-10T16:33:19.150Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="七牛云" scheme="https://lmark.cc/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
+    
+    <category term="备份" scheme="https://lmark.cc/tags/%E5%A4%87%E4%BB%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows11挂载群晖webdav到本地</title>
+    <link href="https://lmark.cc/archives/ea042a0d.html"/>
+    <id>https://lmark.cc/archives/ea042a0d.html</id>
+    <published>2024-10-16T07:50:57.000Z</published>
+    <updated>2025-01-20T12:53:31.678Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;在群晖里启动了webdav server之后，windows11上添加会出现&lt;code&gt;0x80070043</summary>
+        
+      
+    
+    
+    
+    
+    <category term="windows" scheme="https://lmark.cc/tags/windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用脚本自动更新实验室电脑IP到cloudflare域名</title>
+    <link href="https://lmark.cc/archives/efb03d74.html"/>
+    <id>https://lmark.cc/archives/efb03d74.html</id>
+    <published>2024-10-09T08:14:27.000Z</published>
+    <updated>2025-01-20T12:53:31.658Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Cloudflare" scheme="https://lmark.cc/tags/Cloudflare/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一次给龙芯旧世界升级内核的失败经历</title>
+    <link href="https://lmark.cc/archives/febc3415.html"/>
+    <id>https://lmark.cc/archives/febc3415.html</id>
+    <published>2024-03-03T15:47:36.000Z</published>
+    <updated>2025-01-20T12:53:31.667Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Loongarch" scheme="https://lmark.cc/tags/Loongarch/"/>
+    
+    <category term="编译" scheme="https://lmark.cc/tags/%E7%BC%96%E8%AF%91/"/>
+    
+    <category term="Linux内核" scheme="https://lmark.cc/tags/Linux%E5%86%85%E6%A0%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Loongarch下编译Remmina 1.4.5版本</title>
+    <link href="https://lmark.cc/archives/bf37dab6.html"/>
+    <id>https://lmark.cc/archives/bf37dab6.html</id>
+    <published>2024-02-29T13:04:38.000Z</published>
+    <updated>2025-01-20T12:53:31.664Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Loongarch" scheme="https://lmark.cc/tags/Loongarch/"/>
+    
+    <category term="编译" scheme="https://lmark.cc/tags/%E7%BC%96%E8%AF%91/"/>
+    
+    <category term="Remmina" scheme="https://lmark.cc/tags/Remmina/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于Django以前忽略的一些东西</title>
+    <link href="https://lmark.cc/archives/a0885322.html"/>
+    <id>https://lmark.cc/archives/a0885322.html</id>
+    <published>2024-02-27T03:49:26.000Z</published>
+    <updated>2025-01-20T12:53:31.670Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Django直接使用sql查询&quot;&gt;&lt;a href=&quot;#Django直接使用sql查询&quot; class=&quot;headerlink&quot; title=&quot;Django直接使用sql查询&quot;&gt;&lt;/a&gt;Django直接使用sql查询&lt;/h2&gt;&lt;p&gt;官方文档：&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Django" scheme="https://lmark.cc/tags/Django/"/>
+    
+    <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记一次手相简单学习</title>
+    <link href="https://lmark.cc/archives/b280ab86.html"/>
+    <id>https://lmark.cc/archives/b280ab86.html</id>
+    <published>2023-11-11T08:57:54.000Z</published>
+    <updated>2025-01-20T12:53:31.677Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;之前上网冲浪，在油管上看到老高的新视频：&lt;a href=&quot;https://www.youtube.com/watch?v=CM2i6qD8nk8&quot;&gt;最強手相，你的雙手決定你的人生 | 老高與小茉 Mr &amp;amp; Mrs Gao - YouTube&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="手相" scheme="https://lmark.cc/tags/%E6%89%8B%E7%9B%B8/"/>
+    
+    <category term="生活" scheme="https://lmark.cc/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为Loongarch移植thunderbird78版本</title>
+    <link href="https://lmark.cc/archives/ea66db6.html"/>
+    <id>https://lmark.cc/archives/ea66db6.html</id>
+    <published>2023-10-22T17:45:57.000Z</published>
+    <updated>2025-01-20T12:53:31.664Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;引言：&quot;&gt;&lt;a href=&quot;#引言：&quot; class=&quot;headerlink&quot; title=&quot;引言：&quot;&gt;&lt;/a&gt;引言：&lt;/h2&gt;&lt;p&gt;Mozilla</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Loongarch" scheme="https://lmark.cc/tags/Loongarch/"/>
+    
+    <category term="编译" scheme="https://lmark.cc/tags/%E7%BC%96%E8%AF%91/"/>
+    
+    <category term="thunderbird" scheme="https://lmark.cc/tags/thunderbird/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>宿舍网络拓扑介绍（附部分教程）</title>
+    <link href="https://lmark.cc/archives/df0f0134.html"/>
+    <id>https://lmark.cc/archives/df0f0134.html</id>
+    <published>2023-09-28T09:29:56.000Z</published>
+    <updated>2025-01-20T12:53:31.669Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>win11下使用qemu运行Loongarch虚拟机</title>
+    <link href="https://lmark.cc/archives/3f81eb3.html"/>
+    <id>https://lmark.cc/archives/3f81eb3.html</id>
+    <published>2023-09-23T07:03:23.000Z</published>
+    <updated>2025-01-20T12:53:31.676Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Linux" scheme="https://lmark.cc/tags/Linux/"/>
+    
+    <category term="Loongarch" scheme="https://lmark.cc/tags/Loongarch/"/>
+    
+    <category term="qemu" scheme="https://lmark.cc/tags/qemu/"/>
+    
+    <category term="虚拟机" scheme="https://lmark.cc/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于NFC的Url Scheme奇妙用法</title>
+    <link href="https://lmark.cc/archives/decf5cc8.html"/>
+    <id>https://lmark.cc/archives/decf5cc8.html</id>
+    <published>2023-07-26T10:30:44.000Z</published>
+    <updated>2025-09-10T16:15:33.430Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Url</summary>
+        
+      
+    
+    
+    
+    
+    <category term="NFC" scheme="https://lmark.cc/tags/NFC/"/>
+    
+    <category term="Scheme" scheme="https://lmark.cc/tags/Scheme/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>武汉游</title>
+    <link href="https://lmark.cc/archives/83346b50.html"/>
+    <id>https://lmark.cc/archives/83346b50.html</id>
+    <published>2023-05-08T01:45:48.000Z</published>
+    <updated>2025-01-20T12:53:31.680Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本来想着，在天河机场等飞机的时候就开始写的，结果躺椅子上直接睡着了，就忘了这事。回青岛之后忙着写作业，一直没机会写。现在终于忙完了，终于可以开始写了。&lt;/p&gt;
+&lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="生活" scheme="https://lmark.cc/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="旅行" scheme="https://lmark.cc/tags/%E6%97%85%E8%A1%8C/"/>
+    
+    <category term="武汉" scheme="https://lmark.cc/tags/%E6%AD%A6%E6%B1%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机系统工程SecFs实验一</title>
+    <link href="https://lmark.cc/archives/cc742ad6.html"/>
+    <id>https://lmark.cc/archives/cc742ad6.html</id>
+    <published>2023-05-07T08:10:59.000Z</published>
+    <updated>2025-01-20T12:53:31.677Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;这个学期（大二下）我在郝xd的撺掇下，选了曲老师的《计算机系统工程》这门课。对标的是MIT的6.033课程，参考内容目录&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="计算机系统工程" scheme="https://lmark.cc/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="实验" scheme="https://lmark.cc/tags/%E5%AE%9E%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自制Amiibo全记录</title>
+    <link href="https://lmark.cc/archives/646e4863.html"/>
+    <id>https://lmark.cc/archives/646e4863.html</id>
+    <published>2023-04-26T18:59:59.000Z</published>
+    <updated>2025-01-20T12:53:31.658Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Amiibo卡写入&quot;&gt;&lt;a href=&quot;#Amiibo卡写入&quot; class=&quot;headerlink&quot; title=&quot;Amiibo卡写入&quot;&gt;&lt;/a&gt;Amiibo卡写入&lt;/h2&gt;&lt;h3 id=&quot;何为Amiibo&quot;&gt;&lt;a href=&quot;#何为Amiibo&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Amiibo" scheme="https://lmark.cc/tags/Amiibo/"/>
+    
+    <category term="NFC" scheme="https://lmark.cc/tags/NFC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RFID第一期——各种IC卡和ID卡详解</title>
+    <link href="https://lmark.cc/archives/f746fa7f.html"/>
+    <id>https://lmark.cc/archives/f746fa7f.html</id>
+    <published>2023-01-31T20:33:48.000Z</published>
+    <updated>2025-01-20T12:53:31.657Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Supervisord进程管理工具的重启问题 supervisor.sock no such file</title>
+    <link href="https://lmark.cc/archives/6bff89fa.html"/>
+    <id>https://lmark.cc/archives/6bff89fa.html</id>
+    <published>2023-01-02T21:45:45.000Z</published>
+    <updated>2025-01-20T12:53:31.663Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Linux" scheme="https://lmark.cc/tags/Linux/"/>
+    
+    <category term="Supervisord" scheme="https://lmark.cc/tags/Supervisord/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DjangoAdmin后台collectstatic不生效问题</title>
+    <link href="https://lmark.cc/archives/2514f762.html"/>
+    <id>https://lmark.cc/archives/2514f762.html</id>
+    <published>2022-11-30T19:56:17.000Z</published>
+    <updated>2025-01-20T12:53:31.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;问题起因&quot;&gt;&lt;a href=&quot;#问题起因&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Django" scheme="https://lmark.cc/tags/Django/"/>
+    
+    <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git配置全局代理解决10054问题</title>
+    <link href="https://lmark.cc/archives/5f2a3725.html"/>
+    <id>https://lmark.cc/archives/5f2a3725.html</id>
+    <published>2022-11-29T01:07:30.000Z</published>
+    <updated>2025-01-20T12:53:31.661Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;问题复现&quot;&gt;&lt;a href=&quot;#问题复现&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Git" scheme="https://lmark.cc/tags/Git/"/>
+    
+    <category term="代理" scheme="https://lmark.cc/tags/%E4%BB%A3%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一次组装自己的电脑的经历</title>
+    <link href="https://lmark.cc/archives/ba5d5beb.html"/>
+    <id>https://lmark.cc/archives/ba5d5beb.html</id>
+    <published>2022-10-29T14:35:59.000Z</published>
+    <updated>2025-01-20T12:53:31.671Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;开头&quot;&gt;&lt;a href=&quot;#开头&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="电脑" scheme="https://lmark.cc/tags/%E7%94%B5%E8%84%91/"/>
+    
+    <category term="装机" scheme="https://lmark.cc/tags/%E8%A3%85%E6%9C%BA/"/>
+    
+  </entry>
+  
+</feed>
