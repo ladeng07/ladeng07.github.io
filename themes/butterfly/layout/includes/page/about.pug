@@ -1,0 +1,117 @@
+#icat-about-page
+  .Personal-Introduction
+    .PI-box-left
+      .title 你好！
+      .title=_p('我是'+config.author)
+      .describe=theme.about.Personal_Introduction.describe
+      span.describe-tips=theme.about.Personal_Introduction.tips
+      .PI-button
+        a(href="#one") 博主信息
+        a(href="#two") 本站信息
+    .PI-box-right
+      .PI-img
+        img(src=theme.about.Personal_Introduction.image)
+
+  .about-layout.Personal-Introduction-bar
+    .bar-box
+      span.tips 生于
+      .title(style="color:#43a6c6")=theme.about.Personal_Introduction.bar.year
+    .bar-box
+      span.tips 星座
+      .title(style="color:#c69043")=theme.about.Personal_Introduction.bar.constellation
+    .bar-box
+      span.tips 爱好
+      .title(style="color:#d44040")=theme.about.Personal_Introduction.bar.hobby
+    .bar-box
+      span.tips 职业
+      .title(style="color:#b04fe6")=theme.about.Personal_Introduction.bar.career
+
+  #one
+    .about-layout.width.photo
+    .about-layout.width.map
+      span 现在生活在
+        p=theme.about.map
+    .width.h1-box
+      .box-top
+        .top
+          span 01
+          .title-h1 博主信息
+      .about-layout.box-bottom(onclick="meuicat.Introduction()")
+        span#Introduction MeuiCat
+
+  .Philosophical
+    .about-layout.P-box-left
+      .tips 性格
+      .title=theme.about.Philosophical.title
+      .title(style="color:#56a178")=theme.about.Philosophical.referred_to_as
+      .image
+        img(src=theme.about.Philosophical.image)
+      .tips-bottom 在 
+        a(href="https://www.16personalities.com/" target="_blank") 16Personalities 
+        | 了解关于 
+        a(href=theme.about.Philosophical.link target="_blank")=theme.about.Philosophical.title
+        |&ensp;的更多信息
+
+    .about-layout.P-box-right
+      .tips 座右铭
+      span.title(style="opacity:.6;margin-bottom: 8px")=theme.about.Philosophical.motto_one
+      span.title=theme.about.Philosophical.motto_two
+      .tips-bottom=theme.about.Philosophical.motto_tips
+
+  .about-layout.Socialize
+    .tips 账号
+    .title 社交平台
+    .S-box
+      each url, icon in theme.about.Account_number
+        a.btn-layout(href=url_for(trim(url.split('||')[0])) target="_blank")=icon
+    .S-img
+      .img-box
+
+  #two
+    .h1-box
+      .box-top
+        .top
+          span 02
+          .title-h1 本站信息
+      .about-layout.box-bottom
+        span#run-time 运行时间
+    .information
+      .about-layout.Version
+        .V-box
+          .title Hexo
+          .tips-v V7.3.0
+        .V-box
+          .title Butterfly
+          .tips-v V4.13.0
+        .V-box
+          .title LMark
+          .tips-v V1.3.0
+
+      .about-layout.Statistics
+        span= site.posts.length + _p('篇文章')
+        span.N_comments 评论数量
+        span= site.tags.length + _p('个分类')
+        span= totalcount(site) + _p('字')
+
+  .data
+    .about-layout.statistic
+      .tips 浏览
+      .title 访问统计
+      #statistic
+      .tips-bottom
+        .T-box 统计信息来自 
+          a(href="https://user.51.la/activity/invite?cc=22L4t3" target="_blank") 51la 
+          | 网站统计
+        a.T-btn(href="/about/" target="_blank") 更多统计
+
+    .about-layout.union
+      .tips 共创
+      .title 站长联盟
+      .U-box
+        each url, icon in theme.about.Union
+          a.btn-layout(href=url_for(trim(url.split('||')[0])) target="_blank")=icon
+
+  .about-layout.content
+    .tips 心路历程
+    .title 关于本站的介绍
+    != page.content

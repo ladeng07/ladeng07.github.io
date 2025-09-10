@@ -1,0 +1,734 @@
+:root {
+  /* ===== 颜色变量 ===== */
+  --icat-fontcolor: #1f2937;                    /* 主字体颜色（深灰，适合浅色背景） */
+  --icat-gray: #6b7280;                         /* 次要文字（中灰） */
+  --icat-blue: #3b82f6;                         /* 主题蓝色（按钮 / hover / 强调） */
+  --icat-white: #ffffff;                        /* 纯白色 */
+  --icat-secondtext: #9ca3af;                   /* 更次要文字（浅灰） */
+  --icat-card-bg: #ffffff;                      /* 卡片背景（浅色） */
+  --icat-background: #f9fafb;                   /* 按钮等背景（浅灰背景） */
+  --icat-maskbg: rgba(0, 0, 0, 0.4);            /* 毛玻璃遮罩背景 */
+  
+  /* ===== 阴影变量 ===== */
+  --icat-shadow-border: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);  /* 默认细边框阴影 */
+  --icat-shadow-blue: 0 4px 6px -1px rgba(59, 130, 246, 0.4), 0 2px 4px -1px rgba(59, 130, 246, 0.2);  /* 蓝色强调阴影 */
+
+  /* ===== 边框变量 ===== */
+  --style-border: 1px solid #e5e7eb;            /* 默认边框颜色（浅灰） */
+}
+
+/* ===== 深色主题变量覆盖 ===== */
+[data-theme='dark'] {
+  --icat-fontcolor: #f9fafb;                    /* 深色模式下字体为浅色 */
+  --icat-gray: #9ca3af;                         /* 中灰也适当调亮 */
+  --icat-blue: #60a5fa;                         /* 蓝色稍暗以适应暗色背景 */
+  --icat-white: #1f2937;                        /* 白色背景变为深灰 */
+  --icat-secondtext: #6b7280;                   /* 次要文字 */
+  --icat-card-bg: #1f2937;                      /* 卡片背景为深色 */
+  --icat-background: #374151;                   /* 按钮背景为更暗的灰 */
+  --icat-maskbg: rgba(0, 0, 0, 0.6);            /* 暗色毛玻璃更不透明 */
+  
+  --icat-shadow-border: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  --icat-shadow-blue: 0 4px 6px -1px rgba(96, 165, 250, 0.4), 0 2px 4px -1px rgba(96, 165, 250, 0.2);
+
+  --style-border: 1px solid #4b5563;            /* 深色边框 */
+}
+
+
+
+#icat-about-page
+    .about-layout
+        border-radius: 12px
+        background: var(--icat-card-bg)
+        border: var(--style-border)
+        box-shadow: var(--icat-shadow-border)
+        position: relative
+        padding: 1rem 2rem
+        overflow: hidden
+        transition: 0.6s
+
+        &:hover
+            box-shadow: var(--icat-shadow-blue)
+            border-color: var(--icat-blue)
+
+            .title
+                color: var(--icat-fontcolor)
+
+    .title
+        font-size: 36px
+        font-weight: 700
+        line-height: 1.1
+        transition: .6s
+
+    .tips
+        opacity: .8
+        font-size: .9rem
+        line-height: 1
+        margin-bottom: 12px
+        display: flex
+
+    .tips-bottom
+        color: var(--icat-gray)
+        font-size: 14px
+        position: absolute
+        bottom: 1rem
+        left: 2rem
+
+        a
+            color: var(--icat-gray)
+            font-weight: 600
+
+    .h1-box
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+
+        +maxWidth768()
+            height: 220px
+
+        .box-top
+            margin: auto
+
+            .top
+                position: relative
+
+                span
+                    font-size: 100px
+                    position: absolute
+                    top: -106px
+                    left: -64px
+                    margin: 0
+                    padding: 0
+                    opacity: .4
+
+                    +maxWidth768()
+                        display: none
+
+                .title-h1
+                    font-size: 42px
+                    font-weight: 700
+                    line-height: 1.1
+                    margin: 0.5rem 0
+                    letter-spacing: 0.2rem
+                    color: var(--icat-fontcolor)
+
+        .box-bottom
+            padding: 1.25rem 2rem
+            display: inline-flex
+            justify-content: center
+
+            span
+                font-size: 18px
+
+    .btn-layout
+        padding: 6px 18px
+        background: var(--icat-background)
+        margin: 0 18px 18px 0
+        border: var(--style-border)
+        border-radius: 8px
+        box-shadow: var(--icat-shadow-border)
+
+        &:hover
+            box-shadow: var(--icat-shadow-blue)
+            border-color: var(--icat-blue)
+            background: var(--icat-blue)
+            color: var(--icat-white)
+
+    .Personal-Introduction
+        display: flex
+        justify-content: space-between
+
+        .PI-box-left
+            margin-top: 4.25rem
+            color: var(--icat-fontcolor)
+            font-weight: 400
+            width: 60%
+            position: relative
+
+            +maxWidth768()
+                width: 100%
+                z-index: 1
+
+            .title
+                font-size: 42px
+                margin: .5rem 0
+                letter-spacing: .2rem
+
+            .describe
+                font-size: 18px
+                letter-spacing: .2rem
+                margin-top: 2.25rem
+                opacity: .9
+
+                +maxWidth768()
+                    font-size: 16px
+                    letter-spacing: 0
+
+            .describe-tips
+                font-size: 16px
+                opacity: .4
+
+                +maxWidth768()
+                    font-size: 12px
+
+            .PI-button
+                position: absolute
+                bottom: 0
+                display: flex
+
+                +maxWidth768()
+                    position: static
+                    margin-top: 10px
+                
+                a
+                    border-radius: 8px
+                    background: var(--icat-card-bg)
+                    border: var(--style-border)
+                    box-shadow: var(--icat-shadow-border)
+                    padding: 6px 18px
+                    transition: .6s
+                    margin-right: 16px
+
+                    &:hover
+                        background: var(--icat-blue)
+                        color: var(--icat-white)
+                        box-shadow: var(--icat-shadow-blue)
+
+        .PI-box-right
+            height: 420px
+            overflow: hidden
+            width: 40%
+            display: flex
+            justify-content: center
+            // 新增：让图片容器在父盒子中垂直居中（避免图片顶部对齐）
+            align-items: center
+
+            +maxWidth768()
+                position: absolute
+                right: 0
+                width: 38%
+                // 新增：移动端调整高度，避免图片被压缩
+                height: 300px
+                // 新增：移动端让图片容器靠上，不遮挡文字
+                align-items: flex-start
+                // 新增：移动端给父容器加背景（避免图片透明时露底）
+                background: var(--icat-card-bg)
+
+            // 关键新增：图片容器样式（控制图片外层尺寸和溢出）
+            .PI-img
+                // 让图片容器填满父盒子（PI-box-right）的可用空间
+                width: 100%
+                height: 100%
+                // 隐藏图片超出容器的部分（防止图片过大溢出）
+                overflow: hidden
+                // 可选：给图片加圆角，与整体卡片风格统一
+                border-radius: 8px
+                // 可选：轻微阴影，增强图片层次感
+                box-shadow: var(--icat-shadow-border)
+
+                // 核心：图片本身的缩放规则
+                img
+                    // 图片宽度适应容器，高度自动按比例计算（基础缩放）
+                    width: 100%
+                    height: auto
+                    // 关键属性：保持图片比例，同时填满容器（溢出部分裁剪）
+                    // 若希望完整显示图片（允许容器留空白），可改为 object-fit: contain
+                    object-fit: cover
+                    // 可选：让图片裁剪时优先显示中心区域（避免人物头像裁掉脸部）
+                    object-position: center
+                    // 可选：添加过渡动画，hover 时轻微放大（增强交互）
+                    transition: transform 0.6s ease
+
+                // 可选：hover 时图片轻微放大（保持在容器内，不溢出）
+                &:hover img
+                    transform: scale(1.05)
+
+    .Personal-Introduction-bar
+        margin: 2.25rem 0
+        display: flex
+        justify-content: space-between
+
+        +maxWidth768()
+            flex-wrap: wrap
+
+        .bar-box
+            margin: 0.5rem 2rem 0.5rem 0
+
+            +maxWidth768()
+                width: 50%
+                margin: 0.5rem 0
+
+            .title
+                +maxWidth768()
+                    font-size: 26px
+
+    #one
+        display: flex
+
+        +maxWidth768()
+            flex-direction: column
+
+        .width
+            width: calc(100% / 3 - 8px)
+            margin-right: 16px
+            aspect-ratio: 1/1
+
+            +maxWidth768()
+                width: 100%
+                margin-right: 0
+                margin-bottom: 16px
+
+            &:last-child
+                margin-right: 0
+
+        .photo
+            overflow: hidden
+            background: url(https://cdn.lmark.cc/party.webp) no-repeat center
+            background-size: 130%
+            transition: 1s
+
+            +maxWidth768()
+                order: 1
+                padding: calc(100% / 2)
+
+            &:hover
+                background-size: 100%
+                background-position-x: 50%
+                background-position-y: 50%
+
+        .map
+            background: url(https://cdn.lmark.cc/Map.webp) no-repeat center
+            background-size: 100%
+            overflow: hidden
+            transition: 2s
+
+            +maxWidth768()
+                order: 1
+                padding: calc(100% / 2)
+
+            &:hover
+                background-size: 150%
+                background-position-x: 5%
+                background-position-y: 5%
+
+                span
+                    bottom: -100%
+
+            span
+                position: absolute
+                bottom: 0
+                left: 0
+                width: 100%
+                background: var(--icat-maskbg)
+                padding: 1.25rem 2rem
+                -webkit-backdrop-filter: saturate(180%) blur(20px)
+                backdrop-filter: saturate(180%) blur(20px)
+                font-size: 18px
+                display: flex
+                align-items: center
+                transition: bottom 1s
+                border-radius: 0 0 12px 12px
+
+                p
+                    margin: 0
+                    font-weight: bolder
+
+    .Philosophical
+        margin-top: 16px
+        min-height: 240px
+        display: flex
+        gap: 16px
+
+        +maxWidth768()
+            flex-direction: column
+            gap: 0
+            margin-top: 0
+
+        .P-box-left
+            width: 60%
+            padding: 2.25rem 2rem
+            position: relative
+
+            +maxWidth768()
+                width: 100%
+                height: 210px
+                margin-bottom: 16px
+
+            &:hover
+                .image
+                    transform: rotate(-10deg)
+
+            // 关键：图片容器样式（控制缩放和定位）
+            .image
+                position: absolute
+                right: 30px
+                top: 10px
+                // 新增：限制图片容器尺寸，避免过大溢出
+                width: 220px
+                height: 220px // 与宽度一致，适合圆形/方形图片，可根据需求调整
+                // 新增：隐藏图片超出容器的部分（核心防溢出）
+                overflow: hidden
+                // 可选：给容器加圆角，与整体风格统一
+                border-radius: 8px
+                // 保留原有过渡动画（旋转效果）
+                transition: transform 2s cubic-bezier(.13,.45,.21,1.02)
+
+                +maxWidth768()
+                    width: 120px
+                    height: 120px // 移动端同步缩小容器尺寸
+                    right: 18px
+                    top: 40px
+
+                // 核心：图片本身的缩放规则
+                img
+                    // 图片填满容器，同时保持比例（溢出部分被裁剪）
+                    width: 100%
+                    height: 100%
+                    // 关键属性：保持图片比例，避免拉伸变形
+                    object-fit: cover
+                    // 确保图片在容器中居中显示（避免裁剪关键内容）
+                    object-position: center
+                    // 可选：移除图片默认间隙（部分浏览器会给 img 加默认边距）
+                    display: block
+
+        .P-box-right
+            width: 40%
+            padding: 2.25rem 2rem
+            display: flex
+            flex-direction: column
+
+            +maxWidth768()
+                width: 100%
+                height: 210px
+
+
+    .Socialize
+        margin-top: 16px
+        padding: 2.25rem 2rem
+
+        &:hover
+            .S-img .img-box
+                transform: rotate(0deg) translateY(58%) scale(2)
+
+        .S-box
+            margin-top: 2.25rem
+            width: 60%
+            display: flex
+            flex-wrap: wrap
+
+            +maxWidth768()
+                width: 100%
+                z-index: 1
+                position: sticky
+
+        .S-img
+            width: 40%
+            height: 100%
+            position: absolute
+            right: 0
+            top: 0
+            display: flex
+            align-items: center
+            justify-content: center
+
+            +maxWidth768()
+                bottom: 0
+                height: 40%
+                top: auto
+
+            .img-box
+                background: url(https://cdn.lmark.cc/bilibili.webp) no-repeat center
+                background-size: contain
+                aspect-ratio: 8/16
+                height: 95%
+                transform: rotate(12deg) translateY(58%) scale(2)
+                transition: .6s
+
+                +maxWidth768()
+                    transform: rotate(12deg) translateY(62%) scale(3)
+                    filter: blur(2px)
+
+    #two
+        margin-top: 32px
+        display: flex
+
+        +maxWidth768()
+            flex-direction: column
+
+        .h1-box
+            width: 50%
+            margin-right: 16px
+            aspect-ratio: 1/1
+
+            +maxWidth768()
+                width: 100%
+                margin-bottom: 16px
+
+        .information
+            width: 100%
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+
+            .Version
+                display: flex
+                height: 100%
+                margin-bottom: 16px
+                align-items: center
+                justify-content: space-around
+
+                +maxWidth768()
+                    flex-direction: column
+
+                .V-box
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    position: relative
+
+                    +maxWidth768()
+                        margin: 16px 0
+
+                    &:nth-child(1)
+                        &:before
+                            background: url(https://img.meuicat.com/blog/22.webp) no-repeat center
+
+                    &:nth-child(2)
+                        &:before
+                            background: url(https://img.meuicat.com/blog/23.webp) no-repeat center
+
+                    &:nth-child(3)
+                        &:before
+                            background: url(https://cdn.lmark.cc/LMark60.webp) no-repeat center
+
+                    &:before
+                        position: absolute
+                        right: -26px
+                        top: -16px
+                        filter: blur(2px)
+                        opacity: .5
+                        content: ""
+                        width: 60px
+                        height: 100%
+
+                    .title
+                        color: var(--icat-fontcolor)
+                        z-index: 1
+
+            .Statistics
+                padding: 1.25rem 2rem
+                display: inline-flex
+                justify-content: space-between
+
+                +maxWidth768()
+                    flex-wrap: wrap
+
+                span
+                    font-size: 18px
+                    margin-bottom: 10px
+
+                    +maxWidth768()
+                        margin-bottom: 0
+                        width: 50%
+                        text-align: center
+
+    .data
+        margin-top: 16px
+        display: flex
+        justify-content: space-between
+
+        +maxWidth768()
+            flex-direction: column
+
+        .statistic
+            width: calc(65% - 8px)
+            padding: 2.25rem 2rem
+            display: flex
+            flex-direction: column
+            background: url(https://img.meuicat.com/blog/25.webp) no-repeat center
+            background-size: 100%
+            color: var(--icat-white)
+
+            +maxWidth768()
+                width: 100%
+                margin-bottom: 16px
+
+            &:hover
+                .title
+                    color: var(--icat-white)
+
+            &:before
+                box-shadow: 0 -159px 173px 71px #0c1c2c inset
+                position: absolute
+                content: ""
+                width: 100%
+                height: 100%
+                top: 0
+                left: 0
+
+            & > *
+                z-index: 1
+
+            #statistic
+                display: flex
+                justify-content: space-between
+                margin: auto 0
+
+                +maxWidth768()
+                    flex-wrap: wrap
+                    margin: 1.25rem 0
+
+                div
+                    margin: 0 16px 16px 0
+
+                    +maxWidth768()
+                        margin: 0 0 16px
+                        width: 50%
+
+                    span:last-child
+                        font-size: 36px
+                        font-weight: 700
+                        line-height: 1.1
+                        color: var(--icat-white)
+
+            .tips-bottom
+                display: flex
+                justify-content: space-between
+                align-items: center
+                width: 100%
+
+                .T-btn
+                    height: 40px
+                    width: 124px
+                    border-radius: 20px
+                    display: flex
+                    box-shadow: var(--icat-shadow-border)
+                    align-items: center
+                    justify-content: center
+                    border: var(--style-border)
+                    background: var(--icat-background)
+                    margin-right: 4rem
+
+                    +maxWidth768()
+                        display: none
+
+                    &:hover
+                        box-shadow: var(--icat-shadow-blue)
+                        border-color: var(--icat-blue)
+                        background: var(--icat-blue)
+                        color: var(--icat-white)
+
+        .union
+            width: calc(35% - 8px)
+            padding: 2.25rem 2rem
+
+            +maxWidth768()
+                width: 100%
+
+            .U-box
+                margin-top: 1.25rem
+                display: flex
+                flex-wrap: wrap
+
+    .content
+        margin-top: 16px
+        padding: 2.25rem 2rem
+
+    #name-list
+        margin-top: 16px
+        padding: 2.25rem 2rem
+
+        .reward-list-all
+            display: flex
+            flex-wrap: wrap
+            flex-direction: row
+            margin-top: 1rem
+            margin-bottom: 0.5rem
+            margin-left: -0.25rem
+            margin-right: -0.25rem
+
+            .reward-list-item
+                padding: 1rem
+                border-radius: 12px
+                border: var(--style-border)
+                width: calc((100% / 4) - 0.5rem)
+                margin: 0 0.25rem 0.5rem 0.25rem
+                box-shadow: var(--icat-shadow-border)
+                transition: .6s
+
+                +maxWidth768()
+                    width: 100% !important
+
+                &:hover
+                    background: var(--icat-blue)
+                    color: var(--icat-white)
+                    box-shadow: var(--icat-shadow-blue)
+
+                    .reward-list-item-money
+                        background: var(--icat-white)
+                        opacity: .8
+                        color: var(--icat-black)
+
+                    .reward-list-item-time
+                        color: var(--icat-white)
+                        opacity: .6
+
+                .reward-list-item-name
+                    font-size: 1rem
+                    font-weight: 700
+                    line-height: 1
+                    margin-bottom: 0.5rem
+
+                .reward-list-bottom-group
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+
+                .reward-list-item-money
+                    padding: 4px
+                    background: var(--font-color)
+                    color: var(--card-bg)
+                    font-size: 12px
+                    line-height: 1
+                    border-radius: 4px
+                    margin-right: 4px
+                    white-space: nowrap
+
+                .reward-list-item-time
+                    font-size: 12px
+                    color: var(--icat-secondtext)
+                    white-space: nowrap
+
+        .post-reward
+            position: absolute
+            right: 2rem
+            top: 2rem
+
+            .reward-main
+                top: 40px
+                right: 0
+                padding: .5rem 0 0
+
+                .reward-all
+                    &:before
+                        top: 0
+            
+            .reward-button
+                margin-right: 0
+
+
+[data-theme='dark']
+    #icat-about-page
+        #one
+            .map
+                background: url(https://cdn.lmark.cc/Map.webp) no-repeat center
+                background-size: 100%
+                
+                &:hover
+                    background-size: 150%
+                    background-position-x: 5%
+                    background-position-y: 5%
+
+        .data
+            .statistic
+                color: var(--font-color)
