@@ -517,4 +517,697 @@
     
   </entry>
   
+  <entry>
+    <title>HackGame2022部分题解（签到——微积分小练习）</title>
+    <link href="https://lmark.cc/archives/dc57b028.html"/>
+    <id>https://lmark.cc/archives/dc57b028.html</id>
+    <published>2022-10-29T14:35:15.000Z</published>
+    <updated>2025-01-20T12:53:31.662Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;总所周知，中科大每年都会举办一个HackGame，今年也不例外。&lt;/p&gt;
+&lt;p&gt;今年的比赛从2022 年 10 月 22 日 中午 12:00开始，到 10 月 29 日 中午</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
+    
+    <category term="Linux" scheme="https://lmark.cc/tags/Linux/"/>
+    
+    <category term="CTF" scheme="https://lmark.cc/tags/CTF/"/>
+    
+    <category term="XSS" scheme="https://lmark.cc/tags/XSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>斐讯K2P路由器+Openwrt固件实现校园网多播</title>
+    <link href="https://lmark.cc/archives/ff16b028.html"/>
+    <id>https://lmark.cc/archives/ff16b028.html</id>
+    <published>2022-09-22T16:39:16.000Z</published>
+    <updated>2025-01-20T12:53:31.663Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Linux" scheme="https://lmark.cc/tags/Linux/"/>
+    
+    <category term="Openwrt" scheme="https://lmark.cc/tags/Openwrt/"/>
+    
+    <category term="路由器" scheme="https://lmark.cc/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Windows(OpenSSH)实现私钥免密码连接Linux(DropbearSSH)服务器</title>
+    <link href="https://lmark.cc/archives/e74a4c2c.html"/>
+    <id>https://lmark.cc/archives/e74a4c2c.html</id>
+    <published>2022-09-14T18:07:02.000Z</published>
+    <updated>2025-01-20T12:53:31.663Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Linux" scheme="https://lmark.cc/tags/Linux/"/>
+    
+    <category term="openwrt" scheme="https://lmark.cc/tags/openwrt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安卓Termux安装ubuntu+alist实现文件中继服务</title>
+    <link href="https://lmark.cc/archives/b2e71f46.html"/>
+    <id>https://lmark.cc/archives/b2e71f46.html</id>
+    <published>2022-09-11T17:54:40.000Z</published>
+    <updated>2025-01-20T12:53:31.662Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Linux" scheme="https://lmark.cc/tags/Linux/"/>
+    
+    <category term="alist" scheme="https://lmark.cc/tags/alist/"/>
+    
+    <category term="Termux" scheme="https://lmark.cc/tags/Termux/"/>
+    
+    <category term="Ubuntu" scheme="https://lmark.cc/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django 报错 &#39;WSGIRequest&#39; object has no attribute &#39;data&#39; 的一个解决方法</title>
+    <link href="https://lmark.cc/archives/1b50bad4.html"/>
+    <id>https://lmark.cc/archives/1b50bad4.html</id>
+    <published>2022-09-01T16:28:15.000Z</published>
+    <updated>2025-01-20T12:53:31.659Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;报错截图&quot;&gt;&lt;a href=&quot;#报错截图&quot; class=&quot;headerlink&quot; title=&quot;报错截图&quot;&gt;&lt;/a&gt;报错截图&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Django" scheme="https://lmark.cc/tags/Django/"/>
+    
+    <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法笔记①——快速排序and归并排序and二分查找</title>
+    <link href="https://lmark.cc/archives/31f4e153.html"/>
+    <id>https://lmark.cc/archives/31f4e153.html</id>
+    <published>2022-07-04T10:13:18.000Z</published>
+    <updated>2025-01-20T12:53:31.657Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;浅浅记录一下，学的快排与归并与二分。视频地址：&lt;a href=&quot;https://www.acwing.com/video/10/&quot;&gt;第一章 基础算法（一） - AcWing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;快速排序&quot;&gt;&lt;a href=&quot;#快速排序&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="算法" scheme="https://lmark.cc/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="C++" scheme="https://lmark.cc/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记录一些M1卡密钥计算方式和校验位计算方式</title>
+    <link href="https://lmark.cc/archives/abbb7553.html"/>
+    <id>https://lmark.cc/archives/abbb7553.html</id>
+    <published>2022-07-01T09:37:41.000Z</published>
+    <updated>2025-01-20T12:53:31.657Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="RFID" scheme="https://lmark.cc/tags/RFID/"/>
+    
+    <category term="M1卡" scheme="https://lmark.cc/tags/M1%E5%8D%A1/"/>
+    
+    <category term="校验位" scheme="https://lmark.cc/tags/%E6%A0%A1%E9%AA%8C%E4%BD%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>校园网安全问题</title>
+    <link href="https://lmark.cc/archives/875c09b2.html"/>
+    <id>https://lmark.cc/archives/875c09b2.html</id>
+    <published>2022-06-25T02:35:12.000Z</published>
+    <updated>2025-01-20T12:53:31.669Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
+    
+    <category term="校园网" scheme="https://lmark.cc/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/"/>
+    
+    <category term="信息安全" scheme="https://lmark.cc/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络破防实践先导实验四————XSS攻击</title>
+    <link href="https://lmark.cc/archives/af59cd8a.html"/>
+    <id>https://lmark.cc/archives/af59cd8a.html</id>
+    <published>2022-06-24T09:54:37.000Z</published>
+    <updated>2025-01-20T12:53:31.668Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前情回顾&quot;&gt;&lt;a href=&quot;#前情回顾&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="网络破防实践先导" scheme="https://lmark.cc/tags/%E7%BD%91%E7%BB%9C%E7%A0%B4%E9%98%B2%E5%AE%9E%E8%B7%B5%E5%85%88%E5%AF%BC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络破防实践先导实验三————用DLL注入实现扫雷外挂</title>
+    <link href="https://lmark.cc/archives/c2bf18f6.html"/>
+    <id>https://lmark.cc/archives/c2bf18f6.html</id>
+    <published>2022-06-24T00:42:02.000Z</published>
+    <updated>2025-01-20T12:53:31.668Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;关于这次实验&quot;&gt;&lt;a href=&quot;#关于这次实验&quot; class=&quot;headerlink&quot; title=&quot;关于这次实验&quot;&gt;&lt;/a&gt;关于这次实验&lt;/h2&gt;&lt;p&gt;在完成了前两个炒鸡炒鸡炒鸡炒鸡炒鸡炒鸡难的实验之后，</summary>
+        
+      
+    
+    
+    
+    
+    <category term="网络破防实践先导" scheme="https://lmark.cc/tags/%E7%BD%91%E7%BB%9C%E7%A0%B4%E9%98%B2%E5%AE%9E%E8%B7%B5%E5%85%88%E5%AF%BC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>东滨路249号的回忆</title>
+    <link href="https://lmark.cc/archives/3abaf1c6.html"/>
+    <id>https://lmark.cc/archives/3abaf1c6.html</id>
+    <published>2022-05-21T01:14:18.000Z</published>
+    <updated>2025-01-20T12:53:31.675Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;东滨路249号的回忆：&quot;&gt;&lt;a href=&quot;#东滨路249号的回忆：&quot; class=&quot;headerlink&quot; title=&quot;东滨路249号的回忆：&quot;&gt;&lt;/a&gt;东滨路249号的回忆：&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="浦中" scheme="https://lmark.cc/tags/%E6%B5%A6%E4%B8%AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>eprime实验注意事项</title>
+    <link href="https://lmark.cc/archives/e868709.html"/>
+    <id>https://lmark.cc/archives/e868709.html</id>
+    <published>2022-05-01T18:50:20.000Z</published>
+    <updated>2025-01-20T12:53:31.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;z咱就是说，写个注意事项，方便调试程序，还能避免很多问题。这个链接一直都有更新，有问题随时来这里查&lt;/p&gt;
+&lt;h4 id=&quot;1-开始实验之前记得切换输入法至英文&quot;&gt;&lt;a href=&quot;#1-开始实验之前记得切换输入法至英文&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="E-Prime" scheme="https://lmark.cc/tags/E-Prime/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IC卡金额算法破解的一次尝试</title>
+    <link href="https://lmark.cc/archives/5e5bd1a8.html"/>
+    <id>https://lmark.cc/archives/5e5bd1a8.html</id>
+    <published>2022-04-16T05:25:12.000Z</published>
+    <updated>2025-01-20T12:53:31.656Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;时隔快一年，终于想起来要更新IC卡算法破解的第二期了。之前第一篇关于水卡密钥算法的破解那篇博客，还是我高三时候写的了，现在大一了，写出的东西也会不一样了。这次会介绍的详细一点了。&lt;/p&gt;
+&lt;p&gt;第一篇博客传送门：&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="RFID" scheme="https://lmark.cc/tags/RFID/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记录一次和键盘侠的正面硬刚（利用社工库+某些接口）</title>
+    <link href="https://lmark.cc/archives/36147050.html"/>
+    <id>https://lmark.cc/archives/36147050.html</id>
+    <published>2022-04-07T16:46:01.000Z</published>
+    <updated>2025-01-20T12:53:31.676Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本来这几天都没啥时间和心思写博客的，但是呀这几天发生了一些有意思的事，让我有了写博客的素材（其实还是我自己想写辣XD）。&lt;/p&gt;
+&lt;p&gt;就是，前两天，在高中的表白墙下面有一个牛马（这不是我骂人，是它本来的ID就是🐂🐎），在那里骂人，我呢，和几个同学在那里输出DK它。&lt;/</summary>
+        
+      
+    
+    
+    
+    
+    <category term="QQ" scheme="https://lmark.cc/tags/QQ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我的一些常用的工具函数（持续更新）</title>
+    <link href="https://lmark.cc/archives/cfb06458.html"/>
+    <id>https://lmark.cc/archives/cfb06458.html</id>
+    <published>2022-04-07T01:05:33.000Z</published>
+    <updated>2025-01-20T12:53:31.678Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;之前写的一些有意思的函数，因为每次自己再敲一遍又很麻烦，故写好了可以直接复制就可以用了&lt;/p&gt;
+&lt;h4 id=&quot;1-跑跑弱口令字典&quot;&gt;&lt;a href=&quot;#1-跑跑弱口令字典&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Tool" scheme="https://lmark.cc/tags/Tool/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一些常用的git命令</title>
+    <link href="https://lmark.cc/archives/b076b21a.html"/>
+    <id>https://lmark.cc/archives/b076b21a.html</id>
+    <published>2022-04-07T01:00:12.000Z</published>
+    <updated>2025-01-20T12:53:31.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;记录一些git的用法，怕之后的我给忘了（虽然已经忘记几次了）&lt;/p&gt;
+&lt;h3 id=&quot;1-克隆仓库&quot;&gt;&lt;a href=&quot;#1-克隆仓库&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Git" scheme="https://lmark.cc/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络破防实践先导实验二————ROP攻击</title>
+    <link href="https://lmark.cc/archives/7b29b6a8.html"/>
+    <id>https://lmark.cc/archives/7b29b6a8.html</id>
+    <published>2022-04-04T16:29:34.000Z</published>
+    <updated>2025-01-20T12:53:31.668Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1.前言&quot;&gt;&lt;/a&gt;1.前言&lt;/h2&gt;&lt;p&gt;终于在熬过了第一个实验之后，来到了老师所说的，比第一个简单一点的实验。然而，事实证明，老师在画大饼:</summary>
+        
+      
+    
+    
+    
+    
+    <category term="网络破防实践先导" scheme="https://lmark.cc/tags/%E7%BD%91%E7%BB%9C%E7%A0%B4%E9%98%B2%E5%AE%9E%E8%B7%B5%E5%85%88%E5%AF%BC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络破防实践先导实验一————数组越界检测心得</title>
+    <link href="https://lmark.cc/archives/94f62543.html"/>
+    <id>https://lmark.cc/archives/94f62543.html</id>
+    <published>2022-03-31T18:45:36.000Z</published>
+    <updated>2025-01-20T12:53:31.667Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1.前言&quot;&gt;&lt;/a&gt;1.前言&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;网络攻防实践先导&lt;/strong&gt;，听着名字很高大上吧，正如它的名字那般，它的难度也是非常的大:</summary>
+        
+      
+    
+    
+    
+    
+    <category term="网络破防实践先导" scheme="https://lmark.cc/tags/%E7%BD%91%E7%BB%9C%E7%A0%B4%E9%98%B2%E5%AE%9E%E8%B7%B5%E5%85%88%E5%AF%BC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用ssh连接服务器和使用pycharm把代码同步上服务器的方法</title>
+    <link href="https://lmark.cc/archives/8eb53c55.html"/>
+    <id>https://lmark.cc/archives/8eb53c55.html</id>
+    <published>2022-03-28T12:07:55.000Z</published>
+    <updated>2025-01-20T12:53:31.674Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;1-SSH连接服务器&quot;&gt;&lt;a href=&quot;#1-SSH连接服务器&quot; class=&quot;headerlink&quot; title=&quot;1.SSH连接服务器&quot;&gt;&lt;/a&gt;1.SSH连接服务器&lt;/h4&gt;&lt;p&gt;首先需要安装一个远程连接客户端（我用的是Final</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于uwsgi+nginx+centos的Django项目部署经历</title>
+    <link href="https://lmark.cc/archives/cec14bfd.html"/>
+    <id>https://lmark.cc/archives/cec14bfd.html</id>
+    <published>2022-03-27T15:35:37.000Z</published>
+    <updated>2025-01-20T12:53:31.659Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-起因&quot;&gt;&lt;a href=&quot;#1-起因&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Django" scheme="https://lmark.cc/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于proteus的可视化设计(6)——一些自己写的程序介绍</title>
+    <link href="https://lmark.cc/archives/8540ce62.html"/>
+    <id>https://lmark.cc/archives/8540ce62.html</id>
+    <published>2022-02-20T12:23:32.000Z</published>
+    <updated>2025-01-20T12:53:31.673Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这篇文章来介绍一下我自己写的一些程序，仅供参考，同时附上网盘链接，感兴趣可以下载看看&lt;/p&gt;
+&lt;p&gt;链接：&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Proteus" scheme="https://lmark.cc/tags/Proteus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于proteus的可视化设计(5)——传感器</title>
+    <link href="https://lmark.cc/archives/1244c55c.html"/>
+    <id>https://lmark.cc/archives/1244c55c.html</id>
+    <published>2022-02-13T10:47:19.000Z</published>
+    <updated>2025-01-20T12:53:31.673Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;上一篇文章介绍了电机的一些用法，这次来介绍——传感器。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2022/02/13/tVdRNsYSIyZPBrq.png&quot; alt=&quot;距离传感器&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Proteus" scheme="https://lmark.cc/tags/Proteus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于proteus的可视化设计(4)——电机控制</title>
+    <link href="https://lmark.cc/archives/f26766a0.html"/>
+    <id>https://lmark.cc/archives/f26766a0.html</id>
+    <published>2022-02-11T14:56:33.000Z</published>
+    <updated>2025-01-20T12:53:31.673Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在上一篇文章中，我介绍了显示屏的一些用法，今天给大家介绍proteus可视化设计中，电机的一些用法&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2022/02/12/xsrS7HBOEwiPW3L.png&quot;&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Proteus" scheme="https://lmark.cc/tags/Proteus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用pyinstaller在64位电脑上打包32位exe</title>
+    <link href="https://lmark.cc/archives/2fe60316.html"/>
+    <id>https://lmark.cc/archives/2fe60316.html</id>
+    <published>2022-02-10T09:26:49.000Z</published>
+    <updated>2025-01-20T12:53:31.674Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;hello大家好，这里是LMark。今天给别人写程序的时候，用pyinstaller打包成exe，但是对方是32位Win7，而我的是64位，所以用pyinstaller打包出来的exe文件运行不了，后来去网上找了些资料，解决了这个问题。&lt;/p&gt;
+&lt;h4</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于proteus的可视化设计(3)——显示屏控制</title>
+    <link href="https://lmark.cc/archives/cb089c0e.html"/>
+    <id>https://lmark.cc/archives/cb089c0e.html</id>
+    <published>2022-02-01T12:39:09.000Z</published>
+    <updated>2025-01-20T12:53:31.672Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;上一篇文章介绍了LED模块的用法，这次来给大家介绍介绍一下显示屏的用法，列举一些常见的显示屏：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2022/02/01/hOLUIEes4TAa6MS.png&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Proteus" scheme="https://lmark.cc/tags/Proteus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于proteus的可视化设计(2)——LED模块</title>
+    <link href="https://lmark.cc/archives/bcaeb128.html"/>
+    <id>https://lmark.cc/archives/bcaeb128.html</id>
+    <published>2022-01-29T15:52:45.000Z</published>
+    <updated>2025-01-20T12:53:31.672Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在上一篇文章中，介绍了proteus可视化设计的一些基本操作，今天我们来介绍第一种组件的使用——-LED控制。&lt;/p&gt;
+&lt;h3 id=&quot;1-LED模块的选择&quot;&gt;&lt;a href=&quot;#1-LED模块的选择&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Proteus" scheme="https://lmark.cc/tags/Proteus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于proteus的可视化设计(1)——基础介绍</title>
+    <link href="https://lmark.cc/archives/6a55821b.html"/>
+    <id>https://lmark.cc/archives/6a55821b.html</id>
+    <published>2022-01-29T14:46:01.000Z</published>
+    <updated>2025-01-20T12:53:31.671Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Hello，大家好，这里是LMark，今天来给大家分享proteus软件的仿真设计的一些方法，如有错误，欢迎大家指正。我首先声明一下，本人为计算机专业大一学生，对单片机开发只是一个兴趣爱好，并不会在这里介绍太多原理性的内容（主要是我也不是很懂哈哈哈），主要介绍介绍prote</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Proteus" scheme="https://lmark.cc/tags/Proteus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IC卡秘钥算法破解的一次尝试</title>
+    <link href="https://lmark.cc/archives/b79c4a06.html"/>
+    <id>https://lmark.cc/archives/b79c4a06.html</id>
+    <published>2021-07-18T00:41:24.000Z</published>
+    <updated>2025-01-20T12:53:31.656Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Hello大家好，这里是LanternMark，今天给大家分享一下我的一次水卡破解经历。&lt;/p&gt;
+&lt;p&gt;（本文只技术交流分享，滥用者自行承担责任，与本文作者无关）&lt;/p&gt;
+&lt;h3 id=&quot;0x0-前言&quot;&gt;&lt;a href=&quot;#0x0-前言&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="RFID" scheme="https://lmark.cc/tags/RFID/"/>
+    
+    <category term="浦中" scheme="https://lmark.cc/tags/%E6%B5%A6%E4%B8%AD/"/>
+    
+  </entry>
+  
 </feed>
