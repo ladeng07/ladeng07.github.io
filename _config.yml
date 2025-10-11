@@ -106,7 +106,7 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   - type: 'git'
-    repo: git@github.com:ladeng07/ladeng07.github.io.git
+    repo: https://github.com/ladeng07/ladeng07.github.io.git
     branch: master
   # - type: baidu_url_submitter
 
@@ -186,10 +186,10 @@ feed:
   enable: true
   type: atom
   path: atom.xml
-  limit: 20
+  limit: 0
   hub:
   content:
-  content_limit: 140
+  # content_limit: 0
   content_limit_delim: ' '
   order_by: -date
   icon: icon.png

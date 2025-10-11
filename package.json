@@ -6,7 +6,9 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "publish":"npm run clean && npm run build && npm run deploy",
+    "backup": "git add . && git commit -m 'Backup blog source' && git push"
   },
   "hexo": {
     "version": "7.3.0"

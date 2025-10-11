@@ -171,7 +171,7 @@ wordcount:
 # false: do not show the article introduction
 index_post_content:
   method: 2
-  length: 500 # if you set method to 2 or 3, the length need to config
+  length: 800 # if you set method to 2 or 3, the length need to config
 
 # anchor
 anchor:
@@ -1012,7 +1012,7 @@ about:
     个性商店: https://storeweb.cn/site/o/1674
     博客录: https://boke.lu/icat-author/18
     站点聚合平台: https://sites.link/site-info?siteType=life&siteId=64775163ea53c100a9b742ba
-    博友圈: https://www.boyouquan.com/blogs/meuicat.com
+    博友圈: https://www.boyouquan.com/blogs/lmark.cc
     # xx: xxxx
 
   aifadian: https://afdian.net/a/yife68

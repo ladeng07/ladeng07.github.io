@@ -98,8 +98,8 @@ body::-webkit-scrollbar {
 }
 
 #aside-content .card-info .author-info__description {
-    line-height: 16px;
-    font-size: 16px;
+    line-height: 15px;
+    font-size: 15px;
     letter-spacing: 2px;
 
 }
