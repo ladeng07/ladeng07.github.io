@@ -3,6 +3,7 @@ title: DjangoAdmin后台collectstatic不生效问题
 tags:
   - Django
   - Python
+  - Bug
 abbrlink: 2514f762
 cover: https://cdn.lmark.cc/img/300216_origin_20220531_201214.jpg
 top_img: https://cdn.lmark.cc/img/300218_origin_20220531_201225.jpg
