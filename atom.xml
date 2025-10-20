@@ -6,7 +6,7 @@
   <link href="https://lmark.cc/atom.xml" rel="self"/>
   
   <link href="https://lmark.cc/"/>
-  <updated>2025-10-11T14:36:46.882Z</updated>
+  <updated>2025-10-20T07:47:29.367Z</updated>
   <id>https://lmark.cc/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>解决批处理脚本报错：The system cannot find the batch label XXXX</title>
+    <link href="https://lmark.cc/archives/ccc0c16f.html"/>
+    <id>https://lmark.cc/archives/ccc0c16f.html</id>
+    <published>2025-10-16T07:37:37.000Z</published>
+    <updated>2025-10-20T07:47:29.367Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h3&gt;&lt;p&gt;这两天在装[guaguastandup&amp;#x2F;zotero-pdf2zh: PDF2zh for Zotero | Zotero</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Windows" scheme="https://lmark.cc/tags/Windows/"/>
+    
+    <category term="Bug" scheme="https://lmark.cc/tags/Bug/"/>
+    
+  </entry>
+  
+  <entry>
     <title>UE5.6使用Unrealcv和MatrixCityPlugin遇到的一些问题：</title>
     <link href="https://lmark.cc/archives/1020f683.html"/>
     <id>https://lmark.cc/archives/1020f683.html</id>
     <published>2025-10-11T14:08:50.000Z</published>
-    <updated>2025-10-11T14:36:46.882Z</updated>
+    <updated>2025-10-20T07:30:14.687Z</updated>
     
     
       
@@ -35,6 +60,8 @@
     
     
     
+    <category term="Bug" scheme="https://lmark.cc/tags/Bug/"/>
+    
     <category term="Unreal" scheme="https://lmark.cc/tags/Unreal/"/>
     
     <category term="虚幻5" scheme="https://lmark.cc/tags/%E8%99%9A%E5%B9%BB5/"/>
@@ -44,11 +71,38 @@
   </entry>
   
   <entry>
+    <title>解决报错RuntimeError: GET was unable to find an engine to execute this computation</title>
+    <link href="https://lmark.cc/archives/7ad56976.html"/>
+    <id>https://lmark.cc/archives/7ad56976.html</id>
+    <published>2025-10-08T07:25:42.000Z</published>
+    <updated>2025-10-20T07:34:40.786Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Bug" scheme="https://lmark.cc/tags/Bug/"/>
+    
+    <category term="Cuda" scheme="https://lmark.cc/tags/Cuda/"/>
+    
+    <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;</title>
     <link href="https://lmark.cc/archives/13f312f.html"/>
     <id>https://lmark.cc/archives/13f312f.html</id>
     <published>2025-07-13T10:30:44.000Z</published>
-    <updated>2025-09-10T16:21:09.405Z</updated>
+    <updated>2025-10-20T07:29:03.171Z</updated>
     
     
       
@@ -62,9 +116,11 @@
     
     
     
-    <category term="Django" scheme="https://lmark.cc/tags/Django/"/>
+    <category term="Bug" scheme="https://lmark.cc/tags/Bug/"/>
     
     <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
+    
+    <category term="Django" scheme="https://lmark.cc/tags/Django/"/>
     
   </entry>
   
@@ -93,6 +149,29 @@
     <category term="微调" scheme="https://lmark.cc/tags/%E5%BE%AE%E8%B0%83/"/>
     
     <category term="环境" scheme="https://lmark.cc/tags/%E7%8E%AF%E5%A2%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何优雅的批量修改git项目的提交时间</title>
+    <link href="https://lmark.cc/archives/ab483bc5.html"/>
+    <id>https://lmark.cc/archives/ab483bc5.html</id>
+    <published>2025-01-05T07:13:33.000Z</published>
+    <updated>2025-10-20T07:49:37.902Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Git" scheme="https://lmark.cc/tags/Git/"/>
     
   </entry>
   
@@ -126,7 +205,7 @@
     <link href="https://lmark.cc/archives/ea042a0d.html"/>
     <id>https://lmark.cc/archives/ea042a0d.html</id>
     <published>2024-10-16T07:50:57.000Z</published>
-    <updated>2025-01-20T12:53:31.678Z</updated>
+    <updated>2025-10-20T07:49:11.200Z</updated>
     
     
       
@@ -140,7 +219,7 @@
     
     
     
-    <category term="windows" scheme="https://lmark.cc/tags/windows/"/>
+    <category term="Windows" scheme="https://lmark.cc/tags/Windows/"/>
     
   </entry>
   
@@ -240,9 +319,9 @@
     
     
     
-    <category term="Django" scheme="https://lmark.cc/tags/Django/"/>
-    
     <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
+    
+    <category term="Django" scheme="https://lmark.cc/tags/Django/"/>
     
   </entry>
   
@@ -502,7 +581,7 @@
     <link href="https://lmark.cc/archives/2514f762.html"/>
     <id>https://lmark.cc/archives/2514f762.html</id>
     <published>2022-11-30T19:56:17.000Z</published>
-    <updated>2025-01-20T12:53:31.660Z</updated>
+    <updated>2025-10-20T07:28:59.096Z</updated>
     
     
       
@@ -516,9 +595,11 @@
     
     
     
-    <category term="Django" scheme="https://lmark.cc/tags/Django/"/>
+    <category term="Bug" scheme="https://lmark.cc/tags/Bug/"/>
     
     <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
+    
+    <category term="Django" scheme="https://lmark.cc/tags/Django/"/>
     
   </entry>
   
@@ -527,7 +608,7 @@
     <link href="https://lmark.cc/archives/5f2a3725.html"/>
     <id>https://lmark.cc/archives/5f2a3725.html</id>
     <published>2022-11-29T01:07:30.000Z</published>
-    <updated>2025-01-20T12:53:31.661Z</updated>
+    <updated>2025-10-20T07:29:09.126Z</updated>
     
     
       
@@ -540,6 +621,8 @@
     
     
     
+    
+    <category term="Bug" scheme="https://lmark.cc/tags/Bug/"/>
     
     <category term="Git" scheme="https://lmark.cc/tags/Git/"/>
     
@@ -594,9 +677,9 @@
     
     <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
     
-    <category term="Linux" scheme="https://lmark.cc/tags/Linux/"/>
-    
     <category term="CTF" scheme="https://lmark.cc/tags/CTF/"/>
+    
+    <category term="Linux" scheme="https://lmark.cc/tags/Linux/"/>
     
     <category term="XSS" scheme="https://lmark.cc/tags/XSS/"/>
     
@@ -634,7 +717,7 @@
     <link href="https://lmark.cc/archives/e74a4c2c.html"/>
     <id>https://lmark.cc/archives/e74a4c2c.html</id>
     <published>2022-09-14T18:07:02.000Z</published>
-    <updated>2025-01-20T12:53:31.663Z</updated>
+    <updated>2025-10-20T07:50:18.566Z</updated>
     
     
       
@@ -650,7 +733,7 @@
     
     <category term="Linux" scheme="https://lmark.cc/tags/Linux/"/>
     
-    <category term="openwrt" scheme="https://lmark.cc/tags/openwrt/"/>
+    <category term="Openwrt" scheme="https://lmark.cc/tags/Openwrt/"/>
     
   </entry>
   
@@ -688,7 +771,7 @@
     <link href="https://lmark.cc/archives/1b50bad4.html"/>
     <id>https://lmark.cc/archives/1b50bad4.html</id>
     <published>2022-09-01T16:28:15.000Z</published>
-    <updated>2025-01-20T12:53:31.659Z</updated>
+    <updated>2025-10-20T07:28:52.840Z</updated>
     
     
       
@@ -703,9 +786,11 @@
     
     
     
-    <category term="Django" scheme="https://lmark.cc/tags/Django/"/>
+    <category term="Bug" scheme="https://lmark.cc/tags/Bug/"/>
     
     <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
+    
+    <category term="Django" scheme="https://lmark.cc/tags/Django/"/>
     
   </entry>
   

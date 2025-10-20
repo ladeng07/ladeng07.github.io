@@ -5,6 +5,29 @@
     
     <entry>
       
+        <title>解决批处理脚本报错：The system cannot find the batch label XXXX</title>
+      
+      <link href="/archives/ccc0c16f.html"/>
+      <url>/archives/ccc0c16f.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>这两天在装[guaguastandup&#x2F;zotero-pdf2zh: PDF2zh for Zotero | Zotero PDF中文翻译插件](<a href="https://github.com/guaguastandup/zotero-pdf2zh%E6%97%B6%EF%BC%8C%E7%94%A8%E5%AE%83%E7%9A%84%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC%E6%97%B6%EF%BC%8C%E5%87%BA%E4%BA%86%E4%B8%AA%E6%8A%BD%E8%B1%A1%E7%9A%84%E9%94%99%EF%BC%9A">https://github.com/guaguastandup/zotero-pdf2zh时，用它的安装脚本时，出了个抽象的错：</a></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The system cannot find the batch label specified - create_conda_env</span><br></pre></td></tr></table></figure><p>把报错拿去问chat哥和ge哥，他俩给出的答案都是说原本的脚本用了<code>UTF-8 with BOM</code>编码，导致开头有两字节数据，同时还说是结尾用了LF而不是CRLF导致的。</p><p>根据它们说的方法排查一遍之后，发现还是不行。于是只能用匠心传承的古法debug，上stackflow搜索，还真让我找到一个十几年前类似的回答<a href="https://stackoverflow.com/questions/232651/why-the-system-cannot-find-the-batch-label-specified-is-thrown-even-if-label-e">windows - Why “The system cannot find the batch label specified” is thrown even if label exists? - Stack Overflow</a>：</p><p><img src="https://cdn.lmark.cc/img/image-20251017110358112.png" alt="image-20251017110358112"></p><p>里面有一条回答非常细节：</p><blockquote><p>GitHub’s “Raw” download is just HTTP-serving the blob as it sits in the repo storage (which Git always normalizes to LF internally). It does not invoke Git’s clean&#x2F;smudge process, so you always get LF, even if you committed CRLF or have a <code>.gitattributes</code> rule.<br>GitHub 的”原始”下载只是将存储在仓库中的 blob 作为 HTTP 服务提供（Git 内部始终将其标准化为 LF）。它不会调用 Git 的 clean&#x2F;smudge 过程，因此你始终会得到 LF，即使你提交了 CRLF 或有一个 <code>.gitattributes</code> 规则。</p><p>If you clone the repo or pull changes, Git will see your <code>.gitattributes</code> and convert <code>.bat</code> files to CRLF on disk.<br>如果你克隆仓库或拉取更改，Git 会看到你的 <code>.gitattributes</code> 并将 <code>.bat</code> 文件转换为 CRLF 在磁盘上。</p><p>But if you grab the file via the <strong>Raw</strong> link on gitHub.com, you will always get LF endings: the “missing label” symptom will still occur until you convert to CRLF yourself.<br>但如果你通过 gitHub.com 上的原始链接获取文件，你将始终得到 LF 结尾：直到你自行转换为 CRLF，”缺失标签”的症状仍然会发生。</p></blockquote><p>以前都不知道github还有这么细节的处理，也是学习到了。虽然这不是这次报错的原因。</p><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>其实真正的问题是，脚本用使用conda创建环境命令前面都没有<code>CALL</code>，导致了函数作用域发生变化。</p><p><img src="https://cdn.lmark.cc/img/image-20251017110935145.png" alt="image-20251017110935145"></p><p>脚本如下：</p><p><img src="https://cdn.lmark.cc/img/image-20251017112235966.png" alt="image-20251017112235966">给74行的conda前加上call就好了。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Windows </tag>
+            
+            <tag> Bug </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      
         <title>UE5.6使用Unrealcv和MatrixCityPlugin遇到的一些问题：</title>
       
       <link href="/archives/1020f683.html"/>
@@ -16,11 +39,38 @@
       
         <tags>
             
+            <tag> Bug </tag>
+            
             <tag> Unreal </tag>
             
             <tag> 虚幻5 </tag>
             
             <tag> 地编 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      
+        <title>解决报错RuntimeError: GET was unable to find an engine to execute this computation</title>
+      
+      <link href="/archives/7ad56976.html"/>
+      <url>/archives/7ad56976.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>三个月前，写了个项目，将三个模型糅合进一个后端进行调用，同时做成即插即用式。三个月后现在，当我运行项目后端时，竟然报错了。仔细一看我还以为是显卡爆炸了。</p><p><img src="https://cdn.lmark.cc/img/image-20251016195001688.png" alt="image-20251016195001688"></p><p>集成的三个模型都出现这个问题，网上的解决方法大部分都是说，数据和模型不在一个设备上，即cuda和cpu，但是排查了一下，不是这个原因。师兄的conda环境还能正常跑，而我的就报这个错，十分的诡异。于是在网上高强度冲浪，终于找到了原因<a href="https://blog.yuruid.com/post/d784ea82-1f2e-425b-b43e-5fc62f1bc957/">Debug系列：pytorch报错GET was unable to find an engine to execute this computation</a></p><p>打开python交互命令行，使用下面代码会发现：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch </span><br><span class="line"><span class="built_in">print</span>(torch.backends.cudnn.version())</span><br></pre></td></tr></table></figure><p><img src="https://cdn.lmark.cc/img/image-20251016195533185.png" alt="image-20251016195533185"></p><p>原来是师兄之前装了个新的cudnn，装到全局环境了。导致我的conda环境读到了环境变量中的全局cudnn</p><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>最简单的解决方法就是 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">unset</span> LD_LIBRARY_PATH <span class="comment"># 取消cudnn的环境变量</span></span><br></pre></td></tr></table></figure><p>或者在.bashrc中就把这个环境变量unset掉，但是秉持修旧如旧的思想，还是不要改这个好，只针对我自己的环境，写个激活脚本就好：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span>  ~/anaconda3/envs/&#123;env_name&#125;/etc</span><br><span class="line"><span class="built_in">mkdir</span>  conda &amp;&amp; <span class="built_in">cd</span> conda &amp;&amp; <span class="built_in">mkdir</span>  activate.d </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;unset LD_LIBRARY_PATH&#x27;</span> &gt; ~/anaconda3/envs/&#123;env_name&#125;/etc/conda/activate.d/env_vars.sh</span><br></pre></td></tr></table></figure><p><img src="https://cdn.lmark.cc/img/image-20251016200315560.png" alt="image-20251016200315560"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Bug </tag>
+            
+            <tag> Cuda </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -41,9 +91,11 @@
       
         <tags>
             
-            <tag> Django </tag>
+            <tag> Bug </tag>
             
             <tag> Python </tag>
+            
+            <tag> Django </tag>
             
         </tags>
       
@@ -69,6 +121,27 @@
             <tag> 微调 </tag>
             
             <tag> 环境 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      
+        <title>如何优雅的批量修改git项目的提交时间</title>
+      
+      <link href="/archives/ab483bc5.html"/>
+      <url>/archives/ab483bc5.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>之前暑假的时候，做了个项目，拿到了国三。然后最近发现另外一个比赛的区域赛的题目和之前的项目完全契合，遂决定拿之前我们做的这个项目去参赛，但是git项目的时间还是暑假，这显然不太合理。在github上搜寻了一番，发现了<a href="https://github.com/PotatoLabs/git-redate">PotatoLabs&#x2F;git-redate: Change the dates of several git commits with a single command</a></p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>用法非常简单，windows下直接把文件丢到<code>$&#123;INSTALLATION_PATH&#125;\mingw64\libexec\git-core</code>即可，然后使用<code>git redate --commits [[number of commits to view]]</code>，用法如下：</p><p><img src="https://camo.githubusercontent.com/31bec73216f408e7548d49098e5984f114fdde0aa8b36532a54abef58e6be1e3/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f79453463512e676966" alt="alt tag"></p><p>最方便的地方在于可以根据右侧的commit信息来修改时间，同时可以比较自由的修改每一个commit。原仓库是7年前的，导致用起来有些bug，稍微改了下，就能在新版本上跑起来了，仓库链接：<a href="https://github.com/ladeng07/git-redate">ladeng07&#x2F;git-redate: 用一条命令修改多个 Git 提交的日期，支持git 2.45.2+。修改提交时间</a></p><p><img src="https://cdn.lmark.cc/img/image-20251012140621444.png" alt="image-20251012140621444"></p><h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>非常好用，改了时间之后的项目成功进到线下比赛，去上海公费旅游了3天，最后还拿了区域二等奖，小赚1000，美滋滋。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
             
         </tags>
       
@@ -112,7 +185,7 @@
       
         <tags>
             
-            <tag> windows </tag>
+            <tag> Windows </tag>
             
         </tags>
       
@@ -204,9 +277,9 @@
       
         <tags>
             
-            <tag> Django </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Django </tag>
             
         </tags>
       
@@ -449,9 +522,11 @@
       
         <tags>
             
-            <tag> Django </tag>
+            <tag> Bug </tag>
             
             <tag> Python </tag>
+            
+            <tag> Django </tag>
             
         </tags>
       
@@ -471,6 +546,8 @@
       
       
         <tags>
+            
+            <tag> Bug </tag>
             
             <tag> Git </tag>
             
@@ -520,9 +597,9 @@
             
             <tag> Python </tag>
             
-            <tag> Linux </tag>
-            
             <tag> CTF </tag>
+            
+            <tag> Linux </tag>
             
             <tag> XSS </tag>
             
@@ -572,7 +649,7 @@
             
             <tag> Linux </tag>
             
-            <tag> openwrt </tag>
+            <tag> Openwrt </tag>
             
         </tags>
       
@@ -620,9 +697,11 @@
       
         <tags>
             
-            <tag> Django </tag>
+            <tag> Bug </tag>
             
             <tag> Python </tag>
+            
+            <tag> Django </tag>
             
         </tags>
       
