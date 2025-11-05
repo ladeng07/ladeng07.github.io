@@ -9,6 +9,7 @@ menu:
   标签: /tags/ || fas fa-tags
   # 分类: /categories/ || fas fa-folder-open
   # 链接||fas fa-list:
+  Notion: /notion/ || fab fa-n
   友链: /link/ || fas fa-link
   关于: /about/ || fas fa-heart
 

@@ -200,3 +200,21 @@ feed:
 lazyload:
 enable: true
 loadingImg: /img/loading.gif
+
+# Notion Integration
+# 从 Notion 数据库生成页面
+notion:
+  enable: true
+  api_key: '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'
+  database_id: '571c10f428f745c3b64d3a193e3c1c3e'
+  path: 'notion/index.html'
+  title: 'LMark的看番列表'
+  layout: notion
+  # 标题属性名称（Notion 数据库中的标题字段）
+  title_property: Name
+  # 要显示的属性列表(留空则显示所有属性)
+  display_properties:
+    - 观看状态
+    - 年份
+    - 最后一次看时间
+    - 备注

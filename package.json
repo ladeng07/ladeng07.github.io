@@ -7,13 +7,17 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "publish":"npm run clean && npm run build && npm run deploy && npm run backup",
-    "backup": "git add . && git commit -m \"Backup blog source\" && git push"
+    "publish": "npm run clean && npm run build && npm run deploy && npm run backup",
+    "backup": "git add . && git commit -m \"Backup blog source\" && git push",
+    "test:notion": "node scripts/test-notion-config.js",
+    "setup:notion": "powershell -ExecutionPolicy Bypass -File ./setup-notion.ps1"
   },
   "hexo": {
     "version": "7.3.0"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.15",
+    "axios": "^1.13.2",
     "hexo": "^7.3.0",
     "hexo-abbrlink": "^2.2.1",
     "hexo-butterfly-extjs": "^1.4.11",

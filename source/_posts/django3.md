@@ -5,7 +5,6 @@ top_img: 'https://cdn.lmark.cc/img/300243_origin_20220531_201807.jpg'
 tags:
   - Django
   - Python
-  - Bug
 abbrlink: 1b50bad4
 date: 2022-09-02 00:28:15
 ---

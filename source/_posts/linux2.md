@@ -4,7 +4,7 @@ cover: 'https://cdn.lmark.cc/img/300192_origin_20220531_200511.jpg'
 top_img: 'https://cdn.lmark.cc/img/300195_origin_20220531_200519.jpg'
 tags:
    - Linux 
-   - Openwrt
+   - openwrt
 
 abbrlink: e74a4c2c
 date: 2022-09-15 02:07:02

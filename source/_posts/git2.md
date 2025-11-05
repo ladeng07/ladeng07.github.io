@@ -5,7 +5,6 @@ cover: 'https://cdn.lmark.cc/blog/603078.jpg'
 tags:
   - Git
   - 代理
-  - Bug
 abbrlink: 5f2a3725
 date: 2022-11-29 09:07:30
 ---

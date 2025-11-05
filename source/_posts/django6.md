@@ -5,7 +5,6 @@ title: >-
 tags:
   - Django
   - Python
-  - Bug
 cover: 'https://cdn.lmark.cc/img/300155_origin_20220531_195944.jpg'
 top_img: 'https://cdn.lmark.cc/img/300156_origin_20220531_195946.jpg'
 abbrlink: 13f312f
