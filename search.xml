@@ -39,8 +39,6 @@
       
         <tags>
             
-            <tag> Bug </tag>
-            
             <tag> Unreal </tag>
             
             <tag> 虚幻5 </tag>
@@ -90,8 +88,6 @@
       
       
         <tags>
-            
-            <tag> Bug </tag>
             
             <tag> Python </tag>
             
@@ -185,7 +181,7 @@
       
         <tags>
             
-            <tag> Windows </tag>
+            <tag> windows </tag>
             
         </tags>
       
@@ -522,8 +518,6 @@
       
         <tags>
             
-            <tag> Bug </tag>
-            
             <tag> Python </tag>
             
             <tag> Django </tag>
@@ -546,8 +540,6 @@
       
       
         <tags>
-            
-            <tag> Bug </tag>
             
             <tag> Git </tag>
             
@@ -649,7 +641,7 @@
             
             <tag> Linux </tag>
             
-            <tag> Openwrt </tag>
+            <tag> openwrt </tag>
             
         </tags>
       
@@ -696,8 +688,6 @@
       
       
         <tags>
-            
-            <tag> Bug </tag>
             
             <tag> Python </tag>
             

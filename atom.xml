@@ -46,7 +46,7 @@
     <link href="https://lmark.cc/archives/1020f683.html"/>
     <id>https://lmark.cc/archives/1020f683.html</id>
     <published>2025-10-11T14:08:50.000Z</published>
-    <updated>2025-10-20T07:30:14.687Z</updated>
+    <updated>2025-10-11T14:36:46.000Z</updated>
     
     
       
@@ -59,8 +59,6 @@
     
     
     
-    
-    <category term="Bug" scheme="https://lmark.cc/tags/Bug/"/>
     
     <category term="Unreal" scheme="https://lmark.cc/tags/Unreal/"/>
     
@@ -102,7 +100,7 @@
     <link href="https://lmark.cc/archives/13f312f.html"/>
     <id>https://lmark.cc/archives/13f312f.html</id>
     <published>2025-07-13T10:30:44.000Z</published>
-    <updated>2025-10-20T07:29:03.171Z</updated>
+    <updated>2025-09-10T16:21:09.000Z</updated>
     
     
       
@@ -115,8 +113,6 @@
     
     
     
-    
-    <category term="Bug" scheme="https://lmark.cc/tags/Bug/"/>
     
     <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
     
@@ -205,7 +201,7 @@
     <link href="https://lmark.cc/archives/ea042a0d.html"/>
     <id>https://lmark.cc/archives/ea042a0d.html</id>
     <published>2024-10-16T07:50:57.000Z</published>
-    <updated>2025-10-20T07:49:11.200Z</updated>
+    <updated>2025-01-20T12:53:31.000Z</updated>
     
     
       
@@ -219,7 +215,7 @@
     
     
     
-    <category term="Windows" scheme="https://lmark.cc/tags/Windows/"/>
+    <category term="windows" scheme="https://lmark.cc/tags/windows/"/>
     
   </entry>
   
@@ -581,7 +577,7 @@
     <link href="https://lmark.cc/archives/2514f762.html"/>
     <id>https://lmark.cc/archives/2514f762.html</id>
     <published>2022-11-30T19:56:17.000Z</published>
-    <updated>2025-10-20T07:28:59.096Z</updated>
+    <updated>2025-01-20T12:53:31.000Z</updated>
     
     
       
@@ -595,8 +591,6 @@
     
     
     
-    <category term="Bug" scheme="https://lmark.cc/tags/Bug/"/>
-    
     <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
     
     <category term="Django" scheme="https://lmark.cc/tags/Django/"/>
@@ -608,7 +602,7 @@
     <link href="https://lmark.cc/archives/5f2a3725.html"/>
     <id>https://lmark.cc/archives/5f2a3725.html</id>
     <published>2022-11-29T01:07:30.000Z</published>
-    <updated>2025-10-20T07:29:09.126Z</updated>
+    <updated>2025-01-20T12:53:31.000Z</updated>
     
     
       
@@ -621,8 +615,6 @@
     
     
     
-    
-    <category term="Bug" scheme="https://lmark.cc/tags/Bug/"/>
     
     <category term="Git" scheme="https://lmark.cc/tags/Git/"/>
     
@@ -717,7 +709,7 @@
     <link href="https://lmark.cc/archives/e74a4c2c.html"/>
     <id>https://lmark.cc/archives/e74a4c2c.html</id>
     <published>2022-09-14T18:07:02.000Z</published>
-    <updated>2025-10-20T07:50:18.566Z</updated>
+    <updated>2025-01-20T12:53:31.000Z</updated>
     
     
       
@@ -733,7 +725,7 @@
     
     <category term="Linux" scheme="https://lmark.cc/tags/Linux/"/>
     
-    <category term="Openwrt" scheme="https://lmark.cc/tags/Openwrt/"/>
+    <category term="openwrt" scheme="https://lmark.cc/tags/openwrt/"/>
     
   </entry>
   
@@ -771,7 +763,7 @@
     <link href="https://lmark.cc/archives/1b50bad4.html"/>
     <id>https://lmark.cc/archives/1b50bad4.html</id>
     <published>2022-09-01T16:28:15.000Z</published>
-    <updated>2025-10-20T07:28:52.840Z</updated>
+    <updated>2025-01-20T12:53:31.000Z</updated>
     
     
       
@@ -785,8 +777,6 @@
     
     
     
-    
-    <category term="Bug" scheme="https://lmark.cc/tags/Bug/"/>
     
     <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
     
