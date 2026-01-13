@@ -669,9 +669,9 @@
     
     <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
     
-    <category term="CTF" scheme="https://lmark.cc/tags/CTF/"/>
-    
     <category term="Linux" scheme="https://lmark.cc/tags/Linux/"/>
+    
+    <category term="CTF" scheme="https://lmark.cc/tags/CTF/"/>
     
     <category term="XSS" scheme="https://lmark.cc/tags/XSS/"/>
     
