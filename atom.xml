@@ -6,7 +6,7 @@
   <link href="https://lmark.cc/atom.xml" rel="self"/>
   
   <link href="https://lmark.cc/"/>
-  <updated>2025-10-20T07:47:29.367Z</updated>
+  <updated>2026-01-22T11:16:08.908Z</updated>
   <id>https://lmark.cc/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>某小程序课程信息逆向过程</title>
+    <link href="https://lmark.cc/archives/ab7e10a9.html"/>
+    <id>https://lmark.cc/archives/ab7e10a9.html</id>
+    <published>2026-12-22T11:02:39.000Z</published>
+    <updated>2026-01-22T11:16:08.908Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="逆向" scheme="https://lmark.cc/tags/%E9%80%86%E5%90%91/"/>
+    
+    <category term="爬虫" scheme="https://lmark.cc/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>解决批处理脚本报错：The system cannot find the batch label XXXX</title>
@@ -669,9 +694,9 @@
     
     <category term="Python" scheme="https://lmark.cc/tags/Python/"/>
     
-    <category term="Linux" scheme="https://lmark.cc/tags/Linux/"/>
-    
     <category term="CTF" scheme="https://lmark.cc/tags/CTF/"/>
+    
+    <category term="Linux" scheme="https://lmark.cc/tags/Linux/"/>
     
     <category term="XSS" scheme="https://lmark.cc/tags/XSS/"/>
     

@@ -1,0 +1,442 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>某小程序课程信息逆向过程 | LMark的博客</title><meta name="author" content="LMark"><meta name="copyright" content="LMark"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言某某集市小程序在我们学校是优质的信息来源平台。而且人还非常好，帖子信息都是无加密的，同时用户的token也是长效token，根本不用担心过期。 然后上个月推出了个选课信息板块，一开始也是没加密来着，后面过了几天，发现灰度测试加密了。于是打算研究一下怎么加密的。  解包尝试了Base64发现还不太能解出来，于是就考虑AES加密了，接下来就要去找iv和key了  这时候就犯难了，小程序不像网页端，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="某小程序课程信息逆向过程">
+<meta property="og:url" content="https://lmark.cc/archives/ab7e10a9.html">
+<meta property="og:site_name" content="LMark的博客">
+<meta property="og:description" content="前言某某集市小程序在我们学校是优质的信息来源平台。而且人还非常好，帖子信息都是无加密的，同时用户的token也是长效token，根本不用担心过期。 然后上个月推出了个选课信息板块，一开始也是没加密来着，后面过了几天，发现灰度测试加密了。于是打算研究一下怎么加密的。  解包尝试了Base64发现还不太能解出来，于是就考虑AES加密了，接下来就要去找iv和key了  这时候就犯难了，小程序不像网页端，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.lmark.cc/img/300206_origin_20220531_200908.jpg">
+<meta property="article:published_time" content="2026-12-22T11:02:39.000Z">
+<meta property="article:modified_time" content="2026-01-22T11:16:08.908Z">
+<meta property="article:author" content="LMark">
+<meta property="article:tag" content="逆向">
+<meta property="article:tag" content="爬虫">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.lmark.cc/img/300206_origin_20220531_200908.jpg"><link rel="shortcut icon" href="/"><link rel="canonical" href="https://lmark.cc/archives/ab7e10a9.html"><link rel="preconnect" href="https://lib.baomitu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://lib.baomitu.com/fancyapps-ui/5.0.33/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://lib.baomitu.com/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '某小程序课程信息逆向过程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-01-22 19:16:08'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"3K1gEbd0agcY8IUo",ck:"3K1gEbd0agcY8IUo"})</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="LMark的博客" type="application/atom+xml">
+</head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/xlenco/JS-X@main/pace.js/pace.css"/><script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">54</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">60</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/notion/"><i class="fa-fw fab fa-n"></i><span> Notion</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.lmark.cc/img/300207_origin_20220531_200910.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="LMark的博客"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/1633337981355.png"/><span class="site-name">LMark的博客</span></a></span><div id="tp-weather-widget"></div><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/notion/"><i class="fa-fw fab fa-n"></i><span> Notion</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">某小程序课程信息逆向过程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-12-22T11:02:39.000Z" title="发表于 2026-12-22 19:02:39">2026-12-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-01-22T11:16:08.908Z" title="更新于 2026-01-22 19:16:08">2026-01-22</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="某小程序课程信息逆向过程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><script>document.getElementById('web_bg').style.backgroundImage = `url('https://cdn.lmark.cc/img/300207_origin_20220531_200910.jpg')`; // 将Pug变量传递并设置背景图
+</script><article class="post-content" id="article-container"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>某某集市小程序在我们学校是优质的信息来源平台。而且人还非常好，帖子信息都是无加密的，同时用户的token也是长效token，根本不用担心过期。 然后上个月推出了个选课信息板块，一开始也是没加密来着，后面过了几天，发现灰度测试加密了。于是打算研究一下怎么加密的。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/image-20260122191153330.png" alt="image-20260122191153330"></p>
+<h2 id="解包"><a href="#解包" class="headerlink" title="解包"></a>解包</h2><p>尝试了Base64发现还不太能解出来，于是就考虑AES加密了，接下来就要去找iv和key了</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/image-20260122191104798.png" alt="image-20260122191104798"></p>
+<p>这时候就犯难了，小程序不像网页端，不能用控制台调试，不方便找key和iv，而且代码大概率还是混淆的。于是只能先把小程序解包看看，这里使用<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/biggerstar/wedecode">biggerstar&#x2F;wedecode: 全自动化，微信小程序 wxapkg 包 源代码还原工具, 线上代码安全审计，支持 Windows, Macos, Linux</a>，这是之前的**<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/Angels-Ray/UnpackMiniApp">UnpackMiniApp</a>**作者新开的项目，还是比较好用的。直接在小程序中搜索，能找到两个AES的key。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/image-20260122141022672.png" alt="image-20260122141022672">但是从名字上看，这俩就不像是那个接口用的密钥；并且全局搜索也搜不到这个这个接口的调用的地方，这就很抽象了。难道是静态文件压缩成wasm传输走的ws。这样的话抓包也抓不到js了。</p>
+<h2 id="破局"><a href="#破局" class="headerlink" title="破局"></a>破局</h2><p>小程序解包卡住之后，回去看了抓包记录，发现有意思的地方，原来这个课程评价页面是内嵌的h5页面，这就简单了，我只要抓到链接，放到浏览器里就随便调试了，不过直接把链接和cookie放到浏览器里，发现还是打不开。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/image-20260122142024318.png" alt="image-20260122142024318"></p>
+<p>后来搜索了一下，发现要把UA设置成<code>MicroMessenger</code>（微信内置浏览器）就可以了</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pica.zhimg.com/v2-25f77f51fba7a1bef3ad761fd3c5f794_1440w.jpg" alt="img"></p>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p>接下来这个调试就简单了，打断点，定位，这里就不赘述了。现在gemini都要100万上下文，读这些混淆代码很简单了</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/image-20260122142351924.png" alt="image-20260122142351924"></p>
+<p>我这里用的antigravity来逆向这个算法，不过gemini给我改了好多版都是错的，最后折腾一晚上，换了0ai的codex十分钟直接秒了，用了100行代码就复刻了逆向代码，还得是codex啊。下面给出AI总结的解密过程，确实有点复杂。</p>
+<p>可以，把它当成“<strong>三层套娃解密</strong>”：先把一段 URL&#x2F;BASE64&#x2F;AES 的外壳拆掉，拿到第二层的“动态密钥 + 数据”，再做一次类维吉尼亚解密，最后用一张“字符→6bit”的映射表把文本还原成 JSON。</p>
+<hr>
+<h3 id="整体流程（从输入到-JSON）"><a href="#整体流程（从输入到-JSON）" class="headerlink" title="整体流程（从输入到 JSON）"></a>整体流程（从输入到 JSON）</h3><h4 id="0）输入预处理"><a href="#0）输入预处理" class="headerlink" title="0）输入预处理"></a>0）输入预处理</h4><p><code>decrypt_layer1()</code> 里第一步：</p>
+<ol>
+<li><code>unquote(encrypted_text)</code>：把 URL 编码还原（比如 <code>%2F</code> 变 <code>/</code>）。</li>
+<li><code>base64.b64decode(decoded)</code>：把它 base64 解成 bytes。</li>
+<li><code>data_bytes.decode(... )</code> 得到字符串 <code>data_str</code>。</li>
+<li><strong>再</strong> <code>base64.b64decode(data_str)</code>：又解一次 base64，得到 AES 的密文 <code>cipher_bytes</code>。</li>
+</ol>
+<blockquote>
+<p>所以输入是 <strong>URL 编码 + base64 包裹</strong>，里面又是 <strong>一个 base64 字符串</strong>，最终才是真正 AES 密文。</p>
+</blockquote>
+<hr>
+<h3 id="第一层：AES-CBC-解密（固定种子“变形”得-key-iv）"><a href="#第一层：AES-CBC-解密（固定种子“变形”得-key-iv）" class="headerlink" title="第一层：AES-CBC 解密（固定种子“变形”得 key&#x2F;iv）"></a>第一层：AES-CBC 解密（固定种子“变形”得 key&#x2F;iv）</h3><h4 id="1）key-iv-怎么来的？"><a href="#1）key-iv-怎么来的？" class="headerlink" title="1）key &#x2F; iv 怎么来的？"></a>1）key &#x2F; iv 怎么来的？</h4><p>不是直接写死 key&#x2F;iv，而是用 <code>vigenere_decrypt()</code> 从两个常量里“解”出来：</p>
+<ul>
+<li><code>key = vigenere_decrypt(SEED_KEY_ENCRYPTED, DECRYPT_DICT)</code></li>
+<li><code>iv = vigenere_decrypt(SEED_IV_ENCRYPTED, DECRYPT_DICT)</code></li>
+</ul>
+<p>这里的 <code>vigenere_decrypt()</code> 做的事是：</p>
+<ol>
+<li>把 <code>SEED_*</code> 当 base64 解码成 bytes</li>
+<li>对每个 byte，减去 <code>dynamic_key</code>（字符串）的对应字符 ASCII 值（循环用）</li>
+<li>得到字符拼成结果字符串</li>
+</ol>
+<p>所以这是一个“<strong>按字节减 key 字符 ASCII</strong>”的自定义维吉尼亚变体（不是传统字母表那种）。</p>
+<h4 id="2）AES-解密本体"><a href="#2）AES-解密本体" class="headerlink" title="2）AES 解密本体"></a>2）AES 解密本体</h4><ul>
+<li><code>AES.new(key, AES.MODE_CBC, iv)</code></li>
+<li><code>cipher.decrypt(cipher_bytes)</code></li>
+</ul>
+<p>注意它这里如果密文不是 16 的倍数，会补 <code>\0</code> 到 16 对齐：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(cipher_bytes) % <span class="number">16</span> != <span class="number">0</span>:</span><br><span class="line">    cipher_bytes += <span class="string">b&quot;\0&quot;</span> * (<span class="number">16</span> - <span class="built_in">len</span>(cipher_bytes) % <span class="number">16</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这不是标准 padding（比如 PKCS7），更像“容错补齐”。</p>
+<p>输出得到 <code>layer1</code>（utf-8 decode，ignore 错误）。</p>
+<hr>
+<h3 id="layer1-的结构：l2-key-SEPARATOR-l2-data"><a href="#layer1-的结构：l2-key-SEPARATOR-l2-data" class="headerlink" title="layer1 的结构：l2_key + SEPARATOR + l2_data"></a>layer1 的结构：<code>l2_key + SEPARATOR + l2_data</code></h3><p>它要求 layer1 里必须包含：<br><code>SEPARATOR = &quot;%%%%@@@@@%%%%&quot;</code></p>
+<p>然后：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l2_key, l2_data = layer1.split(SEPARATOR, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>l2_key</code>：第二层解密要用的“动态 key”（每条密文都可能不同）</li>
+<li><code>l2_data</code>：第二层密文（字符串形式）</li>
+</ul>
+<hr>
+<h3 id="第二层：再做一次-vigenere-decrypt（动态-key）"><a href="#第二层：再做一次-vigenere-decrypt（动态-key）" class="headerlink" title="第二层：再做一次 vigenere_decrypt（动态 key）"></a>第二层：再做一次 vigenere_decrypt（动态 key）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layer2 = vigenere_decrypt(l2_data, l2_key)</span><br></pre></td></tr></table></figure>
+
+<p>同样逻辑：base64 decode → byte - ord(key_char) → 拼成字符。</p>
+<p>此时得到的 <code>layer2</code> 还不是最终明文，它更像是一段“用特殊字符集编码的文本”。</p>
+<hr>
+<h3 id="第三层：自定义-6-bit-字符映射-→-bytes-→-文本"><a href="#第三层：自定义-6-bit-字符映射-→-bytes-→-文本" class="headerlink" title="第三层：自定义 6-bit 字符映射 → bytes → 文本"></a>第三层：自定义 6-bit 字符映射 → bytes → 文本</h3><h4 id="1）先拿到-map-string（字符表）"><a href="#1）先拿到-map-string（字符表）" class="headerlink" title="1）先拿到 map_string（字符表）"></a>1）先拿到 map_string（字符表）</h4><p>map_string 不是写死的，也被 vigenere_decrypt 解出来：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map_string = vigenere_decrypt(MAP_SEED_ENCRYPTED, MAP_SEED_KEY)</span><br></pre></td></tr></table></figure>
+
+<p>你可以把它理解成一个“字母表”，长度大概率是 64 左右（因为后面是 6bit）。</p>
+<h4 id="2）custom-binary-decode"><a href="#2）custom-binary-decode" class="headerlink" title="2）custom_binary_decode()"></a>2）custom_binary_decode()</h4><p>核心逻辑：</p>
+<ul>
+<li>去掉 <code>=</code> padding</li>
+<li>对 <code>layer2</code> 中每个字符：<ul>
+<li>在 <code>map_string</code> 中找它的位置 <code>idx</code></li>
+<li>把 idx 变成 6 位二进制 <code>format(idx, &quot;06b&quot;)</code></li>
+<li>拼到 <code>binary_str</code></li>
+</ul>
+</li>
+</ul>
+<p>然后：</p>
+<ul>
+<li>把二进制串裁成 8 的倍数</li>
+<li>每 8 位转成一个 byte</li>
+<li>bytes 用 utf-8 decode 得到 <code>final_text</code></li>
+</ul>
+<blockquote>
+<p>这一步本质上就是：<strong>用 64 字符表把文本当 Base64 那样解码</strong>，但字符表是自定义的，而且实现方式是“找索引→转二进制→拼 bytes”。</p>
+</blockquote>
+<p>解密效果</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/image-20260122164811453.png" alt="image-20260122164811453"></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%80%86%E5%90%91/">逆向</a><a class="post-meta__tags" href="/tags/%E7%88%AC%E8%99%AB/">爬虫</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.lmark.cc/img/300206_origin_20220531_200908.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://lib.baomitu.com/butterfly-extsrc/1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/butterfly-extsrc/1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/archives/ccc0c16f.html" title="解决批处理脚本报错：The system cannot find the batch label XXXX"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300176_origin_20220531_200309.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">解决批处理脚本报错：The system cannot find the batch label XXXX</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LMark</div><div class="author-info__description">一个喜欢折腾有意思的技术的人，但是记性不好，所以博客主要记录曾经掌握的知识，方便日后已经忘记的我回来复习。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">54</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">60</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/ladeng07"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ladeng07" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2312936963@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/34625132" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fas fa-tv"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%8C%85"><span class="toc-number">2.</span> <span class="toc-text">解包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A0%B4%E5%B1%80"><span class="toc-number">3.</span> <span class="toc-text">破局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E8%AF%95"><span class="toc-number">4.</span> <span class="toc-text">调试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E6%B5%81%E7%A8%8B%EF%BC%88%E4%BB%8E%E8%BE%93%E5%85%A5%E5%88%B0-JSON%EF%BC%89"><span class="toc-number">4.1.</span> <span class="toc-text">整体流程（从输入到 JSON）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#0%EF%BC%89%E8%BE%93%E5%85%A5%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-number">4.1.1.</span> <span class="toc-text">0）输入预处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%B1%82%EF%BC%9AAES-CBC-%E8%A7%A3%E5%AF%86%EF%BC%88%E5%9B%BA%E5%AE%9A%E7%A7%8D%E5%AD%90%E2%80%9C%E5%8F%98%E5%BD%A2%E2%80%9D%E5%BE%97-key-iv%EF%BC%89"><span class="toc-number">4.2.</span> <span class="toc-text">第一层：AES-CBC 解密（固定种子“变形”得 key&#x2F;iv）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%89key-iv-%E6%80%8E%E4%B9%88%E6%9D%A5%E7%9A%84%EF%BC%9F"><span class="toc-number">4.2.1.</span> <span class="toc-text">1）key &#x2F; iv 怎么来的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%89AES-%E8%A7%A3%E5%AF%86%E6%9C%AC%E4%BD%93"><span class="toc-number">4.2.2.</span> <span class="toc-text">2）AES 解密本体</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#layer1-%E7%9A%84%E7%BB%93%E6%9E%84%EF%BC%9Al2-key-SEPARATOR-l2-data"><span class="toc-number">4.3.</span> <span class="toc-text">layer1 的结构：l2_key + SEPARATOR + l2_data</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%B1%82%EF%BC%9A%E5%86%8D%E5%81%9A%E4%B8%80%E6%AC%A1-vigenere-decrypt%EF%BC%88%E5%8A%A8%E6%80%81-key%EF%BC%89"><span class="toc-number">4.4.</span> <span class="toc-text">第二层：再做一次 vigenere_decrypt（动态 key）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E5%B1%82%EF%BC%9A%E8%87%AA%E5%AE%9A%E4%B9%89-6-bit-%E5%AD%97%E7%AC%A6%E6%98%A0%E5%B0%84-%E2%86%92-bytes-%E2%86%92-%E6%96%87%E6%9C%AC"><span class="toc-number">4.5.</span> <span class="toc-text">第三层：自定义 6-bit 字符映射 → bytes → 文本</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%89%E5%85%88%E6%8B%BF%E5%88%B0-map-string%EF%BC%88%E5%AD%97%E7%AC%A6%E8%A1%A8%EF%BC%89"><span class="toc-number">4.5.1.</span> <span class="toc-text">1）先拿到 map_string（字符表）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%89custom-binary-decode"><span class="toc-number">4.5.2.</span> <span class="toc-text">2）custom_binary_decode()</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/archives/ab7e10a9.html" title="某小程序课程信息逆向过程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300206_origin_20220531_200908.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="某小程序课程信息逆向过程"/></a><div class="content"><a class="title" href="/archives/ab7e10a9.html" title="某小程序课程信息逆向过程">某小程序课程信息逆向过程</a><time datetime="2026-12-22T11:02:39.000Z" title="发表于 2026-12-22 19:02:39">2026-12-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/ccc0c16f.html" title="解决批处理脚本报错：The system cannot find the batch label XXXX"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300176_origin_20220531_200309.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决批处理脚本报错：The system cannot find the batch label XXXX"/></a><div class="content"><a class="title" href="/archives/ccc0c16f.html" title="解决批处理脚本报错：The system cannot find the batch label XXXX">解决批处理脚本报错：The system cannot find the batch label XXXX</a><time datetime="2025-10-16T07:37:37.000Z" title="发表于 2025-10-16 15:37:37">2025-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/1020f683.html" title="UE5.6使用Unrealcv和MatrixCityPlugin遇到的一些问题："><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300160_origin_20220531_200001.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="UE5.6使用Unrealcv和MatrixCityPlugin遇到的一些问题："/></a><div class="content"><a class="title" href="/archives/1020f683.html" title="UE5.6使用Unrealcv和MatrixCityPlugin遇到的一些问题：">UE5.6使用Unrealcv和MatrixCityPlugin遇到的一些问题：</a><time datetime="2025-10-11T14:08:50.000Z" title="发表于 2025-10-11 22:08:50">2025-10-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/7ad56976.html" title="解决报错RuntimeError: GET was unable to find an engine to execute this computation"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300182_origin_20220531_200437.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决报错RuntimeError: GET was unable to find an engine to execute this computation"/></a><div class="content"><a class="title" href="/archives/7ad56976.html" title="解决报错RuntimeError: GET was unable to find an engine to execute this computation">解决报错RuntimeError: GET was unable to find an engine to execute this computation</a><time datetime="2025-10-08T07:25:42.000Z" title="发表于 2025-10-08 15:25:42">2025-10-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/13f312f.html" title="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/img/300155_origin_20220531_195944.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;"/></a><div class="content"><a class="title" href="/archives/13f312f.html" title="解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;">解决django报错&quot;Database returned an invalid datetime value. Are time zone definitions for your database installed?&quot;</a><time datetime="2025-07-13T10:30:44.000Z" title="发表于 2025-07-13 18:30:44">2025-07-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2026 By LMark</div><div class="footer_custom_text"><p><a style="margin-inline:5px" target="_blank" href="https://hexo.io/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a><a style="margin-inline:5px" target="_blank" href="https://butterfly.js.org/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a><a style="margin-inline:5px" target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/%E6%A1%82ICP%E5%A4%87-2022004639%E5%8F%B7--1-blue" alt="桂ICP备2022004639号-1" title="本站已在桂进行备案"></a><a style="margin-inline:5px" target="_blank" href="https://github.com/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a><a style="margin-inline:5px" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a><a style="margin-inline:5px" target="_blank" href="https://www.itstudio.club/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.lmark.cc/itstudio-shields.svg" title="爱特工作室"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div style="background-color:rgba(0,0,0,0.3)"><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/utils.min.js"></script><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/main.min.js"></script><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/tw_cn.min.js"></script><script src="https://lib.baomitu.com/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script><script src="https://lib.baomitu.com/instant.page/5.2.0/instantpage.min.js" type="module"></script><script src="https://lib.baomitu.com/vanilla-lazyload/17.8.8/lazyload.iife.min.js"></script><script src="https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.lmark.cc/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.lmark.cc/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://lib.baomitu.com/twikoo/1.6.39/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.lmark.cc/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://lib.baomitu.com/twikoo/1.6.39/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><div class="aplayer no-destroy" data-id="7509532357" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-order="random"> </div><script>(function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime()/100000000).toString(),10)));window.SeniverseWeatherWidget('show',{flavor:"slim",location:"WWMKWU0KKVZP",geolocation:true,language:"zh-Hans",unit:"c",theme:"auto",token:"be6ff036-8674-43e7-8f27-8716c37b157b",hover:"disabled",container:"tp-weather-widget"});</script><script src='/js/blurBk.js' defer ></script>\<script type="text/javascript" src="/js/about.js"></script><link rel="stylesheet" href="https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://lib.baomitu.com/butterfly-extsrc/1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="https://lib.baomitu.com/hexo-theme-butterfly/4.13.0/js/search/local-search.min.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax src="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("https://gitcalendar.lmark.cc/api?ladeng07",['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c'],'ladeng07')
+    }
+  </script><!-- hexo injector body_end end --></body></html>

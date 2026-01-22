@@ -5,6 +5,29 @@
     
     <entry>
       
+        <title>某小程序课程信息逆向过程</title>
+      
+      <link href="/archives/ab7e10a9.html"/>
+      <url>/archives/ab7e10a9.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>某某集市小程序在我们学校是优质的信息来源平台。而且人还非常好，帖子信息都是无加密的，同时用户的token也是长效token，根本不用担心过期。 然后上个月推出了个选课信息板块，一开始也是没加密来着，后面过了几天，发现灰度测试加密了。于是打算研究一下怎么加密的。</p><p><img src="https://cdn.lmark.cc/img/image-20260122191153330.png" alt="image-20260122191153330"></p><h2 id="解包"><a href="#解包" class="headerlink" title="解包"></a>解包</h2><p>尝试了Base64发现还不太能解出来，于是就考虑AES加密了，接下来就要去找iv和key了</p><p><img src="https://cdn.lmark.cc/img/image-20260122191104798.png" alt="image-20260122191104798"></p><p>这时候就犯难了，小程序不像网页端，不能用控制台调试，不方便找key和iv，而且代码大概率还是混淆的。于是只能先把小程序解包看看，这里使用<a href="https://github.com/biggerstar/wedecode">biggerstar&#x2F;wedecode: 全自动化，微信小程序 wxapkg 包 源代码还原工具, 线上代码安全审计，支持 Windows, Macos, Linux</a>，这是之前的**<a href="https://github.com/Angels-Ray/UnpackMiniApp">UnpackMiniApp</a>**作者新开的项目，还是比较好用的。直接在小程序中搜索，能找到两个AES的key。</p><p><img src="https://cdn.lmark.cc/img/image-20260122141022672.png" alt="image-20260122141022672">但是从名字上看，这俩就不像是那个接口用的密钥；并且全局搜索也搜不到这个这个接口的调用的地方，这就很抽象了。难道是静态文件压缩成wasm传输走的ws。这样的话抓包也抓不到js了。</p><h2 id="破局"><a href="#破局" class="headerlink" title="破局"></a>破局</h2><p>小程序解包卡住之后，回去看了抓包记录，发现有意思的地方，原来这个课程评价页面是内嵌的h5页面，这就简单了，我只要抓到链接，放到浏览器里就随便调试了，不过直接把链接和cookie放到浏览器里，发现还是打不开。</p><p><img src="https://cdn.lmark.cc/img/image-20260122142024318.png" alt="image-20260122142024318"></p><p>后来搜索了一下，发现要把UA设置成<code>MicroMessenger</code>（微信内置浏览器）就可以了</p><p><img src="https://pica.zhimg.com/v2-25f77f51fba7a1bef3ad761fd3c5f794_1440w.jpg" alt="img"></p><h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p>接下来这个调试就简单了，打断点，定位，这里就不赘述了。现在gemini都要100万上下文，读这些混淆代码很简单了</p><p><img src="https://cdn.lmark.cc/img/image-20260122142351924.png" alt="image-20260122142351924"></p><p>我这里用的antigravity来逆向这个算法，不过gemini给我改了好多版都是错的，最后折腾一晚上，换了0ai的codex十分钟直接秒了，用了100行代码就复刻了逆向代码，还得是codex啊。下面给出AI总结的解密过程，确实有点复杂。</p><p>可以，把它当成“<strong>三层套娃解密</strong>”：先把一段 URL&#x2F;BASE64&#x2F;AES 的外壳拆掉，拿到第二层的“动态密钥 + 数据”，再做一次类维吉尼亚解密，最后用一张“字符→6bit”的映射表把文本还原成 JSON。</p><hr><h3 id="整体流程（从输入到-JSON）"><a href="#整体流程（从输入到-JSON）" class="headerlink" title="整体流程（从输入到 JSON）"></a>整体流程（从输入到 JSON）</h3><h4 id="0）输入预处理"><a href="#0）输入预处理" class="headerlink" title="0）输入预处理"></a>0）输入预处理</h4><p><code>decrypt_layer1()</code> 里第一步：</p><ol><li><code>unquote(encrypted_text)</code>：把 URL 编码还原（比如 <code>%2F</code> 变 <code>/</code>）。</li><li><code>base64.b64decode(decoded)</code>：把它 base64 解成 bytes。</li><li><code>data_bytes.decode(... )</code> 得到字符串 <code>data_str</code>。</li><li><strong>再</strong> <code>base64.b64decode(data_str)</code>：又解一次 base64，得到 AES 的密文 <code>cipher_bytes</code>。</li></ol><blockquote><p>所以输入是 <strong>URL 编码 + base64 包裹</strong>，里面又是 <strong>一个 base64 字符串</strong>，最终才是真正 AES 密文。</p></blockquote><hr><h3 id="第一层：AES-CBC-解密（固定种子“变形”得-key-iv）"><a href="#第一层：AES-CBC-解密（固定种子“变形”得-key-iv）" class="headerlink" title="第一层：AES-CBC 解密（固定种子“变形”得 key&#x2F;iv）"></a>第一层：AES-CBC 解密（固定种子“变形”得 key&#x2F;iv）</h3><h4 id="1）key-iv-怎么来的？"><a href="#1）key-iv-怎么来的？" class="headerlink" title="1）key &#x2F; iv 怎么来的？"></a>1）key &#x2F; iv 怎么来的？</h4><p>不是直接写死 key&#x2F;iv，而是用 <code>vigenere_decrypt()</code> 从两个常量里“解”出来：</p><ul><li><code>key = vigenere_decrypt(SEED_KEY_ENCRYPTED, DECRYPT_DICT)</code></li><li><code>iv = vigenere_decrypt(SEED_IV_ENCRYPTED, DECRYPT_DICT)</code></li></ul><p>这里的 <code>vigenere_decrypt()</code> 做的事是：</p><ol><li>把 <code>SEED_*</code> 当 base64 解码成 bytes</li><li>对每个 byte，减去 <code>dynamic_key</code>（字符串）的对应字符 ASCII 值（循环用）</li><li>得到字符拼成结果字符串</li></ol><p>所以这是一个“<strong>按字节减 key 字符 ASCII</strong>”的自定义维吉尼亚变体（不是传统字母表那种）。</p><h4 id="2）AES-解密本体"><a href="#2）AES-解密本体" class="headerlink" title="2）AES 解密本体"></a>2）AES 解密本体</h4><ul><li><code>AES.new(key, AES.MODE_CBC, iv)</code></li><li><code>cipher.decrypt(cipher_bytes)</code></li></ul><p>注意它这里如果密文不是 16 的倍数，会补 <code>\0</code> 到 16 对齐：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(cipher_bytes) % <span class="number">16</span> != <span class="number">0</span>:</span><br><span class="line">    cipher_bytes += <span class="string">b&quot;\0&quot;</span> * (<span class="number">16</span> - <span class="built_in">len</span>(cipher_bytes) % <span class="number">16</span>)</span><br></pre></td></tr></table></figure><p>这不是标准 padding（比如 PKCS7），更像“容错补齐”。</p><p>输出得到 <code>layer1</code>（utf-8 decode，ignore 错误）。</p><hr><h3 id="layer1-的结构：l2-key-SEPARATOR-l2-data"><a href="#layer1-的结构：l2-key-SEPARATOR-l2-data" class="headerlink" title="layer1 的结构：l2_key + SEPARATOR + l2_data"></a>layer1 的结构：<code>l2_key + SEPARATOR + l2_data</code></h3><p>它要求 layer1 里必须包含：<br><code>SEPARATOR = &quot;%%%%@@@@@%%%%&quot;</code></p><p>然后：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l2_key, l2_data = layer1.split(SEPARATOR, <span class="number">1</span>)</span><br></pre></td></tr></table></figure><ul><li><code>l2_key</code>：第二层解密要用的“动态 key”（每条密文都可能不同）</li><li><code>l2_data</code>：第二层密文（字符串形式）</li></ul><hr><h3 id="第二层：再做一次-vigenere-decrypt（动态-key）"><a href="#第二层：再做一次-vigenere-decrypt（动态-key）" class="headerlink" title="第二层：再做一次 vigenere_decrypt（动态 key）"></a>第二层：再做一次 vigenere_decrypt（动态 key）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layer2 = vigenere_decrypt(l2_data, l2_key)</span><br></pre></td></tr></table></figure><p>同样逻辑：base64 decode → byte - ord(key_char) → 拼成字符。</p><p>此时得到的 <code>layer2</code> 还不是最终明文，它更像是一段“用特殊字符集编码的文本”。</p><hr><h3 id="第三层：自定义-6-bit-字符映射-→-bytes-→-文本"><a href="#第三层：自定义-6-bit-字符映射-→-bytes-→-文本" class="headerlink" title="第三层：自定义 6-bit 字符映射 → bytes → 文本"></a>第三层：自定义 6-bit 字符映射 → bytes → 文本</h3><h4 id="1）先拿到-map-string（字符表）"><a href="#1）先拿到-map-string（字符表）" class="headerlink" title="1）先拿到 map_string（字符表）"></a>1）先拿到 map_string（字符表）</h4><p>map_string 不是写死的，也被 vigenere_decrypt 解出来：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map_string = vigenere_decrypt(MAP_SEED_ENCRYPTED, MAP_SEED_KEY)</span><br></pre></td></tr></table></figure><p>你可以把它理解成一个“字母表”，长度大概率是 64 左右（因为后面是 6bit）。</p><h4 id="2）custom-binary-decode"><a href="#2）custom-binary-decode" class="headerlink" title="2）custom_binary_decode()"></a>2）custom_binary_decode()</h4><p>核心逻辑：</p><ul><li>去掉 <code>=</code> padding</li><li>对 <code>layer2</code> 中每个字符：<ul><li>在 <code>map_string</code> 中找它的位置 <code>idx</code></li><li>把 idx 变成 6 位二进制 <code>format(idx, &quot;06b&quot;)</code></li><li>拼到 <code>binary_str</code></li></ul></li></ul><p>然后：</p><ul><li>把二进制串裁成 8 的倍数</li><li>每 8 位转成一个 byte</li><li>bytes 用 utf-8 decode 得到 <code>final_text</code></li></ul><blockquote><p>这一步本质上就是：<strong>用 64 字符表把文本当 Base64 那样解码</strong>，但字符表是自定义的，而且实现方式是“找索引→转二进制→拼 bytes”。</p></blockquote><p>解密效果</p><p><img src="https://cdn.lmark.cc/img/image-20260122164811453.png" alt="image-20260122164811453"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 逆向 </tag>
+            
+            <tag> 爬虫 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      
         <title>解决批处理脚本报错：The system cannot find the batch label XXXX</title>
       
       <link href="/archives/ccc0c16f.html"/>
@@ -589,9 +612,9 @@
             
             <tag> Python </tag>
             
-            <tag> Linux </tag>
-            
             <tag> CTF </tag>
+            
+            <tag> Linux </tag>
             
             <tag> XSS </tag>
             
