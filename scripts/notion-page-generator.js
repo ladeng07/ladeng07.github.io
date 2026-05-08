@@ -8,6 +8,7 @@ const path = require('path');
 
 hexo.extend.generator.register('notion', async function (locals) {
   const config = hexo.config.notion;
+  const notionApiKey = process.env.NOTION_API_KEY || config.api_key;
   
   // 如果未配置或未启用，跳过
   if (!config || !config.enable) {
@@ -15,7 +16,7 @@ hexo.extend.generator.register('notion', async function (locals) {
   }
 
   // 检查必要配置
-  if (!config.api_key) {
+  if (!notionApiKey) {
     console.warn('Notion API key not configured. Skipping Notion page generation.');
     return [];
   }
@@ -27,10 +28,10 @@ hexo.extend.generator.register('notion', async function (locals) {
 
   try {
     console.log('Fetching data from Notion database...');
-    console.log('API Key from config:', config.api_key?.substring(0, 10) + '...' + config.api_key?.substring(config.api_key.length - 4));
+    console.log('API Key from config:', notionApiKey?.substring(0, 10) + '...' + notionApiKey?.substring(notionApiKey.length - 4));
     console.log('Database ID:', config.database_id);
     
-    const notionHelper = new NotionHelper(config.api_key);
+    const notionHelper = new NotionHelper(notionApiKey);
     const formattedItems = await notionHelper.getDatabase(config.database_id);
 
     console.log(`Successfully fetched ${formattedItems.length} items from Notion.`);
@@ -42,6 +43,7 @@ hexo.extend.generator.register('notion', async function (locals) {
         title: config.title || 'Notion 数据库',
         items: formattedItems,
         config: config,
+        robots: config.robots || 'noindex,follow',
       },
       layout: config.layout || ['notion', 'page'],
     };

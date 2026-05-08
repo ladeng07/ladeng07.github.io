@@ -53,3 +53,15 @@
       link: https://twitter.com/
       avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
       descr: 社交分享平臺
+    - name: MikuAPI
+      link: https://mikuapi.org/
+      avatar: https://mikuapi.org/logo.png
+      descr: AI API Gateway
+    - name: GPT image 2
+      link: https://ai.mikuapi.org/
+      avatar: https://ai.mikuapi.org/favicon.svg
+      descr: Free GPT Image 2 Image Generator
+    - name: Airouter
+      link: https://airouter.service.itstudio.club/
+      avatar: https://airouter.service.itstudio.club/logo.png
+      descr: New API

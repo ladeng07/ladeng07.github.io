@@ -9,18 +9,19 @@ description: '一个喜欢折腾有意思的技术的人，但是记性不好，
 keywords: 博客
 author: LMark
 language: zh-CN
-timezone: ''
+timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://lmark.cc/
+url: https://blog.lmark.cc
+root: /
 permalink: archives/:abbrlink.html
 abbrlink:
   alg: crc32  # 算法：crc16(default) and crc32
   rep: hex    # 进制：dec(default) and hex
 permalink_defaults:
 pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
 
 # Directory
@@ -45,7 +46,7 @@ filename_case: 0
 render_drafts: false
 post_asset_folder: false
 relative_link: false
-future: true
+future: false
 highlight:
   enable: true
   line_number: true
@@ -205,11 +206,12 @@ loadingImg: /img/loading.gif
 # 从 Notion 数据库生成页面
 notion:
   enable: true
-  api_key: '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'
+  api_key: ''
   database_id: '571c10f428f745c3b64d3a193e3c1c3e'
   path: 'notion/index.html'
   title: 'LMark的看番列表'
   layout: notion
+  robots: 'noindex,follow'
   # 标题属性名称（Notion 数据库中的标题字段）
   title_property: Name
   # 要显示的属性列表(留空则显示所有属性)

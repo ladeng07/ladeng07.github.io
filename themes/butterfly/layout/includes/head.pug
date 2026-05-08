@@ -21,6 +21,8 @@ meta(name="author" content=pageAuthor)
 meta(name="copyright" content=pageCopyright)
 meta(name ="format-detection" content="telephone=no")
 meta(name="theme-color" content=themeColor)
+if page.robots
+  meta(name="robots" content=page.robots)
 
 //- Open_Graph
 include ./head/Open_Graph.pug
